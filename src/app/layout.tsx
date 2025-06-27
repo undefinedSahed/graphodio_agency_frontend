@@ -27,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${debata.className} antialiased uppercase overflow-hidden`}
+        className={`${debata.className} antialiased uppercase overflow-x-hidden`}
       >
         <Navbar />
         {children}
