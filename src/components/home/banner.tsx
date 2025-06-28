@@ -18,7 +18,7 @@ export default function Banner() {
 
         tl.fromTo(splitedHeadline.words,
             {
-                y: 120,
+                y: 140,
                 opacity: 0,
                 duration: 1,
                 stagger: {
@@ -58,13 +58,13 @@ export default function Banner() {
             {
                 y: 100,
                 opacity: 0,
-                duration: 0.7,
+                duration: 0.8,
                 stagger: 0.2,
             },
             {
                 y: -180,
                 opacity: 1,
-                duration: 0.7,
+                duration: 0.8,
                 stagger: 0.2
             }
         )
@@ -73,7 +73,7 @@ export default function Banner() {
 
     return (
         <>
-            <section className="py-10 text-white/90 flex justify-center" ref={bannerRef}>
+            <section className="py-10 text-white/90 flex justify-center h-screen" ref={bannerRef}>
                 <div className="container">
                     <div className="text-center max-w-4xl mx-auto">
                         <h1 className="headline text-[72px] font-bold leading-tight text-center pb-4">
