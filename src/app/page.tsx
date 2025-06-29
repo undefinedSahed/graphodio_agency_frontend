@@ -1,3 +1,4 @@
+import AboutSection from "@/components/home/abuout-section";
 import Banner from "@/components/home/banner";
 import HowWeWork from "@/components/home/how-we-work";
 
@@ -6,7 +7,7 @@ export default function Home() {
     <main>
       <Banner />
       <HowWeWork />
-      <div className="h-screen"></div>
+      <AboutSection />
     </main>
   );
 }
