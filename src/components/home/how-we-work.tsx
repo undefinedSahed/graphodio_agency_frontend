@@ -18,7 +18,7 @@ export default function HowWeWork() {
         ScrollTrigger.create({
             trigger: sectionRef.current,
             start: "top top",
-            end: "+=1800",
+            end: "+=1200",
             pin: true,
             scrub: 8,
             
@@ -31,7 +31,7 @@ export default function HowWeWork() {
                 scrollTrigger: {
                     trigger: element,
                     start: "top 10%",
-                    end: "+=600",
+                    end: "+=800",
                     scrub: 8,
                 },
             });
@@ -53,7 +53,7 @@ export default function HowWeWork() {
                     x: index === 0 ? 150 : -150,
                     duration: 1,
                 }
-            );
+            );  
         });
     }, { scope: sectionRef });
 
