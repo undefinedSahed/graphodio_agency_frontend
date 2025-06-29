@@ -41,28 +41,87 @@ export default function Navbar() {
     const contactFormRef = useRef(null);
     const contactTimeline = useRef<gsap.core.Timeline | null>(null);
 
+    // Animate logo & contact button from opposite directions
+    useGSAP(() => {
+        const tl = gsap.timeline();
+
+        tl.fromTo(
+            ".logo-animate",
+            {
+                x: -100,
+                opacity: 0,
+                visibility: "hidden",
+            },
+            {
+                x: 0,
+                opacity: 1,
+                visibility: "visible",
+                duration: 1,
+                ease: "power3.out",
+            }
+        );
+
+        tl.fromTo(
+            ".contact-animate",
+            {
+                x: 100,
+                opacity: 0,
+                visibility: "hidden",
+            },
+            {
+                x: 0,
+                opacity: 1,
+                visibility: "visible",
+                duration: 1,
+                ease: "power3.out",
+            },
+            "<" // Start at same time
+        );
+    }, { scope: navRef });
+
     // Animate nav links
     useGSAP(() => {
-        gsap.fromTo(
+        const tl = gsap.timeline();
+        const rlElements = gsap.utils.toArray(".rl");
+
+        rlElements.forEach((rlElement, index) => {
+            tl.fromTo(
+                rlElement as HTMLElement,
+                {
+                    x: index === 0 ? -100 : 100,
+                    opacity: 0,
+                    visibility: "hidden",
+                    ease: "power3.out",
+                },
+                {
+                    x: 0,
+                    opacity: 1,
+                    duration: 3,
+                    visibility: "visible",
+                    ease: "power3.out",
+                }
+            );
+        });
+
+        tl.fromTo(
             ".element",
             {
                 y: -100,
                 opacity: 0,
                 visibility: "hidden",
+                ease: "power3.out",
+                stagger: { amount: 0.5, from: "start" },
             },
             {
                 y: 0,
                 opacity: 1,
                 visibility: "visible",
-                delay: 1.5,
                 duration: 1,
                 ease: "power3.out",
                 stagger: { amount: 0.5, from: "start" },
             }
         );
     }, { scope: navRef });
-
-
 
     useGSAP(() => {
         contactTimeline.current = gsap.timeline({ paused: true }).to(
@@ -112,8 +171,8 @@ export default function Navbar() {
                         className="nav-wrapper flex justify-between items-center"
                         ref={navRef}
                     >
-
-                        <div className="element invisible">
+                        {/* Logo from Left */}
+                        <div className="logo-animate invisible">
                             <Image
                                 src="/images/logo-full.png"
                                 alt="logo"
@@ -140,8 +199,8 @@ export default function Navbar() {
                             </ul>
                         </div>
 
-
-                        <div>
+                        {/* Contact Button from Right */}
+                        <div className="contact-animate invisible">
                             <Button
                                 onClick={handleOpenContactForm}
                                 className="uppercase border border-white/20 text-lg cursor-pointer"
@@ -150,7 +209,7 @@ export default function Navbar() {
                             </Button>
                         </div>
 
-                        {/* Contact Part */}
+                        {/* Contact Form Slide-in */}
                         <div
                             ref={contactFormRef}
                             className="fixed h-svh translate-x-full right-0 top-0 w-[40%] bg-transparent z-50 backdrop-blur-2xl pt-20 pl-20 pr-5 contact_form"
@@ -168,7 +227,6 @@ export default function Navbar() {
                                     onSubmit={contactForm.handleSubmit(onSubmitContact)}
                                     className="space-y-6 mt-10"
                                 >
-
                                     <div className="flex items-center gap-3 w-full justify-between">
                                         <FormField
                                             control={contactForm.control}
@@ -213,7 +271,6 @@ export default function Navbar() {
                                         />
                                     </div>
 
-
                                     <FormField
                                         control={contactForm.control}
                                         name="service"
@@ -253,7 +310,6 @@ export default function Navbar() {
                                         )}
                                     />
 
-
                                     <FormField
                                         control={contactForm.control}
                                         name="message"
@@ -274,7 +330,6 @@ export default function Navbar() {
                                             </FormItem>
                                         )}
                                     />
-
 
                                     <div>
                                         <Button
