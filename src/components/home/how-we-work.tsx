@@ -21,7 +21,6 @@ export default function HowWeWork() {
             end: "+=1200",
             pin: true,
             scrub: 8,
-            
         });
 
         elements.forEach((element: HTMLElement, index: number) => {
@@ -62,7 +61,7 @@ export default function HowWeWork() {
             <div className="container text-white text-center -mt-32">
                 <h2 className='text-[64px] font-bold leading-tight text-center pb-12 max-w-2xl mx-auto'>I build websites at the intersection of:</h2>
                 <div className="flex justify-center">
-                    <div className="relative h-64 w-64 rounded-full flex justify-center items-center elem">
+                    <div className="relative h-64 w-64 translate-x-[30px] rounded-full flex justify-center items-center elem">
                         <svg className="absolute w-full h-full scale-[140%] rotate-[270deg]">
                             <circle
                                 cx="50%"
@@ -122,7 +121,7 @@ export default function HowWeWork() {
                         </span>
                     </div>
 
-                    <div className="relative h-64 w-64 rounded-full flex justify-center items-center elem">
+                    <div className="relative h-64 w-64 -translate-x-[30px] rounded-full flex justify-center items-center elem">
                         <svg className="absolute w-full h-full scale-[140%] rotate-[270deg]">
                             <circle
                                 cx="50%"
