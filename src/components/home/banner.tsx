@@ -21,7 +21,8 @@ export default function Banner() {
                 y: 140,
                 opacity: 0,
                 visibility: "hidden",
-                duration: 1,
+                duration: 1.2,
+                delay: 1.5,
                 stagger: {
                     amount: 0.5,
                     from: "start"
