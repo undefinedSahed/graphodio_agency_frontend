@@ -1,7 +1,10 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import SwiperCore, { FreeMode } from "swiper";
+import { useRef, useState } from "react";
+import SwiperCore from "swiper";
+import { FreeMode } from "swiper/modules";
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/free-mode";
@@ -14,7 +17,7 @@ const works = [
     imgSrc: "/images/work.jpg",
     link: "",
   },
- {
+  {
     title: "Amazon",
     category: "Webdesign + Webflow",
     videoSrc: "/video/Hero.mp4",
@@ -51,7 +54,8 @@ const works = [
   },
 ];
 
-
+// Use swiper modules (not a React hook, so outside the component is fine)
+// eslint-disable-next-line react-hooks/rules-of-hooks
 SwiperCore.use([FreeMode]);
 
 export default function FeaturedWorks() {
@@ -88,14 +92,16 @@ export default function FeaturedWorks() {
       </div>
 
       {/* Desktop Grid */}
-      <div className="hidden md:grid md:grid-cols-6 gap-4 max-w-7xl mx-auto">
+<div className="hidden md:grid gap-4 max-w-7xl mx-auto" style={{ gridTemplateColumns: "repeat(6, 251px)", justifyContent: "center" }}>
         {works.map((work, idx) => (
           <a
             key={idx}
             href={work.link}
             target="_blank"
             rel="noopener noreferrer"
-            ref={(el) => (cardsRef.current[idx] = el)}
+            ref={(el) => {
+              cardsRef.current[idx] = el;  // fix: return void here
+            }}
             onMouseEnter={() => handleMouseEnter(idx)}
             onMouseLeave={() => handleMouseLeave(idx)}
             className="relative group overflow-hidden w-full cursor-pointer rounded-lg transform transition-all duration-300 ease-in-out"
@@ -136,14 +142,9 @@ export default function FeaturedWorks() {
         ))}
       </div>
 
-      {/* Mobile Swiper*/}
+      {/* Mobile Swiper */}
       <div className="md:hidden">
-        <Swiper
-          slidesPerView={1.2}
-          spaceBetween={16}
-          freeMode={true}
-          className="px-4"
-        >
+        <Swiper slidesPerView={1.2} spaceBetween={16} freeMode={true} className="px-4">
           {works.map((work, idx) => (
             <SwiperSlide key={idx}>
               <a
@@ -152,7 +153,6 @@ export default function FeaturedWorks() {
                 rel="noopener noreferrer"
                 className="relative group overflow-hidden w-full cursor-pointer rounded-lg block"
               >
-                {}
                 <div className="relative w-full aspect-[4/5]">
                   <img
                     src={work.imgSrc}
@@ -171,14 +171,9 @@ export default function FeaturedWorks() {
                     Your browser does not support the video tag.
                   </video>
                 </div>
-                {}
                 <div className="mt-4">
-                  <div className="text-xs font-semibold uppercase tracking-wider">
-                    {work.title}
-                  </div>
-                  <div className="text-xs tracking-wider text-gray-400 uppercase">
-                    {work.category}
-                  </div>
+                  <div className="text-xs font-semibold uppercase tracking-wider">{work.title}</div>
+                  <div className="text-xs tracking-wider text-gray-400 uppercase">{work.category}</div>
                 </div>
               </a>
             </SwiperSlide>
