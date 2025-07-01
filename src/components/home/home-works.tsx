@@ -5,10 +5,10 @@ import { Building2 } from 'lucide-react';
 import React, { useRef } from 'react';
 
 const works = [
-    { name: "Olive Stocks", type: "Web Development + MERN", date: "May 2023" },
-    { name: "Pixel Hub", type: "Graphics Design + AI", date: "February 2023" },
-    { name: "Nova Agency", type: "SEO Services + SEM", date: "May 2023" },
-    { name: "CodeCraft", type: "Web Development + MERN", date: "May 2023" }
+    { name: "Graphics Design", type: "Graphics Design | AI", date: "May 2023" },
+    { name: "Custom Website", type: "Web Development | MERN", date: "February 2023" },
+    { name: "SEO Services", type: "SEO Services | SEM", date: "May 2023" },
+    { name: "Amazom Products", type: "Graphics, SEO | AI, SEM", date: "May 2023" }
 ];
 
 export default function HomeWorks() {
@@ -68,7 +68,7 @@ export default function HomeWorks() {
                 <div className="flex justify-between">
                     <div className="max-w-md">
                         <h3 className='lg:text-5xl leading-snug'>
-                            Here is a selection of my most recent works{" "}
+                            Here is a selection of our most popular services{" "}
                             <span className="inline-flex justify-center items-center w-14 h-14 border-2 border-[#1b1b1b] rounded-full ml-3">
                                 <Building2 className="w-6 h-6 animate-bounce" />
                             </span>
@@ -100,7 +100,7 @@ export default function HomeWorks() {
                                     <source src="/videos/mov_bbb.mp4" type="video/mp4" />
                                 </video>
                             </div>
-                            <div className="col-span-3 relative cursor-pointer origin-left will-change-transform hover:scale-125 hover:translate-x-5 duration-700 group">
+                            <div className="col-span-3 relative cursor-pointer origin-left will-change-transform hover:scale-[120%] hover:translate-x-5 duration-700 group">
                                 <h3 className='lg:text-8xl font-bold'>
                                     {work.name}
                                 </h3>
