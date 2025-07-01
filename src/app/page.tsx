@@ -1,5 +1,6 @@
 import AboutSection from "@/components/home/abuout-section";
 import Banner from "@/components/home/banner";
+import HomeWorks from "@/components/home/home-works";
 import HowWeWork from "@/components/home/how-we-work";
 
 export default function Home() {
@@ -8,6 +9,7 @@ export default function Home() {
       <Banner />
       <HowWeWork />
       <AboutSection />
+      <HomeWorks />
     </main>
   );
 }
