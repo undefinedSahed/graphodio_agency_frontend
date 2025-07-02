@@ -1,14 +1,50 @@
-"use client";
+'use client';
 
 import gsap from 'gsap';
 import { Building2 } from 'lucide-react';
 import React, { useRef } from 'react';
 
 const works = [
-    { name: "Graphics Design", type: "Graphics Design | AI", date: "May 2023" },
-    { name: "Custom Website", type: "Web Development | MERN", date: "February 2023" },
-    { name: "SEO Services", type: "SEO Services | SEM", date: "May 2023" },
-    { name: "Amazom Products", type: "Graphics, SEO | AI, SEM", date: "May 2023" }
+    {
+        name: "Graphics Design",
+        type: "Graphics Design | AI",
+        date: "May 2023",
+        videos: [
+            "/videos/video.mp4",
+            "/videos/video.mp4",
+            "/videos/video.mp4"
+        ]
+    },
+    {
+        name: "Custom Website",
+        type: "Web Development | MERN",
+        date: "February 2023",
+        videos: [
+            "/videos/video.mp4",
+            "/videos/video.mp4",
+            "/videos/video.mp4"
+        ]
+    },
+    {
+        name: "SEO Services",
+        type: "SEO Services | SEM",
+        date: "May 2023",
+        videos: [
+            "/videos/video.mp4",
+            "/videos/video.mp4",
+            "/videos/video.mp4"
+        ]
+    },
+    {
+        name: "Amazon Products",
+        type: "Graphics, SEO | AI, SEM",
+        date: "May 2023",
+        videos: [
+            "/videos/video.mp4",
+            "/videos/video.mp4",
+            "/videos/video.mp4"
+        ]
+    }
 ];
 
 export default function HomeWorks() {
@@ -90,16 +126,21 @@ export default function HomeWorks() {
                             onMouseEnter={(e) => handleShow(e.currentTarget)}
                             onMouseLeave={(e) => handleHide(e.currentTarget)}
                         >
+                            {/* Video 1 */}
                             <div className="col-span-1 abc" style={{ transform: 'scale(0)', opacity: 0 }}>
                                 <video autoPlay loop muted>
-                                    <source src="/videos/mov_bbb.mp4" type="video/mp4" />
+                                    <source src={work.videos[0]} type="video/mp4" />
                                 </video>
                             </div>
+
+                            {/* Video 2 */}
                             <div className="col-span-1 abc" style={{ transform: 'scale(0)', opacity: 0 }}>
                                 <video autoPlay loop muted>
-                                    <source src="/videos/mov_bbb.mp4" type="video/mp4" />
+                                    <source src={work.videos[1]} type="video/mp4" />
                                 </video>
                             </div>
+
+                            {/* Title & Info */}
                             <div className="col-span-3 relative cursor-pointer origin-left will-change-transform hover:scale-[120%] hover:translate-x-5 duration-700 group">
                                 <h3 className='lg:text-8xl font-bold'>
                                     {work.name}
@@ -113,9 +154,11 @@ export default function HomeWorks() {
                                     </span>
                                 </div>
                             </div>
+
+                            {/* Video 3 */}
                             <div className="col-span-1 abc" style={{ transform: 'scale(0)', opacity: 0 }}>
                                 <video autoPlay loop muted>
-                                    <source src="/videos/mov_bbb.mp4" type="video/mp4" />
+                                    <source src={work.videos[2]} type="video/mp4" />
                                 </video>
                             </div>
                         </div>
