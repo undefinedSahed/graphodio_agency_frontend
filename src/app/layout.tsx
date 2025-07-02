@@ -3,7 +3,6 @@ import { Bebas_Neue } from "next/font/google";
 import "./globals.css";
 import SmoothScrollProvider from "@/providers/smooth-scroll-provider";
 import Navbar from "@/components/shared/navbar";
-import Footer from "@/components/shared/footer";
 
 const debata = Bebas_Neue({
   subsets: ["latin"],
@@ -27,7 +26,6 @@ export default function RootLayout({
         <SmoothScrollProvider>
           <Navbar />
           {children}
-          <Footer />
         </SmoothScrollProvider>
       </body>
     </html>
