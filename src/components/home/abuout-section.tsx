@@ -4,7 +4,9 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
 import { User, Building2 } from 'lucide-react';
+import Link from 'next/link';
 import React, { useRef } from 'react';
+import { Button } from '../ui/button';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -27,11 +29,14 @@ export default function AboutSection() {
                 trigger: sectionRef.current,
                 start: "top top",
                 end: "+=800",
-                scrub: 8,
+                scrub: 2,
                 pin: true,
-                
+
             },
         });
+
+
+
     }, { scope: sectionRef });
 
     return (
@@ -78,6 +83,14 @@ export default function AboutSection() {
                     <span className="animate-group">powerful</span>
                     <span className="animate-group">websites.</span>
                 </p>
+                <div className="animate-group mt-8 flex justify-center">
+                    <Link href="/about">
+                        <Button className='group w-28 h-12 flex items-center gap-5 text-lg border-2 border-[#1b1b1b] cursor-pointer bg-[#1d1d1d]/30'>
+                            <User className='w-14 h-12 p-1 rounded-full group-hover:p-0' />
+                            <span>About</span>
+                        </Button>
+                    </Link>
+                </div>
             </div>
         </section>
     );

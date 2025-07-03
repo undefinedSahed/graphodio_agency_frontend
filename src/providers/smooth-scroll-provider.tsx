@@ -1,5 +1,3 @@
-// components/global/smooth-scroll-provider.tsx
-
 "use client";
 
 import { useEffect } from "react";

@@ -20,7 +20,7 @@ export default function HowWeWork() {
             start: "top top",
             end: "+=1200",
             pin: true,
-            scrub: 8,
+            scrub: 2,
         });
 
         elements.forEach((element: HTMLElement, index: number) => {
@@ -31,7 +31,7 @@ export default function HowWeWork() {
                     trigger: element,
                     start: "top 10%",
                     end: "+=800",
-                    scrub: 8,
+                    scrub: 2,
                 },
             });
 
@@ -84,7 +84,7 @@ export default function HowWeWork() {
                             />
                         </svg>
                         <span className="z-10 flex flex-col gap-2 justify-center items-center">
-                            <div className="h-16 w-16 flex justify-center items-center border-4 border-[#1b1b1b] rounded-full">
+                            <div className="h-16 w-16 flex justify-center items-center border-2 border-[#1b1b1b] rounded-full">
                                 <NotebookPen className='animate-bounce' />
                             </div>
                             <span> Research</span>
@@ -114,7 +114,7 @@ export default function HowWeWork() {
                             />
                         </svg>
                         <span className="z-10 flex flex-col gap-2 justify-center items-center">
-                            <div className="h-16 w-16 flex justify-center items-center border-4 border-[#1b1b1b] rounded-full">
+                            <div className="h-16 w-16 flex justify-center items-center border-2 border-[#1b1b1b] rounded-full">
                                 <NotebookPen className='animate-bounce' />
                             </div>
                             <span> Research</span>
@@ -144,7 +144,7 @@ export default function HowWeWork() {
                             />
                         </svg>
                         <span className="z-10 flex flex-col gap-2 justify-center items-center">
-                            <div className="h-16 w-16 flex justify-center items-center border-4 border-[#1b1b1b] rounded-full">
+                            <div className="h-16 w-16 flex justify-center items-center border-2 border-[#1b1b1b] rounded-full">
                                 <NotebookPen className='animate-bounce' />
                             </div>
                             <span> Research</span>

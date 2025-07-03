@@ -1,9 +1,7 @@
-// app/layout.tsx
-
 import type { Metadata } from "next";
 import { Bebas_Neue } from "next/font/google";
 import "./globals.css";
-import SmoothScrollProvider from "@/providers/smooth-scroll-provider"; // NEW
+import SmoothScrollProvider from "@/providers/smooth-scroll-provider";
 import Navbar from "@/components/shared/navbar";
 
 const debata = Bebas_Neue({
