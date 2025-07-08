@@ -1,0 +1,148 @@
+"use client";
+
+import { useEffect, useRef, useState } from "react";
+import gsap from "gsap";
+import Image from "next/image";
+import Link from "next/link";
+import { Building2, MoveDown, MoveUp, User, Workflow } from "lucide-react";
+import { Button } from "../ui/button";
+
+const slides = [
+    { src: "/images/slider.jpg", slug: "slide-1" },
+    { src: "/images/slider.jpg", slug: "slide-2" },
+    { src: "/images/slider.jpg", slug: "slide-3" },
+    { src: "/images/slider.jpg", slug: "slide-4" },
+];
+
+export default function StackedSlider() {
+    const containerRef = useRef<HTMLDivElement>(null);
+    const [current, setCurrent] = useState(0);
+
+    useEffect(() => {
+        const cards = gsap.utils.toArray(".slide") as HTMLDivElement[];
+
+        // Stack from top to bottom
+        cards.forEach((card, i) => {
+            gsap.set(card, {
+                zIndex: slides.length - i,
+                y: -i * 20,
+                scale: 1 - i * 0.02,
+            });
+        });
+    }, []);
+
+    const moveNext = () => {
+        const cards = gsap.utils.toArray(".slide") as HTMLDivElement[];
+        if (current < slides.length - 1) {
+            const tl = gsap.timeline();
+            tl.to(cards[current], {
+                y: 100,
+                opacity: 0,
+                duration: 0.5,
+                onComplete: () => setCurrent(current + 1),
+            });
+        }
+    };
+
+    const movePrev = () => {
+        if (current === 0) return;
+        const cards = gsap.utils.toArray(".slide") as HTMLDivElement[];
+        const prev = current - 1;
+
+        gsap.set(cards[prev], { opacity: 1 });
+        gsap.to(cards[prev], {
+            y: -prev * 20,
+            duration: 0.5,
+            onComplete: () => setCurrent(prev),
+        });
+    };
+
+    return (
+        <section className="py-8 lg:py-20">
+            <div className="container">
+                <div className="pb-10">
+                    <p className="text-5xl leading-snug max-w-3xl mx-auto flex flex-wrap justify-center gap-3 main_text">
+                        <span className="animate-group">I</span>
+                        <span className="animate-group">work</span>
+                        <span className="animate-group">with</span>
+
+                        <span className="animate-group flex items-center gap-2">
+                            <span>individuals</span>
+                            <span className="inline-flex justify-center items-center w-14 h-14 border-2 border-[#1b1b1b] rounded-full">
+                                <User className="w-6 h-6 animate-bounce" />
+                            </span>
+                        </span>
+
+                        <span className="animate-group">
+                            and
+                        </span>
+
+                        <span className="animate-group flex items-center gap-2">
+                            <span>studios</span>
+                            <span className="inline-flex justify-center items-center w-14 h-14 border-2 border-[#1b1b1b] rounded-full">
+                                <User className="w-6 h-6 animate-bounce" />
+                            </span>
+                        </span>
+
+                        <span className="animate-group flex items-center gap-2">
+                            <span>companies</span>
+                            <span className="inline-flex justify-center items-center w-14 h-14 border-2 border-[#1b1b1b] rounded-full">
+                                <Building2 className="w-6 h-6 animate-bounce" />
+                            </span>
+                        </span>
+
+                        <span className="animate-group">to</span>
+                        <span className="animate-group">turn</span>
+                        <span className="animate-group">their</span>
+                        <span className="animate-group">vision</span>
+                        <span className="animate-group">into</span>
+                        <span className="animate-group">powerful</span>
+                        <span className="animate-group">websites.</span>
+                    </p>
+                    <div className="animate-group mt-8 flex justify-center">
+                        <Link href="/works">
+                            <Button className='group w-28 h-12 flex items-center gap-5 text-lg border-2 border-[#1b1b1b] cursor-pointer bg-[#1d1d1d]/30'>
+                                <Workflow className='w-14 h-12 p-1 rounded-full group-hover:p-0' />
+                                <span>See More</span>
+                            </Button>
+                        </Link>
+                    </div>
+                </div>
+                <div className="relative max-w-4xl h-[60svh] mx-auto mt-20">
+                    <div ref={containerRef} className="relative h-full w-full">
+                        {slides.map((slide, i) => (
+                            <Link
+                                key={i}
+                                href={`/works/${slide.slug}`}
+                                className="slide absolute top-0 left-0 w-full h-full rounded-lg overflow-hidden shadow-2xl cursor-pointer"
+                            >
+                                <Image
+                                    src={slide.src}
+                                    alt={`slide-${i}`}
+                                    fill
+                                    className="object-cover transition-transform duration-300 hover:scale-105"
+                                />
+                            </Link>
+                        ))}
+                    </div>
+
+                    {/* Controls */}
+                    <div className="absolute right-[-60px] top-1/2 -translate-y-1/2 flex flex-col gap-2">
+                        <button
+                            onClick={movePrev}
+                            className="bg-white text-black px-3 py-1 rounded shadow cursor-pointer"
+                        >
+                            <MoveUp />
+                        </button>
+                        <button
+                            onClick={moveNext}
+                            className="bg-white text-black px-3 py-1 rounded shadow cursor-pointer"
+                        >
+                            <MoveDown />
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    );
+}

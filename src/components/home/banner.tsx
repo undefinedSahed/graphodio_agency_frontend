@@ -90,7 +90,6 @@ export default function Banner() {
                     </div>
                 </div>
             </section>
-            {/* <div className="h-[1000px] w-full"></div> */}
         </>
     )
 }
