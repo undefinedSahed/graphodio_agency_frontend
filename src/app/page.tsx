@@ -6,6 +6,7 @@ import HowWeWork from "@/components/home/how-we-work";
 import Footer from "@/components/home/Footer";
 import StackedSlider from "@/components/home/work-slider";
 
+
 export default function Home() {
   return (
     <main>
