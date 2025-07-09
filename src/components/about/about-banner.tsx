@@ -51,20 +51,6 @@ export default function AboutBanner() {
                     ease: "power2.out",
                     visibility: "invisible"
                 }, "<0");
-
-            tl.to(aboutRef.current.querySelector('.animate_logo'),
-                {
-                    y: 250,
-                    rotateY: 360,
-                    ease: "power2.out",
-                    scrollTrigger: {
-                        trigger: aboutRef.current.querySelector('.animate_logo'),
-                        start: "top 10%",
-                        end: "bottom top",
-                        scrub: 2,
-                        once: true
-                    }
-                })
         }
     }, { scope: aboutRef })
 
