@@ -1,5 +1,8 @@
 import AboutBanner from '@/components/about/about-banner'
 import AboutServices from '@/components/about/about-services'
+import Testimonial from '@/components/about/testimonial'
+import WorksSection from '@/components/about/work-section'
+import LogoCarousel from '@/components/portfolio/LogoCarousel'
 import React from 'react'
 
 export default function page() {
@@ -7,6 +10,11 @@ export default function page() {
         <main>
             <AboutBanner />
             <AboutServices />
+            <div className="py-2 lg:py-20">
+                <LogoCarousel />
+            </div>
+            <Testimonial />
+            <WorksSection />
         </main>
     )
 }

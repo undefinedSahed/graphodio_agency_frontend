@@ -32,10 +32,10 @@ const LogoCarousel: React.FC = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      const track = trackRef.current;                                                                                                                         
+      const track = trackRef.current;
       if (!track) return;
 
-      const totalWidth = track.scrollWidth / 2; 
+      const totalWidth = track.scrollWidth / 2;
       gsap.to(track, {
         x: -totalWidth,
         duration: 40,
@@ -52,6 +52,9 @@ const LogoCarousel: React.FC = () => {
 
   return (
     <div className="overflow-hidden w-full py-1 ">
+      <div className="text-center pb-4">
+        <h2 className="text-lg tracking-wide">brands and agencies i worked with</h2>
+      </div>
       <div ref={trackRef} className="flex w-max gap-12">
         {[...logos, ...logos].map((logo, index) => (
           <div key={index} className="flex-shrink-0">
