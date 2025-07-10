@@ -32,43 +32,32 @@ export default function AboutServices() {
     ];
 
     useGSAP(() => {
-        const boxes = secRef.current?.querySelectorAll('.animate_servide_fade') as NodeListOf<HTMLElement>;
+        const boxes = secRef.current?.querySelectorAll('.animate_service_fade') as NodeListOf<HTMLElement>;
         const videos = secRef.current?.querySelectorAll('.service-video') as NodeListOf<HTMLElement>;
 
         boxes?.forEach((box, index) => {
-            gsap.fromTo(box,
-                { opacity: 0.1 },
-                {
-                    opacity: 1,
-                    scrollTrigger: {
-                        trigger: box,
-                        start: "top 70%",
-                        end: "bottom 70%",
-                        scrub: true,
-                        onEnter: () => {
-                            fadeOthers(index);
-                            showVideo(index);
-                        },
-                        onEnterBack: () => {
-                            fadeOthers(index);
-                            showVideo(index);
-                        }
-                    }
-                }
-            );
+            ScrollTrigger.create({
+                trigger: box,
+                start: "top center",
+                end: "bottom center",
+                onEnter: () => {
+                    fadeOthers(index);
+                    showVideo(index);
+                },
+                onEnterBack: () => {
+                    fadeOthers(index);
+                    showVideo(index);
+                },
+            });
         });
 
         function fadeOthers(activeIndex: number) {
             boxes?.forEach((box, i) => {
-                if (i === activeIndex) {
-                    gsap.to(box, {
-                        opacity: 1,
-                        duration: 0.5,
-                        ease: "power2.out"
-                    });
-                } else {
-                    gsap.set(box, { opacity: 0.1 }); // Faster than to()
-                }
+                gsap.to(box, {
+                    opacity: i === activeIndex ? 1 : 0.1,
+                    duration: 0.4,
+                    ease: "power2.out"
+                });
             });
         }
 
@@ -76,18 +65,8 @@ export default function AboutServices() {
             videos?.forEach((video, i) => {
                 if (i === activeIndex) {
                     gsap.fromTo(video,
-                        {
-                            x: 100,
-                            opacity: 0,
-                            rotate: 30,
-                        },
-                        {
-                            x: 0,
-                            rotate: 0,
-                            opacity: 1,
-                            duration: 0.8,
-                            ease: "bounce.out"
-                        }
+                        { x: 100, opacity: 0, rotate: 30 },
+                        { x: 0, rotate: 0, opacity: 1, duration: 0.4, ease: "bounce.inOut" }
                     );
                 } else {
                     gsap.set(video, { opacity: 0 });
@@ -97,6 +76,8 @@ export default function AboutServices() {
 
     }, { scope: secRef });
 
+
+
     return (
         <section className="py-8 lg:py-20" ref={secRef}>
             <div className="container">
@@ -104,19 +85,23 @@ export default function AboutServices() {
                     <h2 className="text-3xl lg:text-5xl font-bold mb-4">We can help you with</h2>
                 </div>
 
-                <div className="grid grid-rows-3 grid-cols-3 gap-8">
+                <div className="grid grid-rows-3 grid-cols-3 gap-x-8 gap-y-[30px] relative">
                     {services.map((service, index) => {
-                        const position = {
-                            0: { colStart: 1, rowStart: 1 },
-                            1: { colStart: 2, rowStart: 2 },
-                            2: { colStart: 3, rowStart: 3 },
-                        }[index] || { colStart: 1, rowStart: 1 };
+                        const position = [
+                            { gridColumnStart: 1, gridRowStart: 1 },
+                            { gridColumnStart: 2, gridRowStart: 2 },
+                            { gridColumnStart: 3, gridRowStart: 3 },
+                        ][index];
 
                         return (
                             <div
                                 key={service.id}
-                                className={`max-w-sm pr-6 rounded-lg col-start-${position.colStart} row-start-${position.rowStart} animate_servide_fade`}
-                                style={{ opacity: 0.2 }}
+                                className="max-w-sm pr-6 rounded-lg animate_service_fade"
+                                style={{
+                                    opacity: 0.2,
+                                    gridColumnStart: position.gridColumnStart,
+                                    gridRowStart: position.gridRowStart
+                                }}
                             >
                                 <div className="flex justify-between items-center mb-4">
                                     <h3 className="text-xl lg:text-5xl font-semibold leading-tight">
@@ -129,14 +114,15 @@ export default function AboutServices() {
                                         loop
                                         muted
                                         preload="metadata"
-                                        style={{ opacity: 0, willChange: 'transform, opacity'}}
+                                        style={{ opacity: 0, willChange: 'transform, opacity' }}
                                     />
                                 </div>
-                                <p className="text-gray-300 text-lg">{service.description}</p>
+                                <p className="text-gray-300 text-xl tracking-wider">{service.description}</p>
                             </div>
                         );
                     })}
                 </div>
+
             </div>
         </section>
     );
