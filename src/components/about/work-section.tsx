@@ -6,7 +6,7 @@ import React, { useRef } from 'react';
 
 const works = [
     {
-        name: "Graphics Design",
+        name: "Eyden Burger",
         type: "Graphics Design | AI",
         date: "May 2023",
         videos: [
@@ -16,7 +16,7 @@ const works = [
         ]
     },
     {
-        name: "Custom Website",
+        name: "Olivestocks",
         type: "Web Development | MERN",
         date: "February 2023",
         videos: [
@@ -26,7 +26,7 @@ const works = [
         ]
     },
     {
-        name: "Amazon Products",
+        name: "Royal House",
         type: "Graphics, SEO | AI, SEM",
         date: "May 2023",
         videos: [
@@ -37,7 +37,7 @@ const works = [
     }
 ];
 
-export default function ServiceSection() {
+export default function WorksSection() {
     const containerRef = useRef<HTMLDivElement>(null);
 
     const handleShow = (el: HTMLElement) => {
@@ -94,7 +94,7 @@ export default function ServiceSection() {
                 <div className="flex justify-between">
                     <div className="max-w-md">
                         <h3 className='lg:text-5xl leading-snug'>
-                            Here is a selection of our most popular services{" "}
+                            Here is a selection of our most popular works{" "}
                             <span className="inline-flex justify-center items-center w-14 h-14 border-2 border-[#1b1b1b] rounded-full ml-3">
                                 <Building2 className="w-6 h-6 animate-bounce" />
                             </span>
