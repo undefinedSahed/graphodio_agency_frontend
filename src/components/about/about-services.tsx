@@ -1,5 +1,6 @@
 "use client";
 
+import { services } from '@/lib/constant';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
@@ -10,26 +11,6 @@ gsap.registerPlugin(ScrollTrigger);
 export default function AboutServices() {
     const secRef = useRef<HTMLElement | null>(null);
 
-    const services = [
-        {
-            id: 1,
-            title: "Digital Marketing",
-            description: "I design websites that look great and feel intuitive. From the layout to the animations, every detail is crafted for a seamless experience on any device.",
-            video: "/videos/video.mp4"
-        },
-        {
-            id: 2,
-            title: "Website Development",
-            description: "I design websites that look great and feel intuitive. From the layout to the animations, every detail is crafted for a seamless experience on any device.",
-            video: "/videos/video.mp4"
-        },
-        {
-            id: 3,
-            title: "E-commerce Solutions",
-            description: "I design websites that look great and feel intuitive. From the layout to the animations, every detail is crafted for a seamless experience on any device.",
-            video: "/videos/video.mp4"
-        }
-    ];
 
     useGSAP(() => {
         const boxes = secRef.current?.querySelectorAll('.animate_service_fade') as NodeListOf<HTMLElement>;
