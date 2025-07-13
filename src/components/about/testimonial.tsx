@@ -1,5 +1,6 @@
 "use client";
 
+import { testimonials } from "@/lib/constant";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
@@ -10,40 +11,6 @@ import React, { useRef } from "react";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Testimonial() {
-    const testimonials = [
-        {
-            id: 1,
-            name: "John Doe",
-            role: "Web Developer, Tech Company",
-            comment:
-                "Working with this team was a game-changer for our project. Their attention to detail and creativity is unmatched. Their ability to bring our vision to life was incredible. The final product exceeded our expectations. A fantastic experience from start to finish. They understood our needs and delivered a top-notch website.",
-            image: "/images/logo.png",
-        },
-        {
-            id: 2,
-            name: "Jane Smith",
-            role: "Creative Director, Design Studio",
-            comment:
-                "Their ability to bring our vision to life was incredible. The final product exceeded our expectations. A fantastic experience from start to finish. They understood our needs and delivered a top-notch website. Working with this team was a game-changer for our project. Their attention to detail and creativity is unmatched.",
-            image: "/images/logo.png",
-        },
-        {
-            id: 3,
-            name: "Alice Johnson",
-            role: "Product Manager, Startup",
-            comment:
-                "A fantastic experience from start to finish. They understood our needs and delivered a top-notch website. Working with this team was a game-changer for our project. Their attention to detail and creativity is unmatched.",
-            image: "/images/logo.png",
-        },
-        {
-            id: 4,
-            name: "Bob Brown",
-            role: "CEO, E-commerce Business",
-            comment:
-                "The team was professional and efficient. Our new website has significantly improved our online presence. They understood our needs and delivered a top-notch website. Working with this team was a game-changer for our project. Their attention to detail and creativity is unmatched.",
-            image: "/images/logo.png",
-        },
-    ];
 
     const secRef = useRef<HTMLElement | null>(null);
 

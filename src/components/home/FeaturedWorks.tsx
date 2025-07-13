@@ -5,59 +5,19 @@ import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
+import { featuredWorks } from "@/lib/constant";
+import { useGSAP } from "@gsap/react";
+import Link from "next/link";
 
-const works = [
-  {
-    title: "Graphics Design",
-    category: "Webdesign + Webflow",
-    videoSrc: "/video/Hero.mp4",
-    imgSrc: "/images/work.jpg",
-    link: "",
-  },
-  {
-    title: "Amazon",
-    category: "Webdesign + Webflow",
-    videoSrc: "/video/Hero.mp4",
-    imgSrc: "/images/work.jpg",
-    link: "",
-  },
-  {
-    title: "Web Design and development",
-    category: "Webdesign + Webflow",
-    videoSrc: "/video/Hero.mp4",
-    imgSrc: "/images/work.jpg",
-    link: "",
-  },
-  {
-    title: "SEO",
-    category: "Webflow development",
-    videoSrc: "/video/Hero.mp4",
-    imgSrc: "/images/work.jpg",
-    link: "",
-  },
-  {
-    title: "Digital Marketing",
-    category: "Webflow development",
-    videoSrc: "/video/Hero.mp4",
-    imgSrc: "/images/work.jpg",
-    link: "",
-  },
-  {
-    title: "Motion",
-    category: "Webflow development",
-    videoSrc: "/video/Hero.mp4",
-    imgSrc: "/images/work.jpg",
-    link: "",
-  },
-];
 
 export default function FeaturedWorks() {
   const cardsRef = useRef<(HTMLAnchorElement | null)[]>([]);
   const [hoverIndex, setHoverIndex] = useState<number | null>(null);
+  const secRef = useRef<HTMLElement>(null);
 
   // Card base dimensions
   const cardWidth = 251;
-  const cardAspectRatio = 5 / 4; // height / width
+  const cardAspectRatio = 4 / 4; // height / width
   const maxScale = 1.2;
   const maxCardHeight = cardWidth * cardAspectRatio * maxScale; // ~376.5px
 
@@ -77,8 +37,8 @@ export default function FeaturedWorks() {
           ? idx < hoverIndex
             ? `-${(maxScale - scale) * 40}px`
             : idx > hoverIndex
-            ? `${(maxScale - scale) * 40}px`
-            : "0"
+              ? `${(maxScale - scale) * 40}px`
+              : "0"
           : "0";
 
       gsap.to(card, {
@@ -113,9 +73,47 @@ export default function FeaturedWorks() {
     setHoverIndex(null);
   };
 
+
+
+  useGSAP((context) => {
+
+    const q = context.selector
+
+    if (q) {
+      const items = q('.animate_items')
+      gsap.from(items, {
+        y: 300,
+        opacity: 0,
+        ease: "power2.out",
+        stagger: {
+          amount: 0.4,
+          from: "center"
+        },
+        delay: 2.2
+      });
+
+      const title = q('.title_feature')
+      gsap.from(title,
+        {
+          y: 300,
+          opacity: 0,
+          delay: 2.2,
+          ease: "power2.out"
+        }
+      )
+    }
+
+    gsap.from(secRef.current, {
+      opacity: 0,
+      duration: 1,
+      ease: "power2.out",
+    })
+
+  }, { scope: secRef })
+
   return (
-    <section className="text-white px-4 py-16 md:py-24">
-      <div className="text-center text-xs font-semibold uppercase tracking-wider opacity-60 mb-12 md:mb-16">
+    <section className="text-white px-4 -mt-44" ref={secRef}>
+      <div className="text-center text-xs font-semibold uppercase tracking-wider opacity-60 title_feature">
         Featured Works
       </div>
 
@@ -127,15 +125,16 @@ export default function FeaturedWorks() {
           justifyContent: "center",
           gap: hoverIndex !== null ? "2.5rem" : "1rem",
           height: maxCardHeight,
-          alignItems: "end", 
+          alignItems: "end",
         }}
       >
-        {works.map((work, idx) => (
+        {featuredWorks.map((work, idx) => (
           <div
             key={idx}
             style={{ height: maxCardHeight, display: "flex", flexDirection: "column", justifyContent: "flex-end" }}
+            className="animate_items"
           >
-            <a
+            <Link
               href={work.link}
               target="_blank"
               rel="noopener noreferrer"
@@ -148,19 +147,19 @@ export default function FeaturedWorks() {
               style={{ transformOrigin: "bottom center" }}
             >
               {/* Media Container */}
-              <div className="relative w-full aspect-[4/5]">
+              <div className="relative w-full">
                 <img
                   src={work.imgSrc}
                   alt={work.title}
                   loading="lazy"
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="w-full aspect-square object-cover transition-transform duration-500 group-hover:scale-105"
                 />
                 <video
                   muted
                   loop
                   preload="none"
                   playsInline
-                  className="absolute top-0 left-0 w-full h-full object-cover opacity-0 pointer-events-none"
+                  className="absolute top-0 left-0 w-full aspect-square object-cover opacity-0 pointer-events-none"
                 >
                   <source src={work.videoSrc} type="video/mp4" />
                 </video>
@@ -170,7 +169,7 @@ export default function FeaturedWorks() {
                 <span className="font-semibold truncate">{work.title}</span>
                 <span className="text-gray-400 truncate text-right">{work.category}</span>
               </div>
-            </a>
+            </Link>
           </div>
         ))}
       </div>
@@ -178,7 +177,7 @@ export default function FeaturedWorks() {
       {/* Mobile Swiper */}
       <div className="md:hidden">
         <Swiper slidesPerView={1.2} spaceBetween={16} className="px-4">
-          {works.map((work, idx) => (
+          {featuredWorks.map((work, idx) => (
             <SwiperSlide key={idx}>
               <a
                 href={work.link}

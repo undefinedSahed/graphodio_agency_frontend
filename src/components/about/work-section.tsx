@@ -1,41 +1,10 @@
 'use client';
 
+import { works } from '@/lib/constant';
 import gsap from 'gsap';
 import { Building2 } from 'lucide-react';
 import React, { useRef } from 'react';
 
-const works = [
-    {
-        name: "Eyden Burger",
-        type: "Graphics Design | AI",
-        date: "May 2023",
-        videos: [
-            "/videos/video.mp4",
-            "/videos/video.mp4",
-            "/videos/video.mp4"
-        ]
-    },
-    {
-        name: "Olivestocks",
-        type: "Web Development | MERN",
-        date: "February 2023",
-        videos: [
-            "/videos/video.mp4",
-            "/videos/video.mp4",
-            "/videos/video.mp4"
-        ]
-    },
-    {
-        name: "Royal House",
-        type: "Graphics, SEO | AI, SEM",
-        date: "May 2023",
-        videos: [
-            "/videos/video.mp4",
-            "/videos/video.mp4",
-            "/videos/video.mp4"
-        ]
-    }
-];
 
 export default function WorksSection() {
     const containerRef = useRef<HTMLDivElement>(null);
