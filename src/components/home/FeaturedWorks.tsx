@@ -79,6 +79,14 @@ export default function FeaturedWorks() {
 
     const q = context.selector
 
+    gsap.to(secRef.current,
+      {
+        visibility: "visible",
+        minHeight: "auto",
+        ease: "power2.out"
+      }
+    )
+
     if (q) {
       const items = q('.animate_items')
       gsap.from(items, {
@@ -112,7 +120,7 @@ export default function FeaturedWorks() {
   }, { scope: secRef })
 
   return (
-    <section className="text-white px-4 -mt-44" ref={secRef}>
+    <section className="text-white px-4 -mt-44 invisible min-h-screen" ref={secRef}>
       <div className="text-center text-xs font-semibold uppercase tracking-wider opacity-60 title_feature">
         Featured Works
       </div>
