@@ -40,7 +40,7 @@ export default function Team() {
                 .to(
                     q(".animate_photos_group"),
                     {
-                        yPercent: -110,
+                        yPercent: -112,
                         ease: "power1.out",
                         stagger: 0.2
                     }
