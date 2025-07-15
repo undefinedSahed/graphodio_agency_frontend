@@ -5,8 +5,8 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { ArrowRightCircle, MessageCircle } from "lucide-react";
-import Image from "next/image";
 import React, { useRef } from "react";
+import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -89,18 +89,15 @@ export default function Testimonial() {
                                             {testimonial.id}
                                         </span>
                                     </div>
-                                    <div className="">
+                                    <div className="space-y-5">
                                         <h3 className="text-xl tracking-wide font-medium leading-relaxed">
                                             {testimonial.comment}
                                         </h3>
                                         <div className="flex items-center gap-4">
-                                            <Image
-                                                src={testimonial.image}
-                                                alt={testimonial.name}
-                                                width={100}
-                                                height={100}
-                                                className="h-16 w-16 rounded-full object-cover"
-                                            />
+                                            <Avatar className='h-12 w-12'>
+                                                <AvatarImage src={testimonial.image} />
+                                                <AvatarFallback>{testimonial.name}</AvatarFallback>
+                                            </Avatar>
                                             <div>
                                                 <h4 className="text-lg font-semibold">
                                                     {testimonial.name}
