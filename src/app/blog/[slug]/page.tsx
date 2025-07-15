@@ -1,42 +1,37 @@
-import ShareButton from '@/components/blog/share-button'
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
-import { Button } from '@/components/ui/button'
-import { blogs } from '@/lib/constant'
-import Image from 'next/image'
-import Link from 'next/link'
-import React from 'react'
+// File: app/blog/[slug]/page.tsx
 
-interface BlogDetailsProps {
-    params: {
-        slug: string
-    }
-}
+import ShareButton from '@/components/blog/share-button';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { Button } from '@/components/ui/button';
+import { blogs } from '@/lib/constant';
+import Image from 'next/image';
+import Link from 'next/link';
+import React from 'react';
 
-export async function generateMetadata({ params }: BlogDetailsProps) {
-    const blog = blogs.find(b => b.slug === decodeURIComponent(params.slug))
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+    const resolvedParams = await params
+    const blog = blogs.find(b => b.slug === decodeURIComponent(resolvedParams.slug));
 
-    if (!blog) return {}
+    if (!blog) return {};
 
     return {
         title: blog.slug,
         description: blog.secondTitle,
         openGraph: {
-            images: [blog.thumbnail]
-        }
-    }
+            images: [blog.thumbnail],
+        },
+    };
 }
 
+export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
+    const resolvedParams = await params
+    const blog = blogs.find(b => b.slug === decodeURIComponent(resolvedParams.slug));
 
-export default function page({ params }: BlogDetailsProps) {
-
-    const blog = blogs.find(b => b.slug === decodeURIComponent(params.slug))
-
-    if (!blog) return {}
-
+    if (!blog) return null;
 
     return (
         <main>
-            <section className='pb-8 lg:pb-20'>
+            <section className="pb-8 lg:pb-20">
                 <div className="max-w-6xl mx-auto space-y-7 tracking-wider">
                     <div className="relative">
                         <Image
@@ -55,13 +50,11 @@ export default function page({ params }: BlogDetailsProps) {
                             <div className="space-y-3">
                                 <h1 className="text-4xl font-bold">{blog.slug}</h1>
                                 <div className="text-sm flex items-center gap-5">
-                                    <div className="">
-                                        <Avatar className='h-12 w-12'>
-                                            <AvatarImage src={blog.author.image} />
-                                            <AvatarFallback>{blog.author.name}</AvatarFallback>
-                                        </Avatar>
-                                    </div>
-                                    <div className="">
+                                    <Avatar className="h-12 w-12">
+                                        <AvatarImage src={blog.author.image} />
+                                        <AvatarFallback>{blog.author.name}</AvatarFallback>
+                                    </Avatar>
+                                    <div>
                                         <p>By {blog.author.name}</p>
                                         <p>{blog.author.date}</p>
                                     </div>
@@ -106,13 +99,12 @@ export default function page({ params }: BlogDetailsProps) {
                     <p>{blog.eighthPara}</p>
                     <p>{blog.ninethPara}</p>
                     <p>{blog.endingPara}</p>
+
                     <Link href="/blog">
-                        <Button className='cursor-pointer w-40 h-12 text-lg'>
-                            Back To Blog
-                        </Button>
+                        <Button className="cursor-pointer w-40 h-12 text-lg">Back To Blog</Button>
                     </Link>
                 </div>
             </section>
         </main>
-    )
+    );
 }
