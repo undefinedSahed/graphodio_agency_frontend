@@ -100,7 +100,7 @@ export default function StackedSlider() {
                         <span className="animate-group">websites.</span>
                     </p>
                     <div className="animate-group mt-8 flex justify-center">
-                        <Link href="/works">
+                        <Link href="/portfolio">
                             <Button className='group w-28 h-12 flex items-center gap-5 text-lg border-2 border-[#1b1b1b] cursor-pointer bg-[#1d1d1d]/30'>
                                 <Workflow className='w-14 h-12 p-1 rounded-full group-hover:p-0' />
                                 <span>See More</span>
@@ -113,7 +113,7 @@ export default function StackedSlider() {
                         {slides.map((slide, i) => (
                             <Link
                                 key={i}
-                                href={`/works/${slide.slug}`}
+                                href={`/portfolio/${slide.slug}`}
                                 className="slide absolute top-0 left-0 w-full h-full rounded-lg overflow-hidden shadow-2xl cursor-pointer"
                             >
                                 <Image

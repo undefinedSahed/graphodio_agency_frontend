@@ -68,7 +68,7 @@ const Footer: React.FC = () => {
                         <div className="uppercase text-xs tracking-widest mb-2">Next Page</div>
                         <h2 className="text-4xl md:text-5xl font-bold mb-4">Works</h2>
                         <Link
-                            href="/works"
+                            href="/portfolio"
                             className="inline-flex items-center border border-black px-4 py-2 hover:bg-black hover:text-white transition"
                         >
                             • Discover
@@ -87,7 +87,7 @@ const Footer: React.FC = () => {
                             <div className="flex flex-col">
                                 <span className="uppercase text-gray-500 tracking-widest mb-2">Sitemap</span>
                                 <Link href="/" className="hover:underline">Home</Link>
-                                <Link href="/works" className="hover:underline">Works</Link>
+                                <Link href="/portfolio" className="hover:underline">Works</Link>
                                 <Link href="/templates" className="hover:underline">Terms and conditions</Link>
                                 <Link href="/about" className="hover:underline">About</Link>
                                 <Link href="/contact" className="hover:underline">Contact</Link>
