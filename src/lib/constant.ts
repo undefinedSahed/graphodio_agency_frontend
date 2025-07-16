@@ -34,35 +34,59 @@ export const services = [
 export const testimonials = [
     {
         id: 1,
-        name: "John Doe",
-        role: "Web Developer, Tech Company",
+        name: "Steve Christmas",
+        role: "CEO, Good Vibes Music Academy",
         comment:
-            "Working with this team was a game-changer for our project. Their attention to detail and creativity is unmatched. Their ability to bring our vision to life was incredible. The final product exceeded our expectations. A fantastic experience from start to finish. They understood our needs and delivered a top-notch website.",
-        image: "/images/logo.png",
+            "This has been a really positive and professional experience. Graphodio made adaptations as requested as well as offering their own professional advice and options which was much appreciated and valued.They supplied different versions of the logo, banner and other required files that can be used online, print material and on social media too. Would recommend Graphodio and wouldn’t be hesitate in working with them again in the future.",
+        image: "/images/steve.png",
     },
     {
         id: 2,
-        name: "Jane Smith",
-        role: "Creative Director, Design Studio",
+        name: "Nada",
+        role: "Owner, Droplets Attire",
         comment:
-            "Their ability to bring our vision to life was incredible. The final product exceeded our expectations. A fantastic experience from start to finish. They understood our needs and delivered a top-notch website. Working with this team was a game-changer for our project. Their attention to detail and creativity is unmatched.",
+            "Such a creative, thoughtful and attentive team. They gave me all the files we altered, and they were so patient and helpful. Highly recommended.",
         image: "/images/logo.png",
     },
     {
         id: 3,
-        name: "Alice Johnson",
-        role: "Product Manager, Startup",
+        name: "Rowan Anderson",
+        role: "CEO,Far & King Framing",
         comment:
-            "A fantastic experience from start to finish. They understood our needs and delivered a top-notch website. Working with this team was a game-changer for our project. Their attention to detail and creativity is unmatched.",
-        image: "/images/logo.png",
+            "Great work. always great to work with.",
+        image: "/images/rowan.png",
     },
     {
         id: 4,
-        name: "Bob Brown",
-        role: "CEO, E-commerce Business",
+        name: "Tareq",
+        role: "COO,Dessert Pots",
         comment:
-            "The team was professional and efficient. Our new website has significantly improved our online presence. They understood our needs and delivered a top-notch website. Working with this team was a game-changer for our project. Their attention to detail and creativity is unmatched.",
-        image: "/images/logo.png",
+            "Skillful, talented and fast delivery. This is my 5th time working with them and will continue with them also.",
+        image: "/images/tareq.png",
+    },
+    {
+        id: 5,
+        name: "Mehedi Hasan",
+        role: "DGM, Brand & Marketing, Sanmar Properties Limited",
+        comment:
+            "Having worked with Graphodio on projects with tight deadlines, I can attest to their dedication and passion for work. They consistently demonstrates honesty and a commitment to delivering high-quality results, even on short notice. Their responsiveness and reliability are especially valuable in today’s market. I wish them great success and I look forward to continuing our collaboration. Thank you!",
+        image: "/images/mehedi.png",
+    },
+    {
+        id: 6,
+        name: "Dr. Graham Forbes",
+        role: "CEO,Capital Dental Design",
+        comment:
+            "Prompt and efficient with alterations!",
+        image: "/images/Graham.png",
+    },
+    {
+        id: 7,
+        name: "Daniel Constantin",
+        role: "CEO,SHR Motors",
+        comment:
+            "Very understanding and very quick. I recommend them.",
+        image: "/images/daniel.png",
     },
 ];
 
