@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { useParams } from "next/navigation";
 import gsap from "gsap";
 import clsx from "clsx";
+import ProjectDetailsPanel from "@/components/portfolio/ProjectDetailsPanel";
 
 const videos = [
   { src: "/videos/video.mp4", alt: "Welcome Page", index: "/01", detail: "Welcome Page" },
@@ -84,9 +85,8 @@ export default function REVEPage() {
       </div>
 
       <div className="mt-10 w-full" ref={projectRef}>
-        <button className="px-6 py-3 bg-[#191715] border border-white text-white rounded-md text-sm tracking-wider font-semibold mb-6">
-          ● PROJECT DETAILS
-        </button>
+          <ProjectDetailsPanel/>
+   
 
         <div className="relative w-full overflow-x-auto">
           <div className="inline-flex gap-6 px-2 items-start">
