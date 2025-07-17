@@ -141,36 +141,133 @@ export const featuredWorks = [
 // About Page Works
 export const works = [
     {
-        name: "Eyden Burger",
-        type: "Graphics Design | AI",
-        date: "May 2023",
-        videos: [
-            "/videos/video.mp4",
-            "/videos/video.mp4",
-            "/videos/video.mp4"
-        ]
+        title: "Eyden Burger",
+        shortDescription: "Modern UI redesign and branding for a fast food chain.",
+        detailsDescription: "We redesigned the website and developed it with Webflow to modernize Eyden Burger’s online presence, making it responsive, user-friendly, and visually aligned with their brand identity.",
+        thumbnail: "/images/work.jpg",
+        tags: ["Graphics Design", "AI"],
+        videos: ["/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4"],
+        featured: true
     },
     {
-        name: "Olivestocks",
-        type: "Web Development | MERN",
-        date: "February 2023",
-        videos: [
-            "/videos/video.mp4",
-            "/videos/video.mp4",
-            "/videos/video.mp4"
-        ]
+        title: "Olivestocks",
+        shortDescription: "Financial dashboard and user interface for a stock trading platform.",
+        detailsDescription: "Olivestocks needed a clean and intuitive dashboard for real-time data. We designed and developed a MERN-stack powered solution focused on speed and simplicity.",
+        thumbnail: "/images/work.jpg",
+        tags: ["Web Development", "MERN Stack"],
+        videos: ["/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4"],
+        featured: true
     },
     {
-        name: "Royal House",
-        type: "Graphics, SEO | AI, SEM",
-        date: "May 2023",
-        videos: [
-            "/videos/video.mp4",
-            "/videos/video.mp4",
-            "/videos/video.mp4"
-        ]
+        title: "Royal House Interiors",
+        shortDescription: "Interior design studio branding website.",
+        detailsDescription: "We crafted a modern and elegant layout using Webflow, showcasing Royal House Interiors’ portfolio, services, and contact sections with a premium feel.",
+        thumbnail: "/images/work.jpg",
+        tags: ["Graphics", "SEO"],
+        videos: ["/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4"],
+        featured: true
+    },
+    {
+        title: "Royal House Real Estate",
+        shortDescription: "Landing page for luxury real estate listings.",
+        detailsDescription: "This Webflow landing page highlights premium property listings with interactive filters, animations, and SEO-optimized content for Royal House Real Estate.",
+        thumbnail: "/images/work.jpg",
+        tags: ["Graphics", "SEO"],
+        videos: ["/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4"],
+        featured: true
+    },
+    {
+        title: "Royal House Rentals",
+        shortDescription: "Responsive platform for short-term property rentals.",
+        detailsDescription: "We developed a responsive rental platform with filters, video tours, and a sleek UI that lets users easily explore Royal House properties.",
+        thumbnail: "/images/work.jpg",
+        tags: ["Graphics", "SEO"],
+        videos: ["/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4"],
+        featured: true
+    },
+    {
+        title: "Royal House Studio",
+        shortDescription: "Creative portfolio website for a design studio.",
+        detailsDescription: "Royal House Studio wanted a clean and minimalistic design to display their case studies. We delivered a fast-loading, scroll-based portfolio in Webflow.",
+        thumbnail: "/images/work.jpg",
+        tags: ["Graphics", "SEO"],
+        videos: ["/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4"],
+        featured: true
+    },
+    {
+        title: "Royal House Hotel",
+        shortDescription: "Hospitality website with video background and booking section.",
+        detailsDescription: "This site focuses on visual storytelling, using full-width video, sleek animations, and an integrated booking inquiry form to represent Royal House Hotel.",
+        thumbnail: "/images/work.jpg",
+        tags: ["Graphics", "SEO"],
+        videos: ["/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4"],
+        home: true
+    },
+    {
+        title: "Royal House Events",
+        shortDescription: "Event planning agency showcase site.",
+        detailsDescription: "We developed a modern, scroll-animated site for Royal House Events to display past events and client testimonials, optimized for mobile.",
+        thumbnail: "/images/work.jpg",
+        tags: ["Graphics", "SEO"],
+        videos: ["/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4"],
+        home: true
+    },
+    {
+        title: "Royal House Weddings",
+        shortDescription: "Elegant wedding planning portfolio.",
+        detailsDescription: "Royal House Weddings needed a site that speaks romance. We designed a layout rich in imagery and smooth transitions to emotionally connect with users.",
+        thumbnail: "/images/work.jpg",
+        tags: ["Graphics", "SEO"],
+        videos: ["/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4"],
+        home: true
+    },
+    {
+        title: "Royal House Studio 2",
+        shortDescription: "Second iteration of Royal House’s creative studio.",
+        detailsDescription: "An upgraded design with better performance, new case study templates, and improved mobile UX for the Royal House creative team.",
+        thumbnail: "/images/work.jpg",
+        tags: ["Graphics", "SEO"],
+        videos: ["/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4"],
+        home: true
+    },
+    {
+        title: "Royal House Travel",
+        shortDescription: "Website for boutique travel planning services.",
+        detailsDescription: "Royal House Travel needed a minimal design that conveys luxury. We built a fast-loading landing page with destination highlights and inquiry form.",
+        thumbnail: "/images/work.jpg",
+        tags: ["Graphics", "SEO"],
+        videos: ["/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4"],
+        home: true
+    },
+    {
+        title: "Royal House Art",
+        shortDescription: "Architectural firm portfolio website.",
+        detailsDescription: "We crafted an architecture-focused portfolio that balances design detail with minimalism, using a muted color palette and smooth scroll sections.",
+        thumbnail: "/images/work.jpg",
+        tags: ["Graphics", "SEO"],
+        videos: ["/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4"],
+        about: true
+    },
+    {
+        title: "Royal House Cafe",
+        shortDescription: "Coffee shop website with menu and gallery.",
+        detailsDescription: "A cozy and modern site for Royal House Cafe, with a digital menu, gallery slider, and warm tone visuals to create a relaxed vibe.",
+        thumbnail: "/images/work.jpg",
+        tags: ["Graphics", "SEO"],
+        videos: ["/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4"],
+        about: true
+    },
+    {
+        title: "Royal House Fashion",
+        shortDescription: "Lookbook site for a luxury fashion label.",
+        detailsDescription: "This project showcases Royal House’s fashion collections in a high-end, full-screen layout with parallax transitions and image zoom interactions.",
+        thumbnail: "/images/work.jpg",
+        tags: ["Graphics", "SEO"],
+        videos: ["/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4"],
+        about: true
     }
 ];
+
 
 // Teams
 export const teammates = [

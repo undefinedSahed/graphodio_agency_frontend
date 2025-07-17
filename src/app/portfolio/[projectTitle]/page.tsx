@@ -15,7 +15,7 @@ const videos = [
   { src: "/videos/video.mp4", alt: "Another Page", index: "/06", detail: "Another Page" },
 ];
 
-export default function REVEPage() {
+export default function ProjectDetails() {
   const [hovered, setHovered] = useState<number | null>(null);
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
   useParams();

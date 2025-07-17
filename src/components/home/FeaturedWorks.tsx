@@ -5,9 +5,10 @@ import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import { featuredWorks } from "@/lib/constant";
+import { works } from "@/lib/constant";
 import { useGSAP } from "@gsap/react";
 import Link from "next/link";
+import { slugify } from "@/lib/utils";
 
 export default function FeaturedWorks() {
   const cardsRef = useRef<(HTMLAnchorElement | null)[]>([]);
@@ -47,7 +48,7 @@ export default function FeaturedWorks() {
 
     if (video) {
       gsap.to(video, { opacity: 1, duration: 0.3, ease: "power2.out" });
-      video.play().catch(() => {});
+      video.play().catch(() => { });
     }
   };
 
@@ -98,6 +99,9 @@ export default function FeaturedWorks() {
     { scope: secRef }
   );
 
+
+  const featuredWorks = works.filter((work) => work.featured);
+
   return (
     <section className="text-white px-4 -mt-44" ref={secRef}>
       <div className="text-center text-xs font-semibold uppercase tracking-wider opacity-60 title_feature">
@@ -122,8 +126,7 @@ export default function FeaturedWorks() {
             className="animate_items"
           >
             <Link
-              href={work.link}
-              target="_blank"
+              href={`/portfolio/${slugify(work.title)}`}
               rel="noopener noreferrer"
               ref={(el) => {
                 cardsRef.current[idx] = el;
@@ -136,7 +139,7 @@ export default function FeaturedWorks() {
               {/* Media Container */}
               <div className="relative w-full">
                 <img
-                  src={work.imgSrc}
+                  src={work.thumbnail}
                   alt={work.title}
                   loading="lazy"
                   className="w-full aspect-square object-cover transition-transform duration-500 group-hover:scale-105"
@@ -148,13 +151,17 @@ export default function FeaturedWorks() {
                   preload="metadata"
                   className="absolute top-0 left-0 w-full aspect-square object-cover opacity-0 pointer-events-none"
                 >
-                  <source src={work.videoSrc} type="video/mp4" />
+                  <source src={work.videos[0]} type="video/mp4" />
                 </video>
               </div>
               {/* Text */}
               <div className="mt-4 flex justify-between items-center gap-2 text-xs uppercase tracking-wider">
                 <span className="font-semibold truncate">{work.title}</span>
-                <span className="text-gray-400 truncate text-right">{work.category}</span>
+                {
+                  work.tags.map((tag, idx) => (
+                    <span key={idx} className="text-gray-400 truncate text-right">{tag}</span>
+                  ))
+                }
               </div>
             </Link>
           </div>
@@ -166,15 +173,14 @@ export default function FeaturedWorks() {
         <Swiper slidesPerView={1.2} spaceBetween={16} className="px-4">
           {featuredWorks.map((work, idx) => (
             <SwiperSlide key={idx}>
-              <a
-                href={work.link}
-                target="_blank"
+              <Link
+                href={`/portfolio/${slugify(work.title)}`}
                 rel="noopener noreferrer"
                 className="relative group overflow-hidden w-full cursor-pointer rounded-lg block"
               >
                 <div className="relative w-full aspect-[4/5]">
                   <img
-                    src={work.imgSrc}
+                    src={work.thumbnail}
                     alt={work.title}
                     loading="lazy"
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
@@ -186,18 +192,22 @@ export default function FeaturedWorks() {
                     preload="metadata"
                     className="absolute top-0 left-0 w-full h-full object-cover opacity-0 pointer-events-none"
                   >
-                    <source src={work.videoSrc} type="video/mp4" />
+                    <source src={work.videos[0]} type="video/mp4" />
                   </video>
                 </div>
                 <div className="mt-4">
                   <div className="text-xs font-semibold uppercase tracking-wider">
                     {work.title}
                   </div>
-                  <div className="text-xs tracking-wider text-gray-400 uppercase">
-                    {work.category}
-                  </div>
+                  {
+                    work.tags.map((tag, idx) => (
+                      <div key={idx} className="text-xs tracking-wider text-gray-400 uppercase">
+                        {tag}
+                      </div>
+                    ))
+                  }
                 </div>
-              </a>
+              </Link>
             </SwiperSlide>
           ))}
         </Swiper>
