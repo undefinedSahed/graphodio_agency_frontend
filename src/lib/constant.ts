@@ -12,19 +12,34 @@ export const services = [
         id: 1,
         title: "Digital Marketing",
         description: "I design websites that look great and feel intuitive. From the layout to the animations, every detail is crafted for a seamless experience on any device.",
-        video: "/videos/video.mp4"
+        tags: ["SEO", "SMM", "SEM"],
+        videos: [
+            "/videos/video.mp4",
+            "/videos/video.mp4",
+            "/videos/video.mp4"
+        ]
     },
     {
         id: 2,
-        title: "Website Development",
+        title: "Custom Website",
         description: "I design websites that look great and feel intuitive. From the layout to the animations, every detail is crafted for a seamless experience on any device.",
-        video: "/videos/video.mp4"
+        tags: ["Custom Website", "MERN Stack", "Deployment"],
+        videos: [
+            "/videos/video.mp4",
+            "/videos/video.mp4",
+            "/videos/video.mp4"
+        ]
     },
     {
         id: 3,
-        title: "E-commerce Solutions",
+        title: "Brand Design",
         description: "I design websites that look great and feel intuitive. From the layout to the animations, every detail is crafted for a seamless experience on any device.",
-        video: "/videos/video.mp4"
+        tags: ["Store", "Inventory Management"],
+        videos: [
+            "/videos/video.mp4",
+            "/videos/video.mp4",
+            "/videos/video.mp4"
+        ]
     }
 ];
 
@@ -34,119 +49,193 @@ export const services = [
 export const testimonials = [
     {
         id: 1,
-        name: "John Doe",
-        role: "Web Developer, Tech Company",
+        name: "Steve Christmas",
+        role: "CEO, Good Vibes Music Academy",
         comment:
-            "Working with this team was a game-changer for our project. Their attention to detail and creativity is unmatched. Their ability to bring our vision to life was incredible. The final product exceeded our expectations. A fantastic experience from start to finish. They understood our needs and delivered a top-notch website.",
-        image: "https://github.com/shadcn.png",
+            "This has been a really positive and professional experience. Graphodio made adaptations as requested as well as offering their own professional advice and options which was much appreciated and valued.They supplied different versions of the logo, banner and other required files that can be used online, print material and on social media too. Would recommend Graphodio and wouldn’t be hesitate in working with them again in the future.",
+        image: "/images/steve.png",
     },
     {
         id: 2,
-        name: "Jane Smith",
-        role: "Creative Director, Design Studio",
+        name: "Nada",
+        role: "Owner, Droplets Attire",
         comment:
-            "Their ability to bring our vision to life was incredible. The final product exceeded our expectations. A fantastic experience from start to finish. They understood our needs and delivered a top-notch website. Working with this team was a game-changer for our project. Their attention to detail and creativity is unmatched.",
-        image: "https://github.com/shadcn.png",
+            "Such a creative, thoughtful and attentive team. They gave me all the files we altered, and they were so patient and helpful. Highly recommended.",
+        image: "/images/logo.png",
     },
     {
         id: 3,
-        name: "Alice Johnson",
-        role: "Product Manager, Startup",
+        name: "Rowan Anderson",
+        role: "CEO,Far & King Framing",
         comment:
-            "A fantastic experience from start to finish. They understood our needs and delivered a top-notch website. Working with this team was a game-changer for our project. Their attention to detail and creativity is unmatched.",
-        image: "https://github.com/shadcn.png",
+            "Great work. always great to work with.",
+        image: "/images/rowan.png",
     },
     {
         id: 4,
-        name: "Bob Brown",
-        role: "CEO, E-commerce Business",
+        name: "Tareq",
+        role: "COO,Dessert Pots",
         comment:
-            "The team was professional and efficient. Our new website has significantly improved our online presence. They understood our needs and delivered a top-notch website. Working with this team was a game-changer for our project. Their attention to detail and creativity is unmatched.",
-        image: "https://github.com/shadcn.png",
+            "Skillful, talented and fast delivery. This is my 5th time working with them and will continue with them also.",
+        image: "/images/tareq.png",
+    },
+    {
+        id: 5,
+        name: "Mehedi Hasan",
+        role: "DGM, Brand & Marketing, Sanmar Properties Limited",
+        comment:
+            "Having worked with Graphodio on projects with tight deadlines, I can attest to their dedication and passion for work. They consistently demonstrates honesty and a commitment to delivering high-quality results, even on short notice. Their responsiveness and reliability are especially valuable in today’s market. I wish them great success and I look forward to continuing our collaboration. Thank you!",
+        image: "/images/mehedi.png",
+    },
+    {
+        id: 6,
+        name: "Dr. Graham Forbes",
+        role: "CEO,Capital Dental Design",
+        comment:
+            "Prompt and efficient with alterations!",
+        image: "/images/Graham.png",
+    },
+    {
+        id: 7,
+        name: "Daniel Constantin",
+        role: "CEO,SHR Motors",
+        comment:
+            "Very understanding and very quick. I recommend them.",
+        image: "/images/daniel.png",
     },
 ];
 
 
-// Featured Works
-export const featuredWorks = [
-    {
-        title: "Graphics Design",
-        category: "Webdesign + Webflow",
-        videoSrc: "/video/Hero.mp4",
-        imgSrc: "/images/work.jpg",
-        link: "",
-    },
-    {
-        title: "Amazon",
-        category: "Webdesign + Webflow",
-        videoSrc: "/video/Hero.mp4",
-        imgSrc: "/images/work.jpg",
-        link: "",
-    },
-    {
-        title: "Web Design and development",
-        category: "Webdesign + Webflow",
-        videoSrc: "/video/Hero.mp4",
-        imgSrc: "/images/work.jpg",
-        link: "",
-    },
-    {
-        title: "SEO",
-        category: "Webflow development",
-        videoSrc: "/video/Hero.mp4",
-        imgSrc: "/images/work.jpg",
-        link: "",
-    },
-    {
-        title: "Digital Marketing",
-        category: "Webflow development",
-        videoSrc: "/video/Hero.mp4",
-        imgSrc: "/images/work.jpg",
-        link: "",
-    },
-    {
-        title: "Motion",
-        category: "Webflow development",
-        videoSrc: "/video/Hero.mp4",
-        imgSrc: "/images/work.jpg",
-        link: "",
-    },
-];
-
-
-// About Page Works
+// Works
 export const works = [
     {
-        name: "Eyden Burger",
-        type: "Graphics Design | AI",
-        date: "May 2023",
-        videos: [
-            "/videos/video.mp4",
-            "/videos/video.mp4",
-            "/videos/video.mp4"
-        ]
+        title: "Eyden Burger",
+        shortDescription: "Modern UI redesign and branding for a fast food chain.",
+        detailsDescription: "We redesigned the website and developed it with Webflow to modernize Eyden Burger’s online presence, making it responsive, user-friendly, and visually aligned with their brand identity.",
+        thumbnail: "/images/work.jpg",
+        tags: ["Graphics Design", "AI"],
+        videos: ["/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4"],
+        featured: true
     },
     {
-        name: "Olivestocks",
-        type: "Web Development | MERN",
-        date: "February 2023",
-        videos: [
-            "/videos/video.mp4",
-            "/videos/video.mp4",
-            "/videos/video.mp4"
-        ]
+        title: "Olivestocks",
+        shortDescription: "Financial dashboard and user interface for a stock trading platform.",
+        detailsDescription: "Olivestocks needed a clean and intuitive dashboard for real-time data. We designed and developed a MERN-stack powered solution focused on speed and simplicity.",
+        thumbnail: "/images/work.jpg",
+        tags: ["Web Development", "MERN Stack"],
+        videos: ["/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4"],
+        featured: true
     },
     {
-        name: "Royal House",
-        type: "Graphics, SEO | AI, SEM",
-        date: "May 2023",
-        videos: [
-            "/videos/video.mp4",
-            "/videos/video.mp4",
-            "/videos/video.mp4"
-        ]
+        title: "Royal House Interiors",
+        shortDescription: "Interior design studio branding website.",
+        detailsDescription: "We crafted a modern and elegant layout using Webflow, showcasing Royal House Interiors’ portfolio, services, and contact sections with a premium feel.",
+        thumbnail: "/images/work.jpg",
+        tags: ["Graphics", "SEO"],
+        videos: ["/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4"],
+        featured: true
+    },
+    {
+        title: "Royal House Real Estate",
+        shortDescription: "Landing page for luxury real estate listings.",
+        detailsDescription: "This Webflow landing page highlights premium property listings with interactive filters, animations, and SEO-optimized content for Royal House Real Estate.",
+        thumbnail: "/images/work.jpg",
+        tags: ["Graphics", "SEO"],
+        videos: ["/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4"],
+        featured: true
+    },
+    {
+        title: "Royal House Rentals",
+        shortDescription: "Responsive platform for short-term property rentals.",
+        detailsDescription: "We developed a responsive rental platform with filters, video tours, and a sleek UI that lets users easily explore Royal House properties.",
+        thumbnail: "/images/work.jpg",
+        tags: ["Graphics", "SEO"],
+        videos: ["/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4"],
+        featured: true
+    },
+    {
+        title: "Royal House Studio",
+        shortDescription: "Creative portfolio website for a design studio.",
+        detailsDescription: "Royal House Studio wanted a clean and minimalistic design to display their case studies. We delivered a fast-loading, scroll-based portfolio in Webflow.",
+        thumbnail: "/images/work.jpg",
+        tags: ["Graphics", "SEO"],
+        videos: ["/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4"],
+        featured: true
+    },
+    {
+        title: "Royal House Hotel",
+        shortDescription: "Hospitality website with video background and booking section.",
+        detailsDescription: "This site focuses on visual storytelling, using full-width video, sleek animations, and an integrated booking inquiry form to represent Royal House Hotel.",
+        thumbnail: "/images/work.jpg",
+        tags: ["Graphics", "SEO"],
+        videos: ["/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4"],
+        home: true
+    },
+    {
+        title: "Royal House Events",
+        shortDescription: "Event planning agency showcase site.",
+        detailsDescription: "We developed a modern, scroll-animated site for Royal House Events to display past events and client testimonials, optimized for mobile.",
+        thumbnail: "/images/work.jpg",
+        tags: ["Graphics", "SEO"],
+        videos: ["/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4"],
+        home: true
+    },
+    {
+        title: "Royal House Weddings",
+        shortDescription: "Elegant wedding planning portfolio.",
+        detailsDescription: "Royal House Weddings needed a site that speaks romance. We designed a layout rich in imagery and smooth transitions to emotionally connect with users.",
+        thumbnail: "/images/work.jpg",
+        tags: ["Graphics", "SEO"],
+        videos: ["/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4"],
+        home: true
+    },
+    {
+        title: "Royal House Studio 2",
+        shortDescription: "Second iteration of Royal House’s creative studio.",
+        detailsDescription: "An upgraded design with better performance, new case study templates, and improved mobile UX for the Royal House creative team.",
+        thumbnail: "/images/work.jpg",
+        tags: ["Graphics", "SEO"],
+        videos: ["/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4"],
+        home: true
+    },
+    {
+        title: "Royal House Travel",
+        shortDescription: "Website for boutique travel planning services.",
+        detailsDescription: "Royal House Travel needed a minimal design that conveys luxury. We built a fast-loading landing page with destination highlights and inquiry form.",
+        thumbnail: "/images/work.jpg",
+        tags: ["Graphics", "SEO"],
+        videos: ["/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4"],
+        home: true
+    },
+    {
+        title: "Royal House Art",
+        shortDescription: "Architectural firm portfolio website.",
+        detailsDescription: "We crafted an architecture-focused portfolio that balances design detail with minimalism, using a muted color palette and smooth scroll sections.",
+        thumbnail: "/images/work.jpg",
+        tags: ["Graphics", "SEO"],
+        videos: ["/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4"],
+        about: true
+    },
+    {
+        title: "Royal House Cafe",
+        shortDescription: "Coffee shop website with menu and gallery.",
+        detailsDescription: "A cozy and modern site for Royal House Cafe, with a digital menu, gallery slider, and warm tone visuals to create a relaxed vibe.",
+        thumbnail: "/images/work.jpg",
+        tags: ["Graphics", "SEO"],
+        videos: ["/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4"],
+        about: true
+    },
+    {
+        title: "Royal House Fashion",
+        shortDescription: "Lookbook site for a luxury fashion label.",
+        detailsDescription: "This project showcases Royal House’s fashion collections in a high-end, full-screen layout with parallax transitions and image zoom interactions.",
+        thumbnail: "/images/work.jpg",
+        tags: ["Graphics", "SEO"],
+        videos: ["/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4"],
+        about: true
     }
 ];
+
 
 // Teams
 export const teammates = [

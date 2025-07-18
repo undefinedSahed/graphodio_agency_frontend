@@ -6,13 +6,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { Building2, MoveDown, MoveUp, User, Workflow } from "lucide-react";
 import { Button } from "../ui/button";
+import { works } from "@/lib/constant";
+import { slugify } from "@/lib/utils";
 
-const slides = [
-    { src: "/images/slider.jpg", slug: "slide-1" },
-    { src: "/images/slider.jpg", slug: "slide-2" },
-    { src: "/images/slider.jpg", slug: "slide-3" },
-    { src: "/images/slider.jpg", slug: "slide-4" },
-];
 
 export default function StackedSlider() {
     const containerRef = useRef<HTMLDivElement>(null);
@@ -56,6 +52,9 @@ export default function StackedSlider() {
             onComplete: () => setCurrent(prev),
         });
     };
+
+
+    const slides = works.filter((work) => work.home)
 
     return (
         <section className="py-8 lg:py-20">
@@ -113,11 +112,11 @@ export default function StackedSlider() {
                         {slides.map((slide, i) => (
                             <Link
                                 key={i}
-                                href={`/portfolio/${slide.slug}`}
+                                href={`/portfolio/${slugify(slide.title)}`}
                                 className="slide absolute top-0 left-0 w-full h-full rounded-lg overflow-hidden shadow-2xl cursor-pointer"
                             >
                                 <Image
-                                    src={slide.src}
+                                    src={slide.thumbnail}
                                     alt={`slide-${i}`}
                                     fill
                                     className="object-cover transition-transform duration-300 hover:scale-105"

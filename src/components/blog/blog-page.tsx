@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import ShareButton from './share-button'
+import { slugify } from '@/lib/utils'
 
 export default function BlogPage() {
   return (
@@ -12,7 +13,7 @@ export default function BlogPage() {
           {
             blogs.map((blog, idx) => (
               <li key={idx} className='group relative'>
-                <Link href={`/blog/${blog.slug}`} className='grid grid-cols-3 gap-5 items-center'>
+                <Link href={`/blog/${slugify(blog.slug)}`} className='grid grid-cols-3 gap-5 items-center'>
                   <div className="col-span-2 flex justify-between relative after:absolute after:content-[''] after:bottom-0 after:left-0 after:w-full after:h-[1px] after:bg-[#646464] after:z-10 before:absolute before:content-[''] before:bottom-0 before:left-0 before:w-0 group-hover:before:w-full before:duration-500 before:h-0.5 before:bg-blue-500 pb-4 before:z-20">
                     <div className="w-[10%]">
                       <h4>{idx + 1}</h4>

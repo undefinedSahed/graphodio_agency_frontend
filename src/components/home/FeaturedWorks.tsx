@@ -5,25 +5,25 @@ import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import { featuredWorks } from "@/lib/constant";
+import { works } from "@/lib/constant";
 import { useGSAP } from "@gsap/react";
 import Link from "next/link";
-
+import { slugify } from "@/lib/utils";
 
 export default function FeaturedWorks() {
   const cardsRef = useRef<(HTMLAnchorElement | null)[]>([]);
   const [hoverIndex, setHoverIndex] = useState<number | null>(null);
   const secRef = useRef<HTMLElement>(null);
 
-  // Card base dimensions
   const cardWidth = 251;
-  const cardAspectRatio = 4 / 4; // height / width
+  const cardAspectRatio = 4 / 4;
   const maxScale = 1.2;
-  const maxCardHeight = cardWidth * cardAspectRatio * maxScale; // ~376.5px
+  const maxCardHeight = cardWidth * cardAspectRatio * maxScale;
 
   useEffect(() => {
     cardsRef.current.forEach((card, idx) => {
       if (!card) return;
+
       const scaleMap = [1.2, 1.05, 0.95];
       const distance = hoverIndex !== null ? Math.abs(idx - hoverIndex) : null;
 
@@ -32,20 +32,9 @@ export default function FeaturedWorks() {
           ? scaleMap[distance] ?? 0.9
           : 1;
 
-      const translateX =
-        hoverIndex !== null
-          ? idx < hoverIndex
-            ? `-${(maxScale - scale) * 40}px`
-            : idx > hoverIndex
-              ? `${(maxScale - scale) * 40}px`
-              : "0"
-          : "0";
-
       gsap.to(card, {
         scale,
-        x: translateX,
-        zIndex: idx === hoverIndex ? 4 : 1,
-        duration: 0.3,
+        duration: 0.4,
         ease: "power2.out",
         transformOrigin: "bottom center",
       });
@@ -53,85 +42,79 @@ export default function FeaturedWorks() {
   }, [hoverIndex]);
 
   const handleMouseEnter = (idx: number) => {
+    setHoverIndex(idx);
     const card = cardsRef.current[idx];
     const video = card?.querySelector("video") as HTMLVideoElement;
+
     if (video) {
-      gsap.to(video, { opacity: 1, duration: 0.3 });
-      video.play().catch((e) => console.error("Play error", e));
+      gsap.to(video, { opacity: 1, duration: 0.3, ease: "power2.out" });
+      video.play().catch(() => { });
     }
-    setHoverIndex(idx);
   };
 
   const handleMouseLeave = (idx: number) => {
+    setHoverIndex(null);
     const card = cardsRef.current[idx];
     const video = card?.querySelector("video") as HTMLVideoElement;
+
     if (video) {
-      gsap.to(video, { opacity: 0, duration: 0.3 });
+      gsap.to(video, { opacity: 0, duration: 0.3, ease: "power2.out" });
       video.pause();
       video.currentTime = 0;
     }
-    setHoverIndex(null);
   };
 
+  useGSAP(
+    (context) => {
+      const q = context.selector;
 
+      if (q) {
+        const items = q(".animate_items");
+        gsap.from(items, {
+          y: 300,
+          opacity: 0,
+          ease: "power2.out",
+          stagger: {
+            amount: 0.4,
+            from: "center",
+          },
+          delay: 2.2,
+        });
 
-  useGSAP((context) => {
-
-    const q = context.selector
-
-    gsap.to(secRef.current,
-      {
-        visibility: "visible",
-        minHeight: "auto",
-        ease: "power2.out"
-      }
-    )
-
-    if (q) {
-      const items = q('.animate_items')
-      gsap.from(items, {
-        y: 300,
-        opacity: 0,
-        ease: "power2.out",
-        stagger: {
-          amount: 0.4,
-          from: "center"
-        },
-        delay: 2.2
-      });
-
-      const title = q('.title_feature')
-      gsap.from(title,
-        {
+        const title = q(".title_feature");
+        gsap.from(title, {
           y: 300,
           opacity: 0,
           delay: 2.2,
-          ease: "power2.out"
-        }
-      )
-    }
+          ease: "power2.out",
+        });
+      }
 
-    gsap.from(secRef.current, {
-      opacity: 0,
-      duration: 1,
-      ease: "power2.out",
-    })
+      gsap.from(secRef.current, {
+        opacity: 0,
+        duration: 1,
+        ease: "power2.out",
+      });
+    },
+    { scope: secRef }
+  );
 
-  }, { scope: secRef })
+
+  const featuredWorks = works.filter((work) => work.featured);
 
   return (
-    <section className="text-white px-4 -mt-44 invisible min-h-screen" ref={secRef}>
+    <section className="text-white px-4 -mt-44" ref={secRef}>
       <div className="text-center text-xs font-semibold uppercase tracking-wider opacity-60 title_feature">
         Featured Works
       </div>
 
       {/* Desktop Grid */}
       <div
-        className={`hidden md:grid max-w-7xl mx-auto`}
+        className="hidden md:grid max-w-7xl mx-auto"
         style={{
           gridTemplateColumns: "repeat(6, 251px)",
           justifyContent: "center",
-          gap: hoverIndex !== null ? "2.5rem" : "1rem",
+          gap: "2.5rem",
           height: maxCardHeight,
           alignItems: "end",
         }}
@@ -143,8 +126,7 @@ export default function FeaturedWorks() {
             className="animate_items"
           >
             <Link
-              href={work.link}
-              target="_blank"
+              href={`/portfolio/${slugify(work.title)}`}
               rel="noopener noreferrer"
               ref={(el) => {
                 cardsRef.current[idx] = el;
@@ -152,12 +134,12 @@ export default function FeaturedWorks() {
               onMouseEnter={() => handleMouseEnter(idx)}
               onMouseLeave={() => handleMouseLeave(idx)}
               className="relative group overflow-hidden w-full cursor-pointer block"
-              style={{ transformOrigin: "bottom center" }}
+              style={{ transformOrigin: "bottom center", willChange: "transform" }}
             >
               {/* Media Container */}
               <div className="relative w-full">
                 <img
-                  src={work.imgSrc}
+                  src={work.thumbnail}
                   alt={work.title}
                   loading="lazy"
                   className="w-full aspect-square object-cover transition-transform duration-500 group-hover:scale-105"
@@ -165,17 +147,21 @@ export default function FeaturedWorks() {
                 <video
                   muted
                   loop
-                  preload="none"
                   playsInline
+                  preload="metadata"
                   className="absolute top-0 left-0 w-full aspect-square object-cover opacity-0 pointer-events-none"
                 >
-                  <source src={work.videoSrc} type="video/mp4" />
+                  <source src={work.videos[0]} type="video/mp4" />
                 </video>
               </div>
               {/* Text */}
               <div className="mt-4 flex justify-between items-center gap-2 text-xs uppercase tracking-wider">
                 <span className="font-semibold truncate">{work.title}</span>
-                <span className="text-gray-400 truncate text-right">{work.category}</span>
+                {
+                  work.tags.map((tag, idx) => (
+                    <span key={idx} className="text-gray-400 truncate text-right">{tag}</span>
+                  ))
+                }
               </div>
             </Link>
           </div>
@@ -187,15 +173,14 @@ export default function FeaturedWorks() {
         <Swiper slidesPerView={1.2} spaceBetween={16} className="px-4">
           {featuredWorks.map((work, idx) => (
             <SwiperSlide key={idx}>
-              <a
-                href={work.link}
-                target="_blank"
+              <Link
+                href={`/portfolio/${slugify(work.title)}`}
                 rel="noopener noreferrer"
                 className="relative group overflow-hidden w-full cursor-pointer rounded-lg block"
               >
                 <div className="relative w-full aspect-[4/5]">
                   <img
-                    src={work.imgSrc}
+                    src={work.thumbnail}
                     alt={work.title}
                     loading="lazy"
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
@@ -203,22 +188,26 @@ export default function FeaturedWorks() {
                   <video
                     muted
                     loop
-                    preload="none"
                     playsInline
+                    preload="metadata"
                     className="absolute top-0 left-0 w-full h-full object-cover opacity-0 pointer-events-none"
                   >
-                    <source src={work.videoSrc} type="video/mp4" />
+                    <source src={work.videos[0]} type="video/mp4" />
                   </video>
                 </div>
                 <div className="mt-4">
                   <div className="text-xs font-semibold uppercase tracking-wider">
                     {work.title}
                   </div>
-                  <div className="text-xs tracking-wider text-gray-400 uppercase">
-                    {work.category}
-                  </div>
+                  {
+                    work.tags.map((tag, idx) => (
+                      <div key={idx} className="text-xs tracking-wider text-gray-400 uppercase">
+                        {tag}
+                      </div>
+                    ))
+                  }
                 </div>
-              </a>
+              </Link>
             </SwiperSlide>
           ))}
         </Swiper>
@@ -226,4 +215,3 @@ export default function FeaturedWorks() {
     </section>
   );
 }
-
