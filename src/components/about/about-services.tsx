@@ -90,7 +90,7 @@ export default function AboutServices() {
                                     </h3>
                                     <video
                                         className="w-24 h-24 object-cover service-video"
-                                        src={service.video}
+                                        src={service.videos[0]}
                                         autoPlay
                                         loop
                                         muted

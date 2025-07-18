@@ -4,13 +4,15 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useEffect } from 'react';
 import { FaLinkedin, FaDribbble } from 'react-icons/fa';
+import { Button } from '../ui/button';
+import { useContact } from "@/lib/contact-context"
+
 
 interface SocialLinkProps {
     href: string;
     label: string;
     Icon: React.ElementType;
 }
-
 const SocialLink: React.FC<SocialLinkProps> = ({ href, label, Icon }) => (
     <a
         href={href}
@@ -24,6 +26,9 @@ const SocialLink: React.FC<SocialLinkProps> = ({ href, label, Icon }) => (
 );
 
 const Footer: React.FC = () => {
+
+    const { setIsContactOpen } = useContact()
+
     useEffect(() => {
         const noiseStyle = document.createElement('style');
         noiseStyle.innerHTML = `
@@ -90,7 +95,7 @@ const Footer: React.FC = () => {
                                 <Link href="/portfolio" className="hover:underline">Works</Link>
                                 <Link href="/templates" className="hover:underline">Terms and conditions</Link>
                                 <Link href="/about" className="hover:underline">About</Link>
-                                <Link href="/contact" className="hover:underline">Contact</Link>
+                                <Button className="hover:underlineF" onClick={() => setIsContactOpen(true)}>Contact</Button>
                             </div>
                             <p className="text-gray-500 text-xs">Graphodio © 2025</p>
                         </div>

@@ -12,19 +12,34 @@ export const services = [
         id: 1,
         title: "Digital Marketing",
         description: "I design websites that look great and feel intuitive. From the layout to the animations, every detail is crafted for a seamless experience on any device.",
-        video: "/videos/video.mp4"
+        tags: ["SEO", "SMM", "SEM"],
+        videos: [
+            "/videos/video.mp4",
+            "/videos/video.mp4",
+            "/videos/video.mp4"
+        ]
     },
     {
         id: 2,
-        title: "Website Development",
+        title: "Custom Website",
         description: "I design websites that look great and feel intuitive. From the layout to the animations, every detail is crafted for a seamless experience on any device.",
-        video: "/videos/video.mp4"
+        tags: ["Custom Website", "MERN Stack", "Deployment"],
+        videos: [
+            "/videos/video.mp4",
+            "/videos/video.mp4",
+            "/videos/video.mp4"
+        ]
     },
     {
         id: 3,
-        title: "E-commerce Solutions",
+        title: "Brand Design",
         description: "I design websites that look great and feel intuitive. From the layout to the animations, every detail is crafted for a seamless experience on any device.",
-        video: "/videos/video.mp4"
+        tags: ["Store", "Inventory Management"],
+        videos: [
+            "/videos/video.mp4",
+            "/videos/video.mp4",
+            "/videos/video.mp4"
+        ]
     }
 ];
 
@@ -91,54 +106,7 @@ export const testimonials = [
 ];
 
 
-// Featured Works
-export const featuredWorks = [
-    {
-        title: "Graphics Design",
-        category: "Webdesign + Webflow",
-        videoSrc: "/video/Hero.mp4",
-        imgSrc: "/images/work.jpg",
-        link: "",
-    },
-    {
-        title: "Amazon",
-        category: "Webdesign + Webflow",
-        videoSrc: "/video/Hero.mp4",
-        imgSrc: "/images/work.jpg",
-        link: "",
-    },
-    {
-        title: "Web Design and development",
-        category: "Webdesign + Webflow",
-        videoSrc: "/video/Hero.mp4",
-        imgSrc: "/images/work.jpg",
-        link: "",
-    },
-    {
-        title: "SEO",
-        category: "Webflow development",
-        videoSrc: "/video/Hero.mp4",
-        imgSrc: "/images/work.jpg",
-        link: "",
-    },
-    {
-        title: "Digital Marketing",
-        category: "Webflow development",
-        videoSrc: "/video/Hero.mp4",
-        imgSrc: "/images/work.jpg",
-        link: "",
-    },
-    {
-        title: "Motion",
-        category: "Webflow development",
-        videoSrc: "/video/Hero.mp4",
-        imgSrc: "/images/work.jpg",
-        link: "",
-    },
-];
-
-
-// About Page Works
+// Works
 export const works = [
     {
         title: "Eyden Burger",
