@@ -9,8 +9,14 @@ import StackedSlider from "@/components/home/work-slider";
 export default function Home() {
   return (
     <main>
-      <Banner />
-      <FeaturedWorks />
+      <section className="min-h-screen flex flex-col">
+        <div className="flex-grow-[2] flex-shrink-0 basis-3/5">
+          <Banner />
+        </div>
+        <div className="flex-grow-[2] flex-shrink-0 basis-2/5">
+          <FeaturedWorks />
+        </div>
+      </section>
       <HowWeWork />
       <AboutSection />
       <ServiceSection />
