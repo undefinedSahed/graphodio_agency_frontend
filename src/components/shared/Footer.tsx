@@ -4,7 +4,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useEffect } from 'react';
 import { FaLinkedin, FaDribbble } from 'react-icons/fa';
-import { Button } from '../ui/button';
 import { useContact } from "@/lib/contact-context"
 
 
@@ -14,7 +13,7 @@ interface SocialLinkProps {
     Icon: React.ElementType;
 }
 const SocialLink: React.FC<SocialLinkProps> = ({ href, label, Icon }) => (
-    <a
+    <Link
         href={href}
         target="_blank"
         rel="noopener noreferrer"
@@ -22,7 +21,7 @@ const SocialLink: React.FC<SocialLinkProps> = ({ href, label, Icon }) => (
         className="hover:text-gray-800"
     >
         <Icon size={20} />
-    </a>
+    </Link>
 );
 
 const Footer: React.FC = () => {
@@ -95,7 +94,7 @@ const Footer: React.FC = () => {
                                 <Link href="/portfolio" className="hover:underline">Works</Link>
                                 <Link href="/templates" className="hover:underline">Terms and conditions</Link>
                                 <Link href="/about" className="hover:underline">About</Link>
-                                <Button className="hover:underlineF" onClick={() => setIsContactOpen(true)}>Contact</Button>
+                                <p className="hover:underline cursor-pointer" onClick={() => setIsContactOpen(true)}>Contact</p>
                             </div>
                             <p className="text-gray-500 text-xs">Graphodio © 2025</p>
                         </div>
@@ -113,18 +112,18 @@ const Footer: React.FC = () => {
                                     label="Dribbble"
                                     Icon={FaDribbble}
                                 />
-                                <a
+                                <Link
                                     href="#"
                                     className="font-bold border border-black rounded-full w-8 h-8 flex items-center justify-center text-sm hover:bg-black hover:text-white transition"
                                 >
                                     W.
-                                </a>
-                                <a
+                                </Link>
+                                <Link
                                     href="mailto:your@email.com"
                                     className="font-bold border border-black rounded-full w-8 h-8 flex items-center justify-center text-sm hover:bg-black hover:text-white transition"
                                 >
                                     @
-                                </a>
+                                </Link>
                             </div>
                             <Link href="/infos" className="hover:underline text-xs text-right">
                                 Infos & Credits
