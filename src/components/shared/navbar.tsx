@@ -124,7 +124,7 @@ export default function Navbar() {
     };
 
     return (
-        <header className="overflow-x-hidden z-50">
+        <header className="overflow-x-hidden relative z-[999]">
             <nav className="py-3">
                 <div className="container text-white/40 text-lg">
                     <div
@@ -133,13 +133,15 @@ export default function Navbar() {
                     >
                         {/* Logo from Left */}
                         <div className="logo-animate invisible">
-                            <Image
-                                src="/images/logo-full.png"
-                                alt="logo"
-                                width={500}
-                                height={300}
-                                className="w-40 h-16 object-contain"
-                            />
+                            <Link href="/">
+                                <Image
+                                    src="/images/logo-full.png"
+                                    alt="logo"
+                                    width={500}
+                                    height={300}
+                                    className="w-40 h-16 object-contain"
+                                />
+                            </Link>
                         </div>
 
                         {/* Desktop Navigation */}
