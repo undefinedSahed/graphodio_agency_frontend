@@ -56,8 +56,8 @@ export default function AboutBanner() {
 
 
     return (
-        <section className="min-h-screen flex place-items-end pb-20 justify-center text-white bg-[url('/images/map.png')] bg-cover bg-center z-10 invisible -mt-20" ref={aboutRef}>
-            <div className="absolute inset-0 w-full h-full bg-black opacity-50 -z-10"></div>
+        <section className="min-h-screen flex place-items-end pb-20 justify-center text-white bg-[url('/images/map.png')] relative z-10 bg-cover bg-center invisible -mt-20" ref={aboutRef}>
+            <div className="absolute inset-0 w-full h-full bg-black opacity-50"></div>
             <div className="container">
                 <div className="flex justify-between items-end">
                     <div className="max-w-xl text_start">

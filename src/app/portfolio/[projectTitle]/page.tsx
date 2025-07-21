@@ -23,6 +23,10 @@ export default function ProjectDetails() {
   const projectRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [])
+
+  useEffect(() => {
     gsap.fromTo(
       titleRef.current,
       { opacity: 0, y: -20 },
@@ -57,14 +61,14 @@ export default function ProjectDetails() {
 
   return (
     <section className="min-h-screen text-white px-6 py-10 flex flex-col items-center justify-center text-center relative">
-      {}
+      { }
       <div className="w-full max-w-xl relative mb-4">
-        {}
+        { }
         <div className="absolute left-0 top-0 text-sm tracking-widest">
           ● WORKS INDEX
         </div>
 
-        {}
+        { }
         <div className="flex justify-center gap-2">
           <span className="px-2 py-1 text-xs bg-[#1f1f1f] rounded">WEBDESIGN</span>
           <span className="px-2 py-1 text-xs bg-[#1f1f1f]  rounded">WEBFLOW</span>
@@ -85,8 +89,8 @@ export default function ProjectDetails() {
       </div>
 
       <div className="mt-10 w-full" ref={projectRef}>
-          <ProjectDetailsPanel/>
-   
+        <ProjectDetailsPanel />
+
 
         <div className="relative w-full overflow-x-auto">
           <div className="inline-flex gap-6 px-2 items-start">
@@ -101,7 +105,7 @@ export default function ProjectDetails() {
                   hovered !== null && hovered !== idx ? "opacity-40 scale-95" : "opacity-100"
                 )}
               >
-                {}
+                { }
                 <div className="h-[350px] flex items-end">
                   <div
                     className={clsx(
@@ -123,7 +127,7 @@ export default function ProjectDetails() {
                   </div>
                 </div>
 
-                {}
+                { }
                 <div className="flex justify-between text-sm text-gray-500 mt-2 w-full px-1">
                   <span>{vid.index}</span>
                   <span>{vid.detail}</span>

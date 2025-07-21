@@ -273,7 +273,8 @@ export const teammates = [
 // Blogs
 export const blogs = [
     {
-        slug: "The 1 tool that helps remote teams collaborate better",
+        slug: "the-1-tool-that-helps-remote-teams-collaborate-better",
+        title: "The 1 tool that helps remote teams collaborate better",
         thumbnail: "/images/blog.jpg",
         secondTitle: "Winners are recognized for outstanding app design, innovation, ingenuity, and technical achievement",
         firstPara: "Apple today named eight app and game developers receiving an Apple Design Award, each one selected for being thoughtful and creative. Apple Design Award winners bring distinctive new ideas to life and demonstrate deep mastery of Apple technology. The apps spring up from developers large and small, in every part of the world, and provide users with new ways of working, creating, and playing.",
@@ -300,7 +301,8 @@ export const blogs = [
         }
     },
     {
-        slug: "The 1 tool that helps remote teams collaborate better",
+        slug: "the-1-tool-that-helps-remote-teams-collaborate-better",
+        title: "The 1 tool that helps remote teams collaborate better",
         thumbnail: "/images/blog.jpg",
         secondTitle: "Winners are recognized for outstanding app design, innovation, ingenuity, and technical achievement",
         firstPara: "Apple today named eight app and game developers receiving an Apple Design Award, each one selected for being thoughtful and creative. Apple Design Award winners bring distinctive new ideas to life and demonstrate deep mastery of Apple technology. The apps spring up from developers large and small, in every part of the world, and provide users with new ways of working, creating, and playing.",
@@ -327,7 +329,8 @@ export const blogs = [
         }
     },
     {
-        slug: "The 1 tool that helps remote teams collaborate better",
+        slug: "the-1-tool-that-helps-remote-teams-collaborate-better",
+        title: "The 1 tool that helps remote teams collaborate better",
         thumbnail: "/images/blog.jpg",
         secondTitle: "Winners are recognized for outstanding app design, innovation, ingenuity, and technical achievement",
         firstPara: "Apple today named eight app and game developers receiving an Apple Design Award, each one selected for being thoughtful and creative. Apple Design Award winners bring distinctive new ideas to life and demonstrate deep mastery of Apple technology. The apps spring up from developers large and small, in every part of the world, and provide users with new ways of working, creating, and playing.",
@@ -354,7 +357,8 @@ export const blogs = [
         }
     },
     {
-        slug: "The 1 tool that helps remote teams collaborate better",
+        slug: "the-1-tool-that-helps-remote-teams-collaborate-better",
+        title: "The 1 tool that helps remote teams collaborate better",
         thumbnail: "/images/blog.jpg",
         secondTitle: "Winners are recognized for outstanding app design, innovation, ingenuity, and technical achievement",
         firstPara: "Apple today named eight app and game developers receiving an Apple Design Award, each one selected for being thoughtful and creative. Apple Design Award winners bring distinctive new ideas to life and demonstrate deep mastery of Apple technology. The apps spring up from developers large and small, in every part of the world, and provide users with new ways of working, creating, and playing.",
