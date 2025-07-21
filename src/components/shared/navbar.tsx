@@ -172,13 +172,12 @@ export default function Navbar() {
                         <div className="flex items-center gap-4 lg:hidden">
                             <Button
                                 onClick={() => setIsContactOpen(true)}
-                                className="uppercase border border-white/20 lg:text-lg cursor-pointer text-sm px-4 py-2"
+                                className="uppercase border border-white/20 lg:text-lg cursor-pointer text-sm px-4 py-1"
                             >
                                 Contact
                             </Button>
                             <Button
                                 variant="ghost"
-                                className="p-2"
                                 onClick={toggleMobileMenu}
                             >
                                 <Menu className="h-6 w-6" />
@@ -188,7 +187,7 @@ export default function Navbar() {
                         {/* Mobile Menu Slide-in */}
                         <div
                             ref={mobileMenuRef}
-                            className="fixed invisible h-svh translate-x-full right-0 top-0 w-full bg-black/90 z-40 backdrop-blur-2xl pt-20 px-5 lg:hidden"
+                            className="fixed invisible h-svh translate-x-full right-0 top-0 w-full bg-black/90 z-40 backdrop-blur-2xl pt-20 lg:hidden"
                         >
                             <div className="flex flex-col items-center space-y-8 mt-10">
                                 {navLinks.map((link) => {
