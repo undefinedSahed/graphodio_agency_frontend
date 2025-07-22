@@ -4,8 +4,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useEffect } from 'react';
 import { FaLinkedin, FaDribbble } from 'react-icons/fa';
+import { Button } from '../ui/button';
 import { useContact } from "@/lib/contact-context"
-
 
 interface SocialLinkProps {
     href: string;
@@ -13,7 +13,7 @@ interface SocialLinkProps {
     Icon: React.ElementType;
 }
 const SocialLink: React.FC<SocialLinkProps> = ({ href, label, Icon }) => (
-    <Link
+    <a
         href={href}
         target="_blank"
         rel="noopener noreferrer"
@@ -21,30 +21,29 @@ const SocialLink: React.FC<SocialLinkProps> = ({ href, label, Icon }) => (
         className="hover:text-gray-800"
     >
         <Icon size={20} />
-    </Link>
+    </a>
 );
 
 const Footer: React.FC = () => {
-
-    const { setIsContactOpen } = useContact()
+    const { setIsContactOpen } = useContact();
 
     useEffect(() => {
         const noiseStyle = document.createElement('style');
         noiseStyle.innerHTML = `
-      .noise-effect::before {
-        content: "";
-        position: absolute;
-        opacity: 0.04;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: url('https://cdn.prod.website-files.com/677fb4d34764579513f06df6/678a4ca6053fb371ef1a243a_pf_noise.png');
-        pointer-events: none;
-        animation: noise-animation 0.4s infinite;
-        mix-blend-mode: overlay;
-      }
-    `;
+            .noise-effect::before {
+                content: "";
+                position: absolute;
+                opacity: 0.04;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: url('https://cdn.prod.website-files.com/677fb4d34764579513f06df6/678a4ca6053fb371ef1a243a_pf_noise.png');
+                pointer-events: none;
+                animation: noise-animation 0.4s infinite;
+                mix-blend-mode: overlay;
+            }
+        `;
         document.head.appendChild(noiseStyle);
         return () => {
             document.head.removeChild(noiseStyle);
@@ -54,11 +53,11 @@ const Footer: React.FC = () => {
     return (
         <footer className="relative w-full overflow-hidden">
             <div className="noise-effect absolute inset-0 z-0" />
-            <div className="relative z-10 text-black flex flex-col bg-white justify-between lg:px-6 lg:py-20 max-w-8xl w-full mx-auto rounded-3xl">
+            <div className="relative z-10 text-black flex flex-col bg-white justify-between px-4 md:px-6 py-12 md:py-20 max-w-8xl w-full mx-auto rounded-3xl">
                 {/* Top Section */}
-                <div className="relative flex flex-col md:flex-row w-full flex-grow items-center md:h-48">
-                    <div className="flex-1 flex flex-col justify-center">
-                        <h1 className="text-6xl md:text-8xl font-extrabold leading-tight uppercase whitespace-nowrap">
+                <div className="relative flex flex-col md:flex-row w-full items-center md:h-48 max-md:space-y-10">
+                    <div className="flex-1 flex flex-col justify-center max-md:items-center max-md:text-center">
+                        <h1 className="text-6xl md:text-8xl font-extrabold leading-tight uppercase whitespace-nowrap max-md:whitespace-normal">
                             Have a project in mind?
                         </h1>
                         <h1 className="text-6xl md:text-8xl font-extrabold leading-tight uppercase">
@@ -68,7 +67,7 @@ const Footer: React.FC = () => {
 
                     <div className="hidden md:block w-[1px] h-full bg-gray-300 mx-6" />
 
-                    <div className="flex-1 flex flex-col justify-center items-end mt-12 md:mt-0 text-right">
+                    <div className="flex-1 flex flex-col justify-center items-end mt-12 md:mt-0 text-right max-md:items-center max-md:text-center">
                         <div className="uppercase text-xs tracking-widest mb-2">Next Page</div>
                         <h2 className="text-4xl md:text-5xl font-bold mb-4">Works</h2>
                         <Link
@@ -84,55 +83,47 @@ const Footer: React.FC = () => {
                 <div className="border-t border-grey my-6 w-full" />
 
                 {/* Bottom Section */}
-                <div className="flex flex-row justify-between w-full flex-grow items-end">
-                    <div className="flex flex-col md:flex-row flex-1 justify-between w-full">
+                <div className="flex flex-col md:flex-row justify-between w-full items-end gap-8 max-md:items-center">
+                    <div className="flex flex-col md:flex-row flex-1 justify-between w-full gap-10 max-md:items-center">
                         {/* Sitemap & Copyright */}
-                        <div className="flex flex-col space-y-6">
+                        <div className="flex flex-col space-y-6 max-md:items-center max-md:text-center">
                             <div className="flex flex-col">
                                 <span className="uppercase text-gray-500 tracking-widest mb-2">Sitemap</span>
                                 <Link href="/" className="hover:underline">Home</Link>
                                 <Link href="/portfolio" className="hover:underline">Works</Link>
                                 <Link href="/templates" className="hover:underline">Terms and conditions</Link>
                                 <Link href="/about" className="hover:underline">About</Link>
-                                <p className="hover:underline cursor-pointer" onClick={() => setIsContactOpen(true)}>Contact</p>
+                                <Button className="mt-2" onClick={() => setIsContactOpen(true)}>Contact</Button>
                             </div>
                             <p className="text-gray-500 text-xs">Graphodio © 2025</p>
                         </div>
 
                         {/* Social Links & Infos */}
-                        <div className="flex flex-col justify-between items-end mt-6 md:mt-0">
+                        <div className="flex flex-col items-end max-md:items-center max-md:text-center">
                             <div className="flex items-center space-x-4 mb-4">
-                                <SocialLink
-                                    href="https://www.linkedin.com/in/your-profile/"
-                                    label="LinkedIn"
-                                    Icon={FaLinkedin}
-                                />
-                                <SocialLink
-                                    href="https://dribbble.com/your-profile/"
-                                    label="Dribbble"
-                                    Icon={FaDribbble}
-                                />
-                                <Link
+                                <SocialLink href="https://www.linkedin.com/in/your-profile/" label="LinkedIn" Icon={FaLinkedin} />
+                                <SocialLink href="https://dribbble.com/your-profile/" label="Dribbble" Icon={FaDribbble} />
+                                <a
                                     href="#"
                                     className="font-bold border border-black rounded-full w-8 h-8 flex items-center justify-center text-sm hover:bg-black hover:text-white transition"
                                 >
                                     W.
-                                </Link>
-                                <Link
+                                </a>
+                                <a
                                     href="mailto:your@email.com"
                                     className="font-bold border border-black rounded-full w-8 h-8 flex items-center justify-center text-sm hover:bg-black hover:text-white transition"
                                 >
                                     @
-                                </Link>
+                                </a>
                             </div>
-                            <Link href="/infos" className="hover:underline text-xs text-right">
+                            <Link href="/infos" className="hover:underline text-xs">
                                 Infos & Credits
                             </Link>
                         </div>
                     </div>
 
-                    {/* Logo (Animated) */}
-                    <div className="flex-1 flex justify-end ml-6 mt-6 md:mt-0">
+                    {/* Logo */}
+                    <div className="flex-1 flex justify-end ml-6 mt-6 md:mt-0 max-md:justify-center max-md:ml-0">
                         <div className="w-32 md:w-48 h-32 md:h-48 animate-spin-slow relative">
                             <Image
                                 src="/images/logo.png"

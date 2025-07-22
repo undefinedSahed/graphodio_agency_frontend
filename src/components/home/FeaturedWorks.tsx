@@ -170,7 +170,7 @@ export default function FeaturedWorks() {
 
       {/* Mobile Swiper */}
       <div className="md:hidden">
-        <Swiper slidesPerView={1.2} spaceBetween={16} className="px-4">
+        <Swiper slidesPerView={1} spaceBetween={16} className="px-4">
           {featuredWorks.map((work, idx) => (
             <SwiperSlide key={idx}>
               <Link
