@@ -12,55 +12,57 @@ export default function HowWeWork() {
     const sectionRef = useRef(null)
 
     useGSAP((context) => {
-        const q = context.selector;
-        const elements = q && q(".elem");
+        if (window.innerWidth >= 1014) {
+            const q = context.selector;
+            const elements = q && q(".elem");
 
-        ScrollTrigger.create({
-            trigger: sectionRef.current,
-            start: "top top",
-            end: "+=1200",
-            pin: true,
-            scrub: 2,
-        });
-
-        elements.forEach((element: HTMLElement, index: number) => {
-            const progress = element.querySelector(".progress");
-
-            const tl = gsap.timeline({
-                scrollTrigger: {
-                    trigger: element,
-                    start: "top 10%",
-                    end: "+=800",
-                    scrub: 2,
-                },
+            ScrollTrigger.create({
+                trigger: sectionRef.current,
+                start: "top top",
+                end: "+=1200",
+                pin: true,
+                scrub: 2,
             });
 
-            tl.fromTo(
-                progress,
-                { strokeDashoffset: 565.48 },
-                { strokeDashoffset: 0, duration: 1 }
-            );
+            elements.forEach((element: HTMLElement, index: number) => {
+                const progress = element.querySelector(".progress");
 
-            tl.fromTo(element,
-                {
-                    y: 0,
-                    x: index === 0 ? 30 : -30,
-                    duration: 1,
-                },
-                {
-                    y: 150,
-                    x: index === 0 ? 150 : -150,
-                    duration: 1,
-                }
-            );  
-        });
+                const tl = gsap.timeline({
+                    scrollTrigger: {
+                        trigger: element,
+                        start: "top 10%",
+                        end: "+=800",
+                        scrub: 2,
+                    },
+                });
+
+                tl.fromTo(
+                    progress,
+                    { strokeDashoffset: 565.48 },
+                    { strokeDashoffset: 0, duration: 1 }
+                );
+
+                tl.fromTo(element,
+                    {
+                        y: 0,
+                        x: index === 0 ? 30 : -30,
+                        duration: 1,
+                    },
+                    {
+                        y: 150,
+                        x: index === 0 ? 150 : -150,
+                        duration: 1,
+                    }
+                );
+            });
+        }
     }, { scope: sectionRef });
 
     return (
-        <section className='h-screen flex justify-center items-center relative hwww' ref={sectionRef}>
-            <div className="container text-white text-center -mt-32">
-                <h2 className='text-[64px] font-bold leading-tight text-center pb-12 max-w-2xl mx-auto'>I build websites at the intersection of:</h2>
-                <div className="flex justify-center">
+        <section className='lg:h-screen flex justify-center items-center relative hwww' ref={sectionRef}>
+            <div className="container text-white text-center lg:-mt-32 mt-[130px]">
+                <h2 className='lg:text-[64px] text-4xl font-bold leading-tight text-center pb-12 max-w-2xl mx-auto'>I build websites at the intersection of:</h2>
+                <div className="hidden lg:flex justify-center">
                     <div className="relative h-64 w-64 translate-x-[30px] rounded-full flex justify-center items-center elem">
                         <svg className="absolute w-full h-full scale-[140%] rotate-[270deg]">
                             <circle
@@ -149,6 +151,42 @@ export default function HowWeWork() {
                             </div>
                             <span> Research</span>
                         </span>
+                    </div>
+                </div>
+
+                {/* Mobile & Tab */}
+                <div className="lg:hidden max-h-fit">
+                    <div className="flex justify-center items-center">
+                        <div className="w-48 h-48 rounded-full border-2 border-[#1b1b1b] relative">
+                            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col gap-2 justify-center items-center">
+                                <div className="h-16 w-16 flex justify-center items-center border-2 border-[#1b1b1b] rounded-full">
+                                    <NotebookPen className='animate-bounce' />
+                                </div>
+                                <span> Research</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="flex justify-center items-center -translate-x-20 -translate-y-16">
+                        <div className="w-48 h-48 rounded-full border-2 border-[#1b1b1b] relative">
+                            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col gap-2 justify-center items-center">
+                                <div className="h-16 w-16 flex justify-center items-center border-2 border-[#1b1b1b] rounded-full">
+                                    <NotebookPen className='animate-bounce' />
+                                </div>
+                                <span>Group</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="flex justify-center items-center translate-x-20 -translate-y-64">
+                        <div className="w-48 h-48 rounded-full border-2 border-[#1b1b1b] relative">
+                            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col gap-2 justify-center items-center">
+                                <div className="h-16 w-16 flex justify-center items-center border-2 border-[#1b1b1b] rounded-full">
+                                    <NotebookPen className='animate-bounce' />
+                                </div>
+                                <span> Research</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -59,34 +59,32 @@ export default function StackedSlider() {
     return (
         <section className="py-8 lg:py-20">
             <div className="container">
-                <div className="pb-10">
-                    <p className="text-5xl leading-snug max-w-3xl mx-auto flex flex-wrap justify-center gap-3 main_text">
+                <div className="pb-10 lg:max-w-2xl mx-auto">
+                    <p className="lg:text-5xl text-xl leading-relaxed lg:leading-snug mx-auto flex flex-wrap justify-center gap-3">
                         <span className="animate-group">I</span>
                         <span className="animate-group">work</span>
                         <span className="animate-group">with</span>
 
-                        <span className="animate-group flex items-center gap-2">
+                        <span className="animate-group flex -mt-1 items-center gap-2">
                             <span>individuals</span>
-                            <span className="inline-flex justify-center items-center w-14 h-14 border-2 border-[#1b1b1b] rounded-full">
-                                <User className="w-6 h-6 animate-bounce" />
+                            <span className="inline-flex justify-center items-center w-10 h-10 lg:w-14 lg:h-14 border-2 border-[#1b1b1b] rounded-full">
+                                <User className="w-5 h-5 lg:w-6 lg:h-6 animate-bounce" />
                             </span>
                         </span>
 
-                        <span className="animate-group">
-                            and
-                        </span>
+                        <span className="animate-group">and</span>
 
                         <span className="animate-group flex items-center gap-2">
                             <span>studios</span>
-                            <span className="inline-flex justify-center items-center w-14 h-14 border-2 border-[#1b1b1b] rounded-full">
-                                <User className="w-6 h-6 animate-bounce" />
+                            <span className="inline-flex justify-center items-center w-10 h-10 lg:w-14 lg:h-14 border-2 border-[#1b1b1b] rounded-full">
+                                <User className="w-5 h-5 lg:w-6 lg:h-6 animate-bounce" />
                             </span>
                         </span>
 
                         <span className="animate-group flex items-center gap-2">
                             <span>companies</span>
-                            <span className="inline-flex justify-center items-center w-14 h-14 border-2 border-[#1b1b1b] rounded-full">
-                                <Building2 className="w-6 h-6 animate-bounce" />
+                            <span className="inline-flex justify-center items-center w-10 h-10 lg:w-14 lg:h-14 border-2 border-[#1b1b1b] rounded-full">
+                                <Building2 className="w-5 h-5 lg:w-6 lg:h-6 animate-bounce" />
                             </span>
                         </span>
 
@@ -101,7 +99,7 @@ export default function StackedSlider() {
                     <div className="animate-group mt-8 flex justify-center">
                         <Link href="/portfolio">
                             <Button className='group w-28 h-12 flex items-center gap-5 text-lg border-2 border-[#1b1b1b] cursor-pointer bg-[#1d1d1d]/30'>
-                                <Workflow className='w-14 h-12 p-1 rounded-full group-hover:p-0' />
+                                <Workflow className='w-14 h-12 lg:p-1 rounded-full lg:group-hover:p-0' />
                                 <span>See More</span>
                             </Button>
                         </Link>

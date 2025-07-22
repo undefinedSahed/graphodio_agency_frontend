@@ -4,7 +4,7 @@
 @custom-variant dark (&:is(.dark *));
 
 .container {
-  @apply max-w-[1440px] mx-auto
+  @apply max-w-[1440px] mx-auto px-3 lg:px-0
 }
 
 @theme inline {

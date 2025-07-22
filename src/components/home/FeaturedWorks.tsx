@@ -27,10 +27,7 @@ export default function FeaturedWorks() {
       const scaleMap = [1.2, 1.05, 0.95];
       const distance = hoverIndex !== null ? Math.abs(idx - hoverIndex) : null;
 
-      const scale =
-        distance !== null
-          ? scaleMap[distance] ?? 0.9
-          : 1;
+      const scale = distance !== null ? scaleMap[distance] ?? 0.9 : 1;
 
       gsap.to(card, {
         scale,
@@ -69,6 +66,19 @@ export default function FeaturedWorks() {
       const q = context.selector;
 
       if (q) {
+        const ms = q(".mobile_swiper");
+        if (ms) {
+          gsap.set(ms, { opacity: 0 });
+          gsap.to(ms, {
+            opacity: 1,
+            duration: 0.5,
+            ease: "power2.out",
+            delay: 2.5,
+          });
+        }
+      }
+
+      if (q) {
         const items = q(".animate_items");
         gsap.from(items, {
           y: 300,
@@ -99,77 +109,83 @@ export default function FeaturedWorks() {
     { scope: secRef }
   );
 
-
   const featuredWorks = works.filter((work) => work.featured);
 
   return (
-    <section className="text-white px-4 -mt-44" ref={secRef}>
-      <div className="text-center text-xs font-semibold uppercase tracking-wider opacity-60 title_feature">
+    <section className="text-white px-4 lg:-mt-60 -mt-20" ref={secRef}>
+      <div className="text-center text-xs font-semibold uppercase tracking-wider opacity-60 title_feature pb-3">
         Featured Works
       </div>
 
-      {/* Desktop Grid */}
-      <div
-        className="hidden md:grid max-w-7xl mx-auto"
-        style={{
-          gridTemplateColumns: "repeat(6, 251px)",
-          justifyContent: "center",
-          gap: "2.5rem",
-          height: maxCardHeight,
-          alignItems: "end",
-        }}
-      >
-        {featuredWorks.map((work, idx) => (
+      {/* Desktop Grid (Inside Container) */}
+      <div className="hidden md:block">
+        <div className="max-w-7xl mx-auto">
           <div
-            key={idx}
-            style={{ height: maxCardHeight, display: "flex", flexDirection: "column", justifyContent: "flex-end" }}
-            className="animate_items"
+            className="grid"
+            style={{
+              gridTemplateColumns: "repeat(6, 251px)",
+              justifyContent: "center",
+              gap: "2.5rem",
+              height: maxCardHeight,
+              alignItems: "end",
+            }}
           >
-            <Link
-              href={`/portfolio/${slugify(work.title)}`}
-              rel="noopener noreferrer"
-              ref={(el) => {
-                cardsRef.current[idx] = el;
-              }}
-              onMouseEnter={() => handleMouseEnter(idx)}
-              onMouseLeave={() => handleMouseLeave(idx)}
-              className="relative group overflow-hidden w-full cursor-pointer block"
-              style={{ transformOrigin: "bottom center", willChange: "transform" }}
-            >
-              {/* Media Container */}
-              <div className="relative w-full">
-                <img
-                  src={work.thumbnail}
-                  alt={work.title}
-                  loading="lazy"
-                  className="w-full aspect-square object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                <video
-                  muted
-                  loop
-                  playsInline
-                  preload="metadata"
-                  className="absolute top-0 left-0 w-full aspect-square object-cover opacity-0 pointer-events-none"
+            {featuredWorks.map((work, idx) => (
+              <div
+                key={idx}
+                style={{
+                  height: maxCardHeight,
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "flex-end",
+                }}
+                className="animate_items"
+              >
+                <Link
+                  href={`/portfolio/${slugify(work.title)}`}
+                  rel="noopener noreferrer"
+                  ref={(el) => {
+                    cardsRef.current[idx] = el;
+                  }}
+                  onMouseEnter={() => handleMouseEnter(idx)}
+                  onMouseLeave={() => handleMouseLeave(idx)}
+                  className="relative group overflow-hidden w-full cursor-pointer block"
+                  style={{ transformOrigin: "bottom center", willChange: "transform" }}
                 >
-                  <source src={work.videos[0]} type="video/mp4" />
-                </video>
+                  <div className="relative w-full">
+                    <img
+                      src={work.thumbnail}
+                      alt={work.title}
+                      loading="lazy"
+                      className="w-full aspect-square object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <video
+                      muted
+                      loop
+                      playsInline
+                      preload="metadata"
+                      className="absolute top-0 left-0 w-full aspect-square object-cover opacity-0 pointer-events-none"
+                    >
+                      <source src={work.videos[0]} type="video/mp4" />
+                    </video>
+                  </div>
+                  <div className="mt-4 flex justify-between items-center gap-2 text-xs uppercase tracking-wider">
+                    <span className="font-semibold truncate">{work.title}</span>
+                    {work.tags.map((tag, idx) => (
+                      <span key={idx} className="text-gray-400 truncate text-right">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </Link>
               </div>
-              {/* Text */}
-              <div className="mt-4 flex justify-between items-center gap-2 text-xs uppercase tracking-wider">
-                <span className="font-semibold truncate">{work.title}</span>
-                {
-                  work.tags.map((tag, idx) => (
-                    <span key={idx} className="text-gray-400 truncate text-right">{tag}</span>
-                  ))
-                }
-              </div>
-            </Link>
+            ))}
           </div>
-        ))}
+        </div>
       </div>
 
       {/* Mobile Swiper */}
-      <div className="md:hidden">
+      <div className="md:hidden mobile_swiper">
         <Swiper slidesPerView={1.2} spaceBetween={16} className="px-4">
           {featuredWorks.map((work, idx) => (
             <SwiperSlide key={idx}>
@@ -199,13 +215,11 @@ export default function FeaturedWorks() {
                   <div className="text-xs font-semibold uppercase tracking-wider">
                     {work.title}
                   </div>
-                  {
-                    work.tags.map((tag, idx) => (
-                      <div key={idx} className="text-xs tracking-wider text-gray-400 uppercase">
-                        {tag}
-                      </div>
-                    ))
-                  }
+                  {work.tags.map((tag, idx) => (
+                    <div key={idx} className="text-xs tracking-wider text-gray-400 uppercase">
+                      {tag}
+                    </div>
+                  ))}
                 </div>
               </Link>
             </SwiperSlide>

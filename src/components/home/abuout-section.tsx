@@ -11,67 +11,61 @@ import { Button } from '../ui/button';
 gsap.registerPlugin(ScrollTrigger);
 
 export default function AboutSection() {
-
     const sectionRef = useRef<HTMLElement | null>(null);
 
     useGSAP(() => {
+        if (window.innerWidth >= 1024) {
+            const elements = sectionRef.current?.querySelectorAll(".animate-group");
 
-        const elements = sectionRef.current?.querySelectorAll(".animate-group");
-
-        gsap.from(elements as NodeListOf<HTMLElement>, {
-            y: 100,
-            opacity: 0,
-            duration: 1,
-            stagger: 0.2,
-            filter: "blur(6px)",
-            ease: "power3.out",
-            scrollTrigger: {
-                trigger: sectionRef.current,
-                start: "top top",
-                end: "+=800",
-                scrub: 2,
-                pin: true,
-
-            },
-        });
-
-
-
+            gsap.from(elements as NodeListOf<HTMLElement>, {
+                y: 100,
+                opacity: 0,
+                duration: 1,
+                stagger: 0.2,
+                filter: "blur(6px)",
+                ease: "power3.out",
+                scrollTrigger: {
+                    trigger: sectionRef.current,
+                    start: "top top",
+                    end: "+=800",
+                    scrub: 2,
+                    pin: true,
+                },
+            });
+        }
     }, { scope: sectionRef });
 
     return (
         <section
             ref={sectionRef}
-            className="h-screen flex justify-center items-center text-white font-extralight"
+            className="lg:min-h-screen -mt-28 lg:mt-0 flex justify-center items-center text-white font-extralight px-4 pb-16 lg:py-0"
         >
-            <div className="container text-center px-4">
-                <p className="text-5xl leading-snug max-w-2xl mx-auto flex flex-wrap justify-center gap-3 main_text">
+            <div className="text-center max-w-2xl">
+                <p className="lg:text-5xl text-xl leading-relaxed lg:leading-snug mx-auto flex flex-wrap justify-center gap-3">
                     <span className="animate-group">I</span>
                     <span className="animate-group">work</span>
                     <span className="animate-group">with</span>
 
-                    <span className="animate-group flex items-center gap-2">
+                    <span className="animate-group flex -mt-0.5 gap-2">
                         <span>individuals</span>
-                        <span className="inline-flex justify-center items-center w-14 h-14 border-2 border-[#1b1b1b] rounded-full">
-                            <User className="w-6 h-6 animate-bounce" />
+                        <span className="inline-flex justify-center items-center w-10 h-10 lg:w-14 lg:h-14 border-2 border-[#1b1b1b] rounded-full">
+                            <User className="w-5 h-5 lg:w-6 lg:h-6 animate-bounce" />
                         </span>
                     </span>
 
-                    <span className="animate-group">
-                        and
-                    </span>
+                    <span className="animate-group">and</span>
 
                     <span className="animate-group flex items-center gap-2">
                         <span>studios</span>
-                        <span className="inline-flex justify-center items-center w-14 h-14 border-2 border-[#1b1b1b] rounded-full">
-                            <User className="w-6 h-6 animate-bounce" />
+                        <span className="inline-flex justify-center items-center w-10 h-10 lg:w-14 lg:h-14 border-2 border-[#1b1b1b] rounded-full">
+                            <User className="w-5 h-5 lg:w-6 lg:h-6 animate-bounce" />
                         </span>
                     </span>
 
                     <span className="animate-group flex items-center gap-2">
                         <span>companies</span>
-                        <span className="inline-flex justify-center items-center w-14 h-14 border-2 border-[#1b1b1b] rounded-full">
-                            <Building2 className="w-6 h-6 animate-bounce" />
+                        <span className="inline-flex justify-center items-center w-10 h-10 lg:w-14 lg:h-14 border-2 border-[#1b1b1b] rounded-full">
+                            <Building2 className="w-5 h-5 lg:w-6 lg:h-6 animate-bounce" />
                         </span>
                     </span>
 
@@ -83,10 +77,11 @@ export default function AboutSection() {
                     <span className="animate-group">powerful</span>
                     <span className="animate-group">websites.</span>
                 </p>
-                <div className="animate-group mt-8 flex justify-center">
+
+                <div className="animate-group mt-10 flex justify-center">
                     <Link href="/about">
-                        <Button className='group w-28 h-12 flex items-center gap-5 text-lg border-2 border-[#1b1b1b] cursor-pointer bg-[#1d1d1d]/30'>
-                            <User className='w-14 h-12 p-1 rounded-full group-hover:p-0' />
+                        <Button className="group w-24 lg:w-28 h-11 lg:h-12 flex items-center gap-4 lg:gap-5 text-base lg:text-lg border-2 border-[#1b1b1b] bg-[#1d1d1d]/30">
+                            <User className="w-6 h-6 lg:w-7 lg:h-7 rounded-full group-hover:p-0" />
                             <span>About</span>
                         </Button>
                     </Link>
