@@ -59,7 +59,7 @@ export default function StackedSlider() {
     return (
         <section className="py-8 lg:py-20">
             <div className="container">
-                <div className="pb-10">
+                <div className="pb-10 lg:max-w-2xl mx-auto">
                     <p className="lg:text-5xl text-xl leading-relaxed lg:leading-snug mx-auto flex flex-wrap justify-center gap-3">
                         <span className="animate-group">I</span>
                         <span className="animate-group">work</span>
