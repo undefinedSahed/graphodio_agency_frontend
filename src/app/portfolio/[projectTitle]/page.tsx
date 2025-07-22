@@ -22,9 +22,11 @@ export default function ProjectDetails() {
   const titleRef = useRef<HTMLHeadingElement>(null);
   const projectRef = useRef<HTMLDivElement>(null);
 
+  const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
+
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [])
+  }, []);
 
   useEffect(() => {
     gsap.fromTo(
@@ -39,7 +41,8 @@ export default function ProjectDetails() {
     );
   }, []);
 
-  const handleMouseEnter = (idx: number) => {
+  const handleHover = (idx: number) => {
+    if (isMobile) return; // skip hover logic on mobile
     setHovered(idx);
     const vid = videoRefs.current[idx];
     if (vid) {
@@ -50,7 +53,8 @@ export default function ProjectDetails() {
     }
   };
 
-  const handleMouseLeave = (idx: number) => {
+  const handleLeave = (idx: number) => {
+    if (isMobile) return;
     setHovered(null);
     const vid = videoRefs.current[idx];
     if (vid) {
@@ -59,31 +63,38 @@ export default function ProjectDetails() {
     }
   };
 
+  const handleMobileClick = (idx: number) => {
+    if (!isMobile) return;
+    const vid = videoRefs.current[idx];
+    if (vid) {
+      vid.currentTime = 0;
+      vid.play().catch((err) => {
+        console.warn("Video play was blocked or interrupted:", err);
+      });
+    }
+  };
+
   return (
-    <section className="min-h-screen text-white px-6 py-10 flex flex-col items-center justify-center text-center relative">
-      { }
+    <section className="min-h-screen text-white px-4 sm:px-6 py-10 flex flex-col items-center justify-center text-center relative">
       <div className="w-full max-w-xl relative mb-4">
-        { }
-        <div className="absolute left-0 top-0 text-sm tracking-widest">
+        <div className="absolute left-0 top-0 text-xs sm:text-sm tracking-widest">
           ● WORKS INDEX
         </div>
-
-        { }
-        <div className="flex justify-center gap-2">
-          <span className="px-2 py-1 text-xs bg-[#1f1f1f] rounded">WEBDESIGN</span>
-          <span className="px-2 py-1 text-xs bg-[#1f1f1f]  rounded">WEBFLOW</span>
+        <div className="flex justify-center gap-2 mt-6 sm:mt-0">
+          <span className="px-2 py-1 text-[10px] sm:text-xs bg-[#1f1f1f] rounded">WEBDESIGN</span>
+          <span className="px-2 py-1 text-[10px] sm:text-xs bg-[#1f1f1f] rounded">WEBFLOW</span>
         </div>
       </div>
 
       <h1
         ref={titleRef}
-        className="text-6xl font-extrabold leading-tight tracking-wide"
+        className="text-4xl sm:text-6xl font-extrabold leading-tight tracking-wide"
       >
         STUDIO FUGU
       </h1>
 
-      <div className="mt-4 text-gray-400 max-w-xl">
-        <p className="text-xl leading-relaxed">
+      <div className="mt-4 text-gray-400 max-w-xl px-2">
+        <p className="text-base sm:text-xl leading-relaxed">
           Website redesign & Webflow development for Studio Fugu, a localization studio dedicated to the creative and cultural industries.
         </p>
       </div>
@@ -91,26 +102,27 @@ export default function ProjectDetails() {
       <div className="mt-10 w-full" ref={projectRef}>
         <ProjectDetailsPanel />
 
-
         <div className="relative w-full overflow-x-auto">
-          <div className="inline-flex gap-6 px-2 items-start">
+          <div className="inline-flex gap-4 sm:gap-6 px-2 items-start snap-x snap-mandatory">
             {videos.map((vid, idx) => (
               <div
                 key={idx}
-                onMouseEnter={() => handleMouseEnter(idx)}
-                onMouseLeave={() => handleMouseLeave(idx)}
+                onMouseEnter={() => handleHover(idx)}
+                onMouseLeave={() => handleLeave(idx)}
+                onClick={() => handleMobileClick(idx)}
                 className={clsx(
-                  "flex flex-col flex-shrink-0 transition-all duration-500",
-                  hovered === idx ? "w-[300px]" : "w-[250px]",
-                  hovered !== null && hovered !== idx ? "opacity-40 scale-95" : "opacity-100"
+                  "flex flex-col flex-shrink-0 transition-all duration-500 snap-center",
+                  // Mobile: fixed width. Desktop: hover expand
+                  "w-[90vw] sm:w-[250px]",
+                  hovered === idx && !isMobile ? "sm:w-[300px]" : "",
+                  hovered !== null && hovered !== idx && !isMobile ? "opacity-40 scale-95" : "opacity-100"
                 )}
               >
-                { }
-                <div className="h-[350px] flex items-end">
+                <div className="h-[220px] sm:h-[350px] flex items-end">
                   <div
                     className={clsx(
                       "overflow-hidden bg-[#111] rounded-md transition-all duration-500 ease-in-out w-full",
-                      hovered === idx ? "h-[350px]" : "h-[220px]"
+                      isMobile ? "h-[220px]" : hovered === idx ? "h-[350px]" : "h-[220px]"
                     )}
                   >
                     <video
@@ -127,8 +139,7 @@ export default function ProjectDetails() {
                   </div>
                 </div>
 
-                { }
-                <div className="flex justify-between text-sm text-gray-500 mt-2 w-full px-1">
+                <div className="flex justify-between text-xs sm:text-sm text-gray-500 mt-2 w-full px-1">
                   <span>{vid.index}</span>
                   <span>{vid.detail}</span>
                 </div>
