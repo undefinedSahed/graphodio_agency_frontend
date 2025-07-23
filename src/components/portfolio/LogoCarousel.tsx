@@ -55,7 +55,7 @@ const LogoCarousel: React.FC = () => {
       <div className="text-center pb-4">
         <h2 className="text-lg tracking-wide">brands and agencies i worked with</h2>
       </div>
-      <div ref={trackRef} className="flex w-max gap-12">
+      <div ref={trackRef} className="flex w-max lg:gap-12">
         {[...logos, ...logos].map((logo, index) => (
           <div key={index} className="flex-shrink-0">
             <Image

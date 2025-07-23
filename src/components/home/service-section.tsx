@@ -124,6 +124,8 @@ export default function ServiceSection() {
                         </div>
                     ))}
                 </div>
+
+                {/* Small Device Services */}
                 <div className="lg:hidden space-y-10 pt-12">
                     {services.map((service, index) => (
                         <div key={index}>
