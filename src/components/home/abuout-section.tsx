@@ -38,18 +38,18 @@ export default function AboutSection() {
     return (
         <section
             ref={sectionRef}
-            className="lg:min-h-screen -mt-28 lg:mt-0 flex justify-center items-center text-white font-extralight px-4 pb-16 lg:py-0"
+            className="min-h-screen -mt-28 lg:mt-0 flex justify-center items-center text-white font-extralight px-4 pb-16 lg:py-0"
         >
             <div className="text-center max-w-2xl">
-                <p className="lg:text-5xl text-xl leading-relaxed lg:leading-snug mx-auto flex flex-wrap justify-center gap-3">
+                <p className="lg:text-5xl text-2xl lg:leading-snug mx-auto flex flex-wrap justify-center gap-3">
                     <span className="animate-group">I</span>
                     <span className="animate-group">work</span>
                     <span className="animate-group">with</span>
 
-                    <span className="animate-group flex -mt-0.5 gap-2">
+                    <span className="animate-group flex gap-2">
                         <span>individuals</span>
-                        <span className="inline-flex justify-center items-center w-10 h-10 lg:w-14 lg:h-14 border-2 border-[#1b1b1b] rounded-full">
-                            <User className="w-5 h-5 lg:w-6 lg:h-6 animate-bounce" />
+                        <span className="inline-flex justify-center items-center w-8 h-8 lg:w-14 lg:h-14 border-2 border-[#1b1b1b] rounded-full">
+                            <User className="w-3 h-3 lg:w-6 lg:h-6 animate-bounce" />
                         </span>
                     </span>
 
@@ -57,15 +57,15 @@ export default function AboutSection() {
 
                     <span className="animate-group flex items-center gap-2">
                         <span>studios</span>
-                        <span className="inline-flex justify-center items-center w-10 h-10 lg:w-14 lg:h-14 border-2 border-[#1b1b1b] rounded-full">
-                            <User className="w-5 h-5 lg:w-6 lg:h-6 animate-bounce" />
+                        <span className="inline-flex justify-center items-center w-8 h-8 lg:w-14 lg:h-14 border-2 border-[#1b1b1b] rounded-full">
+                            <User className="w-3 h-3 lg:w-6 lg:h-6 animate-bounce" />
                         </span>
                     </span>
 
                     <span className="animate-group flex items-center gap-2">
                         <span>companies</span>
-                        <span className="inline-flex justify-center items-center w-10 h-10 lg:w-14 lg:h-14 border-2 border-[#1b1b1b] rounded-full">
-                            <Building2 className="w-5 h-5 lg:w-6 lg:h-6 animate-bounce" />
+                        <span className="inline-flex justify-center items-center w-8 h-8 lg:w-14 lg:h-14 border-2 border-[#1b1b1b] rounded-full">
+                            <Building2 className="w-3 h-3 lg:w-6 lg:h-6 animate-bounce" />
                         </span>
                     </span>
 

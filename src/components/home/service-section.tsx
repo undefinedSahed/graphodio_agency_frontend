@@ -58,11 +58,11 @@ export default function ServiceSection() {
     };
 
     return (
-        <section className="py-8 lg:py-20">
+        <section className="pt-0 pb-20 lg:py-20">
             <div className="container">
                 <div className="flex justify-between">
                     <div className="max-w-md mx-auto lg:ms-0">
-                        <h3 className='lg:text-5xl text-xl leading-snug text-center'>
+                        <h3 className='lg:text-5xl text-2xl leading-snug text-center'>
                             Here is a selection of our most popular services{" "}
                             <span className="hidden lg:inline-flex justify-center items-center lg:w-14 w-10 lg:h-14 h-10 border-2 border-[#1b1b1b] rounded-full ml-3">
                                 <Building2 className="lg:w-6 w-4 lg:h-6 h-4 animate-bounce" />
