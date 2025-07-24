@@ -5,71 +5,80 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { ArrowRightCircle, MessageCircle } from "lucide-react";
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Testimonial() {
     const secRef = useRef<HTMLElement | null>(null);
+    const [isLargeScreen, setIsLargeScreen] = useState(false);
+
+    // Detect screen size only on client
+    useEffect(() => {
+        if (typeof window !== "undefined") {
+            setIsLargeScreen(window.innerWidth >= 1024);
+        }
+    }, []);
 
     useGSAP(
         (context) => {
-            // Only apply GSAP animations on larger screens
-            if (window.innerWidth >= 1024) {
-                const q = context.selector;
-                if (q) {
-                    const testimonialsElements = q(".fade_comment");
-                    const stuckTextElement = q(".stuck_text");
+            if (!isLargeScreen) return;
 
-                    // Pin the left text
-                    if (stuckTextElement) {
-                        gsap.to(stuckTextElement, {
-                            scrollTrigger: {
-                                trigger: secRef.current,
-                                start: "top 20%",
-                                end: "bottom 80%",
-                                pin: stuckTextElement,
-                                pinSpacing: false,
-                                scrub: 1,
-                            },
-                        });
-                    }
+            const q = context.selector;
+            if (!q) return;
 
-                    // Animate testimonials fade in/out
-                    if (testimonialsElements) {
-                        testimonialsElements.forEach((element: HTMLElement) => {
-                            gsap.timeline({
-                                scrollTrigger: {
-                                    trigger: element,
-                                    start: "top 55%",
-                                    end: "bottom 15%",
-                                    scrub: 1,
-                                    toggleActions: "play reverse play reverse",
-                                },
-                            })
-                                .fromTo(
-                                    element,
-                                    { opacity: 0.2 },
-                                    { opacity: 1, duration: 0.5 }
-                                )
-                                .to(element, { opacity: 0.2, duration: 0.5 });
-                        });
-                    }
-                }
+            const testimonialsElements = q(".fade_comment");
+            const stuckTextElement = q(".stuck_text");
+
+            // Pin the left text
+            if (stuckTextElement) {
+                gsap.to(stuckTextElement, {
+                    scrollTrigger: {
+                        trigger: secRef.current,
+                        start: "top 20%",
+                        end: "bottom 80%",
+                        pin: stuckTextElement,
+                        pinSpacing: false,
+                        scrub: 1,
+                    },
+                });
             }
+
+            // Animate fade in and fade out on scroll
+            testimonialsElements?.forEach((element: HTMLElement) => {
+                // Fade in
+                gsap.to(element, {
+                    opacity: 1,
+                    scrollTrigger: {
+                        trigger: element,
+                        start: "top 55%",
+                        end: "top 30%",
+                        scrub: true,
+                    },
+                });
+
+                // Fade out
+                gsap.to(element, {
+                    opacity: 0.2,
+                    scrollTrigger: {
+                        trigger: element,
+                        start: "top 30%",
+                        end: "top top",
+                        scrub: true,
+                    },
+                });
+            });
         },
-        { scope: secRef }
+        { scope: secRef, dependencies: [isLargeScreen] }
     );
 
+
     return (
-        <section
-            className="relative w-full py-8 lg:py-20"
-            ref={secRef}
-        >
+        <section className="relative w-full py-8 lg:py-20" ref={secRef}>
             <div className="container">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                    {/* Left sticky text - shown only on lg screens */}
+                    {/* Left sticky text - large screens only */}
                     <div className="hidden lg:block lg:sticky lg:top-24 h-fit self-start">
                         <p className="text-4xl sm:text-5xl lg:text-6xl leading-snug flex flex-wrap gap-3 stuck_text">
                             <span>Kind words</span>
@@ -80,7 +89,7 @@ export default function Testimonial() {
                         </p>
                     </div>
 
-                    {/* Mobile header - shown only on small screens */}
+                    {/* Mobile header */}
                     <div className="lg:hidden mb-8 mx-auto">
                         <p className="text-2xl leading-snug flex flex-wrap gap-3 text-center">
                             <span>Kind words</span>
@@ -95,7 +104,7 @@ export default function Testimonial() {
                     <div className="space-y-12 lg:space-y-20">
                         {testimonials.map((testimonial) => (
                             <div key={testimonial.id}>
-                                <div className="lg:fade_comment lg:opacity-20 flex items-start gap-3 lg:gap-5">
+                                <div className="fade_comment lg:opacity-20 flex items-start gap-3 lg:gap-5">
                                     <div className="flex items-center gap-2 text-gray-400">
                                         <ArrowRightCircle className="h-4 w-4 lg:h-5 lg:w-5" />
                                         <span className="text-base lg:text-lg font-semibold">
