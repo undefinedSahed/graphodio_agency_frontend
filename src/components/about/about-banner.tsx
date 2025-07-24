@@ -62,7 +62,7 @@ export default function AboutBanner() {
                 <div className="flex justify-between items-end">
                     <div className="max-w-xl text_start">
                         <p className="text-lg lg:text-6xl font-bold text-gray-300">
-                            I&apos;m Eliot, Freelance Webdesigner & Webflow developer Based in Lyon, France
+                            GRAPHODIO is a full-service creative agency delivering impactful solutions in design, branding, web development, content, and beyond. 
                         </p>
                     </div>
                     <div className="max-w-md text-end animate_logo">

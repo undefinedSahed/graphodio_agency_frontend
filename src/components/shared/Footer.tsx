@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useEffect } from 'react';
-import { FaLinkedin, FaDribbble } from 'react-icons/fa';
+import { FaLinkedin, FaFacebook, FaInstagram, FaWhatsapp, FaTwitter } from 'react-icons/fa';
 import { Button } from '../ui/button';
 import { useContact } from "@/lib/contact-context"
 
@@ -101,20 +101,13 @@ const Footer: React.FC = () => {
                         {/* Social Links & Infos */}
                         <div className="flex flex-col items-end max-md:items-center max-md:text-center">
                             <div className="flex items-center space-x-4 mb-4">
-                                <SocialLink href="https://www.linkedin.com/in/your-profile/" label="LinkedIn" Icon={FaLinkedin} />
-                                <SocialLink href="https://dribbble.com/your-profile/" label="Dribbble" Icon={FaDribbble} />
-                                <a
-                                    href="#"
-                                    className="font-bold border border-black rounded-full w-8 h-8 flex items-center justify-center text-sm hover:bg-black hover:text-white transition"
-                                >
-                                    W.
-                                </a>
-                                <a
-                                    href="mailto:your@email.com"
-                                    className="font-bold border border-black rounded-full w-8 h-8 flex items-center justify-center text-sm hover:bg-black hover:text-white transition"
-                                >
-                                    @
-                                </a>
+                                <SocialLink href="https://www.linkedin.com/company/graphodio360/ " label="LinkedIn" Icon={FaLinkedin} />
+                                 <SocialLink href="https://www.facebook.com/Graphodio360" label="Facebook" Icon={FaFacebook} />
+                                 <SocialLink href="https://www.instagram.com/graphodio360/" label="Instagram" Icon={FaInstagram} />
+                                 <SocialLink href="https://api.whatsapp.com/send/?phone=8801782060008&text&type=phone_number&app_absent=0" label="whatsapp" Icon={FaWhatsapp} />
+                                 <SocialLink href="https://www.instagram.com/graphodio360/" label="Twitter" Icon={FaTwitter} />
+
+                                
                             </div>
                             <Link href="/infos" className="hover:underline text-xs">
                                 Infos & Credits

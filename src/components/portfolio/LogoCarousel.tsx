@@ -53,7 +53,7 @@ const LogoCarousel: React.FC = () => {
   return (
     <div className="overflow-hidden w-full py-1 ">
       <div className="text-center pb-4">
-        <h2 className="text-lg tracking-wide">brands and agencies i worked with</h2>
+        <h2 className="text-lg tracking-wide">brands and agencies we’ve worked with</h2>
       </div>
       <div ref={trackRef} className="flex w-max gap-12">
         {[...logos, ...logos].map((logo, index) => (
