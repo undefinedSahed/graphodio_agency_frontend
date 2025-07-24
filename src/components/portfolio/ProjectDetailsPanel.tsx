@@ -6,8 +6,6 @@ export default function ProjectDetailsPanel() {
   const [isOpen, setIsOpen] = useState(false);
   const panelRef = useRef<HTMLDivElement>(null);
 
-  
-
   return (
     <>
       {/* Trigger Button */}
@@ -22,10 +20,10 @@ export default function ProjectDetailsPanel() {
       {isOpen && (
         <div
           ref={panelRef}
-          className="fixed inset-0 z-50 bg-black bg-opacity-90 flex flex-col md:flex-row text-white p-10 md:p-20"
+          className="fixed inset-0 z-50 bg-black bg-opacity-90 flex flex-col md:flex-row text-white p-6 sm:p-10 md:p-20 overflow-y-auto"
         >
           {/* Left Side - Text Block */}
-          <div className="md:w-1/3 max-w-md text-lg leading-relaxed font-normal space-y-6">
+          <div className="w-full md:w-1/3 max-w-md text-base md:text-lg leading-relaxed font-normal space-y-6 mb-10 md:mb-0">
             <p>
               For Studio Fugu&apos;s launch mid-2024 we worked on their website with
               Studio Elias. I was in charge of the UI design & Webflow
@@ -42,12 +40,15 @@ export default function ProjectDetailsPanel() {
           </div>
 
           {/* Middle - Close Text */}
-          <div className="md:w-1/3 flex items-center justify-center text-sm font-mono tracking-wide cursor-pointer select-none" onClick={() => setIsOpen(false)}>
+          <div
+            className="w-full md:w-1/3 flex items-center justify-center text-sm font-mono tracking-wide cursor-pointer select-none mb-10 md:mb-0"
+            onClick={() => setIsOpen(false)}
+          >
             CLOSE
           </div>
 
           {/* Right Side - Info */}
-          <div className="md:w-1/3 max-w-xs text-xs font-mono tracking-widest space-y-10">
+          <div className="w-full md:w-1/3 max-w-xs text-xs font-mono tracking-widest space-y-10">
             <div>
               <div className="text-gray-400 mb-2">FULL LIST OF SERVICES</div>
               <ul className="space-y-1">
