@@ -59,10 +59,10 @@ export default function HowWeWork() {
     }, { scope: sectionRef });
 
     return (
-        <section className='h-screen flex justify-center items-center relative hwww' ref={sectionRef}>
-            <div className="container text-white text-center -mt-32">
-                <h2 className='text-[64px] font-bold leading-tight text-center pb-12 max-w-2xl mx-auto'>We Create at the intersection of:</h2>
-                <div className="flex justify-center">
+        <section className='lg:h-screen flex justify-center items-center relative hwww' ref={sectionRef}>
+            <div className="container text-white text-center lg:-mt-32 mt-[130px]">
+                <h2 className='lg:text-[64px] text-4xl font-bold leading-tight text-center pb-12 max-w-2xl mx-auto'>We Create at the intersection of:</h2>
+                <div className="hidden lg:flex justify-center">
                     <div className="relative h-64 w-64 translate-x-[30px] rounded-full flex justify-center items-center elem">
                         <svg className="absolute w-full h-full scale-[140%] rotate-[270deg]">
                             <circle
@@ -162,7 +162,7 @@ export default function HowWeWork() {
                                 <div className="h-16 w-16 flex justify-center items-center border-2 border-[#1b1b1b] rounded-full">
                                     <NotebookPen className='animate-bounce' />
                                 </div>
-                                <span> Research</span>
+                                <span> Design</span>
                             </div>
                         </div>
                     </div>
@@ -173,7 +173,7 @@ export default function HowWeWork() {
                                 <div className="h-16 w-16 flex justify-center items-center border-2 border-[#1b1b1b] rounded-full">
                                     <NotebookPen className='animate-bounce' />
                                 </div>
-                                <span>Group</span>
+                                <span> Brand</span>
                             </div>
                         </div>
                     </div>
@@ -184,7 +184,7 @@ export default function HowWeWork() {
                                 <div className="h-16 w-16 flex justify-center items-center border-2 border-[#1b1b1b] rounded-full">
                                     <NotebookPen className='animate-bounce' />
                                 </div>
-                                <span> Research</span>
+                                <span> Strategy</span>
                             </div>
                         </div>
                     </div>

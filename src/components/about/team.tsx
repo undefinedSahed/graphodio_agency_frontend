@@ -21,7 +21,7 @@ export default function Team() {
             ScrollTrigger.create({
                 trigger: secRef.current,
                 start: "top top",
-                end: "+=2500", // The total scroll distance for the pinned section
+                end: "+=4300", // The total scroll distance for the pinned section
                 scrub: true,
                 pin: true,
             })
