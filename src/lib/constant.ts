@@ -11,7 +11,7 @@ export const services = [
     {
         id: 1,
         title: "Digital Marketing",
-        description: "I design websites that look great and feel intuitive. From the layout to the animations, every detail is crafted for a seamless experience on any device.",
+        description: "Drive growth with smart, results-focused digital marketing. From strategic planning and campaign execution to performance analytics and optimization, we help your brand reach the right audience, at the right time, across the right channels.",
         tags: ["SEO", "SMM", "SEM"],
         videos: [
             "/videos/video.mp4",
@@ -22,7 +22,7 @@ export const services = [
     {
         id: 2,
         title: "Custom Website",
-        description: "I design websites that look great and feel intuitive. From the layout to the animations, every detail is crafted for a seamless experience on any device.",
+        description: "Get a website built just for you,designed from the ground up to match your brand, goals, and audience. We create custom websites that are visually stunning, fully responsive, fast, and optimized for performance, ensuring a seamless user experience across all devices.",
         tags: ["Custom Website", "MERN Stack", "Deployment"],
         videos: [
             "/videos/video.mp4",
@@ -32,15 +32,16 @@ export const services = [
     },
     {
         id: 3,
-        title: "Brand Design",
-        description: "I design websites that look great and feel intuitive. From the layout to the animations, every detail is crafted for a seamless experience on any device.",
+        title: "Brand Identity",
+        description: "Craft a brand that speaks volumes. From strategic positioning and messaging to logo design and cohesive visual systems, we build brand identities that resonate with your audience and set you apart from the competition.",
         tags: ["Store", "Inventory Management"],
         videos: [
             "/videos/video.mp4",
             "/videos/video.mp4",
             "/videos/video.mp4"
         ]
-    }
+    },
+    
 ];
 
 
