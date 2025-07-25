@@ -116,7 +116,7 @@ export default function Hero() {
 
     return (
         <>
-            <section className="py-10 text-white/90 flex justify-center h-screen" ref={bannerRef}>
+            <section className="pt-5 text-white/90 flex justify-center" ref={bannerRef}>
                 <div className="container">
                     <div className="text-center max-w-4xl mx-auto">
                         {/* Logo */}

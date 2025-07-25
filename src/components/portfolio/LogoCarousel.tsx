@@ -53,7 +53,7 @@ const LogoCarousel: React.FC = () => {
   return (
     <div className="overflow-hidden w-full py-1 ">
       <div className="text-center pb-4">
-        <h2 className="text-lg tracking-wide">brands and agencies we’ve worked with</h2>
+        <h2 className="text-lg tracking-wide">brands and agencies we&apos;ve worked with</h2>
       </div>
       <div ref={trackRef} className="flex w-max lg:gap-12">
         {[...logos, ...logos].map((logo, index) => (
@@ -63,7 +63,7 @@ const LogoCarousel: React.FC = () => {
               alt={`Logo ${index}`}
               width={100}
               height={60}
-              className="object-contain invert brightness-0 saturate-0"
+              className="aspect-[10/6] object-contain invert brightness-0 saturate-0"
 
             />
           </div>
