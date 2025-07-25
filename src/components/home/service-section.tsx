@@ -61,21 +61,21 @@ export default function ServiceSection() {
         <section className="py-8 lg:py-20">
             <div className="container">
                 <div className="flex justify-between">
-                    <div className="max-w-md">
-                        <h3 className='lg:text-5xl leading-snug'>
+                    <div className="max-w-md mx-auto lg:ms-0">
+                        <h3 className='lg:text-5xl text-xl leading-snug text-center'>
                             Here is a selection of our most popular services{" "}
-                            <span className="inline-flex justify-center items-center w-14 h-14 border-2 border-[#1b1b1b] rounded-full ml-3">
-                                <Building2 className="w-6 h-6 animate-bounce" />
+                            <span className="hidden lg:inline-flex justify-center items-center lg:w-14 w-10 lg:h-14 h-10 border-2 border-[#1b1b1b] rounded-full ml-3">
+                                <Building2 className="lg:w-6 w-4 lg:h-6 h-4 animate-bounce" />
                             </span>
                         </h3>
                     </div>
-                    <div className="max-w-[150px] text-end items-end">
+                    <div className="hidden lg:block max-w-[150px] text-end items-end">
                         <p className="lg:text-xl text-white/70">Hover on names for a closer look</p>
                     </div>
                 </div>
 
                 <div
-                    className="flex flex-col justify-center mt-12"
+                    className="hidden lg:flex flex-col justify-center mt-12"
                     ref={containerRef}
                 >
                     {services.map((service, index) => (
@@ -121,6 +121,24 @@ export default function ServiceSection() {
                                     <source src={service.videos[2]} type="video/mp4" />
                                 </video>
                             </div>
+                        </div>
+                    ))}
+                </div>
+                <div className="lg:hidden space-y-10 pt-12">
+                    {services.map((service, index) => (
+                        <div key={index}>
+                            <div
+                                className="grid grid-cols-3 gap-3"
+                            >
+                                {
+                                    service.videos.map((video, idx) => (
+                                        <video key={idx} autoPlay loop muted className="w-full h-full object-cover">
+                                            <source src={video} type="video/mp4" />
+                                        </video>
+                                    ))
+                                }
+                            </div>
+                            <h3 className='text-2xl font-bold text-center pt-3'>{service.title}</h3>
                         </div>
                     ))}
                 </div>
