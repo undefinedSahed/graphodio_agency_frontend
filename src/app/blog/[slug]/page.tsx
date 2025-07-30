@@ -32,7 +32,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
     return (
         <main>
             <section className="pb-8 lg:pb-20">
-                <div className="max-w-6xl mx-auto space-y-7 tracking-wider">
+                <div className="max-w-6xl mx-auto lg:space-y-7 space-y-4 tracking-wider px-2 lg:px-0">
                     <div className="relative">
                         <Image
                             src={blog.thumbnail}
@@ -46,15 +46,15 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
                         <div className="absolute inset-0 rounded-md shadow-[inset_0_-170px_57px_32px_rgba(0,0,0,0.4)] z-10"></div>
 
                         {/* Text content */}
-                        <div className="absolute flex gap-20 bottom-16 left-20 z-20 text-white border-b pb-4">
-                            <div className="space-y-3">
-                                <h1 className="text-4xl font-bold">{blog.slug}</h1>
-                                <div className="text-sm flex items-center gap-5">
-                                    <Avatar className="h-12 w-12">
+                        <div className="absolute flex lg:gap-20 lg:bottom-16 bottom-1 lg:left-20 left-4 z-20 text-white border-b lg:pb-4 mr-5 lg:mr-0">
+                            <div className="lg:space-y-3 space-y-1">
+                                <h1 className="lg:text-4xl text-base font-bold">{blog.title}</h1>
+                                <div className="text-sm flex items-center lg:gap-5 gap-2">
+                                    <Avatar className="lg:h-12 h-7 w-7 lg:w-12">
                                         <AvatarImage src={blog.author.image} />
                                         <AvatarFallback>{blog.author.name}</AvatarFallback>
                                     </Avatar>
-                                    <div>
+                                    <div className='text-xs lg:text-base'>
                                         <p>By {blog.author.name}</p>
                                         <p>{blog.author.date}</p>
                                     </div>
@@ -64,13 +64,13 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
                         </div>
                     </div>
 
-                    <h2 className="text-2xl font-semibold">{blog.secondTitle}</h2>
-                    <p>{blog.firstPara}</p>
-                    <p>{blog.secondPara}</p>
+                    <h2 className="lg:text-2xl text-base font-semibold">{blog.secondTitle}</h2>
+                    <p className='text-xs lg:text-base text-justify lg:text-start'>{blog.firstPara}</p>
+                    <p className='text-xs lg:text-base text-justify lg:text-start'>{blog.secondPara}</p>
 
-                    <h3 className="text-xl font-semibold">{blog.thirdTitle}</h3>
-                    <p>{blog.thirdPara}</p>
-                    <p>{blog.fourthPara}</p>
+                    <h3 className="lg:text-xl text-base font-semibold">{blog.thirdTitle}</h3>
+                    <p className='text-xs lg:text-base text-justify lg:text-start'>{blog.thirdPara}</p>
+                    <p className='text-xs lg:text-base text-justify lg:text-start'>{blog.fourthPara}</p>
 
                     <Image
                         src={blog.secondImage}
@@ -81,9 +81,9 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
                     />
                     <p className="text-sm italic">{blog.secondImgDes}</p>
 
-                    <h3 className="text-xl font-semibold">{blog.fourthTitle}</h3>
-                    <p>{blog.fifthPara}</p>
-                    <p>{blog.sixthPara}</p>
+                    <h3 className="lg:text-xl text-base font-semibold">{blog.fourthTitle}</h3>
+                    <p className='text-xs lg:text-base text-justify lg:text-start'>{blog.fifthPara}</p>
+                    <p className='text-xs lg:text-base text-justify lg:text-start'>{blog.sixthPara}</p>
 
                     <Image
                         src={blog.thirdImage}
@@ -94,11 +94,11 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
                     />
                     <p className="text-sm italic">{blog.thirdImgDes}</p>
 
-                    <h3 className="text-xl font-semibold">{blog.fifthTitle}</h3>
-                    <p>{blog.seventhPara}</p>
-                    <p>{blog.eighthPara}</p>
-                    <p>{blog.ninethPara}</p>
-                    <p>{blog.endingPara}</p>
+                    <h3 className="lg:text-xl text-base font-semibold">{blog.fifthTitle}</h3>
+                    <p className='text-xs lg:text-base text-justify lg:text-start'>{blog.seventhPara}</p>
+                    <p className='text-xs lg:text-base text-justify lg:text-start'>{blog.eighthPara}</p>
+                    <p className='text-xs lg:text-base text-justify lg:text-start'>{blog.ninethPara}</p>
+                    <p className='text-xs lg:text-base text-justify lg:text-start'>{blog.endingPara}</p>
 
                     <Link href="/blog">
                         <Button className="cursor-pointer w-40 h-12 text-lg">Back To Blog</Button>

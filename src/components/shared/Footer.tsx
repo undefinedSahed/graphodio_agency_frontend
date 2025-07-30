@@ -91,9 +91,10 @@ const Footer: React.FC = () => {
                                 <span className="uppercase text-gray-500 tracking-widest mb-2">Sitemap</span>
                                 <Link href="/" className="hover:underline">Home</Link>
                                 <Link href="/portfolio" className="hover:underline">Works</Link>
-                                <Link href="/templates" className="hover:underline">Terms and conditions</Link>
+                                <p className="hover:underline cursor-pointer">Privacy Policy</p>
+                                <p className="hover:underline cursor-pointer">Terms and conditions</p>
                                 <Link href="/about" className="hover:underline">About</Link>
-                                <Button className="mt-2" onClick={() => setIsContactOpen(true)}>Contact</Button>
+                                <p className="cursor-pointer hover:underline" onClick={() => setIsContactOpen(true)}>Contact</p>
                             </div>
                             <p className="text-gray-500 text-xs">Graphodio © 2025</p>
                         </div>
@@ -106,8 +107,6 @@ const Footer: React.FC = () => {
                                  <SocialLink href="https://www.instagram.com/graphodio360/" label="Instagram" Icon={FaInstagram} />
                                  <SocialLink href="https://api.whatsapp.com/send/?phone=8801782060008&text&type=phone_number&app_absent=0" label="whatsapp" Icon={FaWhatsapp} />
                                  <SocialLink href="https://www.instagram.com/graphodio360/" label="Twitter" Icon={FaTwitter} />
-
-                                
                             </div>
                             <Link href="/infos" className="hover:underline text-xs">
                                 Infos & Credits
