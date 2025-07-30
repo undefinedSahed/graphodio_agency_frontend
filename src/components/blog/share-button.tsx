@@ -23,10 +23,10 @@ export default function ShareButton({ title, url }: { title: string, url: string
         <div className="flex items-end cursor-pointer">
             <Button
                 onClick={handleShare}
-                className="h-10 w-10 rounded-full border flex justify-center items-center cursor-pointer"
+                className="lg:h-10 lg:w-10 w-7 h-7 rounded-full border flex justify-center items-center cursor-pointer"
                 title="Share this post"
             >
-                <Share2 />
+                <Share2 className='h-3 w-3 lg:h-fit lg:w-fit'/>
             </Button>
         </div>
     );
