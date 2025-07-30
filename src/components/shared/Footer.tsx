@@ -4,7 +4,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useEffect } from 'react';
 import { FaLinkedin, FaFacebook, FaInstagram, FaWhatsapp, FaTwitter } from 'react-icons/fa';
-import { Button } from '../ui/button';
 import { useContact } from "@/lib/contact-context"
 
 interface SocialLinkProps {
