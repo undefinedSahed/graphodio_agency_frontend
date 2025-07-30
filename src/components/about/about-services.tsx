@@ -4,15 +4,24 @@ import { services } from '@/lib/constant';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
-import React, { useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function AboutServices() {
     const secRef = useRef<HTMLElement | null>(null);
+    const [isLargeScreen, setIsLargeScreen] = useState(false);
 
+    // Set screen size only on the client
+    useEffect(() => {
+        if (typeof window !== "undefined") {
+            setIsLargeScreen(window.innerWidth >= 1024);
+        }
+    }, []);
 
     useGSAP(() => {
+        if (!isLargeScreen) return;
+
         const boxes = secRef.current?.querySelectorAll('.animate_service_fade') as NodeListOf<HTMLElement>;
         const videos = secRef.current?.querySelectorAll('.service-video') as NodeListOf<HTMLElement>;
 
@@ -55,41 +64,44 @@ export default function AboutServices() {
             });
         }
 
-    }, { scope: secRef });
+    }, { scope: secRef, dependencies: [isLargeScreen] });
 
-
+    const gridPositions = [
+        { gridColumnStart: 1, gridRowStart: 1 },
+        { gridColumnStart: 2, gridRowStart: 2 },
+        { gridColumnStart: 3, gridRowStart: 3 },
+    ];
 
     return (
         <section className="py-8 lg:py-20" ref={secRef}>
             <div className="container">
-                <div className="mb-12">
-                    <h2 className="text-3xl lg:text-5xl font-bold mb-4">We can help you with</h2>
+                <div className="mb-12 text-center lg:text-start">
+                    <h2 className="text-2xl lg:text-5xl font-bold lg:mb-4">We can help you with</h2>
                 </div>
 
-                <div className="grid grid-rows-3 grid-cols-3 gap-x-8 gap-y-[30px] relative">
+                <div className="grid lg:grid-rows-3 lg:grid-cols-3 gap-x-8 lg:gap-y-[30px]  gap-y-[45px] relative">
                     {services.map((service, index) => {
-                        const position = [
-                            { gridColumnStart: 1, gridRowStart: 1 },
-                            { gridColumnStart: 2, gridRowStart: 2 },
-                            { gridColumnStart: 3, gridRowStart: 3 },
-                        ][index];
+                        const position = gridPositions[index] || {};
 
                         return (
                             <div
                                 key={service.id}
-                                className="max-w-sm pr-6 rounded-lg animate_service_fade"
-                                style={{
-                                    opacity: 0.2,
-                                    gridColumnStart: position.gridColumnStart,
-                                    gridRowStart: position.gridRowStart
-                                }}
+                                className="max-w-sm pr-6 rounded-lg animate_service_fade text-center lg:text-start"
+                                style={
+                                    isLargeScreen
+                                        ? {
+                                            opacity: 0.2,
+                                            ...position,
+                                        }
+                                        : {}
+                                }
                             >
                                 <div className="flex justify-between items-center mb-4">
-                                    <h3 className="text-xl lg:text-5xl font-semibold leading-tight">
+                                    <h3 className="text-xl mx-auto lg:mx-0 lg:text-5xl font-semibold leading-tight">
                                         {service.title}
                                     </h3>
                                     <video
-                                        className="w-24 h-24 object-cover service-video"
+                                        className="hidden md:block w-24 h-24 object-cover service-video"
                                         src={service.videos[0]}
                                         autoPlay
                                         loop
@@ -98,12 +110,11 @@ export default function AboutServices() {
                                         style={{ opacity: 0, willChange: 'transform, opacity' }}
                                     />
                                 </div>
-                                <p className="text-gray-300 text-xl tracking-wider">{service.description}</p>
+                                <p className="text-gray-300 text-xl lg:tracking-wider">{service.description}</p>
                             </div>
                         );
                     })}
                 </div>
-
             </div>
         </section>
     );

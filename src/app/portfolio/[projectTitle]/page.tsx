@@ -1,21 +1,21 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { useParams } from "next/navigation";
+import { useParams, usePathname } from "next/navigation";
 import gsap from "gsap";
 import clsx from "clsx";
 import ProjectDetailsPanel from "@/components/portfolio/ProjectDetailsPanel";
+import { works } from "@/lib/constant"
 
-const videos = [
-  { src: "/videos/video.mp4", alt: "Welcome Page", index: "/01", detail: "Welcome Page" },
-  { src: "/videos/video.mp4", alt: "Join Race", index: "/02", detail: "Join Race" },
-  { src: "/videos/video.mp4", alt: "Network", index: "/03", detail: "Network" },
-  { src: "/videos/video.mp4", alt: "Localization", index: "/04", detail: "Localization" },
-  { src: "/videos/video.mp4", alt: "Flip Script", index: "/05", detail: "Flip Script" },
-  { src: "/videos/video.mp4", alt: "Another Page", index: "/06", detail: "Another Page" },
-];
 
 export default function ProjectDetails() {
+
+  const pathname = usePathname()
+  const slug = pathname.split("/").filter(Boolean).pop();
+  const work = works.find(b => b.slug === decodeURIComponent(slug as string));
+
+  console.log(work)
+
   const [hovered, setHovered] = useState<number | null>(null);
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
   useParams();
@@ -75,11 +75,8 @@ export default function ProjectDetails() {
   };
 
   return (
-    <section className="min-h-screen text-white px-4 sm:px-6 py-10 flex flex-col items-center justify-center text-center relative">
-      <div className="w-full max-w-xl relative mb-4">
-        <div className="absolute left-0 top-0 text-xs sm:text-sm tracking-widest">
-          ● WORKS INDEX
-        </div>
+    <section className="min-h-screen text-white px-4 flex flex-col items-center justify-center text-center relative">
+      <div className="w-full max-w-xl relative mb-2">
         <div className="flex justify-center gap-2 mt-6 sm:mt-0">
           <span className="px-2 py-1 text-[10px] sm:text-xs bg-[#1f1f1f] rounded">WEBDESIGN</span>
           <span className="px-2 py-1 text-[10px] sm:text-xs bg-[#1f1f1f] rounded">WEBFLOW</span>
@@ -90,33 +87,27 @@ export default function ProjectDetails() {
         ref={titleRef}
         className="text-4xl sm:text-6xl font-extrabold leading-tight tracking-wide"
       >
-        STUDIO FUGU
+        {
+          work?.title
+        }
       </h1>
 
       <div className="mt-4 text-gray-400 max-w-xl px-2">
         <p className="text-base sm:text-xl leading-relaxed">
-          Website redesign & Webflow development for Studio Fugu, a localization studio dedicated to the creative and cultural industries.
+          {
+            work?.shortDescription
+          }
         </p>
       </div>
 
-      <div className="mt-10 w-full" ref={projectRef}>
+      <div className="lg:mt-6 mt-3 w-full" ref={projectRef}>
         <ProjectDetailsPanel />
 
-        <div className="relative w-full overflow-x-auto">
+        <div className="relative w-full overflow-x-auto mt-7 lg:-mt-14">
           <div className="inline-flex gap-4 sm:gap-6 px-2 items-start snap-x snap-mandatory">
-            {videos.map((vid, idx) => (
+            {work?.videos?.map((vid, idx) => (
               <div
                 key={idx}
-                onMouseEnter={() => handleHover(idx)}
-                onMouseLeave={() => handleLeave(idx)}
-                onClick={() => handleMobileClick(idx)}
-                className={clsx(
-                  "flex flex-col flex-shrink-0 transition-all duration-500 snap-center",
-                  // Mobile: fixed width. Desktop: hover expand
-                  "w-[90vw] sm:w-[250px]",
-                  hovered === idx && !isMobile ? "sm:w-[300px]" : "",
-                  hovered !== null && hovered !== idx && !isMobile ? "opacity-40 scale-95" : "opacity-100"
-                )}
               >
                 <div className="h-[220px] sm:h-[350px] flex items-end">
                   <div
@@ -126,22 +117,39 @@ export default function ProjectDetails() {
                     )}
                   >
                     <video
+                      onMouseEnter={() => handleHover(idx)}
+                      onMouseLeave={() => handleLeave(idx)}
+                      onClick={() => handleMobileClick(idx)}
+                      className={clsx(
+                        "flex flex-col flex-shrink-0 transition-all duration-500 snap-center object-cover w-full h-full",
+                        // Mobile: fixed width. Desktop: hover expand
+                        "w-[90vw] sm:w-[250px]",
+                        hovered === idx && !isMobile ? "sm:w-[300px]" : "",
+                        hovered !== null && hovered !== idx && !isMobile ? "opacity-40 scale-95" : "opacity-100"
+                      )}
                       ref={(el) => {
                         videoRefs.current[idx] = el;
                       }}
-                      src={vid.src}
+                      src={vid}
                       muted
                       loop
                       playsInline
                       preload="metadata"
-                      className="object-cover w-full h-full"
                     />
                   </div>
                 </div>
 
                 <div className="flex justify-between text-xs sm:text-sm text-gray-500 mt-2 w-full px-1">
-                  <span>{vid.index}</span>
-                  <span>{vid.detail}</span>
+                  <span>{work?.title}</span>
+                  <div className="text-white/70 flex items-center gap-1">
+                    {
+                      work?.tags?.map((tag, idx) => (
+                        <span key={idx} className='group-hover:visible mt-1 text-xs bg-[#1b1b1b] tracking-wider px-2 rounded-xs'>
+                          {tag}
+                        </span>
+                      ))
+                    }
+                  </div>
                 </div>
               </div>
             ))}

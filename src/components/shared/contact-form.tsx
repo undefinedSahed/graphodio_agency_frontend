@@ -85,7 +85,7 @@ export default function ContactForm() {
     return (
         <div
             ref={contactFormRef}
-            className="fixed h-svh translate-x-full right-0 top-0 w-full lg:w-[40%] bg-black z-[999] backdrop-blur-2xl pt-20 px-5 lg:pl-20 lg:pr-5 contact_form invisible"
+            className="fixed py-10 lg:py-0 md:h-svh translate-x-full right-0 top-0 w-full lg:w-[40%] bg-black z-[999] backdrop-blur-2xl pt-20 px-5 lg:pl-20 lg:pr-5 contact_form invisible"
         >
             <h2 className="text-4xl lg:text-6xl font-bold text-white">Get In Touch</h2>
             <div
@@ -98,7 +98,7 @@ export default function ContactForm() {
             <Form {...contactForm}>
                 <form
                     onSubmit={contactForm.handleSubmit(onSubmit)}
-                    className="space-y-6 mt-10 bg-black/90"
+                    className="space-y-6 mt-10 bg-black"
                 >
                     <div className="flex flex-col lg:flex-row items-center gap-3 w-full justify-between">
                         <FormField
@@ -196,7 +196,7 @@ export default function ContactForm() {
                                     <Textarea
                                         placeholder="Tell me more about your project. Don't hesitate to include links if necessary."
                                         {...field}
-                                        className="bg-[#121212] border border-white/20 text-white placeholder:text-white/40 min-h-[150px] rounded-none"
+                                        className="border bg-[#121212] border-white/20 text-white placeholder:text-white/40 min-h-[150px] rounded-none"
                                     />
                                 </FormControl>
                                 <FormMessage />
@@ -204,7 +204,7 @@ export default function ContactForm() {
                         )}
                     />
 
-                    <div>
+                    <div className="">
                         <Button
                             variant="outline"
                             type="submit"

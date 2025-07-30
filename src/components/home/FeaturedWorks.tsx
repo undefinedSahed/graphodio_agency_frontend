@@ -112,7 +112,7 @@ export default function FeaturedWorks() {
   const featuredWorks = works.filter((work) => work.featured);
 
   return (
-    <section className="text-white px-4 lg:-mt-60 -mt-20" ref={secRef}>
+    <section className="text-white px-4 lg:-mt-64 -mt-20" ref={secRef}>
       <div className="text-center text-xs font-semibold uppercase tracking-wider opacity-60 title_feature pb-3">
         Featured Works
       </div>

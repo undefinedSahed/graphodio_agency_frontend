@@ -65,21 +65,21 @@ export default function WorksSection() {
         <section className="py-8 lg:py-20">
             <div className="container">
                 <div className="flex justify-between">
-                    <div className="max-w-md">
-                        <h3 className='lg:text-5xl leading-snug'>
+                    <div className="max-w-md mx-auto lg:mx-0">
+                        <h3 className='lg:text-5xl text-2xl leading-snug text-center lg:text-start'>
                             Here is a selection of our most popular works{" "}
-                            <span className="inline-flex justify-center items-center w-14 h-14 border-2 border-[#1b1b1b] rounded-full ml-3">
-                                <Building2 className="w-6 h-6 animate-bounce" />
+                            <span className="inline-flex justify-center items-center lg:w-14 lg:h-14 w-10 h-10 border-2 border-[#1b1b1b] rounded-full lg:ml-3">
+                                <Building2 className="lg:w-6 lg:h-6 w-4 h-4 animate-bounce" />
                             </span>
                         </h3>
                     </div>
-                    <div className="max-w-[150px] text-end items-end">
+                    <div className="max-w-[150px] text-end items-end hidden lg:block">
                         <p className="lg:text-xl text-white/70">Hover on names for a closer look</p>
                     </div>
                 </div>
 
                 <div
-                    className="flex flex-col justify-center mt-12"
+                    className="lg:flex flex-col justify-center mt-12 hidden"
                     ref={containerRef}
                 >
                     {aboutPageWorks.map((work, index) => (
@@ -127,6 +127,28 @@ export default function WorksSection() {
                                 </div>
                             </div>
                         </Link>
+                    ))}
+                </div>
+
+                {/* Small Device Services */}
+                <div className="lg:hidden space-y-10 lg:pt-12 pt-6">
+                    {aboutPageWorks.map((service, index) => (
+                        <div key={index}>
+                            <div
+                                className="grid grid-cols-3 gap-3"
+                            >
+                                {
+                                    service.videos.slice(0, 3).map((video, idx) => (
+                                        <video key={idx} autoPlay loop muted className="w-full h-full object-cover">
+                                            <source src={video} type="video/mp4" />
+                                        </video>
+                                    ))
+                                }
+                            </div>
+                            <Link href={`/portfolio/${slugify(service.title)}`}>
+                                <h3 className='text-2xl font-bold text-center pt-3'>{service.title}</h3>
+                            </Link>
+                        </div>
                     ))}
                 </div>
             </div>
