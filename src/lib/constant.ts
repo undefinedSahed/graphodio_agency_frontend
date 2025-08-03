@@ -116,7 +116,7 @@ export const works = [
         detailsDescription: "We redesigned the website and developed it with Webflow to modernize Eyden Burger’s online presence, making it responsive, user-friendly, and visually aligned with their brand identity.",
         thumbnail: "/images/work.jpg",
         tags: ["Graphics Design", "AI"],
-        videos: ["/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4"],
+        videos: ["/video/Amazon.mp4", "/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4"],
         featured: true
     },
     {
@@ -126,7 +126,7 @@ export const works = [
         detailsDescription: "Olivestocks needed a clean and intuitive dashboard for real-time data. We designed and developed a MERN-stack powered solution focused on speed and simplicity.",
         thumbnail: "/images/work.jpg",
         tags: ["Web Development", "MERN Stack"],
-        videos: ["/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4"],
+        videos: ["/video/website.mp4", "/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4"],
         featured: true
     },
     {
@@ -136,7 +136,7 @@ export const works = [
         detailsDescription: "We crafted a modern and elegant layout using Webflow, showcasing Royal House Interiors’ portfolio, services, and contact sections with a premium feel.",
         thumbnail: "/images/work.jpg",
         tags: ["Graphics", "SEO"],
-        videos: ["/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4"],
+        videos: ["/video/branding.mp4", "/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4"],
         featured: true
     },
     {
@@ -146,7 +146,7 @@ export const works = [
         detailsDescription: "This Webflow landing page highlights premium property listings with interactive filters, animations, and SEO-optimized content for Royal House Real Estate.",
         thumbnail: "/images/work.jpg",
         tags: ["Graphics", "SEO"],
-        videos: ["/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4"],
+        videos: ["/video/Socialmedia.mp4", "/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4"],
         featured: true
     },
     {
