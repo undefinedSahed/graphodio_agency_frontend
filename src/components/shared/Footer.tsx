@@ -90,8 +90,9 @@ const Footer: React.FC = () => {
                                 <span className="uppercase text-gray-500 tracking-widest mb-2">Sitemap</span>
                                 <Link href="/" className="hover:underline">Home</Link>
                                 <Link href="/portfolio" className="hover:underline">Works</Link>
-                                <p className="hover:underline cursor-pointer">Privacy Policy</p>
-                                <p className="hover:underline cursor-pointer">Terms and conditions</p>
+                                <Link href="/policy" className="hover:underline">Privacy Policy</Link>
+                                <Link href="/terms" className="hover:underline">Terms and Conditions</Link>
+
                                 <Link href="/about" className="hover:underline">About</Link>
                                 <p className="cursor-pointer hover:underline" onClick={() => setIsContactOpen(true)}>Contact</p>
                             </div>

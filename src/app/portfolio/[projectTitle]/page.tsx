@@ -5,27 +5,28 @@ import { useParams, usePathname } from "next/navigation";
 import gsap from "gsap";
 import clsx from "clsx";
 import ProjectDetailsPanel from "@/components/portfolio/ProjectDetailsPanel";
-import { works } from "@/lib/constant"
-
+import { works } from "@/lib/constant";
 
 export default function ProjectDetails() {
-
-  const pathname = usePathname()
+  const pathname = usePathname();
   const slug = pathname.split("/").filter(Boolean).pop();
-  const work = works.find(b => b.slug === decodeURIComponent(slug as string));
-
-  console.log(work)
+  const work = works.find((b) => b.slug === decodeURIComponent(slug as string));
 
   const [hovered, setHovered] = useState<number | null>(null);
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
   useParams();
   const titleRef = useRef<HTMLHeadingElement>(null);
   const projectRef = useRef<HTMLDivElement>(null);
-
-  const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    handleResize(); // initial
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   useEffect(() => {
@@ -42,7 +43,7 @@ export default function ProjectDetails() {
   }, []);
 
   const handleHover = (idx: number) => {
-    if (isMobile) return; // skip hover logic on mobile
+    if (isMobile) return;
     setHovered(idx);
     const vid = videoRefs.current[idx];
     if (vid) {
@@ -83,37 +84,34 @@ export default function ProjectDetails() {
         </div>
       </div>
 
-      <h1
-        ref={titleRef}
-        className="text-4xl sm:text-6xl font-extrabold leading-tight tracking-wide"
-      >
-        {
-          work?.title
-        }
+      <h1 ref={titleRef} className="text-4xl sm:text-6xl font-extrabold leading-tight tracking-wide">
+        {work?.title}
       </h1>
 
       <div className="mt-4 text-gray-400 max-w-xl px-2">
-        <p className="text-base sm:text-xl leading-relaxed">
-          {
-            work?.shortDescription
-          }
-        </p>
+        <p className="text-base sm:text-xl leading-relaxed">{work?.shortDescription}</p>
       </div>
 
       <div className="lg:mt-6 mt-3 w-full" ref={projectRef}>
         <ProjectDetailsPanel />
 
         <div className="relative w-full overflow-x-auto mt-7 lg:-mt-14">
-          <div className="inline-flex gap-4 sm:gap-6 px-2 items-start snap-x snap-mandatory">
+          <div className="inline-flex gap-4 sm:gap-6 px-2 items-start snap-x snap-mandatory overflow-x-auto scroll-smooth">
             {work?.videos?.map((vid, idx) => (
               <div
                 key={idx}
+                className="snap-center shrink-0"
+                style={{ width: isMobile ? "100vw" : "auto" }}
               >
                 <div className="h-[220px] sm:h-[350px] flex items-end">
                   <div
                     className={clsx(
                       "overflow-hidden bg-[#111] rounded-md transition-all duration-500 ease-in-out w-full",
-                      isMobile ? "h-[220px]" : hovered === idx ? "h-[350px]" : "h-[220px]"
+                      isMobile
+                        ? "h-[220px]"
+                        : hovered === idx
+                        ? "h-[350px]"
+                        : "h-[220px]"
                     )}
                   >
                     <video
@@ -121,11 +119,11 @@ export default function ProjectDetails() {
                       onMouseLeave={() => handleLeave(idx)}
                       onClick={() => handleMobileClick(idx)}
                       className={clsx(
-                        "flex flex-col flex-shrink-0 transition-all duration-500 snap-center object-cover w-full h-full",
-                        // Mobile: fixed width. Desktop: hover expand
-                        "w-[90vw] sm:w-[250px]",
-                        hovered === idx && !isMobile ? "sm:w-[300px]" : "",
-                        hovered !== null && hovered !== idx && !isMobile ? "opacity-40 scale-95" : "opacity-100"
+                        "transition-all duration-500 object-cover w-full h-full",
+                        hovered === idx && !isMobile ? "sm:w-[300px]" : "sm:w-[250px]",
+                        hovered !== null && hovered !== idx && !isMobile
+                          ? "opacity-40 scale-95"
+                          : "opacity-100"
                       )}
                       ref={(el) => {
                         videoRefs.current[idx] = el;
@@ -142,13 +140,14 @@ export default function ProjectDetails() {
                 <div className="flex justify-between text-xs sm:text-sm text-gray-500 mt-2 w-full px-1">
                   <span>{work?.title}</span>
                   <div className="text-white/70 flex items-center gap-1">
-                    {
-                      work?.tags?.map((tag, idx) => (
-                        <span key={idx} className='group-hover:visible mt-1 text-xs bg-[#1b1b1b] tracking-wider px-2 rounded-xs'>
-                          {tag}
-                        </span>
-                      ))
-                    }
+                    {work?.tags?.map((tag, idx) => (
+                      <span
+                        key={idx}
+                        className="group-hover:visible mt-1 text-xs bg-[#1b1b1b] tracking-wider px-2 rounded-xs"
+                      >
+                        {tag}
+                      </span>
+                    ))}
                   </div>
                 </div>
               </div>
