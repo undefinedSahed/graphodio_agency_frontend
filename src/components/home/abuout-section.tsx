@@ -53,13 +53,14 @@ export default function AboutSection() {
                         </span>
                     </span>
 
-                    <span className="animate-group">Strategy,</span>
+                    <span className="animate-group">Strategy</span>
 
                     <span className="animate-group flex items-center gap-2">
-                        <span>and</span>
-                        <span className="inline-flex justify-center items-center w-8 h-8 lg:w-14 lg:h-14 border-2 border-[#1b1b1b] rounded-full">
+                         <span className="inline-flex justify-center items-center w-8 h-8 lg:w-14 lg:h-14 border-2 border-[#1b1b1b] rounded-full">
                             <User className="w-3 h-3 lg:w-6 lg:h-6 animate-bounce" />
                         </span>
+                        <span>and</span>
+                       
                     </span>
 
                     <span className="animate-group flex items-center gap-2">
