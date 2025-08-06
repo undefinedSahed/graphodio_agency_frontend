@@ -117,7 +117,16 @@ export const works = [
         thumbnail: "/images/work.jpg",
         tags: ["A+ Content", "Product Listing"],
         videos: ["/video/Amazon.mp4", "/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4"],
-        featured: true
+        featured: true,
+        description: `Maximize your reach and sales on Amazon. From optimized product listings and enhanced A+ content to storefront branding and advertising strategies, we help you stand out in the world’s largest marketplace.`,
+        services: [ "E-COMMERCE STRATEGY",  "BRAND POSITIONING",  "PRODUCT LISTING OPTIMIZATION",  "MARKETPLACE MANAGEMENT",  "DATA-DRIVEN ADVERTISING",],
+        credits: {
+        textBeforeLink: "PROJECT BROUGHT TO LIFE BY THE TALENTED TEAM AT ",
+        linkText: "GRAPHODIO",
+        linkHref: "https://graphodio.com",
+        textAfterLink: ", WHERE CREATIVITY MEETS STRATEGY & EXECUTION."
+    },
+        year: "SEP 2024"
     },
     {
         title: "Website",
@@ -127,7 +136,17 @@ export const works = [
         thumbnail: "/images/work.jpg",
         tags: ["Web Development", "MERN Stack"],
         videos: ["/video/website.mp4", "/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4"],
-        featured: true
+        featured: true,
+        description: `Get a website built just for you—designed from the ground up to match your brand, goals, and audience. We create custom websites that are visually stunning, fully responsive, fast, and optimized for performance, ensuring a seamless user experience across all devices.`,
+        services: ["WIREFRAMES",  "UI DESIGN",  "RESPONSIVE DEVELOPMENT",  "WEBFLOW",  "ANIMATIONS (GSAP/CSS)",],
+        credits: {
+        textBeforeLink: "PROJECT BROUGHT TO LIFE BY THE TALENTED TEAM AT ",
+        linkText: "GRAPHODIO",
+        linkHref: "https://graphodio.com",
+        textAfterLink: ", WHERE CREATIVITY MEETS STRATEGY & EXECUTION."
+    },
+        year: "SEP 2024"
+  
     },
     {
         title: "Branding",
@@ -136,8 +155,17 @@ export const works = [
         detailsDescription: "We crafted a modern and elegant layout using Webflow, showcasing Royal House Interiors’ portfolio, services, and contact sections with a premium feel.",
         thumbnail: "/images/work.jpg",
         tags: ["Graphics", "SEO"],
-        videos: ["/video/branding.mp4", "/video/branding2.mp4", "/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4"],
-        featured: true
+        videos: ["/video/branding.mp4", "/video/branding2.mp4", "/video/Branding3.mp4", "/video/branding4.mp4", "/videos/video.mp4"],
+        featured: true,
+        description: `We shape bold, strategic brand identities that define who you are, connect emotionally, and stand out across every touchpoint`,
+        services: ["BRAND STRATEGY",  "LOGO DESIGN",  "VISUAL IDENTITY",  "COLOR & TYPOGRAPHY SYSTEM",  "BRAND GUIDELINES",],
+        credits: {
+        textBeforeLink: "PROJECT BROUGHT TO LIFE BY THE TALENTED TEAM AT ",
+        linkText: "GRAPHODIO",
+        linkHref: "https://graphodio.com",
+        textAfterLink: ", WHERE CREATIVITY MEETS STRATEGY & EXECUTION."
+    },
+        year: "SEP 2024"
     },
     {
         title: "Social Media",
@@ -146,8 +174,18 @@ export const works = [
         detailsDescription: "This Webflow landing page highlights premium property listings with interactive filters, animations, and SEO-optimized content for Royal House Real Estate.",
         thumbnail: "/images/work.jpg",
         tags: ["Graphics", "SEO"],
-        videos: ["/video/Socialmedia.mp4", "/video/socialmedia.mp4", "/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4"],
-        featured: true
+        videos: ["/video/Socialmedia.mp4", "/video/socialmedia2.mp4", "/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4"],
+        featured: true,
+        description: `We grow your brand online through strategic content, targeted campaigns, and consistent engagement turning followers into loyal communities.`,
+        services: [ "CONTENT STRATEGY",  "VISUAL DESIGN",  "COPYWRITING",  "SCHEDULING & MANAGEMENT",  "PERFORMANCE TRACKING",],
+        credits: {
+        textBeforeLink: "PROJECT BROUGHT TO LIFE BY THE TALENTED TEAM AT ",
+        linkText: "GRAPHODIO",
+        linkHref: "https://graphodio.com",
+        textAfterLink: ", WHERE CREATIVITY MEETS STRATEGY & EXECUTION."
+},
+
+        year: "SEP 2024"
     },
     {
         title: "Royal House Rentals",

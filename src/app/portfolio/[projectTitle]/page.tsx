@@ -93,7 +93,8 @@ export default function ProjectDetails() {
       </div>
 
       <div className="lg:mt-6 mt-3 w-full" ref={projectRef}>
-        <ProjectDetailsPanel />
+        {work && <ProjectDetailsPanel slug={work.slug} />}
+
 
         <div className="relative w-full overflow-x-auto mt-7 lg:-mt-14">
           <div className="inline-flex gap-4 sm:gap-6 px-2 items-start snap-x snap-mandatory overflow-x-auto scroll-smooth">
