@@ -16,7 +16,7 @@ export const services = [
         videos: [
             "/video/Socialmedia.mp4",
             "/video/Amazon.mp4",
-            "/videos/video.mp4"
+            "/videos/socialmedia2.mp4"
         ]
     },
     {
@@ -37,7 +37,7 @@ export const services = [
         tags: ["Store", "Inventory Management"],
         videos: [
             "/video/branding.mp4",
-            "/videos/video.mp4",
+            "/video/branding2.mp4",
             "/videos/video.mp4"
         ]
     },
@@ -110,44 +110,77 @@ export const testimonials = [
 // Works
 export const works = [
     {
-        title: "Eyden Burger",
-        slug: "eyden-burger",
-        shortDescription: "Modern UI redesign and branding for a fast food chain.",
-        detailsDescription: "We redesigned the website and developed it with Webflow to modernize Eyden Burger’s online presence, making it responsive, user-friendly, and visually aligned with their brand identity.",
+        title: "Amazon",
+        slug: "amazon",
+        shortDescription: "We build branded Amazon storefronts with custom visuals, A+ content, and cohesive design turning product pages into powerful brand experiences that earn trust and drive sales.",
+        detailsDescription: "Maximize your reach and sales on Amazon. From optimized product listings and enhanced A+ content to storefront branding and advertising strategies, we help you stand out in the world’s largest marketplace.",
         thumbnail: "/images/work.jpg",
-        tags: ["Graphics Design", "AI"],
-        videos: ["/video/Amazon.mp4", "/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4"],
-        featured: true
+        tags: ["A+ Content", "Product Listing"],
+        videos: ["/video/Amazon.mp4", "/video/amazon2.mp4", "/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4"],
+        featured: true,
+        description: `Maximize your reach and sales on Amazon. From optimized product listings and enhanced A+ content to storefront branding and advertising strategies, we help you stand out in the world’s largest marketplace.`,
+        services: [ "E-COMMERCE STRATEGY",  "BRAND POSITIONING",  "PRODUCT LISTING OPTIMIZATION",  "MARKETPLACE MANAGEMENT",  "DATA-DRIVEN ADVERTISING",],
+        credits: {
+        textBeforeLink: "PROJECT BROUGHT TO LIFE BY THE TALENTED TEAM AT ",
+        linkText: "GRAPHODIO",
+        linkHref: "https://graphodio.com",
+        textAfterLink: ", WHERE CREATIVITY MEETS STRATEGY & EXECUTION."
+    },
+        year: "SEP 2024"
     },
     {
-        title: "Olivestocks",
-        slug: "olivestocks",
-        shortDescription: "Financial dashboard and user interface for a stock trading platform.",
-        detailsDescription: "Olivestocks needed a clean and intuitive dashboard for real-time data. We designed and developed a MERN-stack powered solution focused on speed and simplicity.",
+        title: "Website",
+        slug: "website",
+        shortDescription: "We design and build responsive, SEO-optimized websites that are fast, user-focused, and tailored to your brand. Whether it's a sleek portfolio, a custom corporate site, or a powerful e-commerce platform, we turn your vision into a high-performing digital experience.",
+        detailsDescription: "Get a website built just for you—designed from the ground up to match your brand, goals, and audience. We create custom websites that are visually stunning, fully responsive, fast, and optimized for performance, ensuring a seamless user experience across all devices.",
         thumbnail: "/images/work.jpg",
         tags: ["Web Development", "MERN Stack"],
-        videos: ["/video/website.mp4", "/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4"],
-        featured: true
-    },
+        videos: ["/video/website.mp4", "/video/website3.mp4", "/video/website2.mp4", "/videos/video.mp4", "/videos/video.mp4"],
+        featured: true,
+        description: `Get a website built just for you—designed from the ground up to match your brand, goals, and audience. We create custom websites that are visually stunning, fully responsive, fast, and optimized for performance, ensuring a seamless user experience across all devices.`,
+        services: ["WIREFRAMES",  "UI DESIGN",  "RESPONSIVE DEVELOPMENT",  "WEBFLOW",  "ANIMATIONS (GSAP/CSS)",],
+        credits: {
+        textBeforeLink: "PROJECT BROUGHT TO LIFE BY THE TALENTED TEAM AT ",
+        linkText: "GRAPHODIO",
+        linkHref: "https://graphodio.com",
+        textAfterLink: ", WHERE CREATIVITY MEETS STRATEGY & EXECUTION."},
+        year: "SEP 2024"},
     {
-        title: "Royal House Interiors",
-        slug: "royal-house-interiors",
-        shortDescription: "Interior design studio branding website.",
+        title: "Branding",
+        slug: "branding",
+        shortDescription: "We build impactful brand identities with custom logos, visual systems, and messaging strategies that tell your story, spark connection, and leave a lasting impression across every touchpoint.",
         detailsDescription: "We crafted a modern and elegant layout using Webflow, showcasing Royal House Interiors’ portfolio, services, and contact sections with a premium feel.",
         thumbnail: "/images/work.jpg",
         tags: ["Graphics", "SEO"],
-        videos: ["/video/branding.mp4", "/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4"],
-        featured: true
-    },
+        videos: ["/video/branding.mp4", "/video/branding2.mp4", "/video/Branding3.mp4", "/video/branding4.mp4", "/videos/video.mp4"],
+        featured: true,
+        description: `We shape bold, strategic brand identities that define who you are, connect emotionally, and stand out across every touchpoint`,
+        services: ["BRAND STRATEGY",  "LOGO DESIGN",  "VISUAL IDENTITY",  "COLOR & TYPOGRAPHY SYSTEM",  "BRAND GUIDELINES",],
+        credits: {
+        textBeforeLink: "PROJECT BROUGHT TO LIFE BY THE TALENTED TEAM AT ",
+        linkText: "GRAPHODIO",
+        linkHref: "https://graphodio.com",
+        textAfterLink: ", WHERE CREATIVITY MEETS STRATEGY & EXECUTION."},
+        year: "SEP 2024"},
     {
-        title: "Royal House Real Estate",
-        slug: "royal-house-real-state",
-        shortDescription: "Landing page for luxury real estate listings.",
+        title: "Social Media",
+        slug: "social-media",
+        shortDescription: "We spark conversations, foster loyalty, and build active communities around your brand on every platform.",
         detailsDescription: "This Webflow landing page highlights premium property listings with interactive filters, animations, and SEO-optimized content for Royal House Real Estate.",
         thumbnail: "/images/work.jpg",
         tags: ["Graphics", "SEO"],
-        videos: ["/video/Socialmedia.mp4", "/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4"],
-        featured: true
+        videos: ["/video/Socialmedia.mp4", "/video/socialmedia2.mp4", "/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4"],
+        featured: true,
+        description: `We grow your brand online through strategic content, targeted campaigns, and consistent engagement turning followers into loyal communities.`,
+        services: [ "CONTENT STRATEGY",  "VISUAL DESIGN",  "COPYWRITING",  "SCHEDULING & MANAGEMENT",  "PERFORMANCE TRACKING",],
+        credits: {
+        textBeforeLink: "PROJECT BROUGHT TO LIFE BY THE TALENTED TEAM AT ",
+        linkText: "GRAPHODIO",
+        linkHref: "https://graphodio.com",
+        textAfterLink: ", WHERE CREATIVITY MEETS STRATEGY & EXECUTION."
+},
+
+        year: "SEP 2024"
     },
     {
         title: "Royal House Rentals",
@@ -157,7 +190,7 @@ export const works = [
         thumbnail: "/images/work.jpg",
         tags: ["Graphics", "SEO"],
         videos: ["/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4"],
-        featured: true
+         
     },
     {
         title: "Royal House Studio",
@@ -174,7 +207,7 @@ export const works = [
         slug: "royal-house-hotel",
         shortDescription: "Hospitality website with video background and booking section.",
         detailsDescription: "This site focuses on visual storytelling, using full-width video, sleek animations, and an integrated booking inquiry form to represent Royal House Hotel.",
-        thumbnail: "/images/work.jpg",
+        thumbnail: "/images/website portfolio-01.jpg",
         tags: ["Graphics", "SEO"],
         videos: ["/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4"],
         home: true

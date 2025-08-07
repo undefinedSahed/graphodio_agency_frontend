@@ -123,7 +123,7 @@ export default function FeaturedWorks() {
           <div
             className="grid"
             style={{
-              gridTemplateColumns: "repeat(6, 251px)",
+              gridTemplateColumns: "repeat(5, 251px)",
               justifyContent: "center",
               gap: "2.5rem",
               height: maxCardHeight,

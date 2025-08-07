@@ -1,10 +1,19 @@
 "use client";
 
 import { useState, useRef } from "react";
+import { works } from "@/lib/constant"; // adjust path as needed
 
-export default function ProjectDetailsPanel() {
+interface Props {
+  slug: string;
+}
+
+export default function ProjectDetailsPanel({ slug }: Props) {
   const [isOpen, setIsOpen] = useState(false);
   const panelRef = useRef<HTMLDivElement>(null);
+
+  const project = works.find((work) => work.slug === slug);
+
+  if (!project) return null;
 
   return (
     <>
@@ -24,18 +33,10 @@ export default function ProjectDetailsPanel() {
         >
           {/* Left Side - Text Block */}
           <div className="w-full md:w-1/3 max-w-md text-base md:text-lg leading-relaxed font-normal space-y-6 mb-10 md:mb-0">
-            <p>
-              For Studio Fugu&apos;s launch mid-2024 we worked on their website with
-              Studio Elias. I was in charge of the UI design & Webflow
-              development. The challenge was to make the content engaging for
-              their audience while bring their brand universe to life through a
-              distinctive visual style. Every interaction was carefully
-              considered to feel immersive, human, and memorable.
-            </p>
+            <p>{project.description}</p>
 
             <button className="flex items-center gap-2 px-4 py-2 border border-white rounded-sm text-sm font-mono tracking-widest hover:bg-white hover:text-black transition">
-              <span className="block w-2 h-2 rounded-full bg-white"></span> SEE
-              LIVE
+              <span className="block w-2 h-2 rounded-full bg-white"></span> SEE LIVE
             </button>
           </div>
 
@@ -49,37 +50,41 @@ export default function ProjectDetailsPanel() {
 
           {/* Right Side - Info */}
           <div className="w-full md:w-1/3 max-w-xs text-xs font-mono tracking-widest space-y-10">
-            <div>
-              <div className="text-gray-400 mb-2">FULL LIST OF SERVICES</div>
-              <ul className="space-y-1">
-                <li>WIREFRAMES</li>
-                <li>UI DESIGN</li>
-                <li>UI ANIMATION</li>
-                <li>WEBFLOW</li>
-                <li>GSAP CSS</li>
-              </ul>
-            </div>
+            {project.services && (
+              <div>
+                <div className="text-gray-400 mb-2">FULL LIST OF SERVICES</div>
+                <ul className="space-y-1">
+                  {project.services.map((service) => (
+                    <li key={service}>{service}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
 
-            <div>
-              <div className="text-gray-400 mb-2">CREDITS</div>
-              <p>
-                PROJECT MADE IN COLLABORATION WITH THE GREAT PEOPLE OF{" "}
-                <a
-                  href="https://studioelias.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="underline"
-                >
-                  STUDIO ELIAS
-                </a>{" "}
-                WHO HANDLES ARTISTIC DIRECTION & BRANDING
-              </p>
-            </div>
+            {project.credits && (
+              <div>
+                <div className="text-gray-400 mb-2">CREDITS</div>
+                <p>
+                  {project.credits.textBeforeLink}
+                  <a
+                    href={project.credits.linkHref}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline"
+                  >
+                    {project.credits.linkText}
+                  </a>
+                  {project.credits.textAfterLink}
+                </p>
+              </div>
+            )}
 
-            <div>
-              <div className="text-gray-400 mb-2">YEAR</div>
-              <p>SEP 2024</p>
-            </div>
+            {project.year && (
+              <div>
+                <div className="text-gray-400 mb-2">YEAR</div>
+                <p>{project.year}</p>
+              </div>
+            )}
           </div>
         </div>
       )}
