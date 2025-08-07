@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import { useEffect, useRef, useState } from "react";
@@ -55,9 +54,8 @@ export default function FeaturedWorks() {
     const video = card?.querySelector("video") as HTMLVideoElement;
 
     if (video) {
-      gsap.to(video, { opacity: 1, duration: 0.3, ease: "power2.out" }); // keep visible
-      video.pause(); // just pause
-      // video.currentTime = 0; ←❌ remove this line
+      gsap.to(video, { opacity: 1, duration: 0.3, ease: "power2.out" });
+      video.pause();
     }
   };
 
