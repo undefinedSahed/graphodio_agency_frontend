@@ -116,7 +116,7 @@ export const works = [
         detailsDescription: "Maximize your reach and sales on Amazon. From optimized product listings and enhanced A+ content to storefront branding and advertising strategies, we help you stand out in the world’s largest marketplace.",
         thumbnail: "/images/work.jpg",
         tags: ["A+ Content", "Product Listing"],
-        videos: ["/video/Amazon.mp4", "/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4"],
+        videos: ["/video/Amazon.mp4", "/video/amazon2.mp4", "/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4"],
         featured: true,
         description: `Maximize your reach and sales on Amazon. From optimized product listings and enhanced A+ content to storefront branding and advertising strategies, we help you stand out in the world’s largest marketplace.`,
         services: [ "E-COMMERCE STRATEGY",  "BRAND POSITIONING",  "PRODUCT LISTING OPTIMIZATION",  "MARKETPLACE MANAGEMENT",  "DATA-DRIVEN ADVERTISING",],
@@ -135,7 +135,7 @@ export const works = [
         detailsDescription: "Get a website built just for you—designed from the ground up to match your brand, goals, and audience. We create custom websites that are visually stunning, fully responsive, fast, and optimized for performance, ensuring a seamless user experience across all devices.",
         thumbnail: "/images/work.jpg",
         tags: ["Web Development", "MERN Stack"],
-        videos: ["/video/website.mp4", "/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4"],
+        videos: ["/video/website.mp4", "/video/website3.mp4", "/video/website2.mp4", "/videos/video.mp4", "/videos/video.mp4"],
         featured: true,
         description: `Get a website built just for you—designed from the ground up to match your brand, goals, and audience. We create custom websites that are visually stunning, fully responsive, fast, and optimized for performance, ensuring a seamless user experience across all devices.`,
         services: ["WIREFRAMES",  "UI DESIGN",  "RESPONSIVE DEVELOPMENT",  "WEBFLOW",  "ANIMATIONS (GSAP/CSS)",],
@@ -143,11 +143,8 @@ export const works = [
         textBeforeLink: "PROJECT BROUGHT TO LIFE BY THE TALENTED TEAM AT ",
         linkText: "GRAPHODIO",
         linkHref: "https://graphodio.com",
-        textAfterLink: ", WHERE CREATIVITY MEETS STRATEGY & EXECUTION."
-    },
-        year: "SEP 2024"
-  
-    },
+        textAfterLink: ", WHERE CREATIVITY MEETS STRATEGY & EXECUTION."},
+        year: "SEP 2024"},
     {
         title: "Branding",
         slug: "branding",
@@ -163,10 +160,8 @@ export const works = [
         textBeforeLink: "PROJECT BROUGHT TO LIFE BY THE TALENTED TEAM AT ",
         linkText: "GRAPHODIO",
         linkHref: "https://graphodio.com",
-        textAfterLink: ", WHERE CREATIVITY MEETS STRATEGY & EXECUTION."
-    },
-        year: "SEP 2024"
-    },
+        textAfterLink: ", WHERE CREATIVITY MEETS STRATEGY & EXECUTION."},
+        year: "SEP 2024"},
     {
         title: "Social Media",
         slug: "social-media",
@@ -212,7 +207,7 @@ export const works = [
         slug: "royal-house-hotel",
         shortDescription: "Hospitality website with video background and booking section.",
         detailsDescription: "This site focuses on visual storytelling, using full-width video, sleek animations, and an integrated booking inquiry form to represent Royal House Hotel.",
-        thumbnail: "/images/work.jpg",
+        thumbnail: "/images/website portfolio-01.jpg",
         tags: ["Graphics", "SEO"],
         videos: ["/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4", "/videos/video.mp4"],
         home: true
