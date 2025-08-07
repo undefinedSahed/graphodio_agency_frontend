@@ -6,11 +6,13 @@ import gsap from "gsap";
 import clsx from "clsx";
 import ProjectDetailsPanel from "@/components/portfolio/ProjectDetailsPanel";
 import { works } from "@/lib/constant";
+import { PlayCircle } from "lucide-react";
 
 export default function ProjectDetails() {
   const pathname = usePathname();
   const slug = pathname.split("/").filter(Boolean).pop();
   const work = works.find((b) => b.slug === decodeURIComponent(slug as string));
+  const [activeVideoIndex, setActiveVideoIndex] = useState<number | null>(null);
 
   const [hovered, setHovered] = useState<number | null>(null);
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
@@ -65,6 +67,7 @@ export default function ProjectDetails() {
   };
 
   const handleMobileClick = (idx: number) => {
+    setActiveVideoIndex(idx);
     if (!isMobile) return;
     const vid = videoRefs.current[idx];
     if (vid) {
@@ -107,14 +110,20 @@ export default function ProjectDetails() {
                 <div className="h-[220px] sm:h-[350px] flex items-end">
                   <div
                     className={clsx(
-                      "overflow-hidden bg-[#111] rounded-md transition-all duration-500 ease-in-out w-full",
+                      "overflow-hidden bg-[#111] rounded-md transition-all duration-500 ease-in-out w-full relative group",
                       isMobile
                         ? "h-[220px]"
                         : hovered === idx
-                        ? "h-[350px]"
-                        : "h-[220px]"
+                          ? "h-[350px]"
+                          : "h-[220px]"
                     )}
                   >
+                    {activeVideoIndex !== idx && (
+                      <div onClick={() => handleMobileClick(idx)} className="absolute bg-black rounded-full p-3 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+                        <PlayCircle className="w-8 h-8" />
+                      </div>
+                    )}
+
                     <video
                       onMouseEnter={() => handleHover(idx)}
                       onMouseLeave={() => handleLeave(idx)}

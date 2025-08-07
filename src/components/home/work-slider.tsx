@@ -14,19 +14,6 @@ export default function StackedSlider() {
     const containerRef = useRef<HTMLDivElement>(null);
     const [current, setCurrent] = useState(0);
 
-    useEffect(() => {
-        const cards = gsap.utils.toArray(".slide") as HTMLDivElement[];
-
-        // Stack from top to bottom
-        cards.forEach((card, i) => {
-            gsap.set(card, {
-                zIndex: slides.length - i,
-                y: -i * 20,
-                scale: 1 - i * 0.02,
-            });
-        });
-    }, []);
-
     const moveNext = () => {
         const cards = gsap.utils.toArray(".slide") as HTMLDivElement[];
         if (current < slides.length - 1) {
@@ -56,11 +43,24 @@ export default function StackedSlider() {
 
     const slides = works.filter((work) => work.home)
 
+    useEffect(() => {
+        const cards = gsap.utils.toArray(".slide") as HTMLDivElement[];
+
+        // Stack from top to bottom
+        cards.forEach((card, i) => {
+            gsap.set(card, {
+                zIndex: slides.length - i,
+                y: -i * 20,
+                scale: 1 - i * 0.02,
+            });
+        });
+    }, [slides.length]);
+
     return (
         <section className="py-8 lg:py-20">
             <div className="container">
-                <div className="pb-10 lg:max-w-2xl mx-auto">
-                    <p className="lg:text-5xl text-xl leading-relaxed lg:leading-snug mx-auto flex flex-wrap justify-center gap-3">
+                <div className="pb-10 lg:max-w-7xl mx-auto">
+                    <p className="lg:text-5xl text-xl leading-5 text-justify lg:leading-snug mx-auto flex flex-wrap justify-center gap-3">
                         <span className="animate-group">WE</span>
                         <span className="animate-group">PARTNER</span>
                         <span className="animate-group">WITH</span>
@@ -96,7 +96,7 @@ export default function StackedSlider() {
                         <span className="animate-group">CAPTIVATE</span>
                         <span className="animate-group">AND</span>
                         <span className="animate-group">CONVERT.</span>
-                      
+
                     </p>
                     <div className="animate-group mt-8 flex justify-center">
                         <Link href="/portfolio">

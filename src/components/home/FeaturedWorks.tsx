@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import { useEffect, useRef, useState } from "react";
@@ -9,6 +8,9 @@ import { works } from "@/lib/constant";
 import { useGSAP } from "@gsap/react";
 import Link from "next/link";
 import { slugify } from "@/lib/utils";
+import { Navigation } from "swiper/modules";
+import "swiper/css/navigation";
+
 
 export default function FeaturedWorks() {
   const cardsRef = useRef<(HTMLAnchorElement | null)[]>([]);
@@ -55,11 +57,11 @@ export default function FeaturedWorks() {
     const video = card?.querySelector("video") as HTMLVideoElement;
 
     if (video) {
-      gsap.to(video, { opacity: 0, duration: 0.3, ease: "power2.out" });
+      gsap.to(video, { opacity: 1, duration: 0.3, ease: "power2.out" });
       video.pause();
-      video.currentTime = 0;
     }
   };
+
 
   useGSAP(
     (context) => {
@@ -153,22 +155,18 @@ export default function FeaturedWorks() {
                   style={{ transformOrigin: "bottom center", willChange: "transform" }}
                 >
                   <div className="relative w-full">
-                    <img
-                      src={work.thumbnail}
-                      alt={work.title}
-                      loading="lazy"
-                      className="w-full aspect-square object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
                     <video
                       muted
                       loop
                       playsInline
                       preload="metadata"
-                      className="absolute top-0 left-0 w-full aspect-square object-cover opacity-0 pointer-events-none"
+                      className="w-full aspect-square object-cover pointer-events-none transition-opacity duration-300"
+                      style={{ opacity: 1 }}
                     >
                       <source src={work.videos[0]} type="video/mp4" />
                     </video>
                   </div>
+
                   <div className="mt-4 flex justify-between items-center gap-2 text-xs uppercase tracking-wider">
                     <span className="font-semibold truncate">{work.title}</span>
                     {work.tags.map((tag, idx) => (
@@ -186,7 +184,16 @@ export default function FeaturedWorks() {
 
       {/* Mobile Swiper */}
       <div className="md:hidden">
-        <Swiper slidesPerView={1} spaceBetween={16} className="px-4">
+        <Swiper
+          modules={[Navigation]}
+          navigation={{
+            nextEl: `.swiper-button-next`,
+            prevEl: `.swiper-button-prev`,
+          }}
+          slidesPerView={1}
+          spaceBetween={16}
+          className="px-4 relative"
+        >
           {featuredWorks.map((work, idx) => (
             <SwiperSlide key={idx}>
               <Link
@@ -194,23 +201,18 @@ export default function FeaturedWorks() {
                 rel="noopener noreferrer"
                 className="relative group overflow-hidden w-full cursor-pointer rounded-lg block"
               >
-                <div className="relative w-full aspect-[4/5]">
-                  <img
-                    src={work.thumbnail}
-                    alt={work.title}
-                    loading="lazy"
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                  <video
-                    muted
-                    loop
-                    playsInline
-                    preload="metadata"
-                    className="absolute top-0 left-0 w-full h-full object-cover opacity-0 pointer-events-none"
-                  >
-                    <source src={work.videos[0]} type="video/mp4" />
-                  </video>
-                </div>
+                <video
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="auto"
+                  className="w-full h-full object-cover pointer-events-none transition-opacity duration-300"
+                  style={{ opacity: 1 }}
+                >
+                  <source src={work.videos[0]} type="video/mp4" />
+                </video>
+
                 <div className="mt-4">
                   <div className="text-xs font-semibold uppercase tracking-wider">
                     {work.title}
@@ -224,6 +226,10 @@ export default function FeaturedWorks() {
               </Link>
             </SwiperSlide>
           ))}
+
+          {/* Navigation Buttons */}
+          <div className="swiper-button-prev text-white absolute left-2 top-1/2 transform -translate-y-1/2 z-10" />
+          <div className="swiper-button-next text-white absolute right-2 top-1/2 transform -translate-y-1/2 z-10" />
         </Swiper>
       </div>
     </section>
