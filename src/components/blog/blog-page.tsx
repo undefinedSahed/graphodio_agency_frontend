@@ -33,8 +33,8 @@ export default function BlogPage() {
                       <ShareButton title={blog.slug} url={`http://localhost:3000/blog/${blog.slug}`} />
                     </div>
                   </div>
-                  <Link href={`/blog/${slugify(blog.slug)}`}>
-                    <div className="col-span-1 order-1 lg:order-2 flex-1 lg:absolute top-1/2 right-0 lg:-translate-y-1/2 max-w-md">
+                  <div className="col-span-1 order-1 lg:order-2 flex-1 lg:absolute top-1/2 right-0 lg:-translate-y-1/2 max-w-md">
+                    <Link href={`/blog/${slugify(blog.slug)}`}>
                       <Image
                         src={blog.thumbnail}
                         alt={blog.slug}
@@ -42,8 +42,8 @@ export default function BlogPage() {
                         width={1000}
                         className="w-full aspect-video object-cover rounded-md lg:scale-0 lg:group-hover:scale-100 duration-500"
                       />
-                    </div>
-                  </Link>
+                    </Link>
+                  </div>
                 </div>
               </li>
             ))
