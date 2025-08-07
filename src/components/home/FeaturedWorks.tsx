@@ -55,11 +55,12 @@ export default function FeaturedWorks() {
     const video = card?.querySelector("video") as HTMLVideoElement;
 
     if (video) {
-      gsap.to(video, { opacity: 0, duration: 0.3, ease: "power2.out" });
-      video.pause();
-      video.currentTime = 0;
+      gsap.to(video, { opacity: 1, duration: 0.3, ease: "power2.out" }); // keep visible
+      video.pause(); // just pause
+      // video.currentTime = 0; ←❌ remove this line
     }
   };
+
 
   useGSAP(
     (context) => {
@@ -153,22 +154,18 @@ export default function FeaturedWorks() {
                   style={{ transformOrigin: "bottom center", willChange: "transform" }}
                 >
                   <div className="relative w-full">
-                    <img
-                      src={work.thumbnail}
-                      alt={work.title}
-                      loading="lazy"
-                      className="w-full aspect-square object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
                     <video
                       muted
                       loop
                       playsInline
                       preload="metadata"
-                      className="absolute top-0 left-0 w-full aspect-square object-cover opacity-0 pointer-events-none"
+                      className="w-full aspect-square object-cover pointer-events-none transition-opacity duration-300"
+                      style={{ opacity: 1 }}
                     >
                       <source src={work.videos[0]} type="video/mp4" />
                     </video>
                   </div>
+
                   <div className="mt-4 flex justify-between items-center gap-2 text-xs uppercase tracking-wider">
                     <span className="font-semibold truncate">{work.title}</span>
                     {work.tags.map((tag, idx) => (
@@ -194,23 +191,17 @@ export default function FeaturedWorks() {
                 rel="noopener noreferrer"
                 className="relative group overflow-hidden w-full cursor-pointer rounded-lg block"
               >
-                <div className="relative w-full aspect-[4/5]">
-                  <img
-                    src={work.thumbnail}
-                    alt={work.title}
-                    loading="lazy"
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                  <video
-                    muted
-                    loop
-                    playsInline
-                    preload="metadata"
-                    className="absolute top-0 left-0 w-full h-full object-cover opacity-0 pointer-events-none"
-                  >
-                    <source src={work.videos[0]} type="video/mp4" />
-                  </video>
-                </div>
+                <video
+                  muted
+                  loop
+                  playsInline
+                  preload="auto"
+                  className="w-full h-full object-cover pointer-events-none transition-opacity duration-300"
+                  style={{ opacity: 1 }}
+                >
+                  <source src={work.videos[0]} type="video/mp4" />
+                </video>
+
                 <div className="mt-4">
                   <div className="text-xs font-semibold uppercase tracking-wider">
                     {work.title}
