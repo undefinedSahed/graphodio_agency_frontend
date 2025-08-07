@@ -8,6 +8,9 @@ import { works } from "@/lib/constant";
 import { useGSAP } from "@gsap/react";
 import Link from "next/link";
 import { slugify } from "@/lib/utils";
+import { Navigation } from "swiper/modules";
+import "swiper/css/navigation";
+
 
 export default function FeaturedWorks() {
   const cardsRef = useRef<(HTMLAnchorElement | null)[]>([]);
@@ -181,7 +184,16 @@ export default function FeaturedWorks() {
 
       {/* Mobile Swiper */}
       <div className="md:hidden">
-        <Swiper slidesPerView={1} spaceBetween={16} className="px-4">
+        <Swiper
+          modules={[Navigation]}
+          navigation={{
+            nextEl: `.swiper-button-next`,
+            prevEl: `.swiper-button-prev`,
+          }}
+          slidesPerView={1}
+          spaceBetween={16}
+          className="px-4 relative"
+        >
           {featuredWorks.map((work, idx) => (
             <SwiperSlide key={idx}>
               <Link
@@ -190,6 +202,7 @@ export default function FeaturedWorks() {
                 className="relative group overflow-hidden w-full cursor-pointer rounded-lg block"
               >
                 <video
+                  autoPlay
                   muted
                   loop
                   playsInline
@@ -213,6 +226,10 @@ export default function FeaturedWorks() {
               </Link>
             </SwiperSlide>
           ))}
+
+          {/* Navigation Buttons */}
+          <div className="swiper-button-prev text-white absolute left-2 top-1/2 transform -translate-y-1/2 z-10" />
+          <div className="swiper-button-next text-white absolute right-2 top-1/2 transform -translate-y-1/2 z-10" />
         </Swiper>
       </div>
     </section>
