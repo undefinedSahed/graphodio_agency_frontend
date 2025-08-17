@@ -182,19 +182,10 @@ export const works = [
 
         year: "SEP 2024"
     },
+   
     {
-        title: "Royal House Rentals",
-        slug: "royal-house-rentals",
-        shortDescription: "Responsive platform for short-term property rentals.",
-        detailsDescription: "We developed a responsive rental platform with filters, video tours, and a sleek UI that lets users easily explore Royal House properties.",
-        thumbnail: "/images/work.jpg",
-        tags: ["Graphics", "SEO"],
-        videos: ["https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4"],
-         
-    },
-    {
-        title: "Royal House Studio",
-        slug: "royal-house-studio",
+        title: "Digital Marketing",
+        slug: "digital-marketing",
         shortDescription: "Creative portfolio website for a design studio.",
         detailsDescription: "Royal House Studio wanted a clean and minimalistic design to display their case studies. We delivered a fast-loading, scroll-based portfolio in Webflow.",
         thumbnail: "/images/work.jpg",
@@ -203,43 +194,43 @@ export const works = [
         featured: true
     },
     {
-        title: "Royal House Hotel",
-        slug: "royal-house-hotel",
-        shortDescription: "Hospitality website with video background and booking section.",
-        detailsDescription: "This site focuses on visual storytelling, using full-width video, sleek animations, and an integrated booking inquiry form to represent Royal House Hotel.",
-        thumbnail: "/images/website portfolio-01.jpg",
-        tags: ["Graphics", "SEO"],
+        title: "Amazon",
+        slug: "amazon",
+        shortDescription: "We build branded Amazon storefronts with custom visuals, A+ content, and cohesive design turning product pages into powerful brand experiences that earn trust and drive sales.",
+        detailsDescription: "Maximize your reach and sales on Amazon. From optimized product listings and enhanced A+ content to storefront branding and advertising strategies, we help you stand out in the world’s largest marketplace.",
+        thumbnail: "/images/webimages-02.jpg",
+        tags: ["A+ Content", "Product Listing"],
         videos: ["https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4"],
         home: true
     },
     {
-        title: "Royal House Events",
-        slug: "royal-house-events",
-        shortDescription: "Event planning agency showcase site.",
-        detailsDescription: "We developed a modern, scroll-animated site for Royal House Events to display past events and client testimonials, optimized for mobile.",
-        thumbnail: "/images/work.jpg",
-        tags: ["Graphics", "SEO"],
-        videos: ["https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4"],
+        title: "Website",
+        slug: "website",
+        shortDescription: "We design and build responsive, SEO-optimized websites that are fast, user-focused, and tailored to your brand. Whether it's a sleek portfolio, a custom corporate site, or a powerful e-commerce platform, we turn your vision into a high-performing digital experience.",
+        detailsDescription: "Get a website built just for you—designed from the ground up to match your brand, goals, and audience. We create custom websites that are visually stunning, fully responsive, fast, and optimized for performance, ensuring a seamless user experience across all devices.",
+        thumbnail: "/images/webimages-01.jpg",
+        tags: ["Web Development", "MERN Stack"],
+        videos: ["https://res.cloudinary.com/sahed/video/upload/v1754562508/Website_iimvjj.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754562508/Website2_v2k5nd.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754562509/website3_yjdanr.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4"],
         home: true
     },
     {
-        title: "Royal House Weddings",
-        slug: "royal-house-weddings",
-        shortDescription: "Elegant wedding planning portfolio.",
-        detailsDescription: "Royal House Weddings needed a site that speaks romance. We designed a layout rich in imagery and smooth transitions to emotionally connect with users.",
-        thumbnail: "/images/work.jpg",
+        title: "Branding",
+        slug: "branding",
+        shortDescription: "We build impactful brand identities with custom logos, visual systems, and messaging strategies that tell your story, spark connection, and leave a lasting impression across every touchpoint.",
+        detailsDescription: "We crafted a modern and elegant layout using Webflow, showcasing Royal House Interiors’ portfolio, services, and contact sections with a premium feel.",
+        thumbnail: "/images/webimages-04.jpg",
         tags: ["Graphics", "SEO"],
-        videos: ["https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4"],
+        videos: ["https://res.cloudinary.com/sahed/video/upload/v1754562503/Branding_x2dn0g.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754562505/Branding2_kifwr2.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754562503/Branding3_mzorwq.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754562504/branding4_fow92n.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4"],
         home: true
     },
     {
-        title: "Royal House Studio 2",
-        slug: "royal-house-studio-2",
-        shortDescription: "Second iteration of Royal House’s creative studio.",
-        detailsDescription: "An upgraded design with better performance, new case study templates, and improved mobile UX for the Royal House creative team.",
-        thumbnail: "/images/work.jpg",
+       title: "Social Media",
+        slug: "social-media",
+        shortDescription: "We spark conversations, foster loyalty, and build active communities around your brand on every platform.",
+        detailsDescription: "This Webflow landing page highlights premium property listings with interactive filters, animations, and SEO-optimized content for Royal House Real Estate.",
+        thumbnail: "/images/webimages-03.jpg",
         tags: ["Graphics", "SEO"],
-        videos: ["https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4"],
+        videos: ["https://res.cloudinary.com/sahed/video/upload/v1754562507/SocialMedia_smhmsw.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754562508/SocialMedia2_scavga.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4"],
         home: true
     },
     {
