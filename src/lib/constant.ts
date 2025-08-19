@@ -188,7 +188,7 @@ export const works = [
         slug: "digital-marketing",
         shortDescription: "We craft data-driven strategies and campaigns that boost visibility, drive engagement, and deliver measureable growth across digital channels.",
         detailsDescription: "We go beyond ads to create data-driven campaigns that connect your brand with the right audience. From SEO, PPC, and social media to content and email marketing, our strategies boost visibility, drive engagement, and deliver measurable growth tailored to your goals.",
-        thumbnail: "/images/work.jpg",
+        thumbnail: "/images/webimages-05.jpg",
         tags: ["Marketing", "SEO"],
         videos: ["https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4"],
         featured: true,
@@ -246,7 +246,7 @@ export const works = [
         slug: "digital-marketing",
         shortDescription: "Website for boutique travel planning services.",
         detailsDescription: "Royal House Travel needed a minimal design that conveys luxury. We built a fast-loading landing page with destination highlights and inquiry form.",
-        thumbnail: "/images/work.jpg",
+        thumbnail: "/images/webimages-05.jpg",
         tags: ["Graphics", "SEO"],
         videos: ["https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4"],
         home: true
