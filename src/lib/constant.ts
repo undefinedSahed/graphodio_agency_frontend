@@ -536,3 +536,24 @@ export const policyData = [
       "For any questions regarding this Privacy Policy, contact us at:\n📧 Email: info@graphodio.com",
   },
 ]
+
+export const points = [
+  {
+    id: "about",
+    heading: "ABOUT US",
+    body:
+      "With a talented team of designers, developers, photographers, videographers, and marketers, we specialize in dynamic brand identities, websites, and content that elevate businesses. Based in Bangladesh, Canada, and the USA, we bring global expertise to every project, ensuring timely delivery and creativity that exceeds expectations.",
+  },
+  {
+    id: "mission",
+    heading: "OUR MISSION",
+    body:
+      "We provide impactful, innovative, and strategic design solutions to help brands grow and succeed. Our goal is to turn your vision into reality with cutting-edge services across branding, web design, content creation, and marketing.",
+  },
+  {
+    id: "vision",
+    heading: "OUR VISION",
+    body:
+      "To become a globally recognized creative agency known for transforming brands through design and innovation. We aim to lead in digital and creative solutions, connecting businesses with their audiences in meaningful ways while driving growth.",
+  },
+]
