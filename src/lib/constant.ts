@@ -124,8 +124,7 @@ export const works = [
         textBeforeLink: "PROJECT BROUGHT TO LIFE BY THE TALENTED TEAM AT ",
         linkText: "GRAPHODIO",
         linkHref: "https://graphodio.com",
-        textAfterLink: ", WHERE CREATIVITY MEETS STRATEGY & EXECUTION."
-    },
+        textAfterLink: ", WHERE CREATIVITY MEETS STRATEGY & EXECUTION."},
         year: "SEP 2024"
     },
     {
@@ -154,7 +153,7 @@ export const works = [
         tags: ["Visuals", "Strategy"],
         videos: ["https://res.cloudinary.com/sahed/video/upload/v1754562503/Branding_x2dn0g.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754562505/Branding2_kifwr2.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754562503/Branding3_mzorwq.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754562504/branding4_fow92n.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4"],
         featured: true,
-        description: `We shape bold, strategic brand identities that define who you are, connect emotionally, and stand out across every touchpoint`,
+        description: `We shape bold, stra tegic brand identities that define who you are, connect emotionally, and stand out across every touchpoint`,
         services: ["BRAND STRATEGY",  "LOGO DESIGN",  "VISUAL IDENTITY",  "COLOR & TYPOGRAPHY SYSTEM",  "BRAND GUIDELINES",],
         credits: {
         textBeforeLink: "PROJECT BROUGHT TO LIFE BY THE TALENTED TEAM AT ",
@@ -177,9 +176,7 @@ export const works = [
         textBeforeLink: "PROJECT BROUGHT TO LIFE BY THE TALENTED TEAM AT ",
         linkText: "GRAPHODIO",
         linkHref: "https://graphodio.com",
-        textAfterLink: ", WHERE CREATIVITY MEETS STRATEGY & EXECUTION."
-},
-
+        textAfterLink: ", WHERE CREATIVITY MEETS STRATEGY & EXECUTION."},
         year: "SEP 2024"
     },
    

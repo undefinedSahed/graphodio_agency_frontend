@@ -189,14 +189,7 @@ export default function FeaturedWorks() {
 
                   <div className="mt-4 flex justify-between items-center gap-2 text-xs uppercase tracking-wider">
                     <span className="font-semibold truncate">{work.title}</span>
-                    {work.tags.map((tag, idx) => (
-                      <span
-                        key={idx}
-                        className="text-gray-400 truncate text-right"
-                      >
-                        {tag}
-                      </span>
-                    ))}
+                    
                   </div>
                 </Link>
               </div>
@@ -240,14 +233,7 @@ export default function FeaturedWorks() {
                   <div className="text-xs font-semibold uppercase tracking-wider">
                     {work.title}
                   </div>
-                  {work.tags.map((tag, idx) => (
-                    <div
-                      key={idx}
-                      className="text-xs tracking-wider text-gray-400 uppercase"
-                    >
-                      {tag}
-                    </div>
-                  ))}
+                  
                 </div>
               </Link>
             </SwiperSlide>
