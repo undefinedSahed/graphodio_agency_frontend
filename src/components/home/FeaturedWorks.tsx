@@ -11,7 +11,6 @@ import { slugify } from "@/lib/utils";
 import { Navigation } from "swiper/modules";
 import "swiper/css/navigation";
 
-
 export default function FeaturedWorks() {
   const cardsRef = useRef<(HTMLAnchorElement | null)[]>([]);
   const [hoverIndex, setHoverIndex] = useState<number | null>(null);
@@ -28,14 +27,15 @@ export default function FeaturedWorks() {
 
       const scaleMap = [1.2, 1.05, 0.95];
       const distance = hoverIndex !== null ? Math.abs(idx - hoverIndex) : null;
-
       const scale = distance !== null ? scaleMap[distance] ?? 0.9 : 1;
 
       gsap.to(card, {
         scale,
-        duration: 0.4,
-        ease: "power2.out",
+        duration: 0.5, // smoother duration
+        ease: "power3.out", // smoother easing
         transformOrigin: "bottom center",
+        overwrite: "auto", // prevent conflicting tweens
+        force3D: true, // GPU acceleration for smooth scaling
       });
     });
   }, [hoverIndex]);
@@ -46,8 +46,13 @@ export default function FeaturedWorks() {
     const video = card?.querySelector("video") as HTMLVideoElement;
 
     if (video) {
-      gsap.to(video, { opacity: 1, duration: 0.3, ease: "power2.out" });
-      video.play().catch(() => { });
+      gsap.to(video, {
+        opacity: 1,
+        duration: 0.4,
+        ease: "power3.out",
+        overwrite: "auto",
+      });
+      video.play().catch(() => {});
     }
   };
 
@@ -57,11 +62,23 @@ export default function FeaturedWorks() {
     const video = card?.querySelector("video") as HTMLVideoElement;
 
     if (video) {
-      gsap.to(video, { opacity: 1, duration: 0.3, ease: "power2.out" });
+      gsap.to(video, {
+        opacity: 1,
+        duration: 0.4,
+        ease: "power3.out",
+        overwrite: "auto",
+      });
       video.pause();
     }
-  };
 
+    gsap.to(card, {
+      scale: 1,
+      duration: 0.5,
+      ease: "power3.out",
+      overwrite: "auto",
+      force3D: true,
+    });
+  };
 
   useGSAP(
     (context) => {
@@ -119,7 +136,7 @@ export default function FeaturedWorks() {
         Featured Works
       </div>
 
-      {/* Desktop Grid (Inside Container) */}
+      {/* Desktop Grid */}
       <div className="hidden md:block">
         <div className="max-w-7xl mx-auto">
           <div
@@ -152,7 +169,10 @@ export default function FeaturedWorks() {
                   onMouseEnter={() => handleMouseEnter(idx)}
                   onMouseLeave={() => handleMouseLeave(idx)}
                   className="relative group overflow-hidden w-full cursor-pointer block"
-                  style={{ transformOrigin: "bottom center", willChange: "transform" }}
+                  style={{
+                    transformOrigin: "bottom center",
+                    willChange: "transform",
+                  }}
                 >
                   <div className="relative w-full">
                     <video
@@ -169,11 +189,7 @@ export default function FeaturedWorks() {
 
                   <div className="mt-4 flex justify-between items-center gap-2 text-xs uppercase tracking-wider">
                     <span className="font-semibold truncate">{work.title}</span>
-                    {work.tags.map((tag, idx) => (
-                      <span key={idx} className="text-gray-400 truncate text-right">
-                        {tag}
-                      </span>
-                    ))}
+                    
                   </div>
                 </Link>
               </div>
@@ -192,7 +208,7 @@ export default function FeaturedWorks() {
           }}
           slidesPerView={1}
           spaceBetween={16}
-          className="px-4 relative"
+          className="px-4 relative mobile_swiper"
         >
           {featuredWorks.map((work, idx) => (
             <SwiperSlide key={idx}>
@@ -217,11 +233,7 @@ export default function FeaturedWorks() {
                   <div className="text-xs font-semibold uppercase tracking-wider">
                     {work.title}
                   </div>
-                  {work.tags.map((tag, idx) => (
-                    <div key={idx} className="text-xs tracking-wider text-gray-400 uppercase">
-                      {tag}
-                    </div>
-                  ))}
+                  
                 </div>
               </Link>
             </SwiperSlide>

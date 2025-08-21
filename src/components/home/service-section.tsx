@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 'use client';
 
 import gsap from 'gsap';
@@ -62,11 +63,11 @@ export default function ServiceSection() {
             <div className="container">
                 <div className="flex justify-between">
                     <div className="max-w-md mx-auto lg:ms-0">
-                        <h3 className='lg:text-5xl text-2xl leading-snug text-center'>
+                        <h3 className='lg:text-5xl text-2xl leading-snug text-left'>
                             Here is a selection of our most popular services{" "}
-                            <span className="hidden lg:inline-flex justify-center items-center lg:w-14 w-10 lg:h-14 h-10 border-2 border-[#1b1b1b] rounded-full ml-3">
+                            {/*<span className="hidden lg:inline-flex justify-center items-center lg:w-14 w-10 lg:h-14 h-10 border-2 border-[#1b1b1b] rounded-full ml-3">
                                 <Building2 className="lg:w-6 w-4 lg:h-6 h-4 animate-bounce" />
-                            </span>
+                            </span> */}
                         </h3>
                     </div>
                     <div className="hidden lg:block max-w-[150px] text-end items-end">

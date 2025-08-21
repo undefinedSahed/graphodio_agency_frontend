@@ -4,7 +4,8 @@ import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import Image from "next/image";
 import Link from "next/link";
-import { Building2, MoveDown, MoveUp, User, Workflow } from "lucide-react";
+import { Building2, MoveDown, MoveUp, Workflow } from "lucide-react";
+import { Rocket, Clapperboard,  Globe } from "lucide-react";
 import { Button } from "../ui/button";
 import { works } from "@/lib/constant";
 import { slugify } from "@/lib/utils";
@@ -61,43 +62,51 @@ export default function StackedSlider() {
             <div className="container">
                 <div className="pb-10 lg:max-w-7xl mx-auto">
                     <p className="lg:text-5xl text-xl leading-5 text-justify lg:leading-snug mx-auto flex flex-wrap justify-center gap-3">
-                        <span className="animate-group">WE</span>
-                        <span className="animate-group">PARTNER</span>
-                        <span className="animate-group">WITH</span>
-                        <span className="animate-group">DREAMERS,</span>
-                        <span className="animate-group">DISRUPTORS,</span>
+                    <span className="animate-group">WE</span>
+                    <span className="animate-group">PARTNER</span>
+                    <span className="animate-group">WITH</span>
+                    <span className="animate-group">DREAMERS,</span>
+                    <span className="animate-group">DISRUPTORS,</span>
 
-                        <span className="animate-group flex -mt-1 items-center gap-2">
-                            <span>AND BRANDS THAT DARE TO STAND OUT.  </span>
-                            <span className="inline-flex justify-center items-center w-10 h-10 lg:w-14 lg:h-14 border-2 border-[#1b1b1b] rounded-full">
-                                <User className="w-5 h-5 lg:w-6 lg:h-6 animate-bounce" />
-                            </span>
+                    <span className="animate-group flex -mt-1 items-center gap-2">
+                        <span>AND BRANDS THAT DARE TO STAND OUT.</span>
+                    </span>
+
+                    <span className="animate-group flex items-center gap-2">
+                        <span>FROM LOGO TO LAUNCH</span>
+                        <span className="inline-flex justify-center items-center w-10 h-10 lg:w-14 lg:h-14 border-2 border-[#1b1b1b] rounded-full">
+                        <Rocket className="w-5 h-5 lg:w-6 lg:h-6 animate-bounce" />
                         </span>
+                        <span>, WE TURN IDEAS INTO</span>
+                    </span>
 
-                        <span className="animate-group">FROM LOGO TO LAUNCH, WE TURN IDEAS INTO    </span>
-
-                        <span className="animate-group flex items-center gap-2">
-                            <span>studios</span>
-                            <span className="inline-flex justify-center items-center w-10 h-10 lg:w-14 lg:h-14 border-2 border-[#1b1b1b] rounded-full">
-                                <User className="w-5 h-5 lg:w-6 lg:h-6 animate-bounce" />
-                            </span>
+                    <span className="animate-group flex items-center gap-2">
+                        <span>studios</span>
+                        <span className="inline-flex justify-center items-center w-10 h-10 lg:w-14 lg:h-14 border-2 border-[#1b1b1b] rounded-full">
+                        <Clapperboard className="w-5 h-5 lg:w-6 lg:h-6 animate-bounce" />
                         </span>
+                    </span>
 
-                        <span className="animate-group flex items-center gap-2">
-                            <span>companies</span>
-                            <span className="inline-flex justify-center items-center w-10 h-10 lg:w-14 lg:h-14 border-2 border-[#1b1b1b] rounded-full">
-                                <Building2 className="w-5 h-5 lg:w-6 lg:h-6 animate-bounce" />
-                            </span>
+                    <span className="animate-group flex items-center gap-2">
+                        <span>companies</span>
+                        <span className="inline-flex justify-center items-center w-10 h-10 lg:w-14 lg:h-14 border-2 border-[#1b1b1b] rounded-full">
+                        <Building2 className="w-5 h-5 lg:w-6 lg:h-6 animate-bounce" />
                         </span>
+                    </span>
 
-                        <span className="animate-group">DIGITAL</span>
-                        <span className="animate-group">EXPERIENCES</span>
-                        <span className="animate-group">THAT</span>
-                        <span className="animate-group">CAPTIVATE</span>
-                        <span className="animate-group">AND</span>
-                        <span className="animate-group">CONVERT.</span>
+                    <span className="animate-group flex items-center gap-2">
+                        <span>digital experiences</span>
+                        <span className="inline-flex justify-center items-center w-10 h-10 lg:w-14 lg:h-14 border-2 border-[#1b1b1b] rounded-full">
+                        <Globe className="w-5 h-5 lg:w-6 lg:h-6 animate-bounce" />
+                        </span>
+                    </span>
 
+                    <span className="animate-group">THAT</span>
+                    <span className="animate-group">CAPTIVATE</span>
+                    <span className="animate-group">AND</span>
+                    <span className="animate-group">CONVERT.</span>
                     </p>
+
                     <div className="animate-group mt-8 flex justify-center">
                         <Link href="/portfolio">
                             <Button className='group w-28 h-12 flex items-center gap-5 text-lg border-2 border-[#1b1b1b] cursor-pointer bg-[#1d1d1d]/30'>

@@ -1,9 +1,9 @@
+/* eslint-disable @next/next/no-img-element */
 "use client"
 
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/all'
-import { NotebookPen } from 'lucide-react'
 import React, { useRef } from 'react'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -86,11 +86,16 @@ export default function HowWeWork() {
                             />
                         </svg>
                         <span className="z-10 flex flex-col gap-2 justify-center items-center">
-                            <div className="h-16 w-16 flex justify-center items-center border-2 border-[#1b1b1b] rounded-full">
-                                <NotebookPen className='animate-bounce' />
-                            </div>
-                            <span> Design</span>
+                        <div className="h-16 w-16 flex justify-center items-center border-2 border-[#1b1b1b] rounded-full overflow-hidden">
+                            <img 
+                            src="/images/Design.png"   
+                            alt="Design" 
+                            className="h-10 w-10 object-contain animate-bounce" 
+                            />
+                        </div>
+                        <span>Design</span>
                         </span>
+
                     </div>
 
                     <div className="relative h-64 w-64 rounded-full flex justify-center items-center">
@@ -117,7 +122,11 @@ export default function HowWeWork() {
                         </svg>
                         <span className="z-10 flex flex-col gap-2 justify-center items-center">
                             <div className="h-16 w-16 flex justify-center items-center border-2 border-[#1b1b1b] rounded-full">
-                                <NotebookPen className='animate-bounce' />
+                            <img 
+                            src="/images/Storytelling.png"   
+                            alt="Brand" 
+                            className="h-10 w-10 object-contain animate-bounce" 
+                            />
                             </div>
                             <span> Brand</span>
                         </span>
@@ -147,7 +156,11 @@ export default function HowWeWork() {
                         </svg>
                         <span className="z-10 flex flex-col gap-2 justify-center items-center">
                             <div className="h-16 w-16 flex justify-center items-center border-2 border-[#1b1b1b] rounded-full">
-                                <NotebookPen className='animate-bounce' />
+                               <img 
+                            src="/images/Strategy.png"   
+                            alt="Strategy" 
+                            className="h-10 w-10 object-contain animate-bounce" 
+                            />
                             </div>
                             <span> Strategy</span>
                         </span>
@@ -160,7 +173,11 @@ export default function HowWeWork() {
                         <div className="w-48 h-48 rounded-full border-2 border-[#1b1b1b] relative">
                             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col gap-2 justify-center items-center">
                                 <div className="h-16 w-16 flex justify-center items-center border-2 border-[#1b1b1b] rounded-full">
-                                    <NotebookPen className='animate-bounce' />
+                                     <img 
+                            src="/images/Design.png"   
+                            alt="Design" 
+                            className="h-10 w-10 object-contain animate-bounce" 
+                            />
                                 </div>
                                 <span> Design</span>
                             </div>
@@ -171,7 +188,11 @@ export default function HowWeWork() {
                         <div className="w-48 h-48 rounded-full border-2 border-[#1b1b1b] relative">
                             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col gap-2 justify-center items-center">
                                 <div className="h-16 w-16 flex justify-center items-center border-2 border-[#1b1b1b] rounded-full">
-                                    <NotebookPen className='animate-bounce' />
+                                    <img 
+                            src="/images/Storytelling.png"   
+                            alt="Brand" 
+                            className="h-10 w-10 object-contain animate-bounce" 
+                            />
                                 </div>
                                 <span> Brand</span>
                             </div>
@@ -182,7 +203,11 @@ export default function HowWeWork() {
                         <div className="w-48 h-48 rounded-full border-2 border-[#1b1b1b] relative">
                             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col gap-2 justify-center items-center">
                                 <div className="h-16 w-16 flex justify-center items-center border-2 border-[#1b1b1b] rounded-full">
-                                    <NotebookPen className='animate-bounce' />
+                                    <img 
+                            src="/images/Strategy.png"   
+                            alt="Strategy" 
+                            className="h-10 w-10 object-contain animate-bounce" 
+                            />
                                 </div>
                                 <span> Strategy</span>
                             </div>

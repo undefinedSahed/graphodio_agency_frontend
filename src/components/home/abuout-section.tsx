@@ -44,13 +44,16 @@ export default function AboutSection() {
                 <p className="lg:text-5xl text-2xl lg:leading-snug mx-auto flex flex-wrap justify-center gap-3">
                     <span className="animate-group">Graphodio:</span>
                     <span className="animate-group"> Where</span>
-                    <span className="animate-group">Creativity</span>
-
-                    <span className="animate-group flex gap-2">
-                        <span>Meets</span>
+                    <span className="animate-group">
+                        <span>Creativity</span>
                         <span className="inline-flex justify-center items-center w-8 h-8 lg:w-14 lg:h-14 border-2 border-[#1b1b1b] rounded-full">
                             <User className="w-3 h-3 lg:w-6 lg:h-6 animate-bounce" />
                         </span>
+                    </span>
+
+                    <span className="animate-group flex gap-2">
+                        <span>Meets</span>
+                        
                     </span>
 
                     <span className="animate-group">Strategy</span>

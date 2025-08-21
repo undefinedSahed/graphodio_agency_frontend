@@ -114,7 +114,7 @@ export const works = [
         slug: "amazon",
         shortDescription: "We build branded Amazon storefronts with custom visuals, A+ content, and cohesive design turning product pages into powerful brand experiences that earn trust and drive sales.",
         detailsDescription: "Maximize your reach and sales on Amazon. From optimized product listings and enhanced A+ content to storefront branding and advertising strategies, we help you stand out in the world’s largest marketplace.",
-        thumbnail: "/images/work.jpg",
+        thumbnail: "/images/webimages-02.jpg",
         tags: ["A+ Content", "Product Listing"],
         videos: ["https://res.cloudinary.com/sahed/video/upload/v1754562503/Amazon_wldify.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754562504/amazon2_a1clwh.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4"],
         featured: true,
@@ -124,8 +124,7 @@ export const works = [
         textBeforeLink: "PROJECT BROUGHT TO LIFE BY THE TALENTED TEAM AT ",
         linkText: "GRAPHODIO",
         linkHref: "https://graphodio.com",
-        textAfterLink: ", WHERE CREATIVITY MEETS STRATEGY & EXECUTION."
-    },
+        textAfterLink: ", WHERE CREATIVITY MEETS STRATEGY & EXECUTION."},
         year: "SEP 2024"
     },
     {
@@ -133,7 +132,7 @@ export const works = [
         slug: "website",
         shortDescription: "We design and build responsive, SEO-optimized websites that are fast, user-focused, and tailored to your brand. Whether it's a sleek portfolio, a custom corporate site, or a powerful e-commerce platform, we turn your vision into a high-performing digital experience.",
         detailsDescription: "Get a website built just for you—designed from the ground up to match your brand, goals, and audience. We create custom websites that are visually stunning, fully responsive, fast, and optimized for performance, ensuring a seamless user experience across all devices.",
-        thumbnail: "/images/work.jpg",
+        thumbnail: "/images/webimages-01.jpg",
         tags: ["Web Development", "MERN Stack"],
         videos: ["https://res.cloudinary.com/sahed/video/upload/v1754562508/Website_iimvjj.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754562508/Website2_v2k5nd.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754562509/website3_yjdanr.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4"],
         featured: true,
@@ -150,11 +149,11 @@ export const works = [
         slug: "branding",
         shortDescription: "We build impactful brand identities with custom logos, visual systems, and messaging strategies that tell your story, spark connection, and leave a lasting impression across every touchpoint.",
         detailsDescription: "We crafted a modern and elegant layout using Webflow, showcasing Royal House Interiors’ portfolio, services, and contact sections with a premium feel.",
-        thumbnail: "/images/work.jpg",
-        tags: ["Graphics", "SEO"],
+        thumbnail: "/images/webimages-04.jpg",
+        tags: ["Visuals", "Strategy"],
         videos: ["https://res.cloudinary.com/sahed/video/upload/v1754562503/Branding_x2dn0g.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754562505/Branding2_kifwr2.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754562503/Branding3_mzorwq.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754562504/branding4_fow92n.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4"],
         featured: true,
-        description: `We shape bold, strategic brand identities that define who you are, connect emotionally, and stand out across every touchpoint`,
+        description: `We shape bold, stra tegic brand identities that define who you are, connect emotionally, and stand out across every touchpoint`,
         services: ["BRAND STRATEGY",  "LOGO DESIGN",  "VISUAL IDENTITY",  "COLOR & TYPOGRAPHY SYSTEM",  "BRAND GUIDELINES",],
         credits: {
         textBeforeLink: "PROJECT BROUGHT TO LIFE BY THE TALENTED TEAM AT ",
@@ -167,8 +166,8 @@ export const works = [
         slug: "social-media",
         shortDescription: "We spark conversations, foster loyalty, and build active communities around your brand on every platform.",
         detailsDescription: "This Webflow landing page highlights premium property listings with interactive filters, animations, and SEO-optimized content for Royal House Real Estate.",
-        thumbnail: "/images/work.jpg",
-        tags: ["Graphics", "SEO"],
+        thumbnail: "/images/webimages-03.jpg",
+        tags: ["Content", "Trends"],
         videos: ["https://res.cloudinary.com/sahed/video/upload/v1754562507/SocialMedia_smhmsw.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754562508/SocialMedia2_scavga.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4"],
         featured: true,
         description: `We grow your brand online through strategic content, targeted campaigns, and consistent engagement turning followers into loyal communities.`,
@@ -177,111 +176,117 @@ export const works = [
         textBeforeLink: "PROJECT BROUGHT TO LIFE BY THE TALENTED TEAM AT ",
         linkText: "GRAPHODIO",
         linkHref: "https://graphodio.com",
-        textAfterLink: ", WHERE CREATIVITY MEETS STRATEGY & EXECUTION."
-},
-
+        textAfterLink: ", WHERE CREATIVITY MEETS STRATEGY & EXECUTION."},
+        year: "SEP 2024"
+    },
+   
+    {
+        title: "Digital Marketing",
+        slug: "digital-marketing",
+        shortDescription: "We craft data-driven strategies and campaigns that boost visibility, drive engagement, and deliver measureable growth across digital channels.",
+        detailsDescription: "We go beyond ads to create data-driven campaigns that connect your brand with the right audience. From SEO, PPC, and social media to content and email marketing, our strategies boost visibility, drive engagement, and deliver measurable growth tailored to your goals.",
+        thumbnail: "/images/webimages-05.jpg",
+        tags: ["Marketing", "SEO"],
+        videos: ["https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4"],
+        featured: true,
+         description: `We go beyond ads to create data-driven campaigns that connect your brand with the right audience. From SEO, PPC, and social media to content and email marketing, our strategies boost visibility, drive engagement, and deliver measurable growth tailored to your goals.`,
+        services: ["SEO Optimization",  "Content Marketing",  "Social Media Campaigns",  "Paid Advertising(PPC)",  "Analytics and Reporting",],
+        credits: {
+        textBeforeLink: "PROJECT BROUGHT TO LIFE BY THE TALENTED TEAM AT ",
+        linkText: "GRAPHODIO",
+        linkHref: "https://graphodio.com",
+        textAfterLink: ", WHERE CREATIVITY MEETS STRATEGY & EXECUTION."},
         year: "SEP 2024"
     },
     {
-        title: "Royal House Rentals",
-        slug: "royal-house-rentals",
-        shortDescription: "Responsive platform for short-term property rentals.",
-        detailsDescription: "We developed a responsive rental platform with filters, video tours, and a sleek UI that lets users easily explore Royal House properties.",
-        thumbnail: "/images/work.jpg",
-        tags: ["Graphics", "SEO"],
-        videos: ["https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4"],
-         
-    },
-    {
-        title: "Royal House Studio",
-        slug: "royal-house-studio",
-        shortDescription: "Creative portfolio website for a design studio.",
-        detailsDescription: "Royal House Studio wanted a clean and minimalistic design to display their case studies. We delivered a fast-loading, scroll-based portfolio in Webflow.",
-        thumbnail: "/images/work.jpg",
-        tags: ["Graphics", "SEO"],
-        videos: ["https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4"],
-        featured: true
-    },
-    {
-        title: "Royal House Hotel",
-        slug: "royal-house-hotel",
-        shortDescription: "Hospitality website with video background and booking section.",
-        detailsDescription: "This site focuses on visual storytelling, using full-width video, sleek animations, and an integrated booking inquiry form to represent Royal House Hotel.",
-        thumbnail: "/images/website portfolio-01.jpg",
-        tags: ["Graphics", "SEO"],
+        title: "Amazon",
+        slug: "amazon",
+        shortDescription: "We build branded Amazon storefronts with custom visuals, A+ content, and cohesive design turning product pages into powerful brand experiences that earn trust and drive sales.",
+        detailsDescription: "Maximize your reach and sales on Amazon. From optimized product listings and enhanced A+ content to storefront branding and advertising strategies, we help you stand out in the world’s largest marketplace.",
+        thumbnail: "/images/webimages-02.jpg",
+        tags: ["A+ Content", "Product Listing"],
         videos: ["https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4"],
         home: true
     },
     {
-        title: "Royal House Events",
-        slug: "royal-house-events",
-        shortDescription: "Event planning agency showcase site.",
-        detailsDescription: "We developed a modern, scroll-animated site for Royal House Events to display past events and client testimonials, optimized for mobile.",
-        thumbnail: "/images/work.jpg",
-        tags: ["Graphics", "SEO"],
-        videos: ["https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4"],
+        title: "Website",
+        slug: "website",
+        shortDescription: "We design and build responsive, SEO-optimized websites that are fast, user-focused, and tailored to your brand. Whether it's a sleek portfolio, a custom corporate site, or a powerful e-commerce platform, we turn your vision into a high-performing digital experience.",
+        detailsDescription: "Get a website built just for you—designed from the ground up to match your brand, goals, and audience. We create custom websites that are visually stunning, fully responsive, fast, and optimized for performance, ensuring a seamless user experience across all devices.",
+        thumbnail: "/images/webimages-01.jpg",
+        tags: ["Web Development", "MERN Stack"],
+        videos: ["https://res.cloudinary.com/sahed/video/upload/v1754562508/Website_iimvjj.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754562508/Website2_v2k5nd.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754562509/website3_yjdanr.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4"],
         home: true
     },
     {
-        title: "Royal House Weddings",
-        slug: "royal-house-weddings",
-        shortDescription: "Elegant wedding planning portfolio.",
-        detailsDescription: "Royal House Weddings needed a site that speaks romance. We designed a layout rich in imagery and smooth transitions to emotionally connect with users.",
-        thumbnail: "/images/work.jpg",
+        title: "Branding",
+        slug: "branding",
+        shortDescription: "We build impactful brand identities with custom logos, visual systems, and messaging strategies that tell your story, spark connection, and leave a lasting impression across every touchpoint.",
+        detailsDescription: "We crafted a modern and elegant layout using Webflow, showcasing Royal House Interiors’ portfolio, services, and contact sections with a premium feel.",
+        thumbnail: "/images/webimages-04.jpg",
         tags: ["Graphics", "SEO"],
-        videos: ["https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4"],
+        videos: ["https://res.cloudinary.com/sahed/video/upload/v1754562503/Branding_x2dn0g.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754562505/Branding2_kifwr2.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754562503/Branding3_mzorwq.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754562504/branding4_fow92n.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4"],
         home: true
     },
     {
-        title: "Royal House Studio 2",
-        slug: "royal-house-studio-2",
-        shortDescription: "Second iteration of Royal House’s creative studio.",
-        detailsDescription: "An upgraded design with better performance, new case study templates, and improved mobile UX for the Royal House creative team.",
-        thumbnail: "/images/work.jpg",
+       title: "Social Media",
+        slug: "social-media",
+        shortDescription: "We spark conversations, foster loyalty, and build active communities around your brand on every platform.",
+        detailsDescription: "This Webflow landing page highlights premium property listings with interactive filters, animations, and SEO-optimized content for Royal House Real Estate.",
+        thumbnail: "/images/webimages-03.jpg",
         tags: ["Graphics", "SEO"],
-        videos: ["https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4"],
+        videos: ["https://res.cloudinary.com/sahed/video/upload/v1754562507/SocialMedia_smhmsw.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754562508/SocialMedia2_scavga.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4"],
         home: true
     },
     {
-        title: "Royal House Travel",
-        slug: "royal-house-travel",
+        title: "Digital Marketing",
+        slug: "digital-marketing",
         shortDescription: "Website for boutique travel planning services.",
         detailsDescription: "Royal House Travel needed a minimal design that conveys luxury. We built a fast-loading landing page with destination highlights and inquiry form.",
-        thumbnail: "/images/work.jpg",
+        thumbnail: "/images/webimages-05.jpg",
         tags: ["Graphics", "SEO"],
         videos: ["https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4"],
         home: true
     },
     {
-        title: "Royal House Art",
-        slug: "royal-house-art",
-        shortDescription: "Architectural firm portfolio website.",
-        detailsDescription: "We crafted an architecture-focused portfolio that balances design detail with minimalism, using a muted color palette and smooth scroll sections.",
+        title: "Website",
+        slug: "website",
+        shortDescription: "We design and build responsive, SEO-optimized websites that are fast, user-focused, and tailored to your brand. Whether it's a sleek portfolio, a custom corporate site, or a powerful e-commerce platform, we turn your vision into a high-performing digital experience.",
+        detailsDescription: "Get a website built just for you—designed from the ground up to match your brand, goals, and audience. We create custom websites that are visually stunning, fully responsive, fast, and optimized for performance, ensuring a seamless user experience across all devices.",
         thumbnail: "/images/work.jpg",
-        tags: ["Graphics", "SEO"],
-        videos: ["https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4"],
+        tags: ["Web Development", "MERN Stack"],
+        videos: ["https://res.cloudinary.com/sahed/video/upload/v1754562508/Website_iimvjj.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754562508/Website2_v2k5nd.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754562509/website3_yjdanr.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4"],
         about: true
     },
     {
-        title: "Royal House Cafe",
-        slug: "royal-house-cafe",
-        shortDescription: "Coffee shop website with menu and gallery.",
-        detailsDescription: "A cozy and modern site for Royal House Cafe, with a digital menu, gallery slider, and warm tone visuals to create a relaxed vibe.",
+         title: "Branding",
+        slug: "branding",
+        shortDescription: "We build impactful brand identities with custom logos, visual systems, and messaging strategies that tell your story, spark connection, and leave a lasting impression across every touchpoint.",
+        detailsDescription: "We crafted a modern and elegant layout using Webflow, showcasing Royal House Interiors’ portfolio, services, and contact sections with a premium feel.",
         thumbnail: "/images/work.jpg",
         tags: ["Graphics", "SEO"],
-        videos: ["https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4"],
+        videos: ["https://res.cloudinary.com/sahed/video/upload/v1754562503/Branding_x2dn0g.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754562505/Branding2_kifwr2.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754562503/Branding3_mzorwq.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754562504/branding4_fow92n.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4"],
         about: true
     },
     {
-        title: "Royal House Fashion",
-        slug: "royal-house-fashion",
-        shortDescription: "Lookbook site for a luxury fashion label.",
-        detailsDescription: "This project showcases Royal House’s fashion collections in a high-end, full-screen layout with parallax transitions and image zoom interactions.",
+         title: "Amazon",
+        slug: "amazon",
+        shortDescription: "We build branded Amazon storefronts with custom visuals, A+ content, and cohesive design turning product pages into powerful brand experiences that earn trust and drive sales.",
+        detailsDescription: "Maximize your reach and sales on Amazon. From optimized product listings and enhanced A+ content to storefront branding and advertising strategies, we help you stand out in the world’s largest marketplace.",
+        thumbnail: "/images/work.jpg",
+        tags: ["A+ Content", "Product Listing"] ,
+        videos: ["https://res.cloudinary.com/sahed/video/upload/v1754562503/Amazon_wldify.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754562504/amazon2_a1clwh.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4"],
+        about: true
+    },
+    { title: "Social Media",
+        slug: "social-media",
+        shortDescription: "We spark conversations, foster loyalty, and build active communities around your brand on every platform.",
+        detailsDescription: "This Webflow landing page highlights premium property listings with interactive filters, animations, and SEO-optimized content for Royal House Real Estate.",
         thumbnail: "/images/work.jpg",
         tags: ["Graphics", "SEO"],
-        videos: ["https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4"],
-        about: true
-    }
+        videos: ["https://res.cloudinary.com/sahed/video/upload/v1754562507/SocialMedia_smhmsw.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754562508/SocialMedia2_scavga.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4", "https://res.cloudinary.com/sahed/video/upload/v1754564448/video_d03pbz.mp4"],
+        about: true}
+
 ];
 
 
@@ -526,5 +531,26 @@ export const policyData = [
     title: "9. Contact Us",
     content:
       "For any questions regarding this Privacy Policy, contact us at:\n📧 Email: info@graphodio.com",
+  },
+]
+
+export const points = [
+  {
+    id: "about",
+    heading: "ABOUT US",
+    body:
+      "With a talented team of designers, developers, photographers, videographers, and marketers, we specialize in dynamic brand identities, websites, and content that elevate businesses. Based in Bangladesh, Canada, and the USA, we bring global expertise to every project, ensuring timely delivery and creativity that exceeds expectations.",
+  },
+  {
+    id: "mission",
+    heading: "OUR MISSION",
+    body:
+      "We provide impactful, innovative, and strategic design solutions to help brands grow and succeed. Our goal is to turn your vision into reality with cutting-edge services across branding, web design, content creation, and marketing.",
+  },
+  {
+    id: "vision",
+    heading: "OUR VISION",
+    body:
+      "To become a globally recognized creative agency known for transforming brands through design and innovation. We aim to lead in digital and creative solutions, connecting businesses with their audiences in meaningful ways while driving growth.",
   },
 ]
