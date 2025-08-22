@@ -25,7 +25,7 @@ export async function POST(req: Request) {
         const mailOptions = {
             from: `"${name}" <${email}>`,
             to: process.env.CONTACT_EMAIL, // your receiving email
-            subject: `New Contact Form Submission - ${service}`,
+            subject: `Graphodio - New Contact Form Submission for ${service}`,
             text: `
         Name: ${name}
         Email: ${email}
