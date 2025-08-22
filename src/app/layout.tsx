@@ -6,6 +6,7 @@ import Navbar from "@/components/shared/navbar";
 import Footer from "@/components/shared/Footer";
 import { ContactProvider } from "@/lib/contact-context";
 import ContactForm from "@/components/shared/contact-form";
+import { Toaster } from "sonner"
 
 const debata = Bebas_Neue({
   subsets: ["latin"],
@@ -25,11 +26,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${debata.className} antialiased uppercase overflow-x-hidden`}>
+      <body className={`${debata.className} antialiased overflow-x-hidden`}>
         <SmoothScrollProvider>
           <ContactProvider>
             <Navbar />
             {children}
+            <Toaster position="top-right"/>
             <ContactForm />
             <Footer />
           </ContactProvider>

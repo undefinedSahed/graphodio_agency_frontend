@@ -79,11 +79,14 @@ export default function ProjectDetails() {
   };
 
   return (
-    <section className="min-h-screen text-white px-4 flex flex-col items-center justify-center text-center relative">
+    <section className="min-h-screen text-white px-4 flex flex-col items-center justify-center text-center relative pb-12 lg:pb-0">
       <div className="w-full max-w-xl relative mb-2">
         <div className="flex justify-center gap-2 mt-6 sm:mt-0">
-          <span className="px-2 py-1 text-[10px] sm:text-xs bg-[#1f1f1f] rounded">WEBDESIGN</span>
-          <span className="px-2 py-1 text-[10px] sm:text-xs bg-[#1f1f1f] rounded">WEBFLOW</span>
+          {
+            work?.tags?.map((tag, index) => (
+              <span key={index} className="px-2 py-1 text-[10px] sm:text-xs bg-[#1f1f1f] rounded">{tag}</span>
+            ))
+          }
         </div>
       </div>
 
@@ -119,7 +122,7 @@ export default function ProjectDetails() {
                     )}
                   >
                     {activeVideoIndex !== idx && (
-                      <div onClick={() => handleMobileClick(idx)} className="absolute bg-black rounded-full p-3 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+                      <div onClick={() => handleMobileClick(idx)} className="absolute lg:hidden bg-black rounded-full p-3 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
                         <PlayCircle className="w-8 h-8" />
                       </div>
                     )}

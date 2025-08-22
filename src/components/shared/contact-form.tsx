@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useRef, useEffect } from "react"
+import React, { useRef, useEffect, useState } from "react"
 import { useContact } from "@/lib/contact-context"
 import { X } from "lucide-react"
 import { useGSAP } from "@gsap/react"
@@ -15,6 +15,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { Button } from "@/components/ui/button"
 
 import { User, Mail, ComputerIcon, MessageCircle } from "lucide-react"
+import { toast } from "sonner"
 
 const contactFormSchema = z.object({
     name: z.string().min(1, { message: "Name is required" }),
@@ -29,6 +30,7 @@ export default function ContactForm() {
     const { isContactOpen, setIsContactOpen } = useContact()
     const contactFormRef = useRef<HTMLDivElement>(null)
     const contactTimeline = useRef<gsap.core.Timeline | null>(null)
+    const [isSendingMessage, setIsSendingMessage] = useState(false)
 
     const contactForm = useForm<z.infer<typeof contactFormSchema>>({
         resolver: zodResolver(contactFormSchema),
@@ -47,10 +49,31 @@ export default function ContactForm() {
         { value: "other", label: "Other" }
     ]
 
-    const onSubmit = (data: z.infer<typeof contactFormSchema>) => {
-        console.log(data)
-        contactForm.reset()
-    }
+    const onSubmit = async (data: z.infer<typeof contactFormSchema>) => {
+        setIsSendingMessage(true)
+        try {
+            const res = await fetch("/api/contact", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(data),
+            });
+
+            const result = await res.json();
+            if (result.success) {
+                toast.success("Message sent successfully!");
+                contactForm.reset();
+            } else {
+                toast.error("Failed to send message.");
+            }
+        } catch (error) {
+            console.error(error);
+            alert("Something went wrong.");
+        } finally {
+            setIsSendingMessage(false)
+            setIsContactOpen(false)
+        }
+    };
+
 
     useGSAP(() => {
         contactTimeline.current = gsap.timeline({ paused: true }).to(
@@ -114,7 +137,7 @@ export default function ContactForm() {
                                         <Input
                                             placeholder="Full Name"
                                             {...field}
-                                            className="bg-[#121212] h-12 border border-white/20 text-white placeholder:text-white/40 w-full lg:w-60 rounded-none"
+                                            className="bg-[#121212] tracking-wider h-12 border border-white/20 text-white placeholder:text-white/40 w-full lg:w-60 rounded-none"
                                         />
                                     </FormControl>
                                     <FormMessage />
@@ -135,7 +158,7 @@ export default function ContactForm() {
                                         <Input
                                             placeholder="example@mail.com"
                                             {...field}
-                                            className="bg-[#121212] h-12 border border-white/20 text-white placeholder:text-white/40 w-full lg:w-60 rounded-none"
+                                            className="bg-[#121212] tracking-wider !lowercase h-12 border border-white/20 text-white placeholder:text-white/40 w-full lg:w-60 rounded-none"
                                         />
                                     </FormControl>
                                     <FormMessage />
@@ -165,7 +188,7 @@ export default function ContactForm() {
                                                     <RadioGroupItem
                                                         value={option.value}
                                                         id={option.value}
-                                                        className="w-5 h-5 border-white/20 data-[state=checked]:bg-white data-[state=checked]:text-black data-[state=checked]:border-white"
+                                                        className="w-5 h-5 cursor-pointer border-white/20 data-[state=checked]:bg-white data-[state=checked]:text-black data-[state=checked]:border-white"
                                                     />
                                                     <FormLabel
                                                         htmlFor={option.value}
@@ -196,7 +219,7 @@ export default function ContactForm() {
                                     <Textarea
                                         placeholder="Tell me more about your project. Don't hesitate to include links if necessary."
                                         {...field}
-                                        className="border bg-[#121212] border-white/20 text-white placeholder:text-white/40 min-h-[150px] rounded-none"
+                                        className="border tracking-wider bg-[#121212] border-white/20 text-white placeholder:text-white/40 min-h-[150px] rounded-none"
                                     />
                                 </FormControl>
                                 <FormMessage />
@@ -208,9 +231,12 @@ export default function ContactForm() {
                         <Button
                             variant="outline"
                             type="submit"
+                            disabled={isSendingMessage}
                             className="text-white px-6 py-3 rounded-md uppercase font-bold hover:bg-transparent hover:text-white transition cursor-pointer w-full lg:w-auto"
                         >
-                            Send Message
+                            {
+                                isSendingMessage ? "Sending" : "Send Message"
+                            }
                         </Button>
                     </div>
                 </form>
