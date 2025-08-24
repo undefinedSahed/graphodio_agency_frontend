@@ -88,14 +88,14 @@ export default function ServiceSection() {
                         >
                             {/* Video 1 */}
                             <div className="col-span-1 abc" style={{ transform: 'scale(0)', opacity: 0 }}>
-                                <video autoPlay loop muted>
+                                <video autoPlay preload='metadata' loop muted>
                                     <source src={service.videos[0]} type="video/mp4" />
                                 </video>
                             </div>
 
                             {/* Video 2 */}
                             <div className="col-span-1 abc" style={{ transform: 'scale(0)', opacity: 0 }}>
-                                <video autoPlay loop muted>
+                                <video autoPlay preload='metadata' loop muted>
                                     <source src={service.videos[1]} type="video/mp4" />
                                 </video>
                             </div>
@@ -118,7 +118,7 @@ export default function ServiceSection() {
 
                             {/* Video 3 */}
                             <div className="col-span-1 abc" style={{ transform: 'scale(0)', opacity: 0 }}>
-                                <video autoPlay loop muted>
+                                <video autoPlay preload='metadata' loop muted>
                                     <source src={service.videos[2]} type="video/mp4" />
                                 </video>
                             </div>
@@ -135,7 +135,7 @@ export default function ServiceSection() {
                             >
                                 {
                                     service.videos.map((video, idx) => (
-                                        <video key={idx} autoPlay loop muted className="w-full h-full object-cover">
+                                        <video key={idx} autoPlay preload='metadata' loop muted className="w-full h-full object-cover">
                                             <source src={video} type="video/mp4" />
                                         </video>
                                     ))
