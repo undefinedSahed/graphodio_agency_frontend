@@ -10,9 +10,9 @@ export const navLinks = [
 export const services = [
     {
         id: 1,
-        title: "Digital Marketing",
+        title: "Design",
         description: "Drive growth with smart, results-focused digital marketing. From strategic planning and campaign execution to performance analytics and optimization, we help your brand reach the right audience, at the right time, across the right channels.",
-        tags: ["SEO", "SMM", "SEM"],
+        tags: ["AMAZON", "SMM"],
         videos: [
             "https://res.cloudinary.com/sahed/video/upload/q_auto/v1754562507/SocialMedia_smhmsw.mp4",
             "https://res.cloudinary.com/sahed/video/upload/q_auto/v1754562503/Amazon_wldify.mp4",
@@ -34,7 +34,7 @@ export const services = [
         id: 3,
         title: "Brand Identity",
         description: "Craft a brand that speaks volumes. From strategic positioning and messaging to logo design and cohesive visual systems, we build brand identities that resonate with your audience and set you apart from the competition.",
-        tags: ["Store", "Inventory Management"],
+        tags: ["FLYER", "BROCHURE", "BILLBOARD"],
         videos: [
             "https://res.cloudinary.com/sahed/video/upload/q_auto/v1754562503/Branding_x2dn0g.mp4",
             "https://res.cloudinary.com/sahed/video/upload/q_auto/v1754562505/Branding2_kifwr2.mp4",
@@ -293,6 +293,34 @@ export const works = [
 // Teams
 export const teammates = [
     {
+        name: "Sahed Rahman",
+        role: "Full Stack Developer",
+        image: "/images/sahed.jpg",
+        headline: "The unstopable",
+        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro odit adipisci sed ullam earum, alias nam ratione debitis cum optio, modi aspernatur, necessitatibus sunt minima consequuntur repudiandae praesentium voluptatem. Dignissimos, temporibus quas natus"
+    },
+    {
+        name: "Farhan Nair",
+        role: "Founder & Graphic Designer",
+        image: "/images/sahed.jpg",
+        headline: "The unstopable",
+        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro odit adipisci sed ullam earum, alias nam ratione debitis cum optio, modi aspernatur, necessitatibus sunt minima consequuntur repudiandae praesentium voluptatem. Dignissimos, temporibus quas natus"
+    },
+    {
+        name: "Sahed Rahman",
+        role: "Full Stack Developer",
+        image: "/images/sahed.jpg",
+        headline: "The unstopable",
+        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro odit adipisci sed ullam earum, alias nam ratione debitis cum optio, modi aspernatur, necessitatibus sunt minima consequuntur repudiandae praesentium voluptatem. Dignissimos, temporibus quas natus"
+    },
+    {
+        name: "Sahed Rahman",
+        role: "Full Stack Developer",
+        image: "/images/sahed.jpg",
+        headline: "The unstopable",
+        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro odit adipisci sed ullam earum, alias nam ratione debitis cum optio, modi aspernatur, necessitatibus sunt minima consequuntur repudiandae praesentium voluptatem. Dignissimos, temporibus quas natus"
+    },
+     {
         name: "Sahed Rahman",
         role: "Full Stack Developer",
         image: "/images/sahed.jpg",

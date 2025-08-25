@@ -88,12 +88,12 @@ export default function HowWeWork() {
                         <span className="z-10 flex flex-col gap-2 justify-center items-center">
                         <div className="h-16 w-16 flex justify-center items-center border-2 border-[#1b1b1b] rounded-full overflow-hidden">
                             <img 
-                            src="/images/Design.png"   
-                            alt="Design" 
+                            src="/images/Strategy.png"   
+                            alt="strategy" 
                             className="h-10 w-10 object-contain animate-bounce" 
                             />
                         </div>
-                        <span>Design</span>
+                        <span>Strategy</span>
                         </span>
 
                     </div>
@@ -123,12 +123,12 @@ export default function HowWeWork() {
                         <span className="z-10 flex flex-col gap-2 justify-center items-center">
                             <div className="h-16 w-16 flex justify-center items-center border-2 border-[#1b1b1b] rounded-full">
                             <img 
-                            src="/images/Storytelling.png"   
-                            alt="Brand" 
+                            src="/images/Design.png"   
+                            alt="Design" 
                             className="h-10 w-10 object-contain animate-bounce" 
                             />
                             </div>
-                            <span> Brand</span>
+                            <span> Design</span>
                         </span>
                     </div>
 
@@ -157,12 +157,12 @@ export default function HowWeWork() {
                         <span className="z-10 flex flex-col gap-2 justify-center items-center">
                             <div className="h-16 w-16 flex justify-center items-center border-2 border-[#1b1b1b] rounded-full">
                                <img 
-                            src="/images/Strategy.png"   
-                            alt="Strategy" 
+                            src="/images/Storytelling.png"   
+                            alt="storytelling" 
                             className="h-10 w-10 object-contain animate-bounce" 
                             />
                             </div>
-                            <span> Strategy</span>
+                            <span> Storytelling</span>
                         </span>
                     </div>
                 </div>
@@ -174,6 +174,21 @@ export default function HowWeWork() {
                             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col gap-2 justify-center items-center">
                                 <div className="h-16 w-16 flex justify-center items-center border-2 border-[#1b1b1b] rounded-full">
                                      <img 
+                            src="/images/Strategy.png"   
+                            alt="Strategy" 
+                            className="h-10 w-10 object-contain animate-bounce" 
+                            />
+                                </div>
+                                <span> Strategy</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="flex justify-center items-center -translate-x-20 -translate-y-16">
+                        <div className="w-48 h-48 rounded-full border-2 border-[#1b1b1b] relative">
+                            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col gap-2 justify-center items-center">
+                                <div className="h-16 w-16 flex justify-center items-center border-2 border-[#1b1b1b] rounded-full">
+                                    <img 
                             src="/images/Design.png"   
                             alt="Design" 
                             className="h-10 w-10 object-contain animate-bounce" 
@@ -184,32 +199,17 @@ export default function HowWeWork() {
                         </div>
                     </div>
 
-                    <div className="flex justify-center items-center -translate-x-20 -translate-y-16">
-                        <div className="w-48 h-48 rounded-full border-2 border-[#1b1b1b] relative">
-                            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col gap-2 justify-center items-center">
-                                <div className="h-16 w-16 flex justify-center items-center border-2 border-[#1b1b1b] rounded-full">
-                                    <img 
-                            src="/images/Storytelling.png"   
-                            alt="Brand" 
-                            className="h-10 w-10 object-contain animate-bounce" 
-                            />
-                                </div>
-                                <span> Brand</span>
-                            </div>
-                        </div>
-                    </div>
-
                     <div className="flex justify-center items-center translate-x-20 -translate-y-64">
                         <div className="w-48 h-48 rounded-full border-2 border-[#1b1b1b] relative">
                             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col gap-2 justify-center items-center">
                                 <div className="h-16 w-16 flex justify-center items-center border-2 border-[#1b1b1b] rounded-full">
                                     <img 
-                            src="/images/Strategy.png"   
-                            alt="Strategy" 
+                            src="/images/Storytelling.png"   
+                            alt="Storytelling" 
                             className="h-10 w-10 object-contain animate-bounce" 
                             />
                                 </div>
-                                <span> Strategy</span>
+                                <span> Storytelling</span>
                             </div>
                         </div>
                     </div>
