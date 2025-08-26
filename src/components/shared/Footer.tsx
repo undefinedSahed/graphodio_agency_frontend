@@ -56,10 +56,10 @@ const Footer: React.FC = () => {
                 {/* Top Section */}
                 <div className="relative flex flex-col md:flex-row w-full items-center md:h-48 max-md:space-y-10">
                     <div className="flex-1 flex flex-col justify-center max-md:items-center max-md:text-center">
-                        <h1 className="text-6xl md:text-8xl font-extrabold leading-tight uppercase whitespace-nowrap max-md:whitespace-normal font-[Impact]">
+                        <h1 className="text-6xl md:text-8xl font-extrabold leading-tight uppercase whitespace-nowrap max-md:whitespace-normal ">
                             Have a project in mind?
                         </h1>
-                        <h1 className="text-6xl md:text-8xl font-extrabold leading-tight uppercase font-[Impact]">
+                        <h1 className="text-6xl md:text-8xl font-extrabold leading-tight uppercase ">
                             Let&apos;s get in touch!
                         </h1>
                     </div>
