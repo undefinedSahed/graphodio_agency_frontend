@@ -97,7 +97,7 @@ export default function AboutMissionVision() {
         </span>
       </div>
 
-      <div className="mx-auto max-w-6xl px-6 py-20 md:py-28 space-y-12">
+      <div className="mx-auto max-w-6xl px-6 py-20 md:py-28 space-y-12 font-[Roboto]">
         {points.map((item, idx) => (
           <article
             key={item.id}
@@ -115,7 +115,7 @@ export default function AboutMissionVision() {
                   <h2 className="amv-heading font-extrabold leading-[0.95] tracking-tight text-4xl md:text-6xl">
                     {item.heading}
                   </h2>
-                  <p className="amv-body mt-5 max-w-xl text-sm/relaxed md:text-base/relaxed text-white/80">
+                  <p className="amv-body mt-5 max-w-xl text-sm/relaxed md:text-base/relaxed text-white/80 font-[Roboto]">
                     {item.body}
                   </p>
 

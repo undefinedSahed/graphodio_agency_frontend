@@ -140,7 +140,7 @@ export default function Hero() {
                         </h1>
 
                         {/* Paragraph */}
-                        <p className="para invisible px-4 md:px-64 text-xl">
+                        <p className="para invisible px-4 md:px-64 text-l font-[Roboto]">
                             Ready-made templates for powerful websites that stand out.
                         </p>
                     </div>

@@ -198,7 +198,7 @@ export default function FeaturedWorks() {
                     </video>
                   </div>
 
-                  <div className="mt-4 flex justify-between items-center gap-2 text-xs uppercase tracking-wider">
+                  <div className="mt-4 flex justify-center items-center gap-2 text-sm uppercase tracking-wider">
                     <span className="font-semibold truncate">{work.title}</span>
                   </div>
                 </Link>

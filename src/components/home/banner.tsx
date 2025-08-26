@@ -98,14 +98,14 @@ export default function Banner() {
                     {}
                     <h1 
                         className="headline invisible text-[60px] font-bold lg:leading-tight leading-[50px] text-center lg:pb-4 pb-7"
-                        style={{ fontFamily: "Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif" }}
+                    
                     >
                         Crafting Visuals That Make Your Brand Stand Out
                     </h1>
 
                     {}
                     <p 
-                        className={`para invisible px-4 md:px-60 text-base text-center ${roboto.className}`}
+                        className={`para invisible px-4 md:px-60 text-lg text-center ${roboto.className}`}
                     >
                         At Graphodio, we are a full-service creative agency driven by innovation, passion, and a commitment to delivering exceptional design solutions. Since our inception, we’ve been transforming ideas into stunning visuals, building brands that resonate, and creating experiences that leave a lasting impact.
                     </p>

@@ -4,8 +4,8 @@ import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import Image from "next/image";
 import Link from "next/link";
-import { Building2, MoveDown, MoveUp, Workflow } from "lucide-react";
-import { Rocket, Clapperboard, Globe } from "lucide-react";
+import { MoveDown, MoveUp, Workflow } from "lucide-react";
+import { Rocket, Globe } from "lucide-react";
 import { Button } from "../ui/button";
 import { works } from "@/lib/constant";
 
@@ -62,7 +62,7 @@ export default function StackedSlider() {
         <section className="py-8 lg:py-20">
             <div className="container">
                 <div className="pb-10 lg:max-w-6xl lg:px-40 mx-auto">
-                    <p className="lg:text-5xl text-xl leading-5 text-justify lg:leading-snug mx-auto flex flex-wrap justify-center gap-3">
+                    <p className="lg:text-5xl text-xl leading-5 text-justify lg:leading-snug mx-auto flex flex-wrap justify-center gap-3 ">
                         <span className="animate-group">WE</span>
                         <span className="animate-group">PARTNER</span>
                         <span className="animate-group">WITH</span>
@@ -79,20 +79,6 @@ export default function StackedSlider() {
                                 <Rocket className="w-5 h-5 lg:w-6 lg:h-6 animate-bounce" />
                             </span>
                             <span>, WE TURN IDEAS INTO</span>
-                        </span>
-
-                        <span className="animate-group flex items-center gap-2">
-                            <span>studios</span>
-                            <span className="inline-flex justify-center items-center w-10 h-10 lg:w-14 lg:h-14 border-2 border-[#1b1b1b] rounded-full">
-                                <Clapperboard className="w-5 h-5 lg:w-6 lg:h-6 animate-bounce" />
-                            </span>
-                        </span>
-
-                        <span className="animate-group flex items-center gap-2">
-                            <span>companies</span>
-                            <span className="inline-flex justify-center items-center w-10 h-10 lg:w-14 lg:h-14 border-2 border-[#1b1b1b] rounded-full">
-                                <Building2 className="w-5 h-5 lg:w-6 lg:h-6 animate-bounce" />
-                            </span>
                         </span>
 
                         <span className="animate-group flex items-center gap-2">

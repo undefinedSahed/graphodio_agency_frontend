@@ -56,22 +56,22 @@ const Footer: React.FC = () => {
                 {/* Top Section */}
                 <div className="relative flex flex-col md:flex-row w-full items-center md:h-48 max-md:space-y-10">
                     <div className="flex-1 flex flex-col justify-center max-md:items-center max-md:text-center">
-                        <h1 className="text-6xl md:text-8xl font-extrabold leading-tight uppercase whitespace-nowrap max-md:whitespace-normal">
+                        <h1 className="text-6xl md:text-8xl font-extrabold leading-tight uppercase whitespace-nowrap max-md:whitespace-normal font-[Impact]">
                             Have a project in mind?
                         </h1>
-                        <h1 className="text-6xl md:text-8xl font-extrabold leading-tight uppercase">
+                        <h1 className="text-6xl md:text-8xl font-extrabold leading-tight uppercase font-[Impact]">
                             Let&apos;s get in touch!
                         </h1>
                     </div>
 
                     <div className="hidden md:block w-[1px] h-full bg-gray-300 mx-6" />
 
-                    <div className="flex-1 flex flex-col justify-center items-end mt-12 md:mt-0 text-right max-md:items-center max-md:text-center">
+                    <div className="flex-1 flex flex-col justify-center items-end mt-12 md:mt-0 text-right max-md:items-center max-md:text-center font-[Roboto]">
                         <div className="uppercase text-xs tracking-widest mb-2">Next Page</div>
                         <h2 className="text-4xl md:text-5xl font-bold mb-4">Works</h2>
                         <Link
                             href="/portfolio"
-                            className="inline-flex items-center border border-black px-4 py-2 hover:bg-black hover:text-white transition"
+                            className="inline-flex items-center border border-black px-4 py-2 hover:bg-black hover:text-white transition font-[Impact]"
                         >
                             • Discover
                         </Link>
@@ -85,7 +85,7 @@ const Footer: React.FC = () => {
                 <div className="flex flex-col md:flex-row justify-between w-full items-end gap-8 max-md:items-center">
                     <div className="flex flex-col md:flex-row flex-1 justify-between w-full gap-10 max-md:items-center">
                         {/* Sitemap & Copyright */}
-                        <div className="flex flex-col space-y-6 max-md:items-center max-md:text-center">
+                        <div className="flex flex-col space-y-6 max-md:items-center max-md:text-center font-[Roboto]">
                             <div className="flex flex-col">
                                 <span className="uppercase text-gray-500 tracking-widest mb-2">Sitemap</span>
                                 <Link href="/" className="hover:underline">Home</Link>
@@ -108,7 +108,7 @@ const Footer: React.FC = () => {
                                  <SocialLink href="https://api.whatsapp.com/send/?phone=8801782060008&text&type=phone_number&app_absent=0" label="whatsapp" Icon={FaWhatsapp} />
                                  <SocialLink href="https://www.instagram.com/graphodio360/" label="Twitter" Icon={FaTwitter} />
                             </div>
-                            <Link href="/infos" className="hover:underline text-xs">
+                            <Link href="/infos" className="hover:underline text-xs font-[Roboto]">
                                 Infos & Credits
                             </Link>
                         </div>

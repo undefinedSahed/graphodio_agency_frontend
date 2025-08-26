@@ -61,8 +61,7 @@ export default function HowWeWork() {
     return (
         <section className='lg:h-screen flex justify-center items-center relative hwww' ref={sectionRef}>
             <div className="container text-white text-center lg:-mt-32 mt-[130px]">
-                {/* H2 with Impact font */}
-                <h2 className='lg:text-[64px] text-4xl font-bold leading-tight text-center pb-12 max-w-2xl mx-auto' style={{ fontFamily: 'Impact, sans-serif' }}>
+                <h2 className='lg:text-[64px] text-4xl font-bold leading-tight text-center pb-12 max-w-2xl mx-auto'>
                     We Create at the intersection of:
                 </h2>
                 

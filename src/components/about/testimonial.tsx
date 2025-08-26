@@ -107,15 +107,15 @@ export default function Testimonial() {
                                 <div className="fade_comment lg:opacity-20 flex items-start gap-3 lg:gap-5">
                                     <div className="flex items-center gap-2 text-gray-400">
                                         <ArrowRightCircle className="h-4 w-4 lg:h-5 lg:w-5" />
-                                        <span className="text-base lg:text-lg font-semibold">
+                                        <span className="text-base lg:text-lg font-semibold font-[Roboto]">
                                             {testimonial.id}
                                         </span>
                                     </div>
                                     <div className="space-y-3 lg:space-y-5">
-                                        <h3 className="text-lg text-justify lg:text-start lg:text-xl tracking-wide font-medium leading-relaxed">
+                                        <h3 className="text-lg text-justify lg:text-start lg:text-xl tracking-wide font-medium leading-relaxed font-[Roboto]">
                                             {testimonial.comment}
                                         </h3>
-                                        <div className="flex items-center gap-3 lg:gap-4">
+                                        <div className="flex items-center gap-3 lg:gap-4 font-[Roboto]">
                                             <Avatar className='h-10 w-10 lg:h-12 lg:w-12'>
                                                 <AvatarImage src={testimonial.image} />
                                                 <AvatarFallback>{testimonial.name}</AvatarFallback>

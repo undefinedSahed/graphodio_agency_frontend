@@ -70,7 +70,7 @@ export default function ServiceSection() {
                             </span> */}
                         </h3>
                     </div>
-                    <div className="hidden lg:block max-w-[150px] text-end items-end">
+                    <div className="hidden lg:block max-w-[150px] text-end items-end font-[Roboto]">
                         <p className="lg:text-xl text-white/70">Hover on names for a closer look</p>
                     </div>
                 </div>
@@ -141,7 +141,7 @@ export default function ServiceSection() {
                                     ))
                                 }
                             </div>
-                            <h3 className='text-2xl font-bold text-center pt-3'>{service.title}</h3>
+                            <h3 className='text-2xl font-bold text-center pt-3 '>{service.title}</h3>
                         </div>
                     ))}
                 </div>
