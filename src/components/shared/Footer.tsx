@@ -42,6 +42,13 @@ const Footer: React.FC = () => {
                 animation: noise-animation 0.4s infinite;
                 mix-blend-mode: overlay;
             }
+
+            @keyframes noise-animation {
+                0%, 100% { transform: translate(0,0); }
+                25% { transform: translate(-5%, 5%); }
+                50% { transform: translate(5%, -5%); }
+                75% { transform: translate(-5%, -5%); }
+            }
         `;
         document.head.appendChild(noiseStyle);
         return () => {
@@ -103,10 +110,10 @@ const Footer: React.FC = () => {
                         <div className="flex flex-col items-end max-md:items-center max-md:text-center">
                             <div className="flex items-center space-x-4 mb-4">
                                 <SocialLink href="https://www.linkedin.com/company/graphodio360/ " label="LinkedIn" Icon={FaLinkedin} />
-                                 <SocialLink href="https://www.facebook.com/Graphodio360" label="Facebook" Icon={FaFacebook} />
-                                 <SocialLink href="https://www.instagram.com/graphodio360/" label="Instagram" Icon={FaInstagram} />
-                                 <SocialLink href="https://api.whatsapp.com/send/?phone=8801782060008&text&type=phone_number&app_absent=0" label="whatsapp" Icon={FaWhatsapp} />
-                                 <SocialLink href="https://www.instagram.com/graphodio360/" label="Twitter" Icon={FaTwitter} />
+                                <SocialLink href="https://www.facebook.com/Graphodio360" label="Facebook" Icon={FaFacebook} />
+                                <SocialLink href="https://www.instagram.com/graphodio360/" label="Instagram" Icon={FaInstagram} />
+                                <SocialLink href="https://api.whatsapp.com/send/?phone=8801782060008&text&type=phone_number&app_absent=0" label="whatsapp" Icon={FaWhatsapp} />
+                                <SocialLink href="https://www.instagram.com/graphodio360/" label="Twitter" Icon={FaTwitter} />
                             </div>
                             <Link href="/infos" className="hover:underline text-xs font-[Roboto]">
                                 Infos & Credits
@@ -114,14 +121,14 @@ const Footer: React.FC = () => {
                         </div>
                     </div>
 
-                    {/* Logo */}
+                    {/* Logo with interactive animation */}
                     <div className="flex-1 flex justify-end ml-6 mt-6 md:mt-0 max-md:justify-center max-md:ml-0">
-                        <div className="w-32 md:w-48 h-32 md:h-48 animate-spin-slow relative">
+                        <div className="w-32 md:w-48 h-32 md:h-48 relative group">
                             <Image
                                 src="/images/logo.png"
                                 alt="Logo"
                                 fill
-                                className="object-contain"
+                                className="object-contain transform transition duration-500 group-hover:scale-110 group-hover:rotate-12 group-hover:animate-bounce"
                                 sizes="(max-width: 768px) 50vw, 25vw"
                             />
                         </div>
