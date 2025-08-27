@@ -87,11 +87,6 @@ export default function StackedSlider() {
                                 <Globe className="w-5 h-5 lg:w-6 lg:h-6 animate-bounce" />
                             </span>
                         </span>
-
-                        <span className="animate-group">THAT</span>
-                        <span className="animate-group">CAPTIVATE</span>
-                        <span className="animate-group">AND</span>
-                        <span className="animate-group">CONVERT.</span>
                     </p>
 
                     <div className="animate-group mt-8 flex justify-center">
