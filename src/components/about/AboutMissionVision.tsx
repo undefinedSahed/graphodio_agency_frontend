@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useLayoutEffect, useRef } from "react";
+import Link from 'next/link';
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { MotionPathPlugin } from "gsap/MotionPathPlugin";
@@ -120,18 +121,19 @@ export default function AboutMissionVision() {
                   </p>
 
                   <div className="amv-body mt-6 flex flex-wrap gap-3">
-                    <a
-                      href="#services"
+                    <Link
+                      href="/portfolio"
                       className="rounded-2xl border border-white/15 px-4 py-2 text-xs uppercase tracking-wide transition-all hover:bg-white hover:text-black"
                     >
                       Explore Services
-                    </a>
-                    <a
-                      href="#works"
+                    </Link>
+                    <Link
+                      href="/portfolio"
                       className="rounded-2xl border border-white/15 px-4 py-2 text-xs uppercase tracking-wide transition-all hover:bg-white hover:text-black"
                     >
                       View Works
-                    </a>
+                    </Link>
+                    
                   </div>
                 </div>
 
