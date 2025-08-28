@@ -98,7 +98,7 @@ export default function ProjectDetails() {
         <p className="text-base sm:text-xl leading-relaxed">{work?.shortDescription}</p>
       </div>
 
-      <div className="lg:mt-6 mt-3 w-full" ref={projectRef}>
+      <div className="lg:mt-6 mt-3 w-full font-[Roboto]" ref={projectRef}>
         {work && <ProjectDetailsPanel slug={work.slug} />}
 
 

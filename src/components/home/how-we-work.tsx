@@ -61,7 +61,10 @@ export default function HowWeWork() {
     return (
         <section className='lg:h-screen flex justify-center items-center relative hwww' ref={sectionRef}>
             <div className="container text-white text-center lg:-mt-32 mt-[130px]">
-                <h2 className='lg:text-[64px] text-4xl font-bold leading-tight text-center pb-12 max-w-2xl mx-auto'>We Create at the intersection of:</h2>
+                <h2 className='lg:text-[64px] text-4xl font-bold leading-tight text-center pb-12 max-w-2xl mx-auto'>
+                    We Create at the intersection of:
+                </h2>
+                
                 <div className="hidden lg:flex justify-center">
                     <div className="relative h-64 w-64 translate-x-[30px] rounded-full flex justify-center items-center elem">
                         <svg className="absolute w-full h-full scale-[140%] rotate-[270deg]">
@@ -85,17 +88,17 @@ export default function HowWeWork() {
                                 strokeDashoffset="565.48"
                             />
                         </svg>
-                        <span className="z-10 flex flex-col gap-2 justify-center items-center">
-                        <div className="h-16 w-16 flex justify-center items-center border-2 border-[#1b1b1b] rounded-full overflow-hidden">
-                            <img 
-                            src="/images/Design.png"   
-                            alt="Design" 
-                            className="h-10 w-10 object-contain animate-bounce" 
-                            />
-                        </div>
-                        <span>Design</span>
+                        {/* Span with Roboto font */}
+                        <span className="z-10 flex flex-col gap-2 justify-center items-center" style={{ fontFamily: 'Roboto, sans-serif' }}>
+                            <div className="h-16 w-16 flex justify-center items-center border-2 border-[#1b1b1b] rounded-full overflow-hidden">
+                                <img 
+                                    src="/images/Strategy.png"   
+                                    alt="strategy" 
+                                    className="h-10 w-10 object-contain animate-bounce" 
+                                />
+                            </div>
+                            <span>Strategy</span>
                         </span>
-
                     </div>
 
                     <div className="relative h-64 w-64 rounded-full flex justify-center items-center">
@@ -120,15 +123,15 @@ export default function HowWeWork() {
                                 strokeDashoffset="565.48"
                             />
                         </svg>
-                        <span className="z-10 flex flex-col gap-2 justify-center items-center">
+                        <span className="z-10 flex flex-col gap-2 justify-center items-center" style={{ fontFamily: 'Roboto, sans-serif' }}>
                             <div className="h-16 w-16 flex justify-center items-center border-2 border-[#1b1b1b] rounded-full">
-                            <img 
-                            src="/images/Storytelling.png"   
-                            alt="Brand" 
-                            className="h-10 w-10 object-contain animate-bounce" 
-                            />
+                                <img 
+                                    src="/images/Design.png"   
+                                    alt="Design" 
+                                    className="h-10 w-10 object-contain animate-bounce" 
+                                />
                             </div>
-                            <span> Brand</span>
+                            <span>Design</span>
                         </span>
                     </div>
 
@@ -154,62 +157,63 @@ export default function HowWeWork() {
                                 strokeDashoffset="565.48"
                             />
                         </svg>
-                        <span className="z-10 flex flex-col gap-2 justify-center items-center">
+                        <span className="z-10 flex flex-col gap-2 justify-center items-center" style={{ fontFamily: 'Roboto, sans-serif' }}>
                             <div className="h-16 w-16 flex justify-center items-center border-2 border-[#1b1b1b] rounded-full">
-                               <img 
-                            src="/images/Strategy.png"   
-                            alt="Strategy" 
-                            className="h-10 w-10 object-contain animate-bounce" 
-                            />
+                                <img 
+                                    src="/images/Storytelling.png"   
+                                    alt="storytelling" 
+                                    className="h-10 w-10 object-contain animate-bounce" 
+                                />
                             </div>
-                            <span> Strategy</span>
+                            <span>Storytelling</span>
                         </span>
                     </div>
                 </div>
 
                 {/* Mobile & Tab */}
                 <div className="lg:hidden max-h-fit">
+                    {/* Repeat same styling for spans on mobile */}
                     <div className="flex justify-center items-center">
                         <div className="w-48 h-48 rounded-full border-2 border-[#1b1b1b] relative">
-                            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col gap-2 justify-center items-center">
+                            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col gap-2 justify-center items-center" style={{ fontFamily: 'Roboto, sans-serif' }}>
                                 <div className="h-16 w-16 flex justify-center items-center border-2 border-[#1b1b1b] rounded-full">
-                                     <img 
-                            src="/images/Design.png"   
-                            alt="Design" 
-                            className="h-10 w-10 object-contain animate-bounce" 
-                            />
+                                    <img 
+                                        src="/images/Strategy.png"   
+                                        alt="Strategy" 
+                                        className="h-10 w-10 object-contain animate-bounce" 
+                                    />
                                 </div>
-                                <span> Design</span>
+                                <span>Strategy</span>
                             </div>
                         </div>
                     </div>
 
                     <div className="flex justify-center items-center -translate-x-20 -translate-y-16">
                         <div className="w-48 h-48 rounded-full border-2 border-[#1b1b1b] relative">
-                            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col gap-2 justify-center items-center">
+                            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col gap-2 justify-center items-center" style={{ fontFamily: 'Roboto, sans-serif' }}>
                                 <div className="h-16 w-16 flex justify-center items-center border-2 border-[#1b1b1b] rounded-full">
                                     <img 
-                            src="/images/Storytelling.png"   
-                            alt="Brand" 
-                            className="h-10 w-10 object-contain animate-bounce" 
-                            />
+                                        src="/images/Design.png"   
+                                        alt="Design" 
+                                        className="h-10 w-10 object-contain animate-bounce" 
+                                    />
                                 </div>
-                                <span> Brand</span>
+                                <span>Design</span>
                             </div>
                         </div>
                     </div>
 
                     <div className="flex justify-center items-center translate-x-20 -translate-y-64">
                         <div className="w-48 h-48 rounded-full border-2 border-[#1b1b1b] relative">
-                            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col gap-2 justify-center items-center">
+                            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col gap-2 justify-center items-center" style={{ fontFamily: 'Roboto, sans-serif' }}>
                                 <div className="h-16 w-16 flex justify-center items-center border-2 border-[#1b1b1b] rounded-full">
                                     <img 
-                            src="/images/Strategy.png"   
-                            alt="Strategy" 
-                            className="h-10 w-10 object-contain animate-bounce" 
-                            />
+                                        src="/images/Storytelling.png"   
+                                        alt="Storytelling" 
+                                        className="h-10 w-10 object-contain animate-bounce" 
+                                    />
                                 </div>
-                                <span> Strategy</span>
+                                <span>Storytelling</span>
                             </div>
                         </div>
                     </div>

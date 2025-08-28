@@ -128,7 +128,7 @@ export default function Navbar() {
             <nav className="py-3">
                 <div className="container text-white/40 text-lg">
                     <div
-                        className="nav-wrapper flex justify-between items-center"
+                        className="nav-wrapper flex justify-between items-center "
                         ref={navRef}
                     >
                         {/* Logo from Left */}

@@ -11,6 +11,14 @@ import { slugify } from "@/lib/utils";
 import { Navigation } from "swiper/modules";
 import "swiper/css/navigation";
 
+// ✅ Import Roboto font
+import { Roboto } from "next/font/google";
+
+const roboto = Roboto({
+  subsets: ["latin"],
+  weight: ["400", "500", "700"], // you can add other weights if needed
+});
+
 export default function FeaturedWorks() {
   const cardsRef = useRef<(HTMLAnchorElement | null)[]>([]);
   const [hoverIndex, setHoverIndex] = useState<number | null>(null);
@@ -31,11 +39,11 @@ export default function FeaturedWorks() {
 
       gsap.to(card, {
         scale,
-        duration: 0.5, // smoother duration
-        ease: "power3.out", // smoother easing
+        duration: 0.5,
+        ease: "power3.out",
         transformOrigin: "bottom center",
-        overwrite: "auto", // prevent conflicting tweens
-        force3D: true, // GPU acceleration for smooth scaling
+        overwrite: "auto",
+        force3D: true,
       });
     });
   }, [hoverIndex]);
@@ -131,7 +139,10 @@ export default function FeaturedWorks() {
   const featuredWorks = works.filter((work) => work.featured);
 
   return (
-    <section className="text-white px-4 lg:-mt-64 -mt-20" ref={secRef}>
+    <section
+      ref={secRef}
+      className={`${roboto.className} text-white px-4 lg:-mt-64 -mt-20`}
+    >
       <div className="text-center text-xs font-semibold uppercase tracking-wider opacity-60 title_feature pb-3">
         Featured Works
       </div>
@@ -187,9 +198,8 @@ export default function FeaturedWorks() {
                     </video>
                   </div>
 
-                  <div className="mt-4 flex justify-between items-center gap-2 text-xs uppercase tracking-wider">
+                  <div className="mt-4 flex justify-center items-center gap-2 text-sm uppercase tracking-wider">
                     <span className="font-semibold truncate">{work.title}</span>
-                    
                   </div>
                 </Link>
               </div>
@@ -233,7 +243,6 @@ export default function FeaturedWorks() {
                   <div className="text-xs font-semibold uppercase tracking-wider">
                     {work.title}
                   </div>
-                  
                 </div>
               </Link>
             </SwiperSlide>

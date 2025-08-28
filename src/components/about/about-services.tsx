@@ -76,7 +76,7 @@ export default function AboutServices() {
         <section className="py-8 lg:py-20" ref={secRef}>
             <div className="container">
                 <div className="mb-12 text-center lg:text-start">
-                    <h2 className="text-2xl lg:text-5xl font-bold lg:mb-4">We can help you with</h2>
+                    <h2 className="text-2xl lg:text-5xl font-bold lg:mb-4 ">We can help you with</h2>
                 </div>
 
                 <div className="grid lg:grid-rows-3 lg:grid-cols-3 gap-x-8 lg:gap-y-[30px]  gap-y-[45px] relative">
@@ -97,7 +97,7 @@ export default function AboutServices() {
                                 }
                             >
                                 <div className="flex justify-between items-center mb-4">
-                                    <h3 className="text-xl mx-auto lg:mx-0 lg:text-5xl font-semibold leading-tight">
+                                    <h3 className="text-xl mx-auto lg:mx-0 lg:text-5xl font-semibold leading-tight ">
                                         {service.title}
                                     </h3>
                                     <video
@@ -110,7 +110,7 @@ export default function AboutServices() {
                                         style={{ opacity: 0, willChange: 'transform, opacity' }}
                                     />
                                 </div>
-                                <p className="text-gray-300 text-xl lg:tracking-wider">{service.description}</p>
+                                <p className="text-gray-300 text-xl lg:tracking-wider font-[Roboto]">{service.description}</p>
                             </div>
                         );
                     })}

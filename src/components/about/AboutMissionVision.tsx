@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useLayoutEffect, useRef } from "react";
+import Link from 'next/link';
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { MotionPathPlugin } from "gsap/MotionPathPlugin";
@@ -97,7 +98,7 @@ export default function AboutMissionVision() {
         </span>
       </div>
 
-      <div className="mx-auto max-w-6xl px-6 py-20 md:py-28 space-y-12">
+      <div className="mx-auto max-w-6xl px-6 py-20 md:py-28 space-y-12 font-[Roboto]">
         {points.map((item, idx) => (
           <article
             key={item.id}
@@ -115,23 +116,24 @@ export default function AboutMissionVision() {
                   <h2 className="amv-heading font-extrabold leading-[0.95] tracking-tight text-4xl md:text-6xl">
                     {item.heading}
                   </h2>
-                  <p className="amv-body mt-5 max-w-xl text-sm/relaxed md:text-base/relaxed text-white/80">
+                  <p className="amv-body mt-5 max-w-xl text-sm/relaxed md:text-base/relaxed text-white/80 font-[Roboto]">
                     {item.body}
                   </p>
 
                   <div className="amv-body mt-6 flex flex-wrap gap-3">
-                    <a
-                      href="#services"
+                    <Link
+                      href="/portfolio"
                       className="rounded-2xl border border-white/15 px-4 py-2 text-xs uppercase tracking-wide transition-all hover:bg-white hover:text-black"
                     >
                       Explore Services
-                    </a>
-                    <a
-                      href="#works"
+                    </Link>
+                    <Link
+                      href="/portfolio"
                       className="rounded-2xl border border-white/15 px-4 py-2 text-xs uppercase tracking-wide transition-all hover:bg-white hover:text-black"
                     >
                       View Works
-                    </a>
+                    </Link>
+                    
                   </div>
                 </div>
 

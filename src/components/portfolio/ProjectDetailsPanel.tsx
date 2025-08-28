@@ -35,21 +35,21 @@ export default function ProjectDetailsPanel({ slug }: Props) {
           <div className="w-full md:w-1/3 max-w-md text-base md:text-lg leading-relaxed font-normal space-y-6 mb-10 md:mb-0">
             <p>{project.description}</p>
 
-            <button className="flex items-center gap-2 px-4 py-2 border border-white rounded-sm text-sm font-mono tracking-widest hover:bg-white hover:text-black transition">
+            <button className="flex items-center gap-2 px-4 py-2 border border-white rounded-sm text-sm font-[Roboto] tracking-widest hover:bg-white hover:text-black transition">
               <span className="block w-2 h-2 rounded-full bg-white"></span> SEE LIVE
             </button>
           </div>
 
           {/* Middle - Close Text */}
           <div
-            className="w-full md:w-1/3 flex items-center justify-center text-sm font-mono tracking-wide cursor-pointer select-none mb-10 md:mb-0"
+            className="w-full md:w-1/3 flex items-center justify-center text-sm font-[Roboto] tracking-wide cursor-pointer select-none mb-10 md:mb-0"
             onClick={() => setIsOpen(false)}
           >
             CLOSE
           </div>
 
           {/* Right Side - Info */}
-          <div className="w-full md:w-1/3 max-w-xs text-xs font-mono tracking-widest space-y-10">
+          <div className="w-full md:w-1/3 max-w-xs text-xs font-[Roboto] tracking-widest space-y-10">
             {project.services && (
               <div>
                 <div className="text-gray-400 mb-2">FULL LIST OF SERVICES</div>

@@ -73,7 +73,7 @@ export default function WorksSection() {
                             </span>
                         </h3>
                     </div>
-                    <div className="max-w-[150px] text-end items-end hidden lg:block">
+                    <div className="max-w-[150px] text-end items-end hidden lg:block font-[Roboto]">
                         <p className="lg:text-xl text-white/70">Hover on names for a closer look</p>
                     </div>
                 </div>

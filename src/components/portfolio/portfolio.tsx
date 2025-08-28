@@ -50,7 +50,7 @@ export default function Portfolio() {
                 </Link>
               </div>
 
-              <div className="mt-3 text-xs sm:text-sm font-mono tracking-widest text-white/80 flex justify-between flex-wrap">
+              <div className="mt-3 text-xs sm:text-sm font-[Roboto] tracking-widest text-white/80 flex justify-between flex-wrap">
                 <span className="text-white font-bold">{work.title}</span> • {work.tags.join(" ")}
               </div>
             </div>
@@ -88,7 +88,7 @@ export default function Portfolio() {
                 />
               </div>
             </Link>
-            <div className="mt-3 text-xs sm:text-sm font-mono tracking-widest text-white/80 flex justify-between flex-wrap">
+            <div className="mt-3 text-xs sm:text-sm font-[Roboto] tracking-widest text-white/80 flex justify-between flex-wrap">
               <span className="text-white font-bold">{works[2].title}</span> • {works[0].tags.join(" ")}
             </div>
           </div>
@@ -120,7 +120,7 @@ export default function Portfolio() {
                 />
               </div>
             </Link>
-            <div className="mt-3 text-xs sm:text-sm font-mono tracking-widest text-white/80 flex justify-between flex-wrap">
+            <div className="mt-3 text-xs sm:text-sm font-[Roboto] tracking-widest text-white/80 flex justify-between flex-wrap">
               <span className="text-white font-bold">{works[3].title}</span> • {works[0].tags.join(" ")}
             </div>
           </div>
@@ -157,7 +157,7 @@ export default function Portfolio() {
                 />
               </div>
             </Link>
-            <div className="mt-3 text-xs sm:text-sm font-mono tracking-widest text-white/80 flex justify-between flex-wrap">
+            <div className="mt-3 text-xs sm:text-sm font-[Roboto] tracking-widest text-white/80 flex justify-between flex-wrap">
               <span className="text-white font-bold">{works[4].title}</span> • {works[4].tags.join(" ")}
             </div>
           </div>
@@ -189,7 +189,7 @@ export default function Portfolio() {
                 />
               </div>
             </Link>
-            <div className="mt-3 text-xs sm:text-sm font-mono tracking-widest text-white/80 flex justify-between flex-wrap">
+            <div className="mt-3 text-xs sm:text-sm font-[Roboto] tracking-widest text-white/80 flex justify-between flex-wrap">
               <span className="text-white font-bold">{works[5].title}</span> • {works[5].tags.join(" ")}
             </div>
           </div>
