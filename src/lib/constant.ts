@@ -12,7 +12,7 @@ export const services = [
         id: 1,
         title: "Design",
         description: "Drive growth with smart, results-focused digital marketing. From strategic planning and campaign execution to performance analytics and optimization, we help your brand reach the right audience, at the right time, across the right channels.",
-        tags: ["AMAZON", "SMM"],
+        tags: ["AMAZON", "Social Media"],
         videos: [
             "https://res.cloudinary.com/sahed/video/upload/q_auto/v1754562507/SocialMedia_smhmsw.mp4",
             "https://res.cloudinary.com/sahed/video/upload/q_auto/v1754562503/Amazon_wldify.mp4",
