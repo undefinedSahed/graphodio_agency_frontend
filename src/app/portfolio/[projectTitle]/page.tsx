@@ -84,7 +84,7 @@ export default function ProjectDetails() {
         <div className="flex justify-center gap-2 mt-6 sm:mt-0">
           {
             work?.tags?.map((tag, index) => (
-              <span key={index} className="px-2 py-1 text-[10px] sm:text-xs bg-[#1f1f1f] rounded">{tag}</span>
+              <span key={index} className="px-2 py-1 text-[10px] sm:text-xs bg-[#1f1f1f] rounded font-[Roboto]">{tag}</span>
             ))
           }
         </div>
@@ -95,7 +95,7 @@ export default function ProjectDetails() {
       </h1>
 
       <div className="mt-4 text-gray-400 max-w-xl px-2">
-        <p className="text-base sm:text-xl leading-relaxed">{work?.shortDescription}</p>
+        <p className="text-base sm:text-xl leading-relaxed font-[Roboto]">{work?.shortDescription}</p>
       </div>
 
       <div className="lg:mt-6 mt-3 w-full font-[Roboto]" ref={projectRef}>
@@ -150,19 +150,7 @@ export default function ProjectDetails() {
                   </div>
                 </div>
 
-                <div className="flex justify-between text-xs sm:text-sm text-gray-500 mt-2 w-full px-1">
-                  <span>{work?.title}</span>
-                  <div className="text-white/70 flex items-center gap-1">
-                    {work?.tags?.map((tag, idx) => (
-                      <span
-                        key={idx}
-                        className="group-hover:visible mt-1 text-xs bg-[#1b1b1b] tracking-wider px-2 rounded-xs"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </div>
+                
               </div>
             ))}
           </div>
