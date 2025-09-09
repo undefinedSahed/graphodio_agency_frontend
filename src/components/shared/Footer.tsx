@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useEffect } from 'react';
-import { FaLinkedin, FaFacebook, FaInstagram, FaWhatsapp, FaTwitter } from 'react-icons/fa';
+import { FaLinkedin, FaFacebook, FaInstagram, FaWhatsapp } from 'react-icons/fa';
 import { useContact } from "@/lib/contact-context"
 
 interface SocialLinkProps {
@@ -113,7 +113,6 @@ const Footer: React.FC = () => {
                                 <SocialLink href="https://www.facebook.com/Graphodio360" label="Facebook" Icon={FaFacebook} />
                                 <SocialLink href="https://www.instagram.com/graphodio360/" label="Instagram" Icon={FaInstagram} />
                                 <SocialLink href="https://api.whatsapp.com/send/?phone=8801782060008&text&type=phone_number&app_absent=0" label="whatsapp" Icon={FaWhatsapp} />
-                                <SocialLink href="https://www.instagram.com/graphodio360/" label="Twitter" Icon={FaTwitter} />
                             </div>
                             <Link href="/infos" className="hover:underline text-xs font-[Roboto]">
                                 Infos & Credits

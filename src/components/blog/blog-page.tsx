@@ -22,7 +22,7 @@ export default function BlogPage() {
                     </Link>
                     <Link href={`/blog/${slugify(blog.slug)}`}>
                       <div className="lg:w-[70%] w-[80%] lg:space-y-5 space-y-2">
-                        <h1 className='lg:text-3xl text-base'>{blog.title}</h1>
+                        <h1 className='lg:text-3xl text-base font-[Roboto]'>{blog.title}</h1>
                         <div className="text-xs lg:text-base">
                           <h2>{blog.author.name}</h2>
                           <p>{blog.author.date}</p>
@@ -33,7 +33,7 @@ export default function BlogPage() {
                       <ShareButton title={blog.slug} url={`http://localhost:3000/blog/${blog.slug}`} />
                     </div>
                   </div>
-                  <div className="col-span-1 order-1 lg:order-2 flex-1 lg:absolute top-1/2 right-0 lg:-translate-y-1/2 max-w-md">
+                  <div className="col-span-1 order-1 lg:order-2 flex-1 lg:absolute top-1/2 right-0 lg:-translate-y-1/2 max-w-md font-[Roboto] ">
                     <Link href={`/blog/${slugify(blog.slug)}`}>
                       <Image
                         src={blog.thumbnail}
