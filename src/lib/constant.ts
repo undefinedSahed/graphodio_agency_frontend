@@ -293,60 +293,75 @@ export const works = [
 // Teams
 export const teammates = [
     {
-        name: "Mizanur Rahman",
-        role: "Chairman",
-        image: "/team/MizanurRahman.png",
-        headline: "The unstopable",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro odit adipisci sed ullam earum, alias nam ratione debitis cum optio, modi aspernatur, necessitatibus sunt minima consequuntur repudiandae praesentium voluptatem. Dignissimos, temporibus quas natus"
+    "name": "Mizanur Rahman",
+    "role": "Chairman",
+    "image": "/team/MizanurRahman.png",
+    "headline": "The Visionary Leader",
+    "description": "Mizanur Rahman brings unmatched leadership and strategic foresight to Graphodio. As Chairman, he has been instrumental in guiding the company’s growth, fostering innovation, and building a culture of excellence. His dedication and forward-thinking mindset continue to inspire the team to achieve new milestones in the digital landscape."
+    }
+,
+    {
+        
+        "name": "Erik Johnston",
+        "role": "Managing Director",
+        "image": "/team/Erik.png",
+        "headline": "The Driving Force",
+        "description": "As Managing Director of Graphodio, Erik Johnston leads with a results-driven approach and an unwavering commitment to excellence. With his dynamic leadership and deep industry expertise, he plays a key role in shaping business strategies, driving growth, and ensuring the company stays ahead in an ever-evolving digital world."
+        
+},
+    {
+                
+        "name": "Farhan Nair",
+        "role": "Founder and CEO",
+        "image": "/team/Evan.png",
+        "headline": "The Visionary Founder",
+        "description": "Farhan Nair, the Founder and CEO of Graphodio, is the driving visionary behind the company’s journey. With a passion for innovation and a relentless pursuit of excellence, he has built Graphodio from the ground up, transforming ideas into impactful digital solutions. His leadership inspires the team to push boundaries, embrace creativity, and deliver value to clients worldwide."
+
+
     },
     {
-        name: "Erik Johnston",
-        role: "Managing Director",
-        image: "/team/Erik.png",
-        headline: "The unstopable",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro odit adipisci sed ullam earum, alias nam ratione debitis cum optio, modi aspernatur, necessitatibus sunt minima consequuntur repudiandae praesentium voluptatem. Dignissimos, temporibus quas natus"
-    },
-    {
-        name: "Farhan Nair",
-        role: "Founder and CEO",
-        image: "/team/Evan.png",
-        headline: "The unstopable",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro odit adipisci sed ullam earum, alias nam ratione debitis cum optio, modi aspernatur, necessitatibus sunt minima consequuntur repudiandae praesentium voluptatem. Dignissimos, temporibus quas natus"
-    },
-    {
-        name: "Tanmoy Mahmud",
-        role: "Full Stack Developer",
-        image: "/team/Tanmoy.png",
-        headline: "The unstopable",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro odit adipisci sed ullam earum, alias nam ratione debitis cum optio, modi aspernatur, necessitatibus sunt minima consequuntur repudiandae praesentium voluptatem. Dignissimos, temporibus quas natus"
+        
+        "name": "Tanmoy Mahmud",
+        "role": "COO",
+        "image": "/team/Tanmoy.png",
+        "headline": "The Strategic Operator",
+        "description": "As Chief Operating Officer of Graphodio, Tanmoy Mahmud ensures seamless execution of the company’s vision through strong operational leadership. With a focus on efficiency, collaboration, and innovation, he drives organizational growth while optimizing processes that empower teams to deliver impactful results. His commitment to excellence keeps Graphodio agile and future-ready."
+
+
     },
      {
-        name: "Sahed Rahman",
-        role: "Full Stack Developer",
-        image: "/team/Shahed.png",
-        headline: "The unstopable",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro odit adipisci sed ullam earum, alias nam ratione debitis cum optio, modi aspernatur, necessitatibus sunt minima consequuntur repudiandae praesentium voluptatem. Dignissimos, temporibus quas natus"
+        
+        "name": "Sahed Rahman",
+        "role": "Web Development Team Lead",
+        "image": "/team/Shahed.png",
+        "headline": "The Tech Innovator",
+        "description": "As Team Lead of Web Development at Graphodio, Sahed Rahman combines technical expertise with innovative thinking to deliver cutting-edge digital solutions. He leads development teams with precision and creativity, ensuring projects meet the highest standards of performance, functionality, and design. His passion for technology drives Graphodio’s mission to build impactful and future-ready web experiences."
+
+
     },
     {
-        name: "Farhat Lamisa Diya",
-        role: "Web Developer",
-        image: "/team/Dia.png",
-        headline: "The unstopable",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro odit adipisci sed ullam earum, alias nam ratione debitis cum optio, modi aspernatur, necessitatibus sunt minima consequuntur repudiandae praesentium voluptatem. Dignissimos, temporibus quas natus"
+        
+        "name": "Farhat Lamisa Diya",
+        "role": "Web Developer",
+        "image": "/team/Dia.png",
+        "headline": "The Creative Coder",
+        "description": "As a Web Developer at Graphodio, Farhat Lamisa Diya brings creativity and technical expertise together to craft seamless, user-friendly, and impactful digital experiences. With a keen eye for detail and a passion for clean, efficient code, she plays a vital role in turning ideas into functional, high-quality solutions that drive the company’s innovation forward."
+
+
     },
     {
-        name: "Sahed Rahman",
-        role: "Full Stack Developer",
+        name: "Nilima Tabassum",
+        role: "",
         image: "/team/Shupty.png",
         headline: "The unstopable",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro odit adipisci sed ullam earum, alias nam ratione debitis cum optio, modi aspernatur, necessitatibus sunt minima consequuntur repudiandae praesentium voluptatem. Dignissimos, temporibus quas natus"
+        description: "necessitatibus sunt minima consequuntur repudiandae praesentium voluptatem. Dignissimos, temporibus quas natus"
     },
     {
         name: "Sadia Rahman Megha",
         role: "Visualizer",
         image: "/team/Megha.png",
-        headline: "The unstopable",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro odit adipisci sed ullam earum, alias nam ratione debitis cum optio, modi aspernatur, necessitatibus sunt minima consequuntur repudiandae praesentium voluptatem. Dignissimos, temporibus quas natus"
+        "headline": "The Creative Visionary",
+        "description": "As Visualizer at Graphodio, Sadia Rahman Megha transforms concepts into captivating visuals that bring ideas to life. With a strong sense of design and storytelling, she ensures every project reflects both creativity and clarity. Her innovative approach adds depth and impact to Graphodio’s digital experiences, making them visually engaging and memorable."
     }
 ]
 
@@ -356,25 +371,27 @@ export const blogs = [
     {
         slug: "the-1-tool-that-helps-remote-teams-collaborate-better",
         title: "How Data-Driven Marketing Maximizes Your Amazon Profits",
-        thumbnail: "/images/blog.jpg",
+        thumbnail: "/images/Blog1.jpeg",
         secondTitle: "",
         firstPara: "In today’s fast-paced e-commerce world, success on Amazon is no longer about simply listing products—it’s about understanding the numbers behind your business and making smarter,data-driven decisions. At Graphodio, we help brands transform their Amazon presence through powerful PPC campaigns, SEO strategies, and performance-driven marketing solutions.",
         secondPara: "",
         thirdTitle: "Why Data is the Heart of Amazon Growth",
         thirdPara: "Running ads without tracking results is like driving blindfolded. Every click, keyword, and conversion tells a story. By analyzing the right data, sellers can:", 
-        fourthPara: "● Identify their most profitable products. \n● Cut wasted ad spend. \n● Scale campaigns that generate consistent ROI. \n● Improve visibility with targeted SEO and optimized listings",
-        secondImage: "/images/blog.jpg",
+        fourthPara: "● Identify their most profitable products.\n● Cut wasted ad spend.\n● Scale campaigns that generate consistent ROI.\n● Improve visibility with targeted SEO and optimized listings",
+        secondImage: "/images/Blog1.jpeg",
         secondImgDes: "",
-        fourthTitle: "",
-        fifthPara: "",
-        sixthPara: "",
-        thirdImage: "/images/blog.jpg",
+        fourthTitle: "Smarter Campaigns, Better Results",
+        fifthPara: "At Graphodio, we don’t just launch campaigns—we strategically phase them out to let Amazon’s algorithm learn and optimize. This ensures each product campaign gathers enough data before scaling, delivering:",
+        sixthPara: "● Lower ACOS through precise targeting \n ● Higher CTR with compelling creatives \n ● Steady growth with phased scaling instead of “one-size-fits-all” spending",
+        thirdImage: "/images/Blog1.jpeg",
         thirdImgDes: "",
-        fifthTitle: "",
-        seventhPara: "",
-        eighthPara: "",
-        ninethPara: "",
-        endingPara: "",
+        fifthTitle: "Beyond Ads: Building a Strong Amazon Brand",
+        seventhPara: "Success on Amazon is not just about ads. Our approach covers:",
+        eighthPara: "● Listing Optimization: Titles, bullet points, and descriptions designed to boost organic ranking.",
+        ninethPara: "● A+ Content &amp; Graphics: Visually engaging content that builds brand trust and improves conversions.",
+        tenthPara: "● Social Media Integration: Driving external traffic from Instagram, Facebook, and LinkedIn to strengthen brand authority.",
+        sixthTitle: "The Graphodio Difference",
+        endingPara: "What sets us apart is our data-first approach. Every decision we make—whether it’s bid adjustments, keyword targeting, or creative updates—is backed by insights, not guesses. This ensures sustainable, long-term growth for your Amazon store. Ready to maximize your Amazon profits? Let Graphodio handle your PPC, SEO, and creative strategy so you can focus on scaling your brand.",
         author: {
             name: "Sahed Rahman",
             image: "https://github.com/shadcn.png",

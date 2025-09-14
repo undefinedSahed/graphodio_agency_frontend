@@ -27,6 +27,7 @@ export default function BlogPage() {
                           <h2>{blog.author.name}</h2>
                           <p>{blog.author.date}</p>
                         </div>
+                        
                       </div>
                     </Link>
                     <div className="w-[10%]">
