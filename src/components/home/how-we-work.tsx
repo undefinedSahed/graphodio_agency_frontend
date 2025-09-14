@@ -95,6 +95,7 @@ export default function HowWeWork() {
                                     src="/images/Strategy.png"   
                                     alt="strategy" 
                                     className="h-10 w-10 object-contain animate-bounce" 
+                                    
                                 />
                             </div>
                             <span>Strategy</span>
