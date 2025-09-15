@@ -9,6 +9,8 @@ import { slugify } from "@/lib/utils";
 export default function Portfolio() {
   const [hovered, setHovered] = useState<string | null>(null);
 
+  console.log("Works:", works?.length);
+
   return (
     <>
       {/* Section 1 */}
@@ -163,7 +165,7 @@ export default function Portfolio() {
           </div>
 
           {/* Right card */}
-          <div className="md:col-span-2 flex flex-col justify-end">
+          {/* <div className="md:col-span-2 flex flex-col justify-end">
             <Link
               href={`/portfolio/${slugify(works[5].title)}`}
               onMouseEnter={() => setHovered(works[5].title)}
@@ -192,7 +194,7 @@ export default function Portfolio() {
             <div className="mt-3 text-xs sm:text-sm font-[Roboto] tracking-widest text-white/80 flex justify-between flex-wrap">
               <span className="text-white font-bold">{works[5].title}</span> • {works[5].tags.join(" ")}
             </div>
-          </div>
+          </div> */}
         </div>
       </section>
     </>
