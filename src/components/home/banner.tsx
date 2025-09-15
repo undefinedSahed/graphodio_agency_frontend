@@ -1,116 +1,139 @@
-"use client"
+"use client";
 
-import React, { useRef } from 'react'
-import { useGSAP } from '@gsap/react'
-import gsap from 'gsap';
-import { SplitText } from 'gsap/all';
-import { Roboto } from 'next/font/google'
+import React, { useRef } from "react";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { SplitText } from "gsap/all";
 
-const roboto = Roboto({
-    subsets: ["latin"],
-    weight: ["400", "500", "700"]
-});
+type DeviceType = "desktop" | "tablet" | "mobile";
 
 export default function Banner() {
-    const bannerRef = useRef(null)
+  const bannerRef = useRef<HTMLElement>(null);
 
-    useGSAP(() => {
-        const mm = gsap.matchMedia();
+  useGSAP(
+    () => {
+      if (!bannerRef.current) return;
+      const mm = gsap.matchMedia();
 
-        mm.add({
-            // Desktop: min-width 768px and up
-            isDesktop: "(min-width: 768px)",
+      mm.add(
+        {
+          isDesktop: "(min-width: 1024px)",
+          isTablet: "(min-width: 768px) and (max-width: 1023px)",
+          isMobile: "(max-width: 767px)",
+        },
+        (context) => {
+          let device: DeviceType = "desktop";
+          if (context?.conditions?.isMobile) device = "mobile";
+          else if (context?.conditions?.isTablet) device = "tablet";
 
-            // Mobile: max-width 767px
-            isMobile: "(max-width: 767px)"
-        }, (context) => {
-            const isMobile = context.conditions?.isMobile ?? false;
+          const headlineOffset = {
+            desktop: {
+              from: 140,
+              to: 100,
+              yEnd: -150,
+              scale: 0.5,
+              fontSize: 120,
+            },
+            tablet: { from: 100, to: 60, yEnd: -100, scale: 0.6, fontSize: 90 },
+            mobile: { from: 80, to: 40, yEnd: -60, scale: 0.8, fontSize: 48 },
+          };
 
-            const splitedHeadline = SplitText.create(".headline", { type: "words" });
-            const splitedParagraph = SplitText.create(".para", { type: "lines" });
+          const paragraphOffset = {
+            desktop: { from: 100, to: -180 },
+            tablet: { from: 80, to: -120 },
+            mobile: { from: 50, to: -60 },
+          };
+          const hlOffset =
+            headlineOffset[device as keyof typeof headlineOffset];
 
-            const tl = gsap.timeline();
+          const paraOffset =
+            paragraphOffset[device as keyof typeof paragraphOffset];
 
-            // Headline animation
-            tl.fromTo(splitedHeadline.words,
-                {
-                    y: isMobile ? 80 : 140,
-                    opacity: 0,
-                    visibility: "hidden",
-                    duration: 1.2,
-                    delay: 1.5,
-                    stagger: {
-                        amount: 0.5,
-                        from: "start"
-                    },
-                    fontSize: isMobile ? 48 : 120,
-                },
-                {
-                    y: isMobile ? 40 : 100,
-                    opacity: 0.5,
-                    duration: 1,
-                    visibility: "visible",
-                    stagger: {
-                        amount: 0.5,
-                        from: "start"
-                    },
-                    fontSize: isMobile ? 48 : 120
-                }
-            );
+          const splitedHeadline = SplitText.create(".headline", {
+            type: "words",
+          });
+          const splitedParagraph = SplitText.create(".para", { type: "lines" });
 
-            tl.to(splitedHeadline.words, {
-                opacity: 1,
-                duration: 0.2
-            });
+          const tl = gsap.timeline();
 
-            tl.to(".headline", {
-                y: isMobile ? -60 : -150,
-                duration: 0.6,
-                scale: isMobile ? 0.8 : 0.5
-            });
+          // Headline animation
+          tl.fromTo(
+            splitedHeadline.words,
+            {
+              y: hlOffset.from,
+              opacity: 0,
+              visibility: "hidden",
+              duration: 1.2,
+              delay: 1.5,
+              stagger: { amount: 0.5, from: "start" },
+              fontSize: hlOffset.fontSize,
+            },
+            {
+              y: hlOffset.to,
+              opacity: 0.5,
+              duration: 1,
+              visibility: "visible",
+              stagger: { amount: 0.5, from: "start" },
+              fontSize: hlOffset.fontSize,
+            }
+          );
 
-            // Paragraph animation
-            tl.fromTo(splitedParagraph.lines,
-                {
-                    y: isMobile ? 50 : 100,
-                    opacity: 0,
-                    visibility: "hidden",
-                    duration: 0.5,
-                    stagger: 0.2,
-                },
-                {
-                    y: isMobile ? -60 : -180,
-                    opacity: 1,
-                    visibility: "visible",
-                    duration: 0.5,
-                    stagger: 0.2
-                }
-            );
-        });
+          tl.to(splitedHeadline.words, { opacity: 1, duration: 0.2 });
 
-        return () => mm.revert(); 
-    }, { scope: bannerRef });
+          tl.to(".headline", {
+            y: hlOffset.yEnd,
+            scale: hlOffset.scale,
+            duration: 0.6,
+          });
 
-    return (
-        <section className="py-10 text-white/90 flex justify-center" ref={bannerRef}>
-            <div className="container">
-                <div className="text-center max-w-6xl mx-auto">
-                    {}
-                    <h1 
-                        className="headline invisible text-[60px] font-bold lg:leading-tight leading-[50px] text-center lg:pb-4 pb-7"
-                    
-                    >
-                        Crafting Visuals That Make Your Brand Stand Out
-                    </h1>
+          // Paragraph animation
+          tl.fromTo(
+            splitedParagraph.lines,
+            {
+              y: paraOffset.from,
+              opacity: 0,
+              visibility: "hidden",
+              duration: 0.5,
+              stagger: 0.2,
+            },
+            {
+              y: paraOffset.to,
+              opacity: 1,
+              visibility: "visible",
+              duration: 0.5,
+              stagger: 0.2,
+            }
+          );
+        }
+      );
 
-                    {}
-                    <p 
-                        className={`para invisible px-4 md:px-60 text-lg text-center ${roboto.className}`}
-                    >
-                        At Graphodio, we are a full-service creative agency driven by innovation, passion, and a commitment to delivering exceptional design solutions. Since our inception, we’ve been transforming ideas into stunning visuals, building brands that resonate, and creating experiences that leave a lasting impact.
-                    </p>
-                </div>
-            </div>
-        </section>
-    )
+      return () => mm.revert();
+    },
+    { scope: bannerRef }
+  );
+
+  return (
+    <section
+      className="py-10 text-white/90 flex justify-center"
+      ref={bannerRef}
+      aria-label="Banner Section"
+    >
+      <div className="container">
+        <div className="text-center max-w-6xl mx-auto">
+          <h1
+            className={`headline font-bold text-center pb-7 text-[36px] sm:text-[48px] md:text-[64px] lg:text-[80px] xl:text-[120px] leading-tight`}
+          >
+            Crafting Visuals That Make Your Brand Stand Out
+          </h1>
+          <p className={`para px-4 text-lg md:text-xl text-center md:px-60`}>
+            At Graphodio, we are a full-service creative agency driven by
+            innovation, passion, and a commitment to delivering exceptional
+            design solutions. Since our inception, we&apos;ve been transforming
+            ideas into stunning visuals, building brands that resonate, and
+            creating experiences that leave a lasting impact.
+          </p>
+        </div>
+      </div>
+    </section>
+  );
 }
