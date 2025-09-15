@@ -138,6 +138,7 @@ export const works = [
     },
     year: "SEP 2024",
     home: true,
+    about: true
   },
   {
     title: "Website",
@@ -172,6 +173,7 @@ export const works = [
     },
     year: "SEP 2024",
     home: true,
+    about: true
   },
   {
     title: "Branding",
@@ -206,6 +208,7 @@ export const works = [
     },
     year: "SEP 2024",
     home: true,
+    about: true
   },
   {
     title: "Social Media",
@@ -240,6 +243,7 @@ export const works = [
     },
     year: "SEP 2024",
     home: true,
+    about: true
   },
   {
     title: "Digital Marketing",
@@ -274,6 +278,7 @@ export const works = [
     },
     year: "SEP 2024",
     home: true,
+    about: true
   },
 ];
 
