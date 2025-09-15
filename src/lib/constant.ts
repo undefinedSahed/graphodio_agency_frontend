@@ -137,6 +137,7 @@ export const works = [
       textAfterLink: ", WHERE CREATIVITY MEETS STRATEGY & EXECUTION.",
     },
     year: "SEP 2024",
+    home: true,
   },
   {
     title: "Website",
@@ -170,6 +171,7 @@ export const works = [
       textAfterLink: ", WHERE CREATIVITY MEETS STRATEGY & EXECUTION.",
     },
     year: "SEP 2024",
+    home: true,
   },
   {
     title: "Branding",
@@ -203,6 +205,7 @@ export const works = [
       textAfterLink: ", WHERE CREATIVITY MEETS STRATEGY & EXECUTION.",
     },
     year: "SEP 2024",
+    home: true,
   },
   {
     title: "Social Media",
@@ -236,6 +239,7 @@ export const works = [
       textAfterLink: ", WHERE CREATIVITY MEETS STRATEGY & EXECUTION.",
     },
     year: "SEP 2024",
+    home: true,
   },
   {
     title: "Digital Marketing",
@@ -269,6 +273,7 @@ export const works = [
       textAfterLink: ", WHERE CREATIVITY MEETS STRATEGY & EXECUTION.",
     },
     year: "SEP 2024",
+    home: true,
   },
 ];
 
