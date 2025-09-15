@@ -4,10 +4,11 @@ import FeaturedWorks from "@/components/home/FeaturedWorks";
 import ServiceSection from "@/components/home/service-section";
 import HowWeWork from "@/components/home/how-we-work";
 import StackedSlider from "@/components/home/work-slider";
-import { metadata } from "./layout";
 
-metadata.title = "Graphodio - Home";
-metadata.description = "The best agency for Web, Graphics and SEO services";
+export const metadata = {
+  title: "Graphodio - Home",
+  description: "The best agency for Web, Graphics and SEO services",
+};
 
 export default function Home() {
   return (

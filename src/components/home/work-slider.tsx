@@ -76,7 +76,7 @@ export default function StackedSlider() {
               <span className="inline-flex justify-center items-center w-10 h-10 lg:w-14 lg:h-14 border-2 border-[#1b1b1b] rounded-full">
                 <Rocket className="w-5 h-5 lg:w-6 lg:h-6 animate-bounce" />
               </span>
-              <span>, WE TURN IDEAS INTO</span>
+              <span>WE TURN IDEAS INTO</span>
             </span>
 
             <span className="animate-group flex items-center gap-2">
