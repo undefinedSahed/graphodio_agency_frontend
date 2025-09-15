@@ -191,19 +191,17 @@ export default function ContactForm() {
                   >
                     {serviceOptions.map((option) => (
                       <FormItem key={option.value}>
-                        <div className="border border-white/20 rounded-md p-4 flex items-center gap-3 hover:border-white/40 transition-colors text-white text-lg cursor-pointer">
+                        <FormLabel
+                          htmlFor={option.value}
+                          className="border border-white/20 rounded-md p-4 flex items-center gap-3 hover:border-white/40 transition-colors text-white text-lg cursor-pointer"
+                        >
                           <RadioGroupItem
                             value={option.value}
                             id={option.value}
                             className="w-5 h-5 cursor-pointer border-white/20 data-[state=checked]:bg-white data-[state=checked]:text-black data-[state=checked]:border-white"
                           />
-                          <FormLabel
-                            htmlFor={option.value}
-                            className="text-white capitalize cursor-pointer"
-                          >
-                            {option.label}
-                          </FormLabel>
-                        </div>
+                          <span className="capitalize">{option.label}</span>
+                        </FormLabel>
                       </FormItem>
                     ))}
                   </RadioGroup>
