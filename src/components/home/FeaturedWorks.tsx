@@ -10,13 +10,11 @@ import Link from "next/link";
 import { slugify } from "@/lib/utils";
 import { Navigation } from "swiper/modules";
 import "swiper/css/navigation";
-
-// ✅ Import Roboto font
 import { Roboto } from "next/font/google";
 
 const roboto = Roboto({
   subsets: ["latin"],
-  weight: ["400", "500", "700"], // you can add other weights if needed
+  weight: ["400", "500", "700"], 
 });
 
 export default function FeaturedWorks() {

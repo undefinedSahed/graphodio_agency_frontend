@@ -1,7 +1,7 @@
 // File: app/blog/[slug]/page.tsx
 
-import ShareButton from '@/components/blog/share-button';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+//import ShareButton from '@/components/blog/share-button';
+//import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
 import { blogs } from '@/lib/constant';
 import Image from 'next/image';
@@ -31,7 +31,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
 
     return (
         <main>
-            <section className="pb-8 lg:pb-20">
+            <section className="pb-8 lg:pb-20 font-[Roboto]">
                 <div className="max-w-6xl mx-auto lg:space-y-7 space-y-4 tracking-wider px-2 lg:px-0">
                     <div className="relative">
                         <Image
@@ -46,7 +46,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
                         <div className="absolute inset-0 rounded-md shadow-[inset_0_-170px_57px_32px_rgba(0,0,0,0.4)] z-10"></div>
 
                         {/* Text content */}
-                        <div className="absolute flex lg:gap-20 lg:bottom-16 bottom-1 lg:left-20 left-4 z-20 text-white border-b lg:pb-4 mr-5 lg:mr-0">
+                        {/*<div className="absolute flex lg:gap-20 lg:bottom-16 bottom-1 lg:left-20 left-4 z-20 text-white border-b lg:pb-4 mr-5 lg:mr-0">
                             <div className="lg:space-y-3 space-y-1">
                                 <h1 className="lg:text-4xl text-base font-bold">{blog.title}</h1>
                                 <div className="text-sm flex items-center lg:gap-5 gap-2">
@@ -61,7 +61,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
                                 </div>
                             </div>
                             <ShareButton title={blog.slug} url={`http://localhost:3000/blog/${blog.slug}`} />
-                        </div>
+                        </div> */}
                     </div>
 
                     <h2 className="lg:text-2xl text-base font-semibold">{blog.secondTitle}</h2>
@@ -85,13 +85,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
                     <p className='text-xs lg:text-base text-justify lg:text-start'>{blog.fifthPara}</p>
                     <p className='text-xs lg:text-base text-justify lg:text-start'>{blog.sixthPara}</p>
 
-                    <Image
-                        src={blog.thirdImage}
-                        alt={blog.thirdImgDes}
-                        width={1000}
-                        height={600}
-                        className="w-full rounded-md"
-                    />
+                    
                     <p className="text-sm italic">{blog.thirdImgDes}</p>
 
                     <h3 className="lg:text-xl text-base font-semibold">{blog.fifthTitle}</h3>

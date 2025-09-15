@@ -17,6 +17,7 @@
     "@radix-ui/react-slot": "^1.2.3",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "fast-average-color": "^9.5.0",
     "framer-motion": "^12.23.0",
     "gsap": "^3.13.0",
     "lucide-react": "^0.523.0",
