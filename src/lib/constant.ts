@@ -62,7 +62,7 @@ export const testimonials = [
         role: "Owner, Droplets Attire",
         comment:
             "Such a creative, thoughtful and attentive team. They gave me all the files we altered, and they were so patient and helpful. Highly recommended.",
-        image: "/images/logo.png",
+        image: "/images/Nada.jpg",
     },
     {
         id: 3,
@@ -186,7 +186,7 @@ export const works = [
         shortDescription: "We craft data-driven strategies and campaigns that boost visibility, drive engagement, and deliver measureable growth across digital channels.",
         detailsDescription: "We go beyond ads to create data-driven campaigns that connect your brand with the right audience. From SEO, PPC, and social media to content and email marketing, our strategies boost visibility, drive engagement, and deliver measurable growth tailored to your goals.",
         thumbnail: "/images/webimages-05.jpg",
-        tags: ["Marketing", "SEO"],
+        tags: ["PPC", "SEO", "SMM"],
         videos: ["https://res.cloudinary.com/sahed/video/upload/q_auto/v1756048108/digitalmarketing_yjimve.mp4", "https://res.cloudinary.com/sahed/video/upload/q_auto/v1756048108/digitalmarketing2_v9ry8d.mp4", "https://res.cloudinary.com/sahed/video/upload/q_auto/v1756048109/digitalmarketing3_aksogw.mp4", "https://res.cloudinary.com/sahed/video/upload/q_auto/v1756048112/digitalmarketing4_b3eusl.mp4", "https://res.cloudinary.com/sahed/video/upload/q_auto/v1756048112/digitalmarketing5_xgse7i.mp4"],
         featured: true,
          description: `We go beyond ads to create data-driven campaigns that connect your brand with the right audience. From SEO, PPC, and social media to content and email marketing, our strategies boost visibility, drive engagement, and deliver measurable growth tailored to your goals.`,
@@ -244,9 +244,9 @@ export const works = [
         shortDescription: "Website for boutique travel planning services.",
         detailsDescription: "Royal House Travel needed a minimal design that conveys luxury. We built a fast-loading landing page with destination highlights and inquiry form.",
         thumbnail: "/images/webimages-05.jpg",
-        tags: ["Graphics", "SEO"],
+        tags: ["PPC", "SEO", "SMM"],
         videos: ["https://res.cloudinary.com/sahed/video/upload/q_auto/v1756048108/digitalmarketing_yjimve.mp4", "https://res.cloudinary.com/sahed/video/upload/q_auto/v1756048108/digitalmarketing2_v9ry8d.mp4", "https://res.cloudinary.com/sahed/video/upload/q_auto/v1756048109/digitalmarketing3_aksogw.mp4", "https://res.cloudinary.com/sahed/video/upload/q_auto/v1756048112/digitalmarketing4_b3eusl.mp4", "https://res.cloudinary.com/sahed/video/upload/q_auto/v1756048112/digitalmarketing5_xgse7i.mp4"],
-        home: true
+        about: true
     },
     {
         title: "Website",
@@ -350,11 +350,14 @@ export const teammates = [
 
     },
     {
-        name: "Nilima Tabassum",
-        role: "",
-        image: "/team/Shupty.png",
-        headline: "The unstopable",
-        description: "necessitatibus sunt minima consequuntur repudiandae praesentium voluptatem. Dignissimos, temporibus quas natus"
+    
+        "name": "Nilima Tabassum",
+        "role": "KAM, Digital",
+        "image": "/team/Shupty.png",
+        "headline": "The Client Champion",
+        "description": "As Key Account Manager, Digital at Graphodio, Nilima Tabassum builds strong client relationships and ensures seamless delivery of digital solutions. With a strategic mindset and excellent communication skills, she bridges the gap between clients and the development team, driving successful outcomes that align with both business goals and client expectations."
+
+
     },
     {
         name: "Sadia Rahman Megha",
@@ -430,14 +433,14 @@ export const blogs = [
     {
         slug: "seo-isnt-dead-why-your-business-still-needs-it-in-2025",
         title: "SEO Isn’t Dead: Why Your Business Still Needs It in 2025",
-        thumbnail: "/images/blog.jpg",
+        thumbnail: "/images/blog3.jpg",
         secondTitle: "SEO Isn’t Dead: Why Your Business Still Needs It in 2025",
         firstPara: "With AI-generated answers and endless algorithm updates, many businesses assume SEO is losing relevance. The truth? SEO has never been more critical—it’s just evolving.",
         secondPara: "",
         thirdTitle: "The Shift in Search Behavior",
         thirdPara: "Today’s users expect fast, trustworthy, and personalized search results. Businesses that ignore SEO risk vanishing from visibility entirely.",
         fourthPara: "",
-        secondImage: "/images/blog.jpg",
+        secondImage: "/images/blog3.jpg",
         secondImgDes: "",
         fourthTitle: "Modern SEO at Graphodio",
         fifthPara: "We combine traditional SEO best practices with modern optimization strategies, including:",
@@ -458,20 +461,19 @@ export const blogs = [
     {
         slug: "design-that-converts-the-secret-power-of-visual-branding",
         title: "Design That Converts: The Secret Power of Visual Branding",
-        thumbnail: "/images/blog.jpg",
+        thumbnail: "/images/blog4.jpg",
         secondTitle: "Design That Converts: The Secret Power of Visual Branding",
         firstPara: "Your brand’s design isn’t just about looking pretty—it’s about converting. From Amazon A+ content to social media posts, every pixel influences buyer trust.",
         secondPara: "",
         thirdTitle: "Why Design Is More Than Aesthetics",
         thirdPara: "A well-designed brand communicates professionalism, credibility, and clarity. Poor design, on the other hand, signals shortcuts, lowers trust, and reduces conversions.",
         fourthPara: "",
-        secondImage: "/images/blog.jpg",
+        secondImage: "/images/blog4.jpg",
         secondImgDes: "",
         fourthTitle: "How Graphodio Approaches Design",
         fifthPara: "● Data + Creativity Blend – combining audience insights with creative storytelling. ● Conversion-Focused Graphics – layouts that drive clicks, not just likes.● Brand Identity Systems – logos, palettes, and guidelines that keep your brand consistent everywhere. ● Amazon-Ready Visuals – infographics, comparison charts, and lifestyle imagery tailored for conversions.",
         sixthPara: "",
-        thirdImage: "/images/blog.jpg",
-        thirdImgDes: "",
+       
         fifthTitle: "The ROI of Great Design",
         seventhPara: "Strong branding doesn’t just make you memorable—it increases customer willingness to pay premium prices.",
         eighthPara: "Want design that goes beyond pretty visuals? Graphodio builds branding that wins attention and converts sales.",
@@ -486,19 +488,19 @@ export const blogs = [
     {
         slug: "social-media-marketing-in-2025-from-noise-to-authority",
         title: "Social Media Marketing in 2025: From Noise to Authority",
-        thumbnail: "/images/blog.jpg",
+        thumbnail: "/images/blog5.jpg",
         secondTitle: "Social Media Marketing in 2025: From Noise to Authority",
         firstPara: "The social media landscape is louder than ever. Algorithms are stricter, attention spans are shorter, and organic reach feels like a struggle. Yet brands still thrive—because they focus on authority, not noise.",
         secondPara: "",
         thirdTitle: "The Problem with “Post and Pray”",
         thirdPara: "Most businesses still treat social media like a megaphone. They post randomly, hoping something sticks. The result? Low engagement and wasted effort.",
         fourthPara: "",
-        secondImage: "/images/blog.jpg",
+        secondImage: "/images/blog5.jpg",
         secondImgDes: "",
         fourthTitle: "The Authority-Building Framework",
         fifthPara: "At Graphodio, we use a value-driven social strategy that includes:",
         sixthPara: "● Content Pillars – defining themes that align with brand goals and audience needs. ● Engagement Loops – encouraging interaction through polls, comments, and shares. ● Platform-Specific Tactics – LinkedIn for authority, Instagram for visual storytelling, Facebook for community. ● Data Tracking – measuring what resonates and doubling down.",
-        thirdImage: "/images/blog.jpg",
+        thirdImage: "/images/blog5.jpg",
         thirdImgDes: "",
         fifthTitle: "Why This Matters in 2025",
         seventhPara: "Audiences don’t want more posts. They want more value. Brands that deliver insights, authenticity, and trust win the algorithm game. Stop shouting into the void. Let Graphodio help you build a social presence that commands authority and drives real business growth.",

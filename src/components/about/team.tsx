@@ -76,7 +76,7 @@ export default function Team() {
                             alt={member.name}
                             height={1200}
                             width={1200}
-                            className="w-full aspect-square object-cover rounded-lg lg:saturate-0 group-hover:saturate-[70%]"
+                            className="w-full aspect-square object-cover rounded-lg lg:saturate-70% group-hover:saturate-[70%]"
                             />
                             <div className="absolute top-0 lg:top-full group-hover:lg:top-0 left-0 w-full h-full bg-black/70 p-4 lg:p-5 duration-500 flex flex-col justify-between">
                             <div className="flex basis-1/2 justify-between text-lg lg:text-xl">
@@ -95,7 +95,7 @@ export default function Team() {
 
 
                 {/* Second Row */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-0">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-0 mt-12 lg:mt-24">
                     {secondRow.map((member, index) => (
                         <div
                             key={index + 4} 
@@ -107,7 +107,7 @@ export default function Team() {
                                     alt={member.name}
                                     height={1200}
                                     width={1200}
-                                    className='w-full aspect-[4/5] sm:aspect-[4/7] object-cover rounded-lg lg:saturate-0 group-hover:saturate-[70%]'
+                                    className='w-full aspect-square object-cover rounded-lg lg:saturate-70% group-hover:saturate-[70%]'
                                 />
                                 <div className="absolute top-0 lg:top-full group-hover:lg:top-0 left-0 w-full h-full bg-black/70 p-4 lg:p-5 duration-500 flex flex-col justify-between">
                                     <div className="flex basis-1/2 justify-between text-lg lg:text-xl">
@@ -116,7 +116,8 @@ export default function Team() {
                                     </div>
                                     <div>
                                         <p className='text-center pb-2 text-lg lg:text-xl'>{member.headline}</p>
-                                        <p className='text-justify text-sm lg:text-base'>{member.description}</p>
+                                        <p className='text-justify text-sm lg:text-base'>{member.description.toLowerCase()}</p>
+                                        
                                     </div>
                                 </div>
                             </div>
