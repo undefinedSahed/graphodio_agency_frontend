@@ -48,6 +48,62 @@ export const services = [
 
 // Testimonials
 export const testimonials = [
+    {
+        id: 1,
+        name: "Steve Christmas",
+        role: "CEO, Good Vibes Music Academy",
+        comment:
+            "This has been a really positive and professional experience. Graphodio made adaptations as requested as well as offering their own professional advice and options which was much appreciated and valued.They supplied different versions of the logo, banner and other required files that can be used online, print material and on social media too. Would recommend Graphodio and wouldn’t be hesitate in working with them again in the future.",
+        image: "/images/steve.png",
+    },
+    {
+        id: 2,
+        name: "Nada",
+        role: "Owner, Droplets Attire",
+        comment:
+            "Such a creative, thoughtful and attentive team. They gave me all the files we altered, and they were so patient and helpful. Highly recommended.",
+        image: "/images/Nada.jpg",
+    },
+    {
+        id: 3,
+        name: "Rowan Anderson",
+        role: "CEO,Far & King Framing",
+        comment:
+            "Great work. always great to work with.",
+        image: "/images/rowan.png",
+    },
+    {
+        id: 4,
+        name: "Tareq",
+        role: "COO,Dessert Pots",
+        comment:
+            "Skillful, talented and fast delivery. This is my 5th time working with them and will continue with them also.",
+        image: "/images/tareq.png",
+    },
+    {
+        id: 5,
+        name: "Mehedi Hasan",
+        role: "DGM, Brand & Marketing, Sanmar Properties Limited",
+        comment:
+            "Having worked with Graphodio on projects with tight deadlines, I can attest to their dedication and passion for work. They consistently demonstrates honesty and a commitment to delivering high-quality results, even on short notice. Their responsiveness and reliability are especially valuable in today’s market. I wish them great success and I look forward to continuing our collaboration. Thank you!",
+        image: "/images/mehedi.png",
+    },
+    {
+        id: 6,
+        name: "Dr. Graham Forbes",
+        role: "CEO,Capital Dental Design",
+        comment:
+            "Prompt and efficient with alterations!",
+        image: "/images/Graham.png",
+    },
+    {
+        id: 7,
+        name: "Daniel Constantin",
+        role: "CEO,SHR Motors",
+        comment:
+            "Very understanding and very quick. I recommend them.",
+        image: "/images/daniel.png",
+    },
   {
     id: 1,
     name: "Steve Christmas",
@@ -284,70 +340,80 @@ export const works = [
 
 // Teams
 export const teammates = [
-  {
-    name: "Mizanur Rahman",
-    role: "Chairman",
-    image: "/team/MizanurRahman.png",
-    headline: "The Visionary Leader",
-    description:
-      "Mizanur Rahman brings unmatched leadership and strategic foresight to Graphodio. As Chairman, he has been instrumental in guiding the company’s growth, fostering innovation, and building a culture of excellence. His dedication and forward-thinking mindset continue to inspire the team to achieve new milestones in the digital landscape.",
-  },
-  {
-    name: "Erik Johnston",
-    role: "Managing Director",
-    image: "/team/Erik.png",
-    headline: "The Driving Force",
-    description:
-      "As Managing Director of Graphodio, Erik Johnston leads with a results-driven approach and an unwavering commitment to excellence. With his dynamic leadership and deep industry expertise, he plays a key role in shaping business strategies, driving growth, and ensuring the company stays ahead in an ever-evolving digital world.",
-  },
-  {
-    name: "Farhan Nair",
-    role: "Founder and CEO",
-    image: "/team/Evan.png",
-    headline: "The Visionary Founder",
-    description:
-      "Farhan Nair, the Founder and CEO of Graphodio, is the driving visionary behind the company’s journey. With a passion for innovation and a relentless pursuit of excellence, he has built Graphodio from the ground up, transforming ideas into impactful digital solutions. His leadership inspires the team to push boundaries, embrace creativity, and deliver value to clients worldwide.",
-  },
-  {
-    name: "Tanmoy Mahmud",
-    role: "COO",
-    image: "/team/Tanmoy.png",
-    headline: "The Strategic Operator",
-    description:
-      "As Chief Operating Officer of Graphodio, Tanmoy Mahmud ensures seamless execution of the company’s vision through strong operational leadership. With a focus on efficiency, collaboration, and innovation, he drives organizational growth while optimizing processes that empower teams to deliver impactful results. His commitment to excellence keeps Graphodio agile and future-ready.",
-  },
-  {
-    name: "Sahed Rahman",
-    role: "Web Development Team Lead",
-    image: "/team/Shahed.png",
-    headline: "The Tech Innovator",
-    description:
-      "As Team Lead of Web Development at Graphodio, Sahed Rahman combines technical expertise with innovative thinking to deliver cutting-edge digital solutions. He leads development teams with precision and creativity, ensuring projects meet the highest standards of performance, functionality, and design. His passion for technology drives Graphodio’s mission to build impactful and future-ready web experiences.",
-  },
-  {
-    name: "Farhat Lamisa Diya",
-    role: "Web Developer",
-    image: "/team/Dia.png",
-    headline: "The Creative Coder",
-    description:
-      "As a Web Developer at Graphodio, Farhat Lamisa Diya brings creativity and technical expertise together to craft seamless, user-friendly, and impactful digital experiences. With a keen eye for detail and a passion for clean, efficient code, she plays a vital role in turning ideas into functional, high-quality solutions that drive the company’s innovation forward.",
-  },
-  {
-    name: "Nilima Tabassum",
-    role: "",
-    image: "/team/Shupty.png",
-    headline: "The unstopable",
-    description:
-      "necessitatibus sunt minima consequuntur repudiandae praesentium voluptatem. Dignissimos, temporibus quas natus",
-  },
-  {
-    name: "Sadia Rahman Megha",
-    role: "Visualizer",
-    image: "/team/Megha.png",
-    headline: "The Creative Visionary",
-    description:
-      "As Visualizer at Graphodio, Sadia Rahman Megha transforms concepts into captivating visuals that bring ideas to life. With a strong sense of design and storytelling, she ensures every project reflects both creativity and clarity. Her innovative approach adds depth and impact to Graphodio’s digital experiences, making them visually engaging and memorable.",
-  },
+    {
+    "name": "Mizanur Rahman",
+    "role": "Chairman",
+    "image": "/team/MizanurRahman.png",
+    "headline": "The Visionary Leader",
+    "description": "Mizanur Rahman brings unmatched leadership and strategic foresight to Graphodio. As Chairman, he has been instrumental in guiding the company’s growth, fostering innovation, and building a culture of excellence. His dedication and forward-thinking mindset continue to inspire the team to achieve new milestones in the digital landscape."
+    }
+,
+    {
+        
+        "name": "Erik Johnston",
+        "role": "Managing Director",
+        "image": "/team/Erik.png",
+        "headline": "The Driving Force",
+        "description": "As Managing Director of Graphodio, Erik Johnston leads with a results-driven approach and an unwavering commitment to excellence. With his dynamic leadership and deep industry expertise, he plays a key role in shaping business strategies, driving growth, and ensuring the company stays ahead in an ever-evolving digital world."
+        
+},
+    {
+                
+        "name": "Farhan Nair",
+        "role": "Founder and CEO",
+        "image": "/team/Evan.png",
+        "headline": "The Visionary Founder",
+        "description": "Farhan Nair, the Founder and CEO of Graphodio, is the driving visionary behind the company’s journey. With a passion for innovation and a relentless pursuit of excellence, he has built Graphodio from the ground up, transforming ideas into impactful digital solutions. His leadership inspires the team to push boundaries, embrace creativity, and deliver value to clients worldwide."
+
+
+    },
+    {
+        
+        "name": "Tanmoy Mahmud",
+        "role": "COO",
+        "image": "/team/Tanmoy.png",
+        "headline": "The Strategic Operator",
+        "description": "As Chief Operating Officer of Graphodio, Tanmoy Mahmud ensures seamless execution of the company’s vision through strong operational leadership. With a focus on efficiency, collaboration, and innovation, he drives organizational growth while optimizing processes that empower teams to deliver impactful results. His commitment to excellence keeps Graphodio agile and future-ready."
+
+
+    },
+     {
+        
+        "name": "Sahed Rahman",
+        "role": "Web Development Team Lead",
+        "image": "/team/Shahed.png",
+        "headline": "The Tech Innovator",
+        "description": "As Team Lead of Web Development at Graphodio, Sahed Rahman combines technical expertise with innovative thinking to deliver cutting-edge digital solutions. He leads development teams with precision and creativity, ensuring projects meet the highest standards of performance, functionality, and design. His passion for technology drives Graphodio’s mission to build impactful and future-ready web experiences."
+
+
+    },
+    {
+        
+        "name": "Farhat Lamisa Diya",
+        "role": "Web Developer",
+        "image": "/team/Dia.png",
+        "headline": "The Creative Coder",
+        "description": "As a Web Developer at Graphodio, Farhat Lamisa Diya brings creativity and technical expertise together to craft seamless, user-friendly, and impactful digital experiences. With a keen eye for detail and a passion for clean, efficient code, she plays a vital role in turning ideas into functional, high-quality solutions that drive the company’s innovation forward."
+
+
+    },
+    {
+    
+        "name": "Nilima Tabassum",
+        "role": "KAM, Digital",
+        "image": "/team/Shupty.png",
+        "headline": "The Client Champion",
+        "description": "As Key Account Manager, Digital at Graphodio, Nilima Tabassum builds strong client relationships and ensures seamless delivery of digital solutions. With a strategic mindset and excellent communication skills, she bridges the gap between clients and the development team, driving successful outcomes that align with both business goals and client expectations."
+
+
+    },
+    {
+        name: "Sadia Rahman Megha",
+        role: "Visualizer",
+        image: "/team/Megha.png",
+        "headline": "The Creative Visionary",
+        "description": "As Visualizer at Graphodio, Sadia Rahman Megha transforms concepts into captivating visuals that bring ideas to life. With a strong sense of design and storytelling, she ensures every project reflects both creativity and clarity. Her innovative approach adds depth and impact to Graphodio’s digital experiences, making them visually engaging and memorable."
+    }
 ];
 
 // Blogs
@@ -422,6 +488,90 @@ export const blogs = [
       image: "https://github.com/shadcn.png",
       date: "July 14, 2025",
     },
+    {
+        slug: "seo-isnt-dead-why-your-business-still-needs-it-in-2025",
+        title: "SEO Isn’t Dead: Why Your Business Still Needs It in 2025",
+        thumbnail: "/images/blog3.jpg",
+        secondTitle: "SEO Isn’t Dead: Why Your Business Still Needs It in 2025",
+        firstPara: "With AI-generated answers and endless algorithm updates, many businesses assume SEO is losing relevance. The truth? SEO has never been more critical—it’s just evolving.",
+        secondPara: "",
+        thirdTitle: "The Shift in Search Behavior",
+        thirdPara: "Today’s users expect fast, trustworthy, and personalized search results. Businesses that ignore SEO risk vanishing from visibility entirely.",
+        fourthPara: "",
+        secondImage: "/images/blog3.jpg",
+        secondImgDes: "",
+        fourthTitle: "Modern SEO at Graphodio",
+        fifthPara: "We combine traditional SEO best practices with modern optimization strategies, including:",
+        sixthPara: "● Technical SEO Audits – fixing site speed, mobile usability, and indexing issues. \n● Content with Purpose – blogs, product pages, and landing pages that solve real user problems.\n● Authority Building – link strategies that boost domain credibility naturally.\n● AI + Human Insights – using advanced tools to analyze trends but tailoring execution with creativity.",
+        thirdImage: "/images/blog.jpg",
+        thirdImgDes: "",
+        fifthTitle: "Why It Matters",
+        seventhPara: "Without strong SEO, your brand is renting visibility from ads instead of owning organic authority.",
+        eighthPara: "Ready to future-proof your website visibility? Graphodio crafts SEO strategies that work in 2025 and beyond.",
+        ninethPara: "",
+        endingPara: "",
+        author: {
+            name: "Sahed Rahman",
+            image: "https://github.com/shadcn.png",
+            date: "July 14, 2025"
+        }
+    },
+    {
+        slug: "design-that-converts-the-secret-power-of-visual-branding",
+        title: "Design That Converts: The Secret Power of Visual Branding",
+        thumbnail: "/images/blog4.jpg",
+        secondTitle: "Design That Converts: The Secret Power of Visual Branding",
+        firstPara: "Your brand’s design isn’t just about looking pretty—it’s about converting. From Amazon A+ content to social media posts, every pixel influences buyer trust.",
+        secondPara: "",
+        thirdTitle: "Why Design Is More Than Aesthetics",
+        thirdPara: "A well-designed brand communicates professionalism, credibility, and clarity. Poor design, on the other hand, signals shortcuts, lowers trust, and reduces conversions.",
+        fourthPara: "",
+        secondImage: "/images/blog4.jpg",
+        secondImgDes: "",
+        fourthTitle: "How Graphodio Approaches Design",
+        fifthPara: "● Data + Creativity Blend – combining audience insights with creative storytelling. ● Conversion-Focused Graphics – layouts that drive clicks, not just likes.● Brand Identity Systems – logos, palettes, and guidelines that keep your brand consistent everywhere. ● Amazon-Ready Visuals – infographics, comparison charts, and lifestyle imagery tailored for conversions.",
+        sixthPara: "",
+       
+        fifthTitle: "The ROI of Great Design",
+        seventhPara: "Strong branding doesn’t just make you memorable—it increases customer willingness to pay premium prices.",
+        eighthPara: "Want design that goes beyond pretty visuals? Graphodio builds branding that wins attention and converts sales.",
+        ninethPara: "",
+        endingPara: "",
+        author: {
+            name: "Sahed Rahman",
+            image: "https://github.com/shadcn.png",
+            date: "July 14, 2025"
+        }
+    },
+    {
+        slug: "social-media-marketing-in-2025-from-noise-to-authority",
+        title: "Social Media Marketing in 2025: From Noise to Authority",
+        thumbnail: "/images/blog5.jpg",
+        secondTitle: "Social Media Marketing in 2025: From Noise to Authority",
+        firstPara: "The social media landscape is louder than ever. Algorithms are stricter, attention spans are shorter, and organic reach feels like a struggle. Yet brands still thrive—because they focus on authority, not noise.",
+        secondPara: "",
+        thirdTitle: "The Problem with “Post and Pray”",
+        thirdPara: "Most businesses still treat social media like a megaphone. They post randomly, hoping something sticks. The result? Low engagement and wasted effort.",
+        fourthPara: "",
+        secondImage: "/images/blog5.jpg",
+        secondImgDes: "",
+        fourthTitle: "The Authority-Building Framework",
+        fifthPara: "At Graphodio, we use a value-driven social strategy that includes:",
+        sixthPara: "● Content Pillars – defining themes that align with brand goals and audience needs. ● Engagement Loops – encouraging interaction through polls, comments, and shares. ● Platform-Specific Tactics – LinkedIn for authority, Instagram for visual storytelling, Facebook for community. ● Data Tracking – measuring what resonates and doubling down.",
+        thirdImage: "/images/blog5.jpg",
+        thirdImgDes: "",
+        fifthTitle: "Why This Matters in 2025",
+        seventhPara: "Audiences don’t want more posts. They want more value. Brands that deliver insights, authenticity, and trust win the algorithm game. Stop shouting into the void. Let Graphodio help you build a social presence that commands authority and drives real business growth.",
+        eighthPara: "",
+        ninethPara: "",
+        endingPara: "",
+        author: {
+            name: "Sahed Rahman",
+            image: "https://github.com/shadcn.png",
+            date: "July 14, 2025"
+        }
+    }
+]
   },
   {
     slug: "seo-isnt-dead-why-your-business-still-needs-it-in-2025",
