@@ -3,11 +3,46 @@
 
 import gsap from "gsap";
 import { Building2 } from "lucide-react";
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import { services } from "@/lib/constant";
 
 export default function ServiceSection() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const preloadedVideos = useRef<{ [key: string]: HTMLVideoElement }>({});
+
+  // Preload all videos in the background
+  useEffect(() => {
+    const preloadVideos = () => {
+      services.forEach((service, serviceIndex) => {
+        service.videos.forEach((videoSrc, videoIndex) => {
+          const video = document.createElement("video");
+          video.preload = "auto";
+          video.muted = true;
+          video.loop = true;
+          video.playsInline = true;
+
+          // Store reference with a unique key
+          const key = `${serviceIndex}-${videoIndex}`;
+          preloadedVideos.current[key] = video;
+
+          // Set source and start loading
+          video.src = videoSrc;
+          video.load();
+        });
+      });
+    };
+
+    preloadVideos();
+
+    // Cleanup function
+    return () => {
+      Object.values(preloadedVideos.current).forEach((video) => {
+        video.src = "";
+        video.load();
+      });
+      preloadedVideos.current = {};
+    };
+  }, []);
 
   const handleShow = (el: HTMLElement) => {
     const items = containerRef.current?.querySelectorAll(".service-item") || [];
@@ -16,21 +51,26 @@ export default function ServiceSection() {
       if (item !== el) {
         gsap.to(item, {
           opacity: 0.1,
-          duration: 0.3,
+          duration: 0.2,
           ease: "power3.out",
         });
       }
     });
 
-    const videos = el.querySelectorAll(".abc");
+    const videos = el.querySelectorAll(
+      ".abc video"
+    ) as NodeListOf<HTMLVideoElement>;
     videos.forEach((video) => {
-      gsap.killTweensOf(video);
-      gsap.to(video, {
+      gsap.killTweensOf(video.parentElement);
+      gsap.to(video.parentElement, {
         scale: 1,
         opacity: 1,
-        duration: 0.4,
+        duration: 0.2,
         ease: "power3.out",
       });
+
+      // Ensure video plays when shown
+      video.play().catch(console.error);
     });
   };
 
@@ -40,21 +80,34 @@ export default function ServiceSection() {
     items.forEach((item) => {
       gsap.to(item, {
         opacity: 1,
-        duration: 0.3,
+        duration: 0.2,
         ease: "power2.out",
       });
     });
 
-    const videos = el.querySelectorAll(".abc");
+    const videos = el.querySelectorAll(
+      ".abc video"
+    ) as NodeListOf<HTMLVideoElement>;
     videos.forEach((video) => {
-      gsap.killTweensOf(video);
-      gsap.to(video, {
+      gsap.killTweensOf(video.parentElement);
+      gsap.to(video.parentElement, {
         scale: 0,
         opacity: 0,
-        duration: 0.3,
+        duration: 0.2,
         ease: "power3.in",
       });
+
+      // Pause video when hidden to save resources
+      video.pause();
     });
+  };
+
+  const getPreloadedVideo = (
+    serviceIndex: number,
+    videoIndex: number
+  ): HTMLVideoElement | null => {
+    const key = `${serviceIndex}-${videoIndex}`;
+    return preloadedVideos.current[key] || null;
   };
 
   return (
@@ -92,7 +145,20 @@ export default function ServiceSection() {
                 className="col-span-1 abc"
                 style={{ transform: "scale(0)", opacity: 0 }}
               >
-                <video autoPlay preload="metadata" loop muted>
+                <video
+                  autoPlay={false}
+                  preload="auto"
+                  loop
+                  muted
+                  playsInline
+                  onLoadedData={(e) => {
+                    // Sync with preloaded video if available
+                    const preloaded = getPreloadedVideo(index, 0);
+                    if (preloaded && preloaded.readyState >= 3) {
+                      e.currentTarget.currentTime = preloaded.currentTime;
+                    }
+                  }}
+                >
                   <source src={service.videos[0]} type="video/mp4" />
                 </video>
               </div>
@@ -102,7 +168,19 @@ export default function ServiceSection() {
                 className="col-span-1 abc"
                 style={{ transform: "scale(0)", opacity: 0 }}
               >
-                <video autoPlay preload="metadata" loop muted>
+                <video
+                  autoPlay={false}
+                  preload="auto"
+                  loop
+                  muted
+                  playsInline
+                  onLoadedData={(e) => {
+                    const preloaded = getPreloadedVideo(index, 1);
+                    if (preloaded && preloaded.readyState >= 3) {
+                      e.currentTarget.currentTime = preloaded.currentTime;
+                    }
+                  }}
+                >
                   <source src={service.videos[1]} type="video/mp4" />
                 </video>
               </div>
@@ -127,7 +205,19 @@ export default function ServiceSection() {
                 className="col-span-1 abc"
                 style={{ transform: "scale(0)", opacity: 0 }}
               >
-                <video autoPlay preload="metadata" loop muted>
+                <video
+                  autoPlay={false}
+                  preload="auto"
+                  loop
+                  muted
+                  playsInline
+                  onLoadedData={(e) => {
+                    const preloaded = getPreloadedVideo(index, 2);
+                    if (preloaded && preloaded.readyState >= 3) {
+                      e.currentTarget.currentTime = preloaded.currentTime;
+                    }
+                  }}
+                >
                   <source src={service.videos[2]} type="video/mp4" />
                 </video>
               </div>
@@ -144,9 +234,10 @@ export default function ServiceSection() {
                   <video
                     key={idx}
                     autoPlay
-                    preload="metadata"
+                    preload="auto"
                     loop
                     muted
+                    playsInline
                     className="w-full h-full object-cover"
                   >
                     <source src={video} type="video/mp4" />

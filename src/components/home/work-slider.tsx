@@ -54,8 +54,6 @@ export default function StackedSlider() {
     });
   }, [slides.length]);
 
-  console.log("Slides items: ", slides);
-
   return (
     <section className="py-8 lg:py-20">
       <div className="container">
