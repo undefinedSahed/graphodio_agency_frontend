@@ -40,7 +40,7 @@ export default function Team() {
                     .to(
                         q(".animate_photos_group"),
                         {
-                            yPercent: -112,
+                            yPercent: -150,
                             ease: "power1.out",
                             stagger: 0.2
                         }
@@ -64,64 +64,61 @@ export default function Team() {
                 </div>
 
                 {/* First Row */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-0 mt-12 lg:mt-24">
-                    {firstRow.map((member, index) => (
-                        <div
-                        key={index}
-                        className="flex rounded-lg animate_photos_group transform-gpu group duration-500"
-                        >
-                        <div className="relative overflow-hidden w-full ">
-                            <Image
-                            src={member.image}
-                            alt={member.name}
-                            height={1200}
-                            width={1200}
-                            className="w-full aspect-square object-cover rounded-lg lg:saturate-0 group-hover:saturate-[70%]"
-                            />
-                            <div className="absolute top-0 lg:top-full group-hover:lg:top-0 left-0 w-full h-full bg-black/70 p-4 lg:p-5 duration-500 flex flex-col justify-between">
-                            <div className="flex basis-1/2 justify-between text-lg lg:text-xl">
-                                <p>{member.name}</p>
-                                <p>{member.role}</p>
-                            </div>
-                            <div>
-                                <p className="text-center pb-2 text-lg lg:text-xl">{member.headline}</p>
-                                <p className="text-justify text-sm lg:text-base">{member.description}</p>
-                            </div>
-                            </div>
-                        </div>
-                        </div>
-                    ))}
-                    </div>
-
-
-                {/* Second Row */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-0">
-                    {secondRow.map((member, index) => (
-                        <div
-                            key={index + 4} 
-                            className="flex rounded-lg animate_photos_group transform-gpu group duration-500"
-                        >
-                            <div className="relative overflow-hidden w-full">
-                                <Image
-                                    src={member.image}
-                                    alt={member.name}
-                                    height={1200}
-                                    width={1200}
-                                    className='w-full aspect-[4/5] sm:aspect-[4/7] object-cover rounded-lg lg:saturate-0 group-hover:saturate-[70%]'
-                                />
-                                <div className="absolute top-0 lg:top-full group-hover:lg:top-0 left-0 w-full h-full bg-black/70 p-4 lg:p-5 duration-500 flex flex-col justify-between">
-                                    <div className="flex basis-1/2 justify-between text-lg lg:text-xl">
-                                        <p>{member.name}</p>
-                                        <p>{member.role}</p>
-                                    </div>
-                                    <div>
-                                        <p className='text-center pb-2 text-lg lg:text-xl'>{member.headline}</p>
-                                        <p className='text-justify text-sm lg:text-base'>{member.description}</p>
+                <div className="animate_photos_group transform-gpu">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-4">
+                        {firstRow.map((member, index) => (
+                            <div
+                                key={index}
+                                className="flex rounded-lg group duration-500"
+                            >
+                                <div className="relative overflow-hidden group w-full bg-black/70 rounded-md">
+                                    <Image
+                                        src={member.image}
+                                        alt={member.name}
+                                        height={1200}
+                                        width={1200}
+                                        className="w-full aspect-square object-cover rounded-lg lg:saturate-0 group-hover:saturate-[70%]"
+                                    />
+                                    <div className="absolute top-full group-hover:top-0 left-0 w-full h-full bg-black/70 p-4 lg:p-5 duration-500 flex flex-col justify-between">
+                                        <div className="flex basis-1/2 justify-between text-lg lg:text-xl">
+                                            <p>{member.name}</p>
+                                            <p>{member.role}</p>
+                                        </div>
+                                        <div>
+                                            <p className="text-center pb-2 text-lg lg:text-xl">{member.headline}</p>
+                                            <p className="text-justify text-sm lg:text-base">{member.description}</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    ))}
+                        ))}
+                        {secondRow.map((member, index) => (
+                            <div
+                                key={index + 4}
+                                className="flex rounded-lg duration-500"
+                            >
+                                <div className="relative group overflow-hidden w-full">
+                                    <Image
+                                        src={member.image}
+                                        alt={member.name}
+                                        height={1200}
+                                        width={1200}
+                                        className='w-full aspect-square object-cover rounded-lg lg:saturate-0 group-hover:saturate-[70%]'
+                                    />
+                                    <div className="absolute top-full group-hover:top-0 left-0 w-full h-full bg-black/70 p-4 lg:p-5 duration-500 flex flex-col justify-between">
+                                        <div className="flex basis-1/2 justify-between text-lg lg:text-xl">
+                                            <p>{member.name}</p>
+                                            <p>{member.role}</p>
+                                        </div>
+                                        <div>
+                                            <p className='text-center pb-2 text-lg lg:text-xl'>{member.headline}</p>
+                                            <p className='text-justify text-sm lg:text-base'>{member.description}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
                 </div>
 
             </div>

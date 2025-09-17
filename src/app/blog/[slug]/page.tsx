@@ -85,7 +85,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
                     <p className='text-xs lg:text-base text-justify lg:text-start'>{blog.fifthPara}</p>
                     <p className='text-xs lg:text-base text-justify lg:text-start'>{blog.sixthPara}</p>
 
-                    
+
                     <p className="text-sm italic">{blog.thirdImgDes}</p>
 
                     <h3 className="lg:text-xl text-base font-semibold">{blog.fifthTitle}</h3>
