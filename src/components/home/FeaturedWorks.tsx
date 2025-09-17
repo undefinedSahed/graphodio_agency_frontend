@@ -22,10 +22,52 @@ export default function FeaturedWorks() {
   const [hoverIndex, setHoverIndex] = useState<number | null>(null);
   const secRef = useRef<HTMLElement>(null);
 
+  // ✅ Preloaded videos
+  const preloadedVideos = useRef<{ [key: string]: HTMLVideoElement }>({});
+
   const cardWidth = 251;
   const cardAspectRatio = 4 / 4;
   const maxScale = 1.2;
   const maxCardHeight = cardWidth * cardAspectRatio * maxScale;
+
+  // ✅ Preload videos when component mounts
+  useEffect(() => {
+    const preloadVideos = () => {
+      works.forEach((work, workIndex) => {
+        work.videos.forEach((videoSrc, videoIndex) => {
+          const video = document.createElement("video");
+          video.preload = "auto";
+          video.muted = true;
+          video.loop = true;
+          video.playsInline = true;
+
+          const key = `${workIndex}-${videoIndex}`;
+          preloadedVideos.current[key] = video;
+
+          video.src = videoSrc;
+          video.load();
+        });
+      });
+    };
+
+    preloadVideos();
+
+    return () => {
+      Object.values(preloadedVideos.current).forEach((video) => {
+        video.src = "";
+        video.load();
+      });
+      preloadedVideos.current = {};
+    };
+  }, []);
+
+  const getPreloadedVideo = (
+    workIndex: number,
+    videoIndex: number
+  ): HTMLVideoElement | null => {
+    const key = `${workIndex}-${videoIndex}`;
+    return preloadedVideos.current[key] || null;
+  };
 
   useEffect(() => {
     cardsRef.current.forEach((card, idx) => {
@@ -58,7 +100,7 @@ export default function FeaturedWorks() {
         ease: "power3.out",
         overwrite: "auto",
       });
-      video.play().catch(() => {});
+      video.play().catch(() => { });
     }
   };
 
@@ -188,9 +230,15 @@ export default function FeaturedWorks() {
                       muted
                       loop
                       playsInline
-                      preload="metadata"
+                      preload="auto"
                       className="w-full aspect-square object-cover pointer-events-none transition-opacity duration-300"
                       style={{ opacity: 1 }}
+                      onLoadedData={(e) => {
+                        const preloaded = getPreloadedVideo(idx, 0);
+                        if (preloaded && preloaded.readyState >= 3) {
+                          e.currentTarget.currentTime = preloaded.currentTime;
+                        }
+                      }}
                     >
                       <source src={work.videos[0]} type="video/mp4" />
                     </video>
@@ -233,6 +281,12 @@ export default function FeaturedWorks() {
                   preload="auto"
                   className="w-full h-full object-cover pointer-events-none transition-opacity duration-300"
                   style={{ opacity: 1 }}
+                  onLoadedData={(e) => {
+                    const preloaded = getPreloadedVideo(idx, 0);
+                    if (preloaded && preloaded.readyState >= 3) {
+                      e.currentTarget.currentTime = preloaded.currentTime;
+                    }
+                  }}
                 >
                   <source src={work.videos[0]} type="video/mp4" />
                 </video>

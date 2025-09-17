@@ -115,7 +115,7 @@ export default function WorksSection() {
   };
 
   return (
-    <section className="py-8 lg:py-20">
+    <section className="py-8 lg:pb-20 lg:-mt-96">
       <div className="container">
         <div className="flex justify-between">
           <div className="max-w-md mx-auto lg:mx-0">
