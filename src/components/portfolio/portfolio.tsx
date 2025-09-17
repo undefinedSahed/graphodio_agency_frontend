@@ -9,8 +9,6 @@ import { slugify } from "@/lib/utils";
 export default function Portfolio() {
   const [hovered, setHovered] = useState<string | null>(null);
 
-  console.log("Works:", works?.length);
-
   return (
     <>
       {/* Section 1 */}

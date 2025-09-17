@@ -128,9 +128,6 @@ export default function Navbar() {
     }
     setMobileMenuOpen(!mobileMenuOpen);
   };
-
-  console.log("Pathname:", pathname);
-
   return (
     <header className="overflow-x-hidden relative z-[999]">
       <nav className="py-3">
