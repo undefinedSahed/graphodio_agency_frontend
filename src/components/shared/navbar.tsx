@@ -174,7 +174,11 @@ export default function Navbar() {
             <div className="contact-animate invisible hidden lg:block">
               <Button
                 onClick={() => setIsContactOpen(true)}
-                className="uppercase border border-white/20 text-lg cursor-pointer"
+                className={`uppercase border border-white/20 ${
+                  pathname === "/about"
+                    ? "bg-white text-black hover:bg-white/80"
+                    : ""
+                } text-lg cursor-pointer`}
               >
                 Contact
               </Button>
@@ -184,7 +188,7 @@ export default function Navbar() {
             <div className="flex items-center gap-4 lg:hidden">
               <Button
                 onClick={() => setIsContactOpen(true)}
-                className="uppercase border border-white/20 lg:text-lg cursor-pointer text-sm px-4 py-1"
+                className={`uppercase border border-white/20 lg:text-lg cursor-pointer text-sm px-4 py-1`}
               >
                 Contact
               </Button>

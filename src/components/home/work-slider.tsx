@@ -4,8 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import Image from "next/image";
 import Link from "next/link";
-import { MoveDown, MoveUp, Workflow } from "lucide-react";
-import { Rocket, Globe } from "lucide-react";
+import { MoveDown, MoveUp, Workflow, Rocket, Globe } from "lucide-react";
 import { Button } from "../ui/button";
 import { works } from "@/lib/constant";
 
@@ -13,43 +12,42 @@ export default function StackedSlider() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [current, setCurrent] = useState(0);
 
-  const moveNext = () => {
-    const cards = gsap.utils.toArray(".slide") as HTMLDivElement[];
-    if (current < slides.length - 1) {
-      const tl = gsap.timeline();
-      tl.to(cards[current], {
-        y: 100,
-        opacity: 0,
-        duration: 0.5,
-        onComplete: () => setCurrent(current + 1),
-      });
-    }
-  };
-
-  const movePrev = () => {
-    if (current === 0) return;
-    const cards = gsap.utils.toArray(".slide") as HTMLDivElement[];
-    const prev = current - 1;
-
-    gsap.set(cards[prev], { opacity: 1 });
-    gsap.to(cards[prev], {
-      y: -prev * 20,
-      duration: 0.5,
-      onComplete: () => setCurrent(prev),
-    });
-  };
-
   const slides = works.filter((work) => work.home);
 
+  // move to next (top card -> bottom)
+  const moveNext = () => {
+    setCurrent((prev) => (prev + 1) % slides.length);
+  };
+
+  // move to previous (bottom card -> top)
+  const movePrev = () => {
+    setCurrent((prev) => (prev - 1 + slides.length) % slides.length);
+  };
+
+  // animate cards whenever current changes
   useEffect(() => {
     const cards = gsap.utils.toArray(".slide") as HTMLDivElement[];
-
-    // Stack from top to bottom
     cards.forEach((card, i) => {
+      const order = (i - current + slides.length) % slides.length;
+      gsap.to(card, {
+        y: -order * 20,
+        scale: 1 - order * 0.02,
+        zIndex: slides.length - order,
+        duration: 0.5,
+        ease: "power2.out",
+      });
+    });
+  }, [current, slides.length]);
+
+  // initial stack
+  useEffect(() => {
+    const cards = gsap.utils.toArray(".slide") as HTMLDivElement[];
+    cards.forEach((card, i) => {
+      const order = (i - current + slides.length) % slides.length;
       gsap.set(card, {
-        zIndex: slides.length - i,
-        y: -i * 20,
-        scale: 1 - i * 0.02,
+        y: -order * 20,
+        scale: 1 - order * 0.02,
+        zIndex: slides.length - order,
       });
     });
   }, [slides.length]);
@@ -64,11 +62,9 @@ export default function StackedSlider() {
             <span className="animate-group">WITH</span>
             <span className="animate-group">DREAMERS,</span>
             <span className="animate-group">DISRUPTORS,</span>
-
             <span className="animate-group flex -mt-1 items-center gap-2">
               <span>AND BRANDS THAT DARE TO STAND OUT.</span>
             </span>
-
             <span className="animate-group flex items-center gap-2">
               <span>FROM LOGO TO LAUNCH</span>
               <span className="inline-flex justify-center items-center w-10 h-10 lg:w-14 lg:h-14 border-2 border-[#1b1b1b] rounded-full">
@@ -76,7 +72,6 @@ export default function StackedSlider() {
               </span>
               <span>WE TURN IDEAS INTO</span>
             </span>
-
             <span className="animate-group flex items-center gap-2">
               <span>digital experiences</span>
               <span className="inline-flex justify-center items-center w-10 h-10 lg:w-14 lg:h-14 border-2 border-[#1b1b1b] rounded-full">
@@ -94,23 +89,25 @@ export default function StackedSlider() {
             </Link>
           </div>
         </div>
+
         <div className="relative max-w-4xl h-[60svh] mx-auto mt-20">
           <div ref={containerRef} className="relative h-full w-full">
             {slides.map((slide, i) => (
               <div
                 key={i}
-                className={`slide absolute top-0 left-0 w-full h-full rounded-lg overflow-hidden shadow-2xl ${
-                  i === current ? "pointer-events-auto" : "pointer-events-none"
-                }`}
+                className="slide absolute top-0 left-0 w-full h-full rounded-lg overflow-hidden shadow-2xl"
               >
-                <Link href={`/portfolio/${slide.slug}`} className="relative">
+                <Link
+                  href={`/portfolio/${slide.slug}`}
+                  className="relative block h-full"
+                >
                   <div className="absolute bottom-0 w-full h-full opacity-70 bg-gradient-to-t from-black to-white/6"></div>
                   <Image
                     src={slide.thumbnail}
                     alt={`slide-${i}`}
                     width={1000}
                     height={700}
-                    className="object-cover transition-transform duration-300 hover:scale-105"
+                    className="object-cover w-full h-full transition-transform duration-300 hover:scale-105"
                   />
                 </Link>
               </div>

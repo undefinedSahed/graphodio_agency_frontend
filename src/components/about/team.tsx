@@ -28,7 +28,7 @@ export default function Team() {
         const tl = gsap.timeline({
           scrollTrigger: {
             trigger: secRef.current,
-            start: "top bottom",
+            start: "10% bottom",
             end: "200% top",
             scrub: true,
           },
@@ -40,7 +40,7 @@ export default function Team() {
             .to(q(".animate_text_three"), { xPercent: -20 }, "<")
             .to(q(".animate_photos_group"), {
               opacity: 1,
-              yPercent: -150,
+              yPercent: -200,
               ease: "power1.out",
               stagger: 0.3,
             });
@@ -52,8 +52,8 @@ export default function Team() {
 
   return (
     <section ref={secRef} className="py-12 lg:py-0">
-      <div className="container relative">
-        <div className="text-center px-4 lg:px-0 lg:translate-y-[25%]">
+      <div className="container relative lg:translate-y-[10%]">
+        <div className="text-center px-4 lg:px-0">
           <h2 className="text-5xl sm:text-7xl lg:text-[215px] font-bold leading-none mb-8 lg:mb-4">
             <span className="animate_text_one inline-block">Our</span>
             <br />
@@ -68,7 +68,7 @@ export default function Team() {
             {teammates.map((member, index) => (
               <div
                 key={index}
-                className="flex rounded-lg group duration-500 animate_photos_group"
+                className="flex rounded-lg duration-500 animate_photos_group"
               >
                 <div className="relative overflow-hidden group w-full bg-black/70 rounded-md">
                   <Image
