@@ -94,7 +94,7 @@ export default function AboutServices() {
           </h2>
         </div>
 
-        <div className="grid lg:grid-rows-3 lg:grid-cols-3 gap-x-8 lg:gap-y-[30px]  gap-y-[45px] relative">
+        <div className="grid lg:grid-rows-3 lg:grid-cols-3 gap-x-8 lg:gap-y-[30px]  gap-y-[45px] relative ml-6 lg:ml-0">
           {services.map((service, index) => {
             const position = gridPositions[index] || {};
             return (
@@ -115,7 +115,7 @@ export default function AboutServices() {
                     {service.title}
                   </h3>
                   <video
-                    className="hidden md:block w-24 h-24 object-cover service-video"
+                    className="hidden lg:block w-24 h-24 object-cover service-video"
                     src={service.videos[0]}
                     autoPlay
                     loop
