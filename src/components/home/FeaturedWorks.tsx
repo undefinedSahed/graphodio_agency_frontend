@@ -36,7 +36,7 @@ export default function FeaturedWorks() {
       works.forEach((work, workIndex) => {
         work.videos.forEach((videoSrc, videoIndex) => {
           const video = document.createElement("video");
-          video.preload = "auto";
+          video.preload = "metadata";
           video.muted = true;
           video.loop = true;
           video.playsInline = true;
