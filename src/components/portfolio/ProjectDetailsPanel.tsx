@@ -20,7 +20,7 @@ export default function ProjectDetailsPanel({ slug }: Props) {
       {/* Trigger Button */}
       <button
         onClick={() => setIsOpen(true)}
-        className="px-6 py-3 relative z-40 bg-[#191715] border border-white text-white rounded-md text-sm tracking-wider font-semibold cursor-pointer"
+        className="px-6 py-3 relative z-20 bg-[#191715] border border-white text-white rounded-md text-sm tracking-wider font-semibold cursor-pointer"
       >
         ● PROJECT DETAILS
       </button>
