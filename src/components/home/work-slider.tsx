@@ -50,6 +50,7 @@ export default function StackedSlider() {
         zIndex: slides.length - order,
       });
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [slides.length]);
 
   return (
@@ -115,17 +116,17 @@ export default function StackedSlider() {
           </div>
 
           {/* Controls */}
-          <div className="absolute right-[-60px] top-1/2 -translate-y-1/2 flex flex-col gap-2">
+          <div className="absolute z-20 translate-x-1/2 right-1/2 lg:right-[-60px] lg:top-1/2 -translate-y-1/2 flex lg:flex-col gap-2">
             <button
               onClick={movePrev}
-              className="bg-white text-black px-3 py-1 rounded shadow cursor-pointer"
+              className="bg-white text-black px-3 py-2 lg:py-1 rounded shadow cursor-pointer"
             >
               <MoveUp />
               <span className="sr-only">Previous</span>
             </button>
             <button
               onClick={moveNext}
-              className="bg-white text-black px-3 py-1 rounded shadow cursor-pointer"
+              className="bg-white text-black px-3 py-2 lg:py-1 rounded shadow cursor-pointer"
             >
               <MoveDown />
               <span className="sr-only">Next</span>
