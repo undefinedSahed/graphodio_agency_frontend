@@ -85,7 +85,7 @@ export default function ContactForm() {
     contactTimeline.current = gsap
       .timeline({ paused: true })
       .to(contactFormRef.current, {
-        x: 0,
+        x: -100,
         duration: 0.8,
         ease: "power3.out",
         visibility: "visible",
@@ -102,7 +102,7 @@ export default function ContactForm() {
       });
     } else {
       gsap.to(contactFormRef.current, {
-        x: "100%",
+        x: "-100%",
         autoAlpha: 0,
         duration: 0.5,
         ease: "power2.in",
@@ -113,7 +113,7 @@ export default function ContactForm() {
   return (
     <div
       ref={contactFormRef}
-      className="fixed py-10 lg:py-0 md:h-screen place-content-center translate-x-full right-0 top-0 w-full lg:w-[40%] bg-black z-[999] backdrop-blur-2xl pt-20 px-5 lg:pl-14 lg:pr-5 contact_form invisible"
+      className="fixed py-10 lg:py-0 md:h-screen place-content-center right-0 top-0 w-full lg:w-[40%] bg-black z-[999] backdrop-blur-2xl pt-20 px-5 lg:pl-14 lg:pr-5 contact_form invisible"
     >
       <h2 className="text-4xl lg:text-6xl font-bold text-white">
         Get In Touch

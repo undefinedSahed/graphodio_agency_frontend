@@ -20,7 +20,7 @@ export default function WorksSection() {
       aboutPageWorks.forEach((work, workIndex) => {
         work.videos.slice(0, 3).forEach((videoSrc, videoIndex) => {
           const video = document.createElement("video");
-          video.preload = "auto";
+          video.preload = "metadata";
           video.muted = true;
           video.loop = true;
           video.playsInline = true;

@@ -8,30 +8,25 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { usePathname } from "next/navigation";
 import { navLinks } from "@/lib/constant";
-import { Menu } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useContact } from "@/lib/contact-context";
 
 export default function Navbar() {
   const pathname = usePathname();
   const navRef = useRef(null);
-  const mobileMenuRef = useRef(null);
-  const mobileMenuTimeline = useRef<gsap.core.Timeline | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
   const { setIsContactOpen } = useContact();
 
-  // Animate logo & contact button from opposite directions
+  const toggleMobileMenu = () => setMobileMenuOpen((prev) => !prev);
+
+  // Your GSAP animations for logo and desktop nav
   useGSAP(
     () => {
       const tl = gsap.timeline();
 
       tl.fromTo(
         ".logo-animate",
-        {
-          x: -100,
-          opacity: 0,
-          visibility: "hidden",
-        },
+        { x: -100, opacity: 0, visibility: "hidden" },
         {
           x: 0,
           opacity: 1,
@@ -43,11 +38,7 @@ export default function Navbar() {
 
       tl.fromTo(
         ".contact-animate",
-        {
-          x: 100,
-          opacity: 0,
-          visibility: "hidden",
-        },
+        { x: 100, opacity: 0, visibility: "hidden" },
         {
           x: 0,
           opacity: 1,
@@ -55,13 +46,12 @@ export default function Navbar() {
           duration: 1,
           ease: "power3.out",
         },
-        "<" // Start at same time
+        "<"
       );
     },
     { scope: navRef }
   );
 
-  // Animate nav links for desktop
   useGSAP(
     () => {
       const tl = gsap.timeline();
@@ -70,12 +60,7 @@ export default function Navbar() {
       rlElements.forEach((rlElement, index) => {
         tl.fromTo(
           rlElement as HTMLElement,
-          {
-            x: index === 0 ? -100 : 100,
-            opacity: 0,
-            visibility: "hidden",
-            ease: "power3.out",
-          },
+          { x: index === 0 ? -100 : 100, opacity: 0, visibility: "hidden" },
           {
             x: 0,
             opacity: 1,
@@ -92,14 +77,13 @@ export default function Navbar() {
           y: -100,
           opacity: 0,
           visibility: "hidden",
-          ease: "power3.out",
           stagger: { amount: 0.5, from: "start" },
         },
         {
           y: 0,
           opacity: 1,
-          visibility: "visible",
           duration: 1,
+          visibility: "visible",
           ease: "power3.out",
           stagger: { amount: 0.5, from: "start" },
         }
@@ -108,35 +92,15 @@ export default function Navbar() {
     { scope: navRef }
   );
 
-  // Mobile menu animation
-  useGSAP(() => {
-    mobileMenuTimeline.current = gsap
-      .timeline({ paused: true })
-      .to(mobileMenuRef.current, {
-        x: 0,
-        visibility: "visible",
-        duration: 0.5,
-        ease: "power3.out",
-      });
-  }, []);
-
-  const toggleMobileMenu = () => {
-    if (mobileMenuOpen) {
-      mobileMenuTimeline.current?.reverse();
-    } else {
-      mobileMenuTimeline.current?.play();
-    }
-    setMobileMenuOpen(!mobileMenuOpen);
-  };
   return (
     <header className="overflow-x-hidden relative z-[999]">
       <nav className="py-3">
         <div className="container text-white/40 text-lg">
           <div
-            className="nav-wrapper flex justify-between items-center "
+            className="nav-wrapper flex justify-between items-center"
             ref={navRef}
           >
-            {/* Logo from Left */}
+            {/* Logo */}
             <div className="logo-animate invisible">
               <Link href="/">
                 <Image
@@ -161,7 +125,7 @@ export default function Navbar() {
                   return (
                     <li
                       key={link.link}
-                      className={`${isActive ? "text-white" : ""}`}
+                      className={isActive ? "text-white" : ""}
                     >
                       <Link href={link.link}>{link.name}</Link>
                     </li>
@@ -174,31 +138,43 @@ export default function Navbar() {
             <div className="contact-animate invisible hidden lg:block">
               <Button
                 onClick={() => setIsContactOpen(true)}
-                className="uppercase border border-white/20 text-lg cursor-pointer"
+                className={`uppercase border border-white/20 ${
+                  pathname === "/about"
+                    ? "bg-white text-black hover:bg-white/80"
+                    : ""
+                } text-lg cursor-pointer`}
               >
                 Contact
               </Button>
             </div>
 
-            {/* Mobile Navigation - Hamburger and Contact Button */}
+            {/* Mobile Hamburger + Contact */}
             <div className="flex items-center gap-4 lg:hidden">
               <Button
                 onClick={() => setIsContactOpen(true)}
-                className="uppercase border border-white/20 lg:text-lg cursor-pointer text-sm px-4 py-1"
+                className="uppercase border border-white/20 text-sm px-4 py-1"
               >
                 Contact
               </Button>
-              <Button variant="ghost" onClick={toggleMobileMenu}>
-                <Menu className="h-6 w-6" />
-              </Button>
+              <button onClick={toggleMobileMenu} className="">
+                {mobileMenuOpen ? (
+                  <X className="w-6 h-6" />
+                ) : (
+                  <Menu className="w-6 h-6" />
+                )}
+              </button>
             </div>
 
-            {/* Mobile Menu Slide-in */}
+            {/* Mobile Menu */}
             <div
-              ref={mobileMenuRef}
-              className="fixed invisible h-svh translate-x-full right-0 top-0 w-full bg-black/90 z-40 backdrop-blur-2xl pt-20 lg:hidden"
+              className={`
+                fixed top-0 h-screen w-full lg:hidden bg-black/90 backdrop-blur-2xl pt-20
+                duration-500 ease-in-out ${
+                  mobileMenuOpen ? "left-0" : "left-[-100%]"
+                }
+              `}
             >
-              <div className="flex flex-col items-center space-y-8 mt-10">
+              <div className="flex flex-col items-center space-y-8 mt-10 w-full">
                 {navLinks.map((link) => {
                   const isActive = pathname === link.link;
                   return (
@@ -214,6 +190,9 @@ export default function Navbar() {
                     </Link>
                   );
                 })}
+                <div className="" onClick={toggleMobileMenu}>
+                  <X className="w-6 h-6" />
+                </div>
               </div>
             </div>
           </div>

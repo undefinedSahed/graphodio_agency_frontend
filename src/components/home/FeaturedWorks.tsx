@@ -11,6 +11,7 @@ import { slugify } from "@/lib/utils";
 import { Navigation } from "swiper/modules";
 import "swiper/css/navigation";
 import { Roboto } from "next/font/google";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -36,7 +37,7 @@ export default function FeaturedWorks() {
       works.forEach((work, workIndex) => {
         work.videos.forEach((videoSrc, videoIndex) => {
           const video = document.createElement("video");
-          video.preload = "auto";
+          video.preload = "metadata";
           video.muted = true;
           video.loop = true;
           video.playsInline = true;
@@ -100,7 +101,7 @@ export default function FeaturedWorks() {
         ease: "power3.out",
         overwrite: "auto",
       });
-      video.play().catch(() => { });
+      video.play().catch(() => {});
     }
   };
 
@@ -188,7 +189,7 @@ export default function FeaturedWorks() {
       </div>
 
       {/* Desktop Grid */}
-      <div className="hidden md:block">
+      <div className="hidden lg:block">
         <div className="max-w-7xl mx-auto">
           <div
             className="grid"
@@ -255,7 +256,7 @@ export default function FeaturedWorks() {
       </div>
 
       {/* Mobile Swiper */}
-      <div className="md:hidden">
+      <div className="lg:hidden">
         <Swiper
           modules={[Navigation]}
           navigation={{
@@ -279,7 +280,7 @@ export default function FeaturedWorks() {
                   loop
                   playsInline
                   preload="auto"
-                  className="w-full h-full object-cover pointer-events-none transition-opacity duration-300"
+                  className="w-full aspect-[5/4] object-cover pointer-events-none transition-opacity duration-300"
                   style={{ opacity: 1 }}
                   onLoadedData={(e) => {
                     const preloaded = getPreloadedVideo(idx, 0);
@@ -301,8 +302,12 @@ export default function FeaturedWorks() {
           ))}
 
           {/* Navigation Buttons */}
-          <div className="swiper-button-prev text-white absolute left-2 top-1/2 transform -translate-y-1/2 z-10" />
-          <div className="swiper-button-next text-white absolute right-2 top-1/2 transform -translate-y-1/2 z-10" />
+          <div className="swiper-button-prev absolute left-2 top-1/2 -translate-y-1/2 z-10">
+            <ChevronLeft className="w-7 h-7 text-white bg-gray-500 rounded-full" />
+          </div>
+          <div className="swiper-button-next absolute right-2 top-1/2 -translate-y-1/2 z-10">
+            <ChevronRight className="w-7 h-7 text-white bg-gray-500 rounded-full" />
+          </div>
         </Swiper>
       </div>
     </section>

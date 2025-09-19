@@ -16,7 +16,7 @@ export default function ServiceSection() {
       services.forEach((service, serviceIndex) => {
         service.videos.forEach((videoSrc, videoIndex) => {
           const video = document.createElement("video");
-          video.preload = "auto";
+          video.preload = "metadata";
           video.muted = true;
           video.loop = true;
           video.playsInline = true;
