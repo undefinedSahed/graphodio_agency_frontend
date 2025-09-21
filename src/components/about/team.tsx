@@ -117,7 +117,7 @@ export default function Team() {
                         <p className="text-center pb-2 text-lg lg:text-xl">
                           {member.headline}
                         </p>
-                        <p className="text-justify text-sm lg:text-base">
+                        <p className="text-justify text-sm lg:text-base font-[Roboto]">
                           {member.description}
                         </p>
                       </div>
