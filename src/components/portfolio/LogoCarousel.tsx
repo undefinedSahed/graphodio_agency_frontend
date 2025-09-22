@@ -62,8 +62,8 @@ const LogoCarousel: React.FC = () => {
               src={logo}
               alt={`Logo ${index}`}
               width={100}
-              height={60}
-              className="aspect-[10/6] object-contain invert brightness-0 saturate-0"
+              height={100}
+              className="aspect-[10/10] object-contain invert brightness-0 saturate-0"
 
             />
           </div>
