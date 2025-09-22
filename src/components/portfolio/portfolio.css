@@ -1,0 +1,20 @@
+/* portfolio.css */
+
+/* Tablet screens (iPads & mid-size devices) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .tablet-gap {
+    gap: 20px !important;
+  }
+
+  .tablet-card-lg {
+    height: 500px !important;
+  }
+
+  .tablet-card-md {
+    height: 420px !important;
+  }
+
+  .tablet-card-sm {
+    height: 280px !important;
+  }
+}
