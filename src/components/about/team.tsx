@@ -7,7 +7,9 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import { teammates } from "@/lib/constant";
 import Image from "next/image";
 
+
 gsap.registerPlugin(ScrollTrigger);
+
 
 export default function Team() {
   const secRef = useRef<HTMLElement | null>(null);
@@ -18,6 +20,7 @@ export default function Team() {
       if (window.innerWidth >= 1024) {
         const q = context.selector;
 
+
         ScrollTrigger.create({
           trigger: secRef.current,
           start: "top top",
@@ -25,6 +28,7 @@ export default function Team() {
           scrub: true,
           pin: true,
         });
+
 
         const tl = gsap.timeline({
           scrollTrigger: {
@@ -34,6 +38,7 @@ export default function Team() {
             scrub: true,
           },
         });
+
 
         if (q) {
           tl.to(q(".animate_text_one"), { xPercent: 200 })
@@ -69,6 +74,7 @@ export default function Team() {
           </h2>
         </div>
 
+
         {/* First Row */}
         <div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-4 transform-gpu">
@@ -94,7 +100,7 @@ export default function Team() {
                     <div
                       className={`
                         absolute left-0 w-full h-full bg-black/70 p-4 lg:p-5 duration-500 flex flex-col justify-between
-                        ${isOpen ? "top-0" : "top-full"} 
+                        ${isOpen ? "top-0" : "top-full"}
                         lg:top-full lg:group-hover:top-0
                       `}
                     >
@@ -106,7 +112,7 @@ export default function Team() {
                         <p className="text-center pb-2 text-lg lg:text-xl">
                           {member.headline}
                         </p>
-                        <p className="text-justify text-sm lg:text-base">
+                        <p className="text-justify text-sm lg:text-base font-[Roboto]">
                           {member.description}
                         </p>
                       </div>
