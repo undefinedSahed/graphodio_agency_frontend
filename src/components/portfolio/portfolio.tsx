@@ -1,5 +1,6 @@
 "use client";
 
+import "./portfolio.css"; // import tablet overrides
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
@@ -13,13 +14,11 @@ export default function Portfolio() {
     <main className="space-y-12">
       {/* Section 1 */}
       <div className="text-white px-4 sm:px-6 lg:py-12 flex items-center justify-center">
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-10 md:gap-60 w-full max-w-7xl">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-10 md:gap-60 w-full max-w-7xl tablet-gap">
           {works.slice(0, 2).map((work, idx) => (
             <div
               key={idx}
-              className={`md:col-span-${
-                idx === 0 ? "3" : "2"
-              } flex flex-col justify-end`}
+              className={`md:col-span-${idx === 0 ? "3" : "2"} flex flex-col justify-end`}
             >
               <div className="flex-grow flex flex-col justify-end">
                 <Link
@@ -28,8 +27,8 @@ export default function Portfolio() {
                   onMouseLeave={() => setHovered(null)}
                   className={`group relative block overflow-hidden border border-gray-700 hover:scale-[1.015] transition-transform duration-300 ease-in-out ${
                     idx === 0
-                      ? "h-[300px] sm:h-[400px] md:h-[500px]"
-                      : "h-[200px] sm:h-[300px] md:h-[300px]"
+                      ? "h-[300px] sm:h-[400px] md:h-[500px] tablet-card-md"
+                      : "h-[200px] sm:h-[300px] md:h-[300px] tablet-card-sm"
                   }`}
                 >
                   {/* Background */}
@@ -68,14 +67,14 @@ export default function Portfolio() {
 
       {/* Section 2 */}
       <section className="text-white px-4 sm:px-6 lg:py-12 flex items-center justify-center">
-        <div className="grid grid-cols-1 md:grid-cols-5 lg:gap-10 w-full max-w-7xl">
+        <div className="grid grid-cols-1 md:grid-cols-5 lg:gap-10 w-full max-w-7xl tablet-gap">
           {/* Small Card */}
           <div className="md:col-span-2 flex flex-col justify-end mb-10 md:mb-20">
             <Link
               href={`/portfolio/${slugify(works[2].title)}`}
               onMouseEnter={() => setHovered(works[2].title)}
               onMouseLeave={() => setHovered(null)}
-              className="group relative block h-[200px] sm:h-[300px] md:h-[350px] overflow-hidden border border-gray-700 hover:scale-[1.015] transition-transform duration-300 ease-in-out"
+              className="group relative block h-[200px] sm:h-[300px] md:h-[350px] overflow-hidden border border-gray-700 hover:scale-[1.015] transition-transform duration-300 ease-in-out tablet-card-sm"
             >
               <div
                 className="absolute inset-0 z-0 transition-all duration-500"
@@ -109,7 +108,7 @@ export default function Portfolio() {
               href={`/portfolio/${slugify(works[3].title)}`}
               onMouseEnter={() => setHovered(works[3].title)}
               onMouseLeave={() => setHovered(null)}
-              className="group relative block h-[300px] sm:h-[400px] md:h-[600px] overflow-hidden border border-gray-700 hover:scale-[1.015] transition-transform duration-300 ease-in-out"
+              className="group relative block h-[300px] sm:h-[400px] md:h-[600px] overflow-hidden border border-gray-700 hover:scale-[1.015] transition-transform duration-300 ease-in-out tablet-card-lg"
             >
               <div
                 className="absolute inset-0 z-0 transition-all duration-500"
@@ -141,14 +140,14 @@ export default function Portfolio() {
 
       {/* Section 3 */}
       <section className="text-white px-4 sm:px-6 lg:pt-10 flex items-center justify-center">
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-10 md:gap-40 w-full max-w-7xl">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-10 md:gap-40 w-full max-w-7xl tablet-gap">
           {/* Left card */}
           <div className="md:col-span-2 flex flex-col justify-end mb-10 md:mb-20">
             <Link
               href={`/portfolio/${slugify(works[4].title)}`}
               onMouseEnter={() => setHovered(works[4].title)}
               onMouseLeave={() => setHovered(null)}
-              className="group relative block h-[200px] sm:h-[300px] md:h-[350px] overflow-hidden border border-gray-700 hover:scale-[1.015] transition-transform duration-300 ease-in-out"
+              className="group relative block h-[200px] sm:h-[300px] md:h-[350px] overflow-hidden border border-gray-700 hover:scale-[1.015] transition-transform duration-300 ease-in-out tablet-card-sm"
             >
               <div
                 className="absolute inset-0 z-0 transition-all duration-500"
@@ -175,38 +174,6 @@ export default function Portfolio() {
               {works[4].tags.join(" ")}
             </div>
           </div>
-
-          {/* Right card */}
-          {/* <div className="md:col-span-2 flex flex-col justify-end">
-            <Link
-              href={`/portfolio/${slugify(works[5].title)}`}
-              onMouseEnter={() => setHovered(works[5].title)}
-              onMouseLeave={() => setHovered(null)}
-              className="group relative block h-[200px] sm:h-[300px] md:h-[350px] overflow-hidden border border-gray-700 hover:scale-[1.015] transition-transform duration-300 ease-in-out"
-            >
-              <div
-                className="absolute inset-0 z-0 transition-all duration-500"
-                style={{
-                  backgroundImage: `url(${works[5].thumbnail})`,
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
-                  filter: hovered === works[5].title ? "blur(8px)" : "blur(3px)",
-                }}
-              />
-              <div className="relative z-10 w-full h-full p-4 sm:p-6 flex items-center justify-center">
-                <Image
-                  src={works[5].thumbnail}
-                  alt={works[5].title}
-                  width={320}
-                  height={280}
-                  className="object-contain max-h-full"
-                />
-              </div>
-            </Link>
-            <div className="mt-3 text-xs sm:text-sm font-[Roboto] tracking-widest text-white/80 flex justify-between flex-wrap">
-              <span className="text-white font-bold">{works[5].title}</span> • {works[5].tags.join(" ")}
-            </div>
-          </div> */}
         </div>
       </section>
     </main>

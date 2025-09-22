@@ -1,6 +1,5 @@
 "use client";
 
-
 import React, { useRef, useState } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
@@ -15,7 +14,6 @@ gsap.registerPlugin(ScrollTrigger);
 export default function Team() {
   const secRef = useRef<HTMLElement | null>(null);
   const [openIndex, setOpenIndex] = useState<number | null>(null); // mobile toggle
-
 
   useGSAP(
     (context) => {
@@ -58,13 +56,11 @@ export default function Team() {
     { scope: secRef }
   );
 
-
   const handleToggle = (index: number) => {
     if (window.innerWidth < 1024) {
       setOpenIndex(openIndex === index ? null : index);
     }
   };
-
 
   return (
     <section ref={secRef} className="py-12 lg:py-0">
@@ -84,7 +80,6 @@ export default function Team() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-4 transform-gpu">
             {teammates.map((member, index) => {
               const isOpen = openIndex === index;
-
 
               return (
                 <div
