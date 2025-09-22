@@ -293,7 +293,7 @@ export default function FeaturedWorks() {
                 </video>
 
                 <div className="mt-4">
-                  <div className="text-xs font-semibold uppercase tracking-wider">
+                  <div className="text-xs font-semibold uppercase tracking-wider text-center">
                     {work.title}
                   </div>
                 </div>

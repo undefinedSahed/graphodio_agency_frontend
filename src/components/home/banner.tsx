@@ -125,7 +125,9 @@ export default function Banner() {
           >
             Crafting Visuals That Make Your Brand Stand Out
           </h1>
-          <p className={`para px-4 text-lg md:text-xl text-center lg:px-60`}>
+          <p
+            className={`para px-4 text-lg md:text-xl text-center font-[Roboto]`}
+          >
             At Graphodio, we are a full-service creative agency driven by
             innovation, passion, and a commitment to delivering exceptional
             design solutions. Since our inception, we&apos;ve been transforming

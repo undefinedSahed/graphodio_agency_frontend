@@ -3,7 +3,6 @@
 import React, { useRef, useEffect, useState } from "react";
 import { useContact } from "@/lib/contact-context";
 import { X } from "lucide-react";
-import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -36,7 +35,6 @@ const contactFormSchema = z.object({
 export default function ContactForm() {
   const { isContactOpen, setIsContactOpen } = useContact();
   const contactFormRef = useRef<HTMLDivElement>(null);
-  const contactTimeline = useRef<gsap.core.Timeline | null>(null);
   const [isSendingMessage, setIsSendingMessage] = useState(false);
 
   const contactForm = useForm<z.infer<typeof contactFormSchema>>({
@@ -81,39 +79,51 @@ export default function ContactForm() {
     }
   };
 
-  useGSAP(() => {
-    contactTimeline.current = gsap
-      .timeline({ paused: true })
-      .to(contactFormRef.current, {
-        x: -100,
-        duration: 0.8,
-        ease: "power3.out",
-        visibility: "visible",
-      });
-  }, []);
-
   useEffect(() => {
-    if (isContactOpen) {
-      gsap.to(contactFormRef.current, {
-        x: 0,
-        autoAlpha: 1,
-        duration: 0.5,
-        ease: "power2.out",
-      });
+    if (!contactFormRef.current) return;
+
+    // Different animation behavior for large vs small screens
+    if (window.innerWidth >= 1024) {
+      // Large screens: animate from right
+      if (isContactOpen) {
+        gsap.to(contactFormRef.current, {
+          x: 0,
+          autoAlpha: 1,
+          duration: 0.5,
+          ease: "power2.out",
+        });
+      } else {
+        gsap.to(contactFormRef.current, {
+          x: "100%",
+          autoAlpha: 0,
+          duration: 0.5,
+          ease: "power2.in",
+        });
+      }
     } else {
-      gsap.to(contactFormRef.current, {
-        x: "-100%",
-        autoAlpha: 0,
-        duration: 0.5,
-        ease: "power2.in",
-      });
+      // Small screens: maintain existing animation
+      if (isContactOpen) {
+        gsap.to(contactFormRef.current, {
+          x: 0,
+          autoAlpha: 1,
+          duration: 0.5,
+          ease: "power2.out",
+        });
+      } else {
+        gsap.to(contactFormRef.current, {
+          x: "-100%",
+          autoAlpha: 0,
+          duration: 0.5,
+          ease: "power2.in",
+        });
+      }
     }
   }, [isContactOpen]);
 
   return (
     <div
       ref={contactFormRef}
-      className="fixed py-10 lg:py-0 md:h-screen place-content-center right-0 top-0 w-full lg:w-[40%] bg-black z-[999] backdrop-blur-2xl pt-20 px-5 lg:pl-14 lg:pr-5 contact_form invisible"
+      className="fixed py-10 lg:py-0 md:h-screen place-content-center right-0 top-0 w-full lg:w-[40%] bg-black z-[999] backdrop-blur-2xl pt-20 px-5 lg:pl-14 lg:pr-5 contact_form invisible translate-x-full lg:translate-x-[100%]"
     >
       <h2 className="text-4xl lg:text-6xl font-bold text-white">
         Get In Touch

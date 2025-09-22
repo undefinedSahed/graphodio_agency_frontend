@@ -12,35 +12,47 @@ export async function POST(req: Request) {
             );
         }
 
-        // Create transporter
+        // SMTP transporter (your domain mail)
         const transporter = nodemailer.createTransport({
-            service: "gmail", // or "smtp.yourmail.com"
+            host: "mail.graphodio.com",
+            port: 465,
+            secure: true, // true for port 465
             auth: {
-                user: process.env.SMTP_USER, // your email
-                pass: process.env.SMTP_PASS, // your app password
+                user: process.env.SMTP_USER, // info@graphodio.com
+                pass: process.env.SMTP_PASS, // password from cPanel
+            },
+            tls: {
+                rejectUnauthorized: false,
             },
         });
 
-        // Email options
+        // Email options (multiple recipients)
         const mailOptions = {
-            from: `"${name}" <${email}>`,
-            to: process.env.CONTACT_EMAIL, // your receiving email
+            from: `"${name}" <${process.env.SMTP_USER}>`,
+            replyTo: email,
+            to: [process.env.SMTP_USER, process.env.SMTP_USER_BACKUP],
             subject: `Graphodio - New Contact Form Submission for ${service}`,
-            text: `
-        Name: ${name}
-        Email: ${email}
-        Service: ${service}
-        Message: ${message}
-      `,
             html: `
-        <h2>New Contact Form Submission</h2>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Service:</strong> ${service}</p>
-        <p><strong>Message:</strong></p>
-        <p>${message}</p>
-      `,
+  <div style="font-family: Arial, sans-serif; max-width: 600px; margin: auto; border: 1px solid #e5e5e5; border-radius: 8px; overflow: hidden;">
+    <div style="background: #0d6efd; padding: 16px; text-align: center; color: white;">
+      <h2 style="margin: 0;">📩 New Contact Form Submission</h2>
+    </div>
+    <div style="padding: 20px; background: #fafafa;">
+      <p style="margin: 0 0 10px;"><strong>Name:</strong> ${name}</p>
+      <p style="margin: 0 0 10px;"><strong>Email:</strong> ${email}</p>
+      <p style="margin: 0 0 10px;"><strong>Service:</strong> ${service}</p>
+      <p style="margin: 0;"><strong>Message:</strong></p>
+      <div style="margin-top: 8px; padding: 12px; background: #fff; border: 1px solid #ddd; border-radius: 6px; white-space: pre-line;">
+        ${message}
+      </div>
+    </div>
+    <div style="background: #f1f1f1; padding: 12px; text-align: center; font-size: 12px; color: #555;">
+      <p style="margin: 4px 0;">This message was sent from the <strong>Graphodio</strong> website.</p>
+    </div>
+  </div>
+  `,
         };
+
 
         await transporter.sendMail(mailOptions);
 

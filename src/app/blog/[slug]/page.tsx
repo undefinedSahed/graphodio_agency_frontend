@@ -72,14 +72,14 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
                     <p className='text-xs lg:text-base text-justify lg:text-start'>{blog.thirdPara}</p>
                     <p className='text-xs lg:text-base text-justify lg:text-start'>{blog.fourthPara}</p>
 
-                    <Image
+                  {/*  <Image
                         src={blog.secondImage}
                         alt={blog.secondImgDes}
                         width={1000}
                         height={600}
                         className="w-full rounded-md"
                     />
-                    <p className="text-sm italic">{blog.secondImgDes}</p>
+                    <p className="text-sm italic">{blog.secondImgDes}</p> */}
 
                     <h3 className="lg:text-xl text-base font-semibold">{blog.fourthTitle}</h3>
                     <p className='text-xs lg:text-base text-justify lg:text-start'>{blog.fifthPara}</p>

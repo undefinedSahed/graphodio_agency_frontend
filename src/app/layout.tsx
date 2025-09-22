@@ -25,13 +25,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" data-arp="">
       <body className={`${debata.className} antialiased overflow-x-hidden`}>
         <SmoothScrollProvider>
           <ContactProvider>
             <Navbar />
             {children}
-            <Toaster position="top-right"/>
+            <Toaster position="top-right" />
             <ContactForm />
             <Footer />
           </ContactProvider>

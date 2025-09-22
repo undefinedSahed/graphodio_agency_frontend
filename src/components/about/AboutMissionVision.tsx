@@ -92,11 +92,13 @@ export default function AboutMissionVision() {
       </div>
 
       {/* Watermark */}
-      <div className="amv-watermark pointer-events-none absolute top-24 select-none opacity-10 mix-blend-screen">
-        <span className="block text-[22rem] leading-none font-black tracking-tighter text-white/80">
-          graphodio
-        </span>
-      </div>
+     <div className="amv-watermark pointer-events-none absolute top-12 sm:top-16 md:top-20 lg:top-24 select-none opacity-10 mix-blend-screen w-full flex justify-center">
+  <span className="block text-[6rem] sm:text-[12rem] md:text-[16rem] lg:text-[22rem] leading-none font-black tracking-tighter text-white/80 text-center">
+    graphodio
+  </span>
+</div>
+
+
 
       <div className="mx-auto max-w-6xl px-6 py-20 md:py-28 space-y-12 font-[Roboto]">
         {points.map((item, idx) => (
@@ -110,13 +112,13 @@ export default function AboutMissionVision() {
               <>
                 {/* RIGHT (text) */}
                 <div className="relative z-10 order-2 md:order-2">
-                  <span className="amv-kicker mb-3 inline-block text-xs tracking-[0.3em] text-red-500/90">
+                  <span className="amv-kicker mb-3 inline-block text-sm tracking-[0.3em] text-red-500/90">
                     WHAT DRIVES US
                   </span>
                   <h2 className="amv-heading font-extrabold leading-[0.95] tracking-tight text-4xl md:text-6xl">
                     {item.heading}
                   </h2>
-                  <p className="amv-body mt-5 max-w-xl text-sm/relaxed md:text-base/relaxed text-white/80 font-[Roboto]">
+                  <p className="amv-body mt-5 max-w-xl text-xl/relaxed md:text-base/relaxed text-white/80 font-[Roboto]">
                     {item.body}
                   </p>
 
@@ -138,12 +140,13 @@ export default function AboutMissionVision() {
                 </div>
 
                 {/* LEFT (badges box) */}
-                <div className="relative h-[18vh] md:h-[30vh] flex justify-center order-1 md:order-1">
+                <div className="relative h-[18vh] md:h-[30vh]  justify-center order-1 md:order-1 hidden sm:flex">
                   <div
                     aria-hidden
                     className="relative w-[70%] h-full rounded-[2rem] border border-white/10
-                    bg-[radial-gradient(circle_at_20%_20%,rgba(0,255,255,0.1),transparent_40%),radial-gradient(circle_at_80%_70%,rgba(255,165,0,0.15),transparent_35%)]
-                    shadow-[0_0_0_1px_rgba(255,255,255,0.04)_inset] backdrop-blur-[1px]"
+  bg-[radial-gradient(circle_at_20%_20%,rgba(0,255,255,0.1),transparent_40%),radial-gradient(circle_at_80%_70%,rgba(255,165,0,0.15),transparent_35%)]
+  shadow-[0_0_0_1px_rgba(255,255,255,0.04)_inset] backdrop-blur-[1px]
+  hidden sm:block"
                   >
                     <Badge label="Impactful" className="absolute left-6 top-6" />
                     <Badge label="Innovative" className="absolute right-8 top-12" />
@@ -160,24 +163,25 @@ export default function AboutMissionVision() {
               <>
                 {/* LEFT (text) */}
                 <div className="relative z-10">
-                  <span className="amv-kicker mb-3 inline-block text-xs tracking-[0.3em] text-red-500/90">
+                  <span className="amv-kicker mb-3 inline-block text-sm tracking-[0.3em] text-red-500/90">
                     {idx === 0 ? "WHO WE ARE" : "WHERE WE'RE HEADED"}
                   </span>
                   <h2 className="amv-heading font-extrabold leading-[0.95] tracking-tight text-4xl md:text-6xl">
                     {item.heading}
                   </h2>
-                  <p className="amv-body mt-5 max-w-xl text-sm/relaxed md:text-base/relaxed text-white/80">
+                  <p className="amv-body mt-5 max-w-xl text-lg/relaxed md:text-base/relaxed text-white/80">
                     {item.body}
                   </p>
                 </div>
 
                 {/* RIGHT (badges box) */}
-                <div className="relative h-[18vh] md:h-[30vh] flex justify-center">
+                <div className="relative h-[18vh] md:h-[30vh] justify-center  hidden sm:flex">
                   <div
                     aria-hidden
                     className="relative w-[70%] h-full rounded-[2rem] border border-white/10
-                    bg-[radial-gradient(circle_at_20%_20%,rgba(0,255,255,0.1),transparent_40%),radial-gradient(circle_at_80%_70%,rgba(255,165,0,0.15),transparent_35%)]
-                    shadow-[0_0_0_1px_rgba(255,255,255,0.04)_inset] backdrop-blur-[1px]"
+  bg-[radial-gradient(circle_at_20%_20%,rgba(0,255,255,0.1),transparent_40%),radial-gradient(circle_at_80%_70%,rgba(255,165,0,0.15),transparent_35%)]
+  shadow-[0_0_0_1px_rgba(255,255,255,0.04)_inset] backdrop-blur-[1px]
+  hidden sm:block"
                   >
                     {idx === 0 && (
                       <>
