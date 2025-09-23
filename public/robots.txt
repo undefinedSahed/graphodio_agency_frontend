@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://graphodio.com/
+
+# Sitemaps
+Sitemap: https://graphodio.com/sitemap.xml
