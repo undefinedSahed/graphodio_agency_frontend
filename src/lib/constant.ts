@@ -15,9 +15,9 @@ export const services = [
       "Drive growth with smart, results-focused digital marketing. From strategic planning and campaign execution to performance analytics and optimization, we help your brand reach the right audience, at the right time, across the right channels.",
     tags: ["AMAZON", "Social Media"],
     videos: [
-      "https://res.cloudinary.com/sahed/video/upload/v1758583149/SocialMedia2_wutaz9.mp4",
-      "https://res.cloudinary.com/sahed/video/upload/v1758583143/Amazon5_gmhq0b.mp4",
-      "https://res.cloudinary.com/sahed/video/upload/v1758583148/SocialMedia_tkdcia.mp4",
+      "https://res.cloudinary.com/sahed/video/upload/q_auto/v1758583149/SocialMedia2_wutaz9.mp4",
+      "https://res.cloudinary.com/sahed/video/upload/q_auto/v1758583143/Amazon5_gmhq0b.mp4",
+      "https://res.cloudinary.com/sahed/video/upload/q_auto/v1758583148/SocialMedia_tkdcia.mp4",
     ],
   },
   {
@@ -27,9 +27,9 @@ export const services = [
       "Get a website built just for you,designed from the ground up to match your brand, goals, and audience. We create custom websites that are visually stunning, fully responsive, fast, and optimized for performance, ensuring a seamless user experience across all devices.",
     tags: ["Custom Website", "MERN Stack", "Deployment"],
     videos: [
-      "https://res.cloudinary.com/sahed/video/upload/v1758583155/website4_dfejx7.mp4",
-      "https://res.cloudinary.com/sahed/video/upload/v1758583153/Website2_q35rag.mp4",
-      "https://res.cloudinary.com/sahed/video/upload/v1758583154/website3_etnjkn.mp4",
+      "https://res.cloudinary.com/sahed/video/upload/q_auto/v1758583155/website4_dfejx7.mp4",
+      "https://res.cloudinary.com/sahed/video/upload/q_auto/v1758583153/Website2_q35rag.mp4",
+      "https://res.cloudinary.com/sahed/video/upload/q_auto/v1758583154/website3_etnjkn.mp4",
     ],
   },
   {
@@ -39,9 +39,9 @@ export const services = [
       "Craft a brand that speaks volumes. From strategic positioning and messaging to logo design and cohesive visual systems, we build brand identities that resonate with your audience and set you apart from the competition.",
     tags: ["FLYER", "BROCHURE", "BILLBOARD"],
     videos: [
-      "https://res.cloudinary.com/sahed/video/upload/v1758583144/Branding3_vpssgb.mp4",
-      "https://res.cloudinary.com/sahed/video/upload/v1758583144/Branding2_kdqih9.mp4",
-      "https://res.cloudinary.com/sahed/video/upload/v1758583147/branding4_irtlir.mp4",
+      "https://res.cloudinary.com/sahed/video/upload/q_auto/v1758583144/Branding3_vpssgb.mp4",
+      "https://res.cloudinary.com/sahed/video/upload/q_auto/v1758583144/Branding2_kdqih9.mp4",
+      "https://res.cloudinary.com/sahed/video/upload/q_auto/v1758583147/branding4_irtlir.mp4",
     ],
   },
 ];
@@ -115,11 +115,11 @@ export const works = [
     thumbnail: "/images/webimages-02.jpg",
     tags: ["A+ Content", "Product Listing"],
     videos: [
-      "https://res.cloudinary.com/sahed/video/upload/v1758583143/Amazon_npn3jt.mp4",
-      "https://res.cloudinary.com/sahed/video/upload/v1758583142/amazon2_nawrma.mp4",
-      "https://res.cloudinary.com/sahed/video/upload/v1758583142/amazon3_xpkvgy.mp4",
-      "https://res.cloudinary.com/sahed/video/upload/v1758583143/Amazon4_un4pft.mp4",
-      "https://res.cloudinary.com/sahed/video/upload/v1758583143/Amazon5_gmhq0b.mp4",
+      "https://res.cloudinary.com/sahed/video/upload/q_auto/v1758583143/Amazon_npn3jt.mp4",
+      "https://res.cloudinary.com/sahed/video/upload/q_auto/v1758583142/amazon2_nawrma.mp4",
+      "https://res.cloudinary.com/sahed/video/upload/q_auto/v1758583142/amazon3_xpkvgy.mp4",
+      "https://res.cloudinary.com/sahed/video/upload/q_auto/v1758583143/Amazon4_un4pft.mp4",
+      "https://res.cloudinary.com/sahed/video/upload/q_auto/v1758583143/Amazon5_gmhq0b.mp4",
     ],
     featured: true,
     description: `Maximize your reach and sales on Amazon. From optimized product listings and enhanced A+ content to storefront branding and advertising strategies, we help you stand out in the world’s largest marketplace.`,
@@ -137,6 +137,8 @@ export const works = [
       textAfterLink: ", WHERE CREATIVITY MEETS STRATEGY & EXECUTION.",
     },
     year: "SEP 2024",
+    about: true,
+    home: true,
   },
   {
     title: "Website",
@@ -148,11 +150,11 @@ export const works = [
     thumbnail: "/images/webimages-01.jpg",
     tags: ["Web Development", "MERN Stack"],
     videos: [
-      "https://res.cloudinary.com/sahed/video/upload/q_auto/v1754562508/Website_iimvjj.mp4",
-      "https://res.cloudinary.com/sahed/video/upload/q_auto/v1754562508/Website2_v2k5nd.mp4",
-      "https://res.cloudinary.com/sahed/video/upload/q_auto/v1754562509/website3_yjdanr.mp4",
-      "https://res.cloudinary.com/sahed/video/upload/q_auto/v1756047583/website4_pffvmo.mp4",
-      "https://res.cloudinary.com/sahed/video/upload/q_auto/v1756047584/website5_gkvzz6.mp4",
+      "https://res.cloudinary.com/sahed/video/upload/q_auto/v1758583153/Website_bvtkla.mp4",
+      "https://res.cloudinary.com/sahed/video/upload/q_auto/v1758583153/Website2_q35rag.mp4",
+      "https://res.cloudinary.com/sahed/video/upload/q_auto/v1758583154/website3_etnjkn.mp4",
+      "https://res.cloudinary.com/sahed/video/upload/q_auto/v1758583155/website4_dfejx7.mp4",
+      "https://res.cloudinary.com/sahed/video/upload/q_auto/v1758583155/website5_zclwy6.mp4",
     ],
     featured: true,
     description: `Get a website built just for you—designed from the ground up to match your brand, goals, and audience. We create custom websites that are visually stunning, fully responsive, fast, and optimized for performance, ensuring a seamless user experience across all devices.`,
@@ -170,6 +172,8 @@ export const works = [
       textAfterLink: ", WHERE CREATIVITY MEETS STRATEGY & EXECUTION.",
     },
     year: "SEP 2024",
+    about: true,
+    home: true,
   },
   {
     title: "Branding",
@@ -181,11 +185,11 @@ export const works = [
     thumbnail: "/images/webimages-04.jpg",
     tags: ["Visuals", "Strategy"],
     videos: [
-      "https://res.cloudinary.com/sahed/video/upload/q_auto/v1754562503/Branding_x2dn0g.mp4",
-      "https://res.cloudinary.com/sahed/video/upload/q_auto/v1754562505/Branding2_kifwr2.mp4",
-      "https://res.cloudinary.com/sahed/video/upload/q_auto/v1754562503/Branding3_mzorwq.mp4",
-      "https://res.cloudinary.com/sahed/video/upload/q_auto/v1754562504/branding4_fow92n.mp4",
-      "https://res.cloudinary.com/sahed/video/upload/q_auto/v1756047703/branding5_m0szlw.mp4",
+      "https://res.cloudinary.com/sahed/video/upload/q_auto/v1758583143/Branding_pxamja.mp4",
+      "https://res.cloudinary.com/sahed/video/upload/q_auto/v1758583144/Branding2_kdqih9.mp4",
+      "https://res.cloudinary.com/sahed/video/upload/q_auto/v1758583144/Branding3_vpssgb.mp4",
+      "https://res.cloudinary.com/sahed/video/upload/q_auto/v1758583147/branding4_irtlir.mp4",
+      "https://res.cloudinary.com/sahed/video/upload/q_auto/v1758583146/branding5_ydfu0i.mp4",
     ],
     featured: true,
     description: `We shape bold, stra tegic brand identities that define who you are, connect emotionally, and stand out across every touchpoint`,
@@ -203,6 +207,8 @@ export const works = [
       textAfterLink: ", WHERE CREATIVITY MEETS STRATEGY & EXECUTION.",
     },
     year: "SEP 2024",
+    about: true,
+    home: true,
   },
   {
     title: "Social Media",
@@ -214,11 +220,11 @@ export const works = [
     thumbnail: "/images/webimages-03.jpg",
     tags: ["Content", "Trends"],
     videos: [
-      "https://res.cloudinary.com/sahed/video/upload/q_auto/v1754562507/SocialMedia_smhmsw.mp4",
-      "https://res.cloudinary.com/sahed/video/upload/q_auto/v1754562508/SocialMedia2_scavga.mp4",
-      "https://res.cloudinary.com/sahed/video/upload/q_auto/v1756047825/socialmedia3_bqmxte.mp4",
-      "https://res.cloudinary.com/sahed/video/upload/q_auto/v1756047827/socialmedia4_f7hljn.mp4",
-      "https://res.cloudinary.com/sahed/video/upload/q_auto/v1756047828/socialmedia5_irnbal.mp4",
+      "https://res.cloudinary.com/sahed/video/upload/q_auto/v1758583148/SocialMedia_tkdcia.mp4",
+      "https://res.cloudinary.com/sahed/video/upload/q_auto/v1758583149/SocialMedia2_wutaz9.mp4",
+      "https://res.cloudinary.com/sahed/video/upload/q_auto/v1758583150/socialmedia3_gen81w.mp4",
+      "https://res.cloudinary.com/sahed/video/upload/q_auto/v1758583152/socialmedia4_yh9laz.mp4",
+      "https://res.cloudinary.com/sahed/video/upload/q_auto/v1758583152/socialmedia5_n7sy3q.mp4",
     ],
     featured: true,
     description: `We grow your brand online through strategic content, targeted campaigns, and consistent engagement turning followers into loyal communities.`,
@@ -236,8 +242,9 @@ export const works = [
       textAfterLink: ", WHERE CREATIVITY MEETS STRATEGY & EXECUTION.",
     },
     year: "SEP 2024",
+    about: true,
+    home: true,
   },
-
   {
     title: "Digital Marketing",
     slug: "digital-marketing",
@@ -248,11 +255,11 @@ export const works = [
     thumbnail: "/images/webimages-05.jpg",
     tags: ["PPC", "SEO", "SMM"],
     videos: [
-      "https://res.cloudinary.com/sahed/video/upload/q_auto/v1756048108/digitalmarketing_yjimve.mp4",
-      "https://res.cloudinary.com/sahed/video/upload/q_auto/v1756048108/digitalmarketing2_v9ry8d.mp4",
-      "https://res.cloudinary.com/sahed/video/upload/q_auto/v1756048109/digitalmarketing3_aksogw.mp4",
-      "https://res.cloudinary.com/sahed/video/upload/q_auto/v1756048112/digitalmarketing4_b3eusl.mp4",
-      "https://res.cloudinary.com/sahed/video/upload/q_auto/v1756048112/digitalmarketing5_xgse7i.mp4",
+      "https://res.cloudinary.com/sahed/video/upload/q_auto/v1758583145/digitalmarketing_qx0nmb.mp4",
+      "https://res.cloudinary.com/sahed/video/upload/q_auto/v1758583146/digitalmarketing2_jzxj89.mp4",
+      "https://res.cloudinary.com/sahed/video/upload/q_auto/v1758583146/digitalmarketing3_z4rkxa.mp4",
+      "https://res.cloudinary.com/sahed/video/upload/q_auto/v1758583147/digitalmarketing4_w3wvnz.mp4",
+      "https://res.cloudinary.com/sahed/video/upload/q_auto/v1758583148/digitalmarketing5_qd8jzc.mp4",
     ],
     featured: true,
     description: `We go beyond ads to create data-driven campaigns that connect your brand with the right audience. From SEO, PPC, and social media to content and email marketing, our strategies boost visibility, drive engagement, and deliver measurable growth tailored to your goals.`,
@@ -270,167 +277,8 @@ export const works = [
       textAfterLink: ", WHERE CREATIVITY MEETS STRATEGY & EXECUTION.",
     },
     year: "SEP 2024",
-  },
-  {
-    title: "Amazon",
-    slug: "amazon",
-    shortDescription:
-      "We build branded Amazon storefronts with custom visuals, A+ content, and cohesive design turning product pages into powerful brand experiences that earn trust and drive sales.",
-    detailsDescription:
-      "Maximize your reach and sales on Amazon. From optimized product listings and enhanced A+ content to storefront branding and advertising strategies, we help you stand out in the world’s largest marketplace.",
-    thumbnail: "/images/webimages-02.jpg",
-    tags: ["A+ Content", "Product Listing"],
-    videos: [
-      "https://res.cloudinary.com/sahed/video/upload/q_auto/v1754562503/Amazon_wldify.mp4",
-      "https://res.cloudinary.com/sahed/video/upload/q_auto/v1754562504/amazon2_a1clwh.mp4",
-      "https://res.cloudinary.com/sahed/video/upload/q_auto/v1756047390/amazon3_mqqcuj.mp4",
-      "https://res.cloudinary.com/sahed/video/upload/q_auto/v1756047391/Amazon4_p13fta.mp4",
-      "https://res.cloudinary.com/sahed/video/upload/q_auto/v1756047391/Amazon5_yfeqgw.mp4",
-    ],
+    about: true,
     home: true,
-  },
-  {
-    title: "Website",
-    slug: "website",
-    shortDescription:
-      "We design and build responsive, SEO-optimized websites that are fast, user-focused, and tailored to your brand. Whether it's a sleek portfolio, a custom corporate site, or a powerful e-commerce platform, we turn your vision into a high-performing digital experience.",
-    detailsDescription:
-      "Get a website built just for you—designed from the ground up to match your brand, goals, and audience. We create custom websites that are visually stunning, fully responsive, fast, and optimized for performance, ensuring a seamless user experience across all devices.",
-    thumbnail: "/images/webimages-01.jpg",
-    tags: ["Web Development", "MERN Stack"],
-    videos: [
-      "https://res.cloudinary.com/sahed/video/upload/q_auto/v1754562508/Website_iimvjj.mp4",
-      "https://res.cloudinary.com/sahed/video/upload/q_auto/v1754562508/Website2_v2k5nd.mp4",
-      "https://res.cloudinary.com/sahed/video/upload/q_auto/v1754562509/website3_yjdanr.mp4",
-      "https://res.cloudinary.com/sahed/video/upload/q_auto/v1756047583/website4_pffvmo.mp4",
-      "https://res.cloudinary.com/sahed/video/upload/q_auto/v1756047584/website5_gkvzz6.mp4",
-    ],
-    home: true,
-  },
-  {
-    title: "Branding",
-    slug: "branding",
-    shortDescription:
-      "We build impactful brand identities with custom logos, visual systems, and messaging strategies that tell your story, spark connection, and leave a lasting impression across every touchpoint.",
-    detailsDescription:
-      "We crafted a modern and elegant layout using Webflow, showcasing Royal House Interiors’ portfolio, services, and contact sections with a premium feel.",
-    thumbnail: "/images/webimages-04.jpg",
-    tags: ["Graphics", "SEO"],
-    videos: [
-      "https://res.cloudinary.com/sahed/video/upload/q_auto/v1754562503/Branding_x2dn0g.mp4",
-      "https://res.cloudinary.com/sahed/video/upload/q_auto/v1754562505/Branding2_kifwr2.mp4",
-      "https://res.cloudinary.com/sahed/video/upload/q_auto/v1754562503/Branding3_mzorwq.mp4",
-      "https://res.cloudinary.com/sahed/video/upload/q_auto/v1754562504/branding4_fow92n.mp4",
-      "https://res.cloudinary.com/sahed/video/upload/q_auto/v1756047703/branding5_m0szlw.mp4",
-    ],
-    home: true,
-  },
-  {
-    title: "Social Media",
-    slug: "social-media",
-    shortDescription:
-      "We spark conversations, foster loyalty, and build active communities around your brand on every platform.",
-    detailsDescription:
-      "This Webflow landing page highlights premium property listings with interactive filters, animations, and SEO-optimized content for Royal House Real Estate.",
-    thumbnail: "/images/webimages-03.jpg",
-    tags: ["Graphics", "SEO"],
-    videos: [
-      "https://res.cloudinary.com/sahed/video/upload/q_auto/v1754562507/SocialMedia_smhmsw.mp4",
-      "https://res.cloudinary.com/sahed/video/upload/q_auto/v1754562508/SocialMedia2_scavga.mp4",
-      "https://res.cloudinary.com/sahed/video/upload/q_auto/v1756047825/socialmedia3_bqmxte.mp4",
-      "https://res.cloudinary.com/sahed/video/upload/q_auto/v1756047827/socialmedia4_f7hljn.mp4",
-      "https://res.cloudinary.com/sahed/video/upload/q_auto/v1756047828/socialmedia5_irnbal.mp4",
-    ],
-    home: true,
-  },
-  {
-    title: "Digital Marketing",
-    slug: "digital-marketing",
-    shortDescription: "Website for boutique travel planning services.",
-    detailsDescription:
-      "Royal House Travel needed a minimal design that conveys luxury. We built a fast-loading landing page with destination highlights and inquiry form.",
-    thumbnail: "/images/webimages-05.jpg",
-    tags: ["PPC", "SEO", "SMM"],
-    videos: [
-      "https://res.cloudinary.com/sahed/video/upload/q_auto/v1756048108/digitalmarketing_yjimve.mp4",
-      "https://res.cloudinary.com/sahed/video/upload/q_auto/v1756048108/digitalmarketing2_v9ry8d.mp4",
-      "https://res.cloudinary.com/sahed/video/upload/q_auto/v1756048109/digitalmarketing3_aksogw.mp4",
-      "https://res.cloudinary.com/sahed/video/upload/q_auto/v1756048112/digitalmarketing4_b3eusl.mp4",
-      "https://res.cloudinary.com/sahed/video/upload/q_auto/v1756048112/digitalmarketing5_xgse7i.mp4",
-    ],
-    about: true,
-  },
-  {
-    title: "Website",
-    slug: "website",
-    shortDescription:
-      "We design and build responsive, SEO-optimized websites that are fast, user-focused, and tailored to your brand. Whether it's a sleek portfolio, a custom corporate site, or a powerful e-commerce platform, we turn your vision into a high-performing digital experience.",
-    detailsDescription:
-      "Get a website built just for you—designed from the ground up to match your brand, goals, and audience. We create custom websites that are visually stunning, fully responsive, fast, and optimized for performance, ensuring a seamless user experience across all devices.",
-    thumbnail: "/images/work.jpg",
-    tags: ["Web Development", "MERN Stack"],
-    videos: [
-      "https://res.cloudinary.com/sahed/video/upload/q_auto/v1754562508/Website_iimvjj.mp4",
-      "https://res.cloudinary.com/sahed/video/upload/q_auto/v1754562508/Website2_v2k5nd.mp4",
-      "https://res.cloudinary.com/sahed/video/upload/q_auto/v1754562509/website3_yjdanr.mp4",
-      "https://res.cloudinary.com/sahed/video/upload/q_auto/v1756047583/website4_pffvmo.mp4",
-      "https://res.cloudinary.com/sahed/video/upload/q_auto/v1756047584/website5_gkvzz6.mp4",
-    ],
-    about: true,
-  },
-  {
-    title: "Branding",
-    slug: "branding",
-    shortDescription:
-      "We build impactful brand identities with custom logos, visual systems, and messaging strategies that tell your story, spark connection, and leave a lasting impression across every touchpoint.",
-    detailsDescription:
-      "We crafted a modern and elegant layout using Webflow, showcasing Royal House Interiors’ portfolio, services, and contact sections with a premium feel.",
-    thumbnail: "/images/work.jpg",
-    tags: ["Graphics", "SEO"],
-    videos: [
-      "https://res.cloudinary.com/sahed/video/upload/q_auto/v1754562503/Branding_x2dn0g.mp4",
-      "https://res.cloudinary.com/sahed/video/upload/q_auto/v1754562505/Branding2_kifwr2.mp4",
-      "https://res.cloudinary.com/sahed/video/upload/q_auto/v1754562503/Branding3_mzorwq.mp4",
-      "https://res.cloudinary.com/sahed/video/upload/q_auto/v1754562504/branding4_fow92n.mp4",
-      "https://res.cloudinary.com/sahed/video/upload/q_auto/v1756047703/branding5_m0szlw.mp4",
-    ],
-    about: true,
-  },
-  {
-    title: "Amazon",
-    slug: "amazon",
-    shortDescription:
-      "We build branded Amazon storefronts with custom visuals, A+ content, and cohesive design turning product pages into powerful brand experiences that earn trust and drive sales.",
-    detailsDescription:
-      "Maximize your reach and sales on Amazon. From optimized product listings and enhanced A+ content to storefront branding and advertising strategies, we help you stand out in the world’s largest marketplace.",
-    thumbnail: "/images/work.jpg",
-    tags: ["A+ Content", "Product Listing"],
-    videos: [
-      "https://res.cloudinary.com/sahed/video/upload/q_auto/v1754562503/Amazon_wldify.mp4",
-      "https://res.cloudinary.com/sahed/video/upload/q_auto/v1754562504/amazon2_a1clwh.mp4",
-      "https://res.cloudinary.com/sahed/video/upload/q_auto/v1756047390/amazon3_mqqcuj.mp4",
-      "https://res.cloudinary.com/sahed/video/upload/q_auto/v1756047391/Amazon4_p13fta.mp4",
-      "https://res.cloudinary.com/sahed/video/upload/q_auto/v1756047391/Amazon5_yfeqgw.mp4",
-    ],
-    about: true,
-  },
-  {
-    title: "Social Media",
-    slug: "social-media",
-    shortDescription:
-      "We spark conversations, foster loyalty, and build active communities around your brand on every platform.",
-    detailsDescription:
-      "This Webflow landing page highlights premium property listings with interactive filters, animations, and SEO-optimized content for Royal House Real Estate.",
-    thumbnail: "/images/work.jpg",
-    tags: ["Graphics", "SEO"],
-    videos: [
-      "https://res.cloudinary.com/sahed/video/upload/q_auto/v1754562507/SocialMedia_smhmsw.mp4",
-      "https://res.cloudinary.com/sahed/video/upload/q_auto/v1754562508/SocialMedia2_scavga.mp4",
-      "https://res.cloudinary.com/sahed/video/upload/q_auto/v1756047825/socialmedia3_bqmxte.mp4",
-      "https://res.cloudinary.com/sahed/video/upload/q_auto/v1756047827/socialmedia4_f7hljn.mp4",
-      "https://res.cloudinary.com/sahed/video/upload/q_auto/v1756047828/socialmedia5_irnbal.mp4",
-    ],
-    about: true,
   },
 ];
 
