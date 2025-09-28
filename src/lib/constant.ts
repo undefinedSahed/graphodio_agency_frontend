@@ -383,8 +383,8 @@ export const blogs = [
     endingPara:
       "What sets us apart is our data-first approach. Every decision we make—whether it’s bid adjustments, keyword targeting, or creative updates—is backed by insights, not guesses. This ensures sustainable, long-term growth for your Amazon store. Ready to maximize your Amazon profits? Let Graphodio handle your PPC, SEO, and creative strategy so you can focus on scaling your brand.",
     author: {
-      name: "Sahed Rahman",
-      image: "https://github.com/shadcn.png",
+      name: "Graphodio",
+      image: "/images/logo.png",
       date: "September 09, 2025",
     },
   },
@@ -418,9 +418,9 @@ export const blogs = [
       "If your Amazon ads feel like an expense instead of an investment, let Graphodio show you how strategy turns spend into sustainable profit.",
 
     author: {
-      name: "Sahed Rahman",
-      image: "https://github.com/shadcn.png",
-      date: "July 14, 2025",
+      name: "Graphodio",
+      image: "/images/logo.png",
+      date: "September 14, 2025",
     },
   },
   {
@@ -452,9 +452,9 @@ export const blogs = [
     ninethPara: "",
     endingPara: "",
     author: {
-      name: "Sahed Rahman",
-      image: "https://github.com/shadcn.png",
-      date: "July 14, 2025",
+      name: "Graphodio",
+      image: "/images/logo.png",
+      date: "September 16, 2025",
     },
   },
   {
@@ -484,9 +484,9 @@ export const blogs = [
     ninethPara: "",
     endingPara: "",
     author: {
-      name: "Sahed Rahman",
-      image: "https://github.com/shadcn.png",
-      date: "July 14, 2025",
+      name: "Graphodio",
+      image: "/images/logo.png",
+      date: "September 24, 2025",
     },
   },
   {
@@ -517,9 +517,9 @@ export const blogs = [
     ninethPara: "",
     endingPara: "",
     author: {
-      name: "Sahed Rahman",
-      image: "https://github.com/shadcn.png",
-      date: "July 14, 2025",
+      name: "Graphodio",
+      image: "/images/logo.png",
+      date: "September 28, 2025",
     },
   },
 ];
