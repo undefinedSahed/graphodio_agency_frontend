@@ -2,37 +2,48 @@ import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 
 export async function POST(req: Request) {
-    try {
-        const { name, email, service, message } = await req.json();
+  try {
+    const { name, email, service, message } = await req.json();
 
-        if (!name || !email || !service || !message) {
-            return NextResponse.json(
-                { error: "Missing required fields" },
-                { status: 400 }
-            );
-        }
+    if (!name || !email || !service || !message) {
+      return NextResponse.json(
+        { error: "Missing required fields" },
+        { status: 400 }
+      );
+    }
 
-        // SMTP transporter (your domain mail)
-        const transporter = nodemailer.createTransport({
-            host: "mail.graphodio.com",
-            port: 465,
-            secure: true, // true for port 465
-            auth: {
-                user: process.env.SMTP_USER, // info@graphodio.com
-                pass: process.env.SMTP_PASS, // password from cPanel
-            },
-            tls: {
-                rejectUnauthorized: false,
-            },
-        });
+    // SMTP transporter (your domain mail)
+    const transporter = nodemailer.createTransport({
+      host: "mail.graphodio.com",
+      port: 465,
+      secure: true,
+      auth: {
+        user: process.env.SMTP_USER,
+        pass: process.env.SMTP_PASS,
+      },
+      tls: {
+        rejectUnauthorized: false,
+      },
+      debug: true, // Enable debug output
+      logger: true // Enable logger
+    });
 
-        // Email options (multiple recipients)
-        const mailOptions = {
-            from: `"${name}" <${process.env.SMTP_USER}>`,
-            replyTo: email,
-            to: [process.env.SMTP_USER, process.env.SMTP_USER_BACKUP],
-            subject: `Graphodio - New Contact Form Submission for ${service}`,
-            html: `
+    // Test connection first
+    transporter.verify(function (error, success) {
+      if (error) {
+        console.log('SMTP connection error:', error);
+      } else {
+        console.log('Server is ready to take our messages');
+      }
+    });
+
+    // Email options (multiple recipients)
+    const mailOptions = {
+      from: `"${name}" <${process.env.SMTP_USER}>`,
+      replyTo: email,
+      to: [process.env.SMTP_USER, process.env.SMTP_USER_BACKUP],
+      subject: `Graphodio - New Contact Form Submission for ${service}`,
+      html: `
   <div style="font-family: Arial, sans-serif; max-width: 600px; margin: auto; border: 1px solid #e5e5e5; border-radius: 8px; overflow: hidden;">
     <div style="background: #0d6efd; padding: 16px; text-align: center; color: white;">
       <h2 style="margin: 0;">📩 New Contact Form Submission</h2>
@@ -51,18 +62,18 @@ export async function POST(req: Request) {
     </div>
   </div>
   `,
-        };
+    };
 
 
-        await transporter.sendMail(mailOptions);
+    await transporter.sendMail(mailOptions);
 
-        return NextResponse.json({ success: true, message: "Email sent successfully" });
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    } catch (error: any) {
-        console.error("Email send error:", error);
-        return NextResponse.json(
-            { success: false, error: "Failed to send email" },
-            { status: 500 }
-        );
-    }
+    return NextResponse.json({ success: true, message: "Email sent successfully" });
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  } catch (error: any) {
+    console.error("Email send error:", error);
+    return NextResponse.json(
+      { success: false, error: "Failed to send email" },
+      { status: 500 }
+    );
+  }
 }
