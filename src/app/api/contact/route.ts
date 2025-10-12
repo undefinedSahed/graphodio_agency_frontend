@@ -12,30 +12,16 @@ export async function POST(req: Request) {
       );
     }
 
-    // SMTP transporter (your domain mail)
-    const transporter = nodemailer.createTransport({
-      host: "mail.graphodio.com",
-      port: 465,
-      secure: true,
-      auth: {
-        user: process.env.SMTP_USER,
-        pass: process.env.SMTP_PASS,
-      },
-      tls: {
-        rejectUnauthorized: false,
-      },
-      debug: true, // Enable debug output
-      logger: true // Enable logger
-    });
-
-    // Test connection first
-    transporter.verify(function (error, success) {
-      if (error) {
-        console.log('SMTP connection error:', error);
-      } else {
-        console.log('Server is ready to take our messages');
-      }
-    });
+        // SMTP transporter (your domain mail)
+        const transporter = nodemailer.createTransport(
+        {
+          service: 'gmail',
+          auth: {
+            user: process.env.SMTP_USER,
+            pass: process.env.SMTP_PASS
+          }
+        }
+        );
 
     // Email options (multiple recipients)
     const mailOptions = {
