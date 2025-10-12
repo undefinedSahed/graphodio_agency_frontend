@@ -138,7 +138,7 @@ export default function ContactForm() {
       <Form {...contactForm}>
         <form
           onSubmit={contactForm.handleSubmit(onSubmit)}
-          className="space-y-6 mt-10 bg-black"
+          className="space-y-6 mt-10 bg-black font-[Roboto] uppercase"
         >
           <div className="flex flex-col lg:flex-row items-center gap-3 w-full justify-between">
             <FormField
@@ -191,7 +191,7 @@ export default function ContactForm() {
               <FormItem>
                 <FormLabel className="text-white text-lg flex items-center gap-2">
                   <ComputerIcon className="w-5 h-5" />
-                  Services Needed*
+                  Service Needed*
                 </FormLabel>
                 <FormControl>
                   <RadioGroup
