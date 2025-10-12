@@ -13,18 +13,15 @@ export async function POST(req: Request) {
         }
 
         // SMTP transporter (your domain mail)
-        const transporter = nodemailer.createTransport({
-            host: "mail.graphodio.com",
-            port: 465,
-            secure: true, // true for port 465
-            auth: {
-                user: process.env.SMTP_USER, // info@graphodio.com
-                pass: process.env.SMTP_PASS, // password from cPanel
-            },
-            tls: {
-                rejectUnauthorized: false,
-            },
-        });
+        const transporter = nodemailer.createTransport(
+        {
+          service: 'gmail',
+          auth: {
+            user: process.env.SMTP_USER,
+            pass: process.env.SMTP_PASS
+          }
+        }
+        );
 
         // Email options (multiple recipients)
         const mailOptions = {
