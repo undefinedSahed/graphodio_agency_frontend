@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import {termsData} from "@/lib/constant";
+import { termsData } from "@/lib/constant";
 
 
 export default function TermsPage() {
@@ -14,7 +14,7 @@ export default function TermsPage() {
   };
 
   return (
-    <main className="max-w-4xl mx-auto px-4 py-16">
+    <main className="max-w-4xl mx-auto px-4 py-16 font-[Roboto]">
       <h1 className="text-4xl font-bold mb-10 text-center">Terms & Conditions</h1>
 
       {termsData.map((section, idx) => (
@@ -26,7 +26,7 @@ export default function TermsPage() {
             {section.title}
           </h2>
           {openSections.includes(idx) && (
-            <p className="mt-2 text-sm whitespace-pre-line text-[#6d6d6d]">
+            <p className="mt-2 text-base whitespace-pre-line text-[#6d6d6d]">
               {section.content}
             </p>
           )}
