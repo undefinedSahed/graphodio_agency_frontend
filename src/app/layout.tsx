@@ -6,7 +6,8 @@ import Navbar from "@/components/shared/navbar";
 import Footer from "@/components/shared/Footer";
 import { ContactProvider } from "@/lib/contact-context";
 import ContactForm from "@/components/shared/contact-form";
-import { Toaster } from "sonner"
+import { Toaster } from "sonner";
+import MetaPixel from "@/components/shared/meta-pixel";
 
 const debata = Bebas_Neue({
   subsets: ["latin"],
@@ -25,8 +26,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" data-arp="">
+    <html lang="en">
       <body className={`${debata.className} antialiased overflow-x-hidden`}>
+        <MetaPixel />
         <SmoothScrollProvider>
           <ContactProvider>
             <Navbar />
