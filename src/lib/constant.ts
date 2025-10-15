@@ -575,7 +575,7 @@ export const policyData = [
   {
     title: "1. Information We Collect",
     content:
-      "We collect the following types of information: \n• Personal Information: Your name, email address, phone number, or business details (when you contact us, use our services, or sign up for newsletters). \n• Non-Personal Data: Data like IP addresses, browser information, and cookies when you visit our website.",
+      "We collect the following types of information: \n• Personal Information: Your name, email address, phone number, or business details (when you contact us, use our services). \n• Non-Personal Data: Data like IP addresses, browser information, and cookies when you visit our website.",
   },
   {
     title: "2. How We Use Your Information",

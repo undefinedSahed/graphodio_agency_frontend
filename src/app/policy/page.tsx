@@ -18,7 +18,7 @@ export default function PolicyPage() {
       <h1 className="text-4xl font-bold mb-10 text-center">Privacy Policy</h1>
 
       {policyData.map((section, idx) => (
-        <div key={idx} className="mb-6">
+        <div key={idx} className="mb-6 font-[Roboto]">
           <h2
             className="text-xl font-semibold text-[#b72026] cursor-pointer hover:underline"
             onClick={() => toggleSection(idx)}
@@ -26,7 +26,7 @@ export default function PolicyPage() {
             {section.title}
           </h2>
           {openSections.includes(idx) && (
-            <p className="mt-2 text-sm whitespace-pre-line text-[#6d6d6d]">
+            <p className="mt-2 text-base whitespace-pre-line text-[#6d6d6d]">
               {section.content}
             </p>
           )}
