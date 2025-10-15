@@ -93,7 +93,7 @@ export default function ContactForm() {
       x: window.innerWidth >= 1024 ? "100%" : "-100%",
       autoAlpha: 0,
     });
-  }, []);
+  }, [contactFormRef, isMounted]);
 
   useEffect(() => {
     if (!contactFormRef.current) return;
@@ -167,7 +167,7 @@ export default function ContactForm() {
               name="name"
               render={({ field }) => (
                 <FormItem className="w-full">
-                  <FormLabel className="text-white text-sm flex items-center gap-2">
+                  <FormLabel className="text-white text-lg flex items-center gap-2">
                     <User className="w-5 h-5" />
                     Name*
                   </FormLabel>
@@ -188,7 +188,7 @@ export default function ContactForm() {
               name="email"
               render={({ field }) => (
                 <FormItem className="w-full ">
-                  <FormLabel className="text-white text-sm flex items-center gap-2">
+                  <FormLabel className="text-white text-lg flex items-center gap-2">
                     <Mail className="w-5 h-5" />
                     Email*
                   </FormLabel>
@@ -210,7 +210,7 @@ export default function ContactForm() {
             name="service"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="text-white text-sm flex items-center gap-2">
+                <FormLabel className="text-white text-lg flex items-center gap-2">
                   <ComputerIcon className="w-5 h-5" />
                   Service Needed*
                 </FormLabel>
@@ -224,7 +224,7 @@ export default function ContactForm() {
                       <FormItem key={option.value}>
                         <FormLabel
                           htmlFor={option.value}
-                          className="border border-white/20 rounded-md p-4 flex items-center gap-3 hover:border-white/40 transition-colors text-white text-sm cursor-pointer"
+                          className="border border-white/20 rounded-md p-4 flex items-center gap-3 hover:border-white/40 transition-colors text-white text-lg cursor-pointer"
                         >
                           <RadioGroupItem
                             value={option.value}
@@ -247,7 +247,7 @@ export default function ContactForm() {
             name="message"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="text-white text-sm flex items-center gap-2">
+                <FormLabel className="text-white text-lg flex items-center gap-2">
                   <MessageCircle className="w-5 h-5" />
                   Message*
                 </FormLabel>
