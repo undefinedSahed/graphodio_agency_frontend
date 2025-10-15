@@ -13,6 +13,11 @@ const nextConfig: NextConfig = {
         hostname: "www.facebook.com",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "res.cloudinary.com",
+        pathname: "/**",
+      },
     ],
   },
 };
