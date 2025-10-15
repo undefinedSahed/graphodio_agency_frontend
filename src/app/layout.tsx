@@ -7,7 +7,7 @@ import Footer from "@/components/shared/Footer";
 import { ContactProvider } from "@/lib/contact-context";
 import ContactForm from "@/components/shared/contact-form";
 import { Toaster } from "sonner";
-import MetaPixel from "@/components/shared/meta-pixel";
+import TrackingProvider from "@/providers/tracking-provider";
 
 const debata = Bebas_Neue({
   subsets: ["latin"],
@@ -28,7 +28,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${debata.className} antialiased overflow-x-hidden`}>
-        <MetaPixel />
+        <TrackingProvider
+          gtmIds={["G-K357W4STM4", "GT-NFP5R97W"]}
+          fbPixelId="680203374976332"
+        />
         <SmoothScrollProvider>
           <ContactProvider>
             <Navbar />

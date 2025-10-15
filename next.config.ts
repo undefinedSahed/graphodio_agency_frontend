@@ -6,15 +6,15 @@ const nextConfig: NextConfig = {
       {
         protocol: "https",
         hostname: "cdn.prod.website-files.com",
-        pathname: "/**"
+        pathname: "/**",
       },
       {
         protocol: "https",
-        hostname: "picsum.photos",
-        pathname: "/**"
-      }
-    ]
-  }
+        hostname: "www.facebook.com",
+        pathname: "/**",
+      },
+    ],
+  },
 };
 
 export default nextConfig;
