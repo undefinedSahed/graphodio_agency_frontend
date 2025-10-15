@@ -12,16 +12,16 @@ export async function POST(req: Request) {
       );
     }
 
-        // SMTP transporter (your domain mail)
-        const transporter = nodemailer.createTransport(
-        {
-          service: 'gmail',
-          auth: {
-            user: process.env.SMTP_USER,
-            pass: process.env.SMTP_PASS
-          }
+    // SMTP transporter (your domain mail)
+    const transporter = nodemailer.createTransport(
+      {
+        service: 'gmail',
+        auth: {
+          user: process.env.SMTP_USER,
+          pass: process.env.SMTP_PASS
         }
-        );
+      }
+    );
 
     // Email options (multiple recipients)
     const mailOptions = {
@@ -37,7 +37,7 @@ export async function POST(req: Request) {
     <div style="padding: 20px; background: #fafafa;">
       <p style="margin: 0 0 10px;"><strong>Name:</strong> ${name}</p>
       <p style="margin: 0 0 10px;"><strong>Email:</strong> ${email}</p>
-      <p style="margin: 0 0 10px;"><strong>Service:</strong> ${service}</p>
+      <p style="margin: 0 0 10px; text-transform: capitalize;"><strong>Service:</strong> ${service}</p>
       <p style="margin: 0;"><strong>Message:</strong></p>
       <div style="margin-top: 8px; padding: 12px; background: #fff; border: 1px solid #ddd; border-radius: 6px; white-space: pre-line;">
         ${message}

@@ -93,7 +93,7 @@ export default function Navbar() {
   );
 
   return (
-    <header className="overflow-x-hidden relative z-[999]">
+    <header className="!overflow-x-hidden relative z-[999]">
       <nav className="py-3">
         <div className="container text-white/40 text-lg">
           <div
@@ -121,7 +121,10 @@ export default function Navbar() {
             <div className="element uppercase invisible lg:-ml-16 hidden lg:block">
               <ul className="flex gap-8 items-center">
                 {navLinks.map((link) => {
-                  const isActive = pathname === link.link;
+                  const isActive =
+                    pathname === link.link ||
+                    pathname.startsWith(link.link + "/");
+
                   return (
                     <li
                       key={link.link}

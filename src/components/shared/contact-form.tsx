@@ -36,6 +36,7 @@ export default function ContactForm() {
   const { isContactOpen, setIsContactOpen } = useContact();
   const contactFormRef = useRef<HTMLDivElement>(null);
   const [isSendingMessage, setIsSendingMessage] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
 
   const contactForm = useForm<z.infer<typeof contactFormSchema>>({
     resolver: zodResolver(contactFormSchema),
@@ -79,6 +80,21 @@ export default function ContactForm() {
     }
   };
 
+  // Set mounted state to true after component mounts
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (!contactFormRef.current || !isMounted) return;
+
+    // Set initial state
+    gsap.set(contactFormRef.current, {
+      x: window.innerWidth >= 1024 ? "100%" : "-100%",
+      autoAlpha: 0,
+    });
+  }, []);
+
   useEffect(() => {
     if (!contactFormRef.current) return;
 
@@ -118,7 +134,12 @@ export default function ContactForm() {
         });
       }
     }
-  }, [isContactOpen]);
+  }, [isContactOpen, isMounted]);
+
+  // Don't render anything until component is mounted to prevent flash
+  if (!isMounted) {
+    return null;
+  }
 
   return (
     <div
@@ -146,7 +167,7 @@ export default function ContactForm() {
               name="name"
               render={({ field }) => (
                 <FormItem className="w-full">
-                  <FormLabel className="text-white text-lg flex items-center gap-2">
+                  <FormLabel className="text-white text-sm flex items-center gap-2">
                     <User className="w-5 h-5" />
                     Name*
                   </FormLabel>
@@ -167,7 +188,7 @@ export default function ContactForm() {
               name="email"
               render={({ field }) => (
                 <FormItem className="w-full ">
-                  <FormLabel className="text-white text-lg flex items-center gap-2">
+                  <FormLabel className="text-white text-sm flex items-center gap-2">
                     <Mail className="w-5 h-5" />
                     Email*
                   </FormLabel>
@@ -189,7 +210,7 @@ export default function ContactForm() {
             name="service"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="text-white text-lg flex items-center gap-2">
+                <FormLabel className="text-white text-sm flex items-center gap-2">
                   <ComputerIcon className="w-5 h-5" />
                   Service Needed*
                 </FormLabel>
@@ -203,7 +224,7 @@ export default function ContactForm() {
                       <FormItem key={option.value}>
                         <FormLabel
                           htmlFor={option.value}
-                          className="border border-white/20 rounded-md p-4 flex items-center gap-3 hover:border-white/40 transition-colors text-white text-lg cursor-pointer"
+                          className="border border-white/20 rounded-md p-4 flex items-center gap-3 hover:border-white/40 transition-colors text-white text-sm cursor-pointer"
                         >
                           <RadioGroupItem
                             value={option.value}
@@ -226,13 +247,13 @@ export default function ContactForm() {
             name="message"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="text-white text-lg flex items-center gap-2">
+                <FormLabel className="text-white text-sm flex items-center gap-2">
                   <MessageCircle className="w-5 h-5" />
                   Message*
                 </FormLabel>
                 <FormControl>
                   <Textarea
-                    placeholder="Tell me more about your project. Don't hesitate to include links if necessary."
+                    placeholder="Tell us more about your project. Don't hesitate to include links if necessary."
                     {...field}
                     className="border tracking-wider bg-[#121212] border-white/20 text-white placeholder:text-white/40 min-h-[150px] rounded-none"
                   />
