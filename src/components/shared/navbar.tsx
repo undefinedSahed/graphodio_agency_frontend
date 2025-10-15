@@ -121,7 +121,10 @@ export default function Navbar() {
             <div className="element uppercase invisible lg:-ml-16 hidden lg:block">
               <ul className="flex gap-8 items-center">
                 {navLinks.map((link) => {
-                  const isActive = pathname === link.link;
+                  const isActive =
+                    pathname === link.link ||
+                    pathname.startsWith(link.link + "/");
+
                   return (
                     <li
                       key={link.link}
