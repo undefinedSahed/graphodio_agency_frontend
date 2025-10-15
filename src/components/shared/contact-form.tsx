@@ -82,6 +82,16 @@ export default function ContactForm() {
   useEffect(() => {
     if (!contactFormRef.current) return;
 
+    // Set initial state
+    gsap.set(contactFormRef.current, {
+      x: window.innerWidth >= 1024 ? "100%" : "-100%",
+      autoAlpha: 0,
+    });
+  }, []);
+
+  useEffect(() => {
+    if (!contactFormRef.current) return;
+
     // Different animation behavior for large vs small screens
     if (window.innerWidth >= 1024) {
       // Large screens: animate from right

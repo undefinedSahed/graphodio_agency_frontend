@@ -27,7 +27,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${debata.className} antialiased overflow-x-hidden`}>
+      <body className={`${debata.className} antialiased !overflow-x-hidden`}>
         <TrackingProvider
           gtmIds={["G-K357W4STM4", "GT-NFP5R97W"]}
           fbPixelId="680203374976332"

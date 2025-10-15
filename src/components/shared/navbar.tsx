@@ -93,7 +93,7 @@ export default function Navbar() {
   );
 
   return (
-    <header className="overflow-x-hidden relative z-[999]">
+    <header className="!overflow-x-hidden relative z-[999]">
       <nav className="py-3">
         <div className="container text-white/40 text-lg">
           <div
