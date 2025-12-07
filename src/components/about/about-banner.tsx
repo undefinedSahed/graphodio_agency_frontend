@@ -94,7 +94,7 @@ export default function AboutBanner() {
         <link
           rel="preload"
           as="video"
-          href="https://res.cloudinary.com/sahed/video/upload/q_auto/q_auto,c_fill,w_1920,h_1080/v1758587584/about-banner_o2gre9.mp4"
+          href="https://res.cloudinary.com/dznntnati/video/upload/q_auto/q_auto,c_fill,w_1920,h_1080/v1764184801/about-banner_qqrouz.mp4"
           type="video/mp4"
         />
       </Head>
@@ -104,7 +104,7 @@ export default function AboutBanner() {
       >
         <video
           className="absolute inset-0 w-full h-full object-cover z-0 transition-opacity duration-700"
-          src="https://res.cloudinary.com/sahed/video/upload/q_auto/q_auto,c_fill,w_1920,h_1080/v1758587584/about-banner_o2gre9.mp4"
+          src="https://res.cloudinary.com/dznntnati/video/upload/q_auto/q_auto,c_fill,w_1920,h_1080/v1764184801/about-banner_qqrouz.mp4"
           autoPlay
           loop
           muted
