@@ -8,6 +8,8 @@ import { ContactProvider } from "@/lib/contact-context";
 import ContactForm from "@/components/shared/contact-form";
 import { Toaster } from "sonner";
 import TrackingProvider from "@/providers/tracking-provider";
+import Script from "next/script";
+
 
 const debata = Bebas_Neue({
   subsets: ["latin"],
@@ -28,6 +30,21 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${debata.className} antialiased !overflow-x-hidden`}>
+        {/* Google Analytics */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-K357W4STM4"
+          strategy="afterInteractive"
+        />
+
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-K357W4STM4');
+          `}
+        </Script>
+
         <TrackingProvider
           gtmIds={["GT-NFP5R97W"]} 
           fbPixelId="680203374976332"
