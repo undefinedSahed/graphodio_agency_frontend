@@ -15,7 +15,7 @@ export const services = [
       "Drive growth with smart, results-focused digital marketing. From strategic planning and campaign execution to performance analytics and optimization, we help your brand reach the right audience, at the right time, across the right channels.",
     tags: ["AMAZON", "Social Media"],
     videos: [
-      "https://res.cloudinary.com/dznntnati/video/upload/q_auto/v1764184821/SocialMedia_eazdfv.mp4",
+      "https://res.cloudinary.com/drgqax7f/video/upload/q_auto/v1788296187/SocialMedia.mp4",
       "https://res.cloudinary.com/dznntnati/video/upload/q_auto/v1764184815/Amazon_iltq39.mp4",
       "https://res.cloudinary.com/dznntnati/video/upload/q_auto/v1764184830/socialmedia4_pze2i8.mp4",
     ],
